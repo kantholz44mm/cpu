@@ -51,7 +51,7 @@ PC cannot be directly accessed and is used as the 16 bit program counter. NOTE: 
 
 ```
 | Byte                 |           0            |           1           |           2           |           4            |
-| Bit                  | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 10 11 12 13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F |
+| Bit                  | 1F 1E 1D 1C 1B 1A 19 18 17 16 15 14 13 12 11 10 0F 0E 0D 0C 0B 0A 09 08 07 06 05 04 03 02 01 00 |
 | Instruction          |   opcode   |  cond  |  rd    |  ro1   |  ro2   |                      imm16                     |
 | Instruction          |   opcode   |  cond  |  rd    |  ro1   |  ro2   |         imm8          | aluop  |               |
 ```
@@ -82,7 +82,7 @@ all instructions can be conditionally executed based on the state of r7/rf.
 # control lines
 RWEN:1   Register Write Enable            -> Whether the register file shall be updated with a new value
 FWEN:1   Flag Write Enable                -> Should the Flag register be updated?
-MWEN:1   Memory Read/Write Selection      -> Should the memory read or write? (if none required, just read. no harm.)
+MWEN:1   Memory Write Enable              -> Should the memory read or write? (if none required, just read. no harm.)
 BSSEL:1  ALU Operand B source Selection   -> Selects if the B operand in the ALU is imm8 or ro2.
 MASSEL:1  Memory Address Selection        -> Selects the source for the memory address: [ro1:rp] or [imm16]
 RSSEL:2  Register Source Selection        -> Selects the source for register writes: [imm8, ALU result, memory read]
