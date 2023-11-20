@@ -3,6 +3,7 @@ type Word = u8;
 type DoubleWord = u16;
 type QuadWord = u32;
 
+#[derive(Clone, Copy)]
 pub enum ALUFunction {
     ADD = 0,
     ADC = 1,
@@ -35,7 +36,7 @@ pub enum Instruction {
     SW      { addr: RegisterPair, source: Register },
     SWI     { addr: DoubleWord, source: Register },
     MW      { dest: Register, source: Register },
-    MWI     { dest: Register, source: Word },
+    MWI     { dest: Register, datum: Word },
     JP      { addr: RegisterPair },
     JPI     { addr: DoubleWord },
     ALU     { dest: Register, op_a: Register, op_b: Register, op: ALUFunction },
@@ -53,13 +54,13 @@ impl Instruction {
                 0x00000000
             },
             Instruction::LW { dest, addr } => {
-                0x10000000 | ((*dest as u32) << 22) | ((*addr.0 as u32) << 19) | ((*addr.1 as u32) << 16)
+                0x10000000 | ((*dest as u32) << 22) | ((addr.0 as u32) << 19) | ((addr.1 as u32) << 16)
             },
             Instruction::LWI { dest, addr } =>  {
                 0x20000000 | ((*dest as u32) << 22) | *addr as u32
             },
             Instruction::SW { addr, source } =>  {
-                0x30000000 | ((*addr.0 as u32) << 19) | ((*source as u32) << 16)
+                0x30000000 | ((addr.0 as u32) << 19) | ((*source as u32) << 16)
             },
             Instruction::SWI { addr, source } =>  {
                 0x40000000 | ((*source as u32) << 16) | *addr as u32
@@ -67,11 +68,11 @@ impl Instruction {
             Instruction::MW { dest, source } =>  {
                 0x50000000 | ((*dest as u32) << 22) | ((*source as u32) << 19)
             },
-            Instruction::MWI { dest, source } =>  {
-                0x60000000 | ((*dest as u32) << 22) | ((*source as u32) << 8)
+            Instruction::MWI { dest, datum } =>  {
+                0x60000000 | ((*dest as u32) << 22) | ((*datum as u32) << 8)
             },
             Instruction::JP { addr } =>  {
-                0x70000000 | ((*addr.0 as u32) << 19) | ((*addr.1 as u32) << 16)
+                0x70000000 | ((addr.0 as u32) << 19) | ((addr.1 as u32) << 16)
             },
             Instruction::JPI { addr } =>  {
                 0x80000000 | *addr as u32
