@@ -53,7 +53,7 @@ PC cannot be directly accessed and is used as the 16 bit program counter. NOTE: 
 | Byte                 |           0            |           1           |           2           |           4            |
 | Bit                  | 1F 1E 1D 1C 1B 1A 19 18 17 16 15 14 13 12 11 10 0F 0E 0D 0C 0B 0A 09 08 07 06 05 04 03 02 01 00 |
 | Instruction          |   opcode   |  cond  |  rd    |  ro1   |  ro2   |                      imm16                     |
-| Instruction          |   opcode   |  cond  |  rd    |  ro1   |  ro2   |         imm8          | aluop  |               |
+| Instruction          |   opcode   |  cond  |  rd    |  ro1   |  ro2   |         imm8          |     res      |  aluop  |
 ```
 
 ## instructions:
@@ -74,8 +74,8 @@ all instructions can be conditionally executed based on the state of r7/rf.
 0xA ALUI  rd, ro1, imm8     : rd = ALU(ro1, imm8, aluop)
 0xB ALUF  rd, ro1, ro2      : same as ALU, but updates Flags register
 0xC ALUFI rd, ro1, imm8     : same as ALUI, but updates Flags register
-0xD CMP^  ro1, ro2          : rf = compare(ro1, ro2)
-0xE
+0xD CMP   ro1, ro2          : rf = compare(ro1, ro2)
+0xE CMPI  ro1, imm8         : rf = compare(ro1, imm8)
 0xF
 ```
 
