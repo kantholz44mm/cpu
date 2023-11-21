@@ -95,72 +95,108 @@ pub enum Token {
 }
 
 #[derive(Debug, Clone, Copy)]
-pub enum Instruction {
-    NOP,
-    LW      { dest: Register, addr: RegisterPair },
-    LWI     { dest: Register, addr: DoubleWord },
-    SW      { addr: RegisterPair, source: Register },
-    SWI     { addr: DoubleWord, source: Register },
-    MW      { dest: Register, source: Register },
-    MWI     { dest: Register, datum: Word },
-    JP      { addr: RegisterPair },
-    JPI     { addr: DoubleWord },
-    ALU     { dest: Register, op_a: Register, op_b: Register, op: ALUFunction },
-    ALUI    { dest: Register, op_a: Register, op_b: Word, op: ALUFunction },
-    ALUF    { dest: Register, op_a: Register, op_b: Register, op: ALUFunction },
-    ALUFI   { dest: Register, op_a: Register, op_b: Word, op: ALUFunction },
-    CMP     { op_a: Register, op_b: Register },
-    CMPI    { op_a: Register, op_b: Word },
+pub enum Opcode {
+    NOP   = 0x0,
+    LW    = 0x1,
+    LWI   = 0x2,
+    SW    = 0x3,
+    SWI   = 0x4,
+    MW    = 0x5,
+    MWI   = 0x6,
+    JP    = 0x7,
+    JPI   = 0x8,
+    ALU   = 0x9,
+    ALUI  = 0xA,
+    ALUF  = 0xB,
+    ALUFI = 0xC,
+    CMP   = 0xD,
+    CMPI  = 0xE,
+}
+
+#[derive(Debug, Clone, Copy)]
+pub enum UpperInstruction {
+    Imm16(u16),
+    ALU(u8, ALUFunction)
+}
+
+#[derive(Debug, Clone, Copy)]
+pub struct Instruction {
+    pub operation: Opcode,
+    pub destination: Register,
+    pub operand1: Register,
+    pub operand2: Register,
+    pub immediate: UpperInstruction,
+}
+
+pub enum PCSSEL {
+    Zero        = 0b00,
+    Increment   = 0b01,
+    R1R2        = 0b10,
+    Imm16       = 0b11,
+}
+
+pub enum RSSEL {
+    Imm8        = 0b00,
+    Memory      = 0b01,
+    ALU         = 0b10,
+    Register1   = 0b11,
+}
+
+pub enum BSSEL {
+    Imm8       = 0b0,
+    Register2  = 0b1
+}
+
+pub enum MASEL {
+    Imm16       = 0b0,
+    R1RP        = 0b1,
+}
+
+pub struct ControlLines {
+    pub RWEN: bool,
+    pub FWEN: bool,
+    pub MWEN: bool,
+    pub BSSEL: BSSEL,
+    pub MASEL: MASEL,
+    pub RSSEL: RSSEL,
+    pub PCSSEL: PCSSEL,
 }
 
 impl Instruction {
     pub fn encode(&self) -> QuadWord {
+        let word = (0 as QuadWord)
+        | (self.operation as u32) << 28
+        | (self.destination as u32) << 22
+        | (self.operand1 as u32) << 19
+        | (self.operand2 as u32) << 16;
+
+        let upper_word = match self.immediate {
+            UpperInstruction::Imm16(imm16) => imm16 as u32,
+            UpperInstruction::ALU(imm8, aluop) => (imm8 as u32) << 8 | (aluop as u32),
+        };
+
+        word | upper_word
+    }
+}
+
+impl Opcode {
+    pub fn get_control_lines(&self) -> ControlLines {
         match self {
-            Instruction::NOP => {
-                0x00000000
-            },
-            Instruction::LW { dest, addr } => {
-                0x10000000 | ((*dest as u32) << 22) | ((addr.0 as u32) << 19) | ((addr.1 as u32) << 16)
-            },
-            Instruction::LWI { dest, addr } =>  {
-                0x20000000 | ((*dest as u32) << 22) | *addr as u32
-            },
-            Instruction::SW { addr, source } =>  {
-                0x30000000 | ((addr.0 as u32) << 19) | ((*source as u32) << 16)
-            },
-            Instruction::SWI { addr, source } =>  {
-                0x40000000 | ((*source as u32) << 16) | *addr as u32
-            },
-            Instruction::MW { dest, source } =>  {
-                0x50000000 | ((*dest as u32) << 22) | ((*source as u32) << 19)
-            },
-            Instruction::MWI { dest, datum } =>  {
-                0x60000000 | ((*dest as u32) << 22) | ((*datum as u32) << 8)
-            },
-            Instruction::JP { addr } =>  {
-                0x70000000 | ((addr.0 as u32) << 19) | ((addr.1 as u32) << 16)
-            },
-            Instruction::JPI { addr } =>  {
-                0x80000000 | *addr as u32
-            },
-            Instruction::ALU { dest, op_a, op_b, op } =>  {
-                0x90000000 | (*op as u32) | ((*dest as u32) << 22) | ((*op_a as u32) << 19) | ((*op_b as u32) << 16)
-            },
-            Instruction::ALUI { dest, op_a, op_b, op } =>  {
-                0xA0000000 | (*op as u32) | ((*dest as u32) << 22) | ((*op_a as u32) << 19) | ((*op_b as u32) << 8)
-            },
-            Instruction::ALUF { dest, op_a, op_b, op } =>  {
-                0xB0000000 | (*op as u32) | ((*dest as u32) << 22) | ((*op_a as u32) << 19) | ((*op_b as u32) << 16)
-            },
-            Instruction::ALUFI { dest, op_a, op_b, op } =>  {
-                0xC0000000 | (*op as u32) | ((*dest as u32) << 22) | ((*op_a as u32) << 19) | ((*op_b as u32) << 8)
-            },
-            Instruction::CMP { op_a, op_b } =>  {
-                0xD0000000 | ((*op_a as u32) << 19) | ((*op_b as u32) << 16)
-            },
-            Instruction::CMPI { op_a, op_b } =>  {
-                0xE0000000 | ((*op_a as u32) << 19) | ((*op_b as u32) << 8)
-            },
+            Opcode::NOP   => ControlLines { RWEN: false, FWEN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::Increment },
+            Opcode::LW    => ControlLines { RWEN: true, FWEN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::R1RP, RSSEL: RSSEL::Memory, PCSSEL: PCSSEL::Increment },
+            Opcode::LWI   => ControlLines { RWEN: true, FWEN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Memory, PCSSEL: PCSSEL::Increment },
+            Opcode::SW    => ControlLines { RWEN: false, FWEN: false, MWEN: true, BSSEL: BSSEL::Imm8, MASEL: MASEL::R1RP, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::Increment },
+            Opcode::SWI   => ControlLines { RWEN: false, FWEN: false, MWEN: true, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::Increment },
+            Opcode::MW    => ControlLines { RWEN: true, FWEN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Register1, PCSSEL: PCSSEL::Increment },
+            Opcode::MWI   => ControlLines { RWEN: true, FWEN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::Increment },
+            Opcode::JP    => ControlLines { RWEN: false, FWEN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::R1R2 },
+            Opcode::JPI   => ControlLines { RWEN: false, FWEN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::Imm16 },
+            Opcode::ALU   => ControlLines { RWEN: true, FWEN: false, MWEN: false, BSSEL: BSSEL::Register2, MASEL: MASEL::Imm16, RSSEL: RSSEL::ALU, PCSSEL: PCSSEL::Increment },
+            Opcode::ALUI  => ControlLines { RWEN: true, FWEN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::ALU, PCSSEL: PCSSEL::Increment },
+            Opcode::ALUF  => ControlLines { RWEN: true, FWEN: true, MWEN: false, BSSEL: BSSEL::Register2, MASEL: MASEL::Imm16, RSSEL: RSSEL::ALU, PCSSEL: PCSSEL::Increment },
+            Opcode::ALUFI => ControlLines { RWEN: true, FWEN: true, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::ALU, PCSSEL: PCSSEL::Increment },
+            Opcode::CMP   => ControlLines { RWEN: false, FWEN: true, MWEN: false, BSSEL: BSSEL::Register2, MASEL: MASEL::Imm16, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::Increment },
+            Opcode::CMPI  => ControlLines { RWEN: false, FWEN: true, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::Increment },
         }
     }
 }
@@ -211,6 +247,19 @@ impl Token {
     }
 }
 
+impl ControlLines {
+    pub fn encode(self) -> u16 {
+        (0 as u16)
+        | (self.RWEN as u16) << 0
+        | (self.FWEN as u16) << 1
+        | (self.MWEN as u16) << 2
+        | (self.BSSEL as u16) << 3
+        | (self.MASEL as u16) << 4
+        | (self.RSSEL as u16) << 5
+        | (self.PCSSEL as u16) << 7
+    }
+}
+
 impl Instruction {
     pub fn from_tokens(tokens: &[Token]) -> Option<Self> {
         let mut mnemonic = Operation::NOP;
@@ -220,85 +269,256 @@ impl Instruction {
             return None;
         }
         
-/*
-    LW      { dest: Register, addr: RegisterPair },
-    LWI     { dest: Register, addr: DoubleWord },
-    SW      { addr: RegisterPair, source: Register },
-    SWI     { addr: DoubleWord, source: Register },
-    MW      { dest: Register, source: Register },
-    MWI     { dest: Register, datum: Word },
-    JP      { addr: RegisterPair },
-    JPI     { addr: DoubleWord },
-    ALU     { dest: Register, op_a: Register, op_b: Register, op: ALUFunction },
-    ALUI    { dest: Register, op_a: Register, op_b: Word, op: ALUFunction },
-    ALUF    { dest: Register, op_a: Register, op_b: Register, op: ALUFunction },
-    ALUFI   { dest: Register, op_a: Register, op_b: Word, op: ALUFunction },
-    CMP     { op_a: Register, op_b: Register },
-    CMPI    { op_a: Register, op_b: Word },
-*/
+        /*
+            LW      { dest: Register, addr: RegisterPair },
+            LWI     { dest: Register, addr: DoubleWord },
+            SW      { addr: RegisterPair, source: Register },
+            SWI     { addr: DoubleWord, source: Register },
+            MW      { dest: Register, source: Register },
+            MWI     { dest: Register, datum: Word },
+            JP      { addr: RegisterPair },
+            JPI     { addr: DoubleWord },
+            ALU     { dest: Register, op_a: Register, op_b: Register, op: ALUFunction },
+            ALUI    { dest: Register, op_a: Register, op_b: Word, op: ALUFunction },
+            ALUF    { dest: Register, op_a: Register, op_b: Register, op: ALUFunction },
+            ALUFI   { dest: Register, op_a: Register, op_b: Word, op: ALUFunction },
+            CMP     { op_a: Register, op_b: Register },
+            CMPI    { op_a: Register, op_b: Word },
+        */
 
         match mnemonic {
-            Operation::NOP => if let None = tokens.get(1) {
-                Some(Instruction::NOP)
-            } else { None },
-            Operation::LW => if let (Some(Token::Register(dest)), Some(Token::RegisterPair(addr))) = (tokens.get(1), tokens.get(2)) {
-                Some(Instruction::LW { dest: *dest, addr: *addr })
-            } else { None },
+            Operation::NOP => Some(Instruction
+            {
+                operation: Opcode::NOP,
+                destination: Register::R0,
+                operand1: Register::R0,
+                operand2: Register::R0,
+                immediate: UpperInstruction::Imm16(0)
+            }),
+            Operation::LW => if let (Token::Register(dest), Token::RegisterPair((lower_addr, Register::RP))) = (tokens.get(1)?, tokens.get(2)?) {
+                    Some(Instruction
+                    {
+                        operation: Opcode::LW,
+                        destination: *dest,
+                        operand1: *lower_addr,
+                        operand2: Register::RP,
+                        immediate: UpperInstruction::Imm16(0)
+                    })
+                } else { None },
             Operation::LWI => if let (Some(Token::Register(dest)), Some(Token::Imm16(addr))) = (tokens.get(1), tokens.get(2)) {
-                Some(Instruction::LWI { dest: *dest, addr: *addr })
-            } else { None }
-            Operation::SW => if let (Some(Token::RegisterPair(addr)), Some(Token::Register(source))) = (tokens.get(1), tokens.get(2)) {
-                Some(Instruction::SW { addr: *addr, source: *source })
-            } else { None }
+                    Some(Instruction
+                    {
+                        operation: Opcode::LWI,
+                        destination: *dest,
+                        operand1: Register::R0,
+                        operand2: Register::R0,
+                        immediate: UpperInstruction::Imm16(*addr)
+                    })
+                } else { None },
+            Operation::SW => if let (Some(Token::RegisterPair((lower_addr, Register::RP))), Some(Token::Register(source))) = (tokens.get(1), tokens.get(2)) {
+                    Some(Instruction
+                    {
+                        operation: Opcode::SW,
+                        destination: Register::R0,
+                        operand1: *lower_addr,
+                        operand2: Register::RP,
+                        immediate: UpperInstruction::Imm16(0)
+                    })
+                } else { None },
             Operation::SWI => if let (Some(Token::Imm16(addr)), Some(Token::Register(source))) = (tokens.get(1), tokens.get(2)) {
-                Some(Instruction::SWI { addr: *addr, source: *source })
-            } else { None },
+                    Some(Instruction
+                    {
+                        operation: Opcode::SWI,
+                        destination: Register::R0,
+                        operand1: *source,
+                        operand2: Register::R0,
+                        immediate: UpperInstruction::Imm16(*addr)
+                    })
+                } else { None },
             Operation::MW => if let (Some(Token::Register(dest)), Some(Token::Register(source))) = (tokens.get(1), tokens.get(2)) {
-                Some(Instruction::MW { dest: *dest, source: *source })
-            } else { None },
+                    Some(Instruction
+                    {
+                        operation: Opcode::MW,
+                        destination: *dest,
+                        operand1: *source,
+                        operand2: Register::R0,
+                        immediate: UpperInstruction::Imm16(0)
+                    })
+                } else { None },
             Operation::MWI => if let (Some(Token::Register(dest)), Some(Token::Imm8(datum))) = (tokens.get(1), tokens.get(2)) {
-                Some(Instruction::MWI { dest: *dest, datum: *datum })
-            } else { None },
-            Operation::JP => if let Some(Token::RegisterPair(addr)) = tokens.get(1) {
-                Some(Instruction::JP { addr: *addr })
-            } else { None },
+                    Some(Instruction
+                    {
+                        operation: Opcode::MWI,
+                        destination: *dest,
+                        operand1: Register::R0,
+                        operand2: Register::R0,
+                        immediate: UpperInstruction::ALU(*datum, ALUFunction::ADD)
+                    })
+                } else { None },
+            Operation::JP => if let Some(Token::RegisterPair((lower, upper))) = tokens.get(1) {
+                    Some(Instruction
+                    {
+                        operation: Opcode::JP,
+                        destination: Register::R0,
+                        operand1: *lower,
+                        operand2: *upper,
+                        immediate: UpperInstruction::Imm16(0)
+                    })
+                } else { None },
             Operation::JPI => if let Some(Token::Imm16(addr)) = tokens.get(1) {
-                Some(Instruction::JPI { addr: *addr })
-            } else { None },
-            Operation::ADD => todo!(),
-            Operation::ADC => todo!(),
-            Operation::SUB => todo!(),
-            Operation::SBB => todo!(),
-            Operation::OR => todo!(),
-            Operation::NOR => todo!(),
-            Operation::XOR => todo!(),
-            Operation::AND => todo!(),
-            Operation::ADDI => todo!(),
-            Operation::ADCI => todo!(),
-            Operation::SUBI => todo!(),
-            Operation::SBBI => todo!(),
-            Operation::ORI => todo!(),
-            Operation::NORI => todo!(),
-            Operation::XORI => todo!(),
-            Operation::ANDI => todo!(),
-            Operation::ADDF => todo!(),
-            Operation::ADCF => todo!(),
-            Operation::SUBF => todo!(),
-            Operation::SBBF => todo!(),
-            Operation::ORF => todo!(),
-            Operation::NORF => todo!(),
-            Operation::XORF => todo!(),
-            Operation::ANDF => todo!(),
-            Operation::ADDFI => todo!(),
-            Operation::ADCFI => todo!(),
-            Operation::SUBFI => todo!(),
-            Operation::SBBFI => todo!(),
-            Operation::ORFI => todo!(),
-            Operation::NORFI => todo!(),
-            Operation::XORFI => todo!(),
-            Operation::ANDFI => todo!(),
-            Operation::CMP => todo!(),
-            Operation::CMPI => todo!(),
+                    Some(Instruction
+                    {
+                        operation: Opcode::JPI,
+                        destination: Register::R0,
+                        operand1: Register::R0,
+                        operand2: Register::R0,
+                        immediate: UpperInstruction::Imm16(*addr)
+                    })
+                } else { None },
+
+                Operation::ADD |
+                Operation::ADC |
+                Operation::SUB |
+                Operation::SBB |
+                Operation::OR |
+                Operation::NOR |
+                Operation::XOR |
+                Operation::AND => if let (Token::Register(dest), Token::Register(op_a), Token::Register(op_b)) = (tokens.get(1)?, tokens.get(2)?, tokens.get(3)?) {
+                    Some(Instruction
+                        {
+                            operation: Opcode::ALU,
+                            destination: *dest,
+                            operand1: *op_a,
+                            operand2: *op_b,
+                            immediate: UpperInstruction::ALU(0, mnemonic.get_alu_function())
+                        })
+                } else { None },
+
+                Operation::ADDI |
+                Operation::ADCI |
+                Operation::SUBI |
+                Operation::SBBI |
+                Operation::ORI |
+                Operation::NORI |
+                Operation::XORI |
+                Operation::ANDI => if let (Token::Register(dest), Token::Register(op_a), Token::Imm8(op_b)) = (tokens.get(1)?, tokens.get(2)?, tokens.get(3)?) {
+                    Some(Instruction
+                        {
+                            operation: Opcode::ALUI,
+                            destination: *dest,
+                            operand1: *op_a,
+                            operand2: Register::R0,
+                            immediate: UpperInstruction::ALU(*op_b, mnemonic.get_alu_function())
+                        })
+                } else { None },
+            
+                Operation::ADD |
+                Operation::ADC |
+                Operation::SUB |
+                Operation::SBB |
+                Operation::OR |
+                Operation::NOR |
+                Operation::XOR |
+                Operation::AND => if let (Token::Register(dest), Token::Register(op_a), Token::Register(op_b)) = (tokens.get(1)?, tokens.get(2)?, tokens.get(3)?) {
+                    Some(Instruction
+                        {
+                            operation: Opcode::ALUF,
+                            destination: *dest,
+                            operand1: *op_a,
+                            operand2: *op_b,
+                            immediate: UpperInstruction::ALU(0, mnemonic.get_alu_function())
+                        })
+                } else { None },
+
+                Operation::ADDI |
+                Operation::ADCI |
+                Operation::SUBI |
+                Operation::SBBI |
+                Operation::ORI |
+                Operation::NORI |
+                Operation::XORI |
+                Operation::ANDI => if let (Token::Register(dest), Token::Register(op_a), Token::Imm8(op_b)) = (tokens.get(1)?, tokens.get(2)?, tokens.get(3)?) {
+                    Some(Instruction
+                        {
+                            operation: Opcode::ALUFI,
+                            destination: *dest,
+                            operand1: *op_a,
+                            operand2: Register::R0,
+                            immediate: UpperInstruction::ALU(*op_b, mnemonic.get_alu_function())
+                        })
+                } else { None },
+
+            Operation::CMP => if let (Some(Token::Register(op_a)), Some(Token::Register(op_b))) = (tokens.get(1), tokens.get(2)) {
+                    Some(Instruction
+                    {
+                        operation: Opcode::CMP,
+                        destination: Register::R0,
+                        operand1: *op_a,
+                        operand2: *op_b,
+                        immediate: UpperInstruction::Imm16(0)
+                    })
+                } else { None },
+            Operation::CMPI => if let (Some(Token::Register(op_a)), Some(Token::Imm8(op_b))) = (tokens.get(1), tokens.get(2)) {
+                    Some(Instruction
+                    {
+                        operation: Opcode::CMPI,
+                        destination: Register::R0,
+                        operand1: *op_a,
+                        operand2: Register::R0,
+                        immediate: UpperInstruction::ALU(*op_b, ALUFunction::ADD)
+                    })
+                } else { None },
+            _ => None,
+        }
+    }
+}
+
+impl Operation {
+    pub fn get_alu_function(&self) -> ALUFunction {
+        match self {
+            Operation::NOP => ALUFunction::ADD,
+            Operation::LW => ALUFunction::ADD,
+            Operation::LWI => ALUFunction::ADD,
+            Operation::SW => ALUFunction::ADD,
+            Operation::SWI => ALUFunction::ADD,
+            Operation::MW => ALUFunction::ADD,
+            Operation::MWI => ALUFunction::ADD,
+            Operation::JP => ALUFunction::ADD,
+            Operation::JPI => ALUFunction::ADD,
+            Operation::ADD => ALUFunction::ADD,
+            Operation::ADC => ALUFunction::ADC,
+            Operation::SUB => ALUFunction::SUB,
+            Operation::SBB => ALUFunction::SBB,
+            Operation::OR => ALUFunction::OR,
+            Operation::NOR => ALUFunction::NOR,
+            Operation::XOR => ALUFunction::XOR,
+            Operation::AND => ALUFunction::AND,
+            Operation::ADDI => ALUFunction::ADD,
+            Operation::ADCI => ALUFunction::ADC,
+            Operation::SUBI => ALUFunction::SUB,
+            Operation::SBBI => ALUFunction::SBB,
+            Operation::ORI => ALUFunction::OR,
+            Operation::NORI => ALUFunction::NOR,
+            Operation::XORI => ALUFunction::XOR,
+            Operation::ANDI => ALUFunction::AND,
+            Operation::ADDF => ALUFunction::ADD,
+            Operation::ADCF => ALUFunction::ADC,
+            Operation::SUBF => ALUFunction::SUB,
+            Operation::SBBF => ALUFunction::SBB,
+            Operation::ORF => ALUFunction::OR,
+            Operation::NORF => ALUFunction::NOR,
+            Operation::XORF => ALUFunction::XOR,
+            Operation::ANDF => ALUFunction::AND,
+            Operation::ADDFI => ALUFunction::ADD,
+            Operation::ADCFI => ALUFunction::ADC,
+            Operation::SUBFI => ALUFunction::SUB,
+            Operation::SBBFI => ALUFunction::SBB,
+            Operation::ORFI => ALUFunction::OR,
+            Operation::NORFI => ALUFunction::NOR,
+            Operation::XORFI => ALUFunction::XOR,
+            Operation::ANDFI => ALUFunction::AND,
+            Operation::CMP => ALUFunction::ADD,
+            Operation::CMPI => ALUFunction::ADD,
         }
     }
 }

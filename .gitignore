@@ -1,3 +1,4 @@
 /assembler/target/
 .vscode/
 /assembler/.vscode/
+/assembler/compiled_binary.arx
