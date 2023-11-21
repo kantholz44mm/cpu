@@ -7,9 +7,13 @@ pub fn try_parse_register(input: &str) -> Option<Register> {
     let mut chars = input.chars();
     let first_char = chars.next()?;
     let index = chars.next()?;
+    
+    if let Some(_) = chars.next() {
+        return None;
+    }
 
     if first_char != 'r' && first_char != 'R' {
-        return None
+        return None;
     }
 
     if index == 'P' || index == 'p' {

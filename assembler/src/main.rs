@@ -7,16 +7,10 @@ mod lexer;
 
 fn main() {
 
-    let input = "something: MW r0 r1";
-    let tokens: Vec<&str> = input.split([',', '\n', '\t', '\r', ' ']).collect();
+    let input = "LW r0 r3:r5";
+    let tokens: Vec<Token> = input.split([',', '\n', '\t', '\r', ' ']).map(|t| Token::parse(t).unwrap()).collect();
+    println!("{:?}", tokens);
 
     println!("lexing {} tokens", tokens.len());
-
-    for token in tokens.iter() {
-        if let Some(parsed) = Token::parse(token) {
-            println!("parsed token: {:?}", parsed);
-        } else {
-            println!("invalid/unknown token: {}", token);
-        }
-    }
+    println!("parsing line yields: {:?}", Instruction::from_tokens(&tokens));
 }

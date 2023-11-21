@@ -210,3 +210,95 @@ impl Token {
         None
     }
 }
+
+impl Instruction {
+    pub fn from_tokens(tokens: &[Token]) -> Option<Self> {
+        let mut mnemonic = Operation::NOP;
+        if let Some(Token::Operation(mnem)) = tokens.get(0) {
+            mnemonic = *mnem;
+        } else {
+            return None;
+        }
+        
+/*
+    LW      { dest: Register, addr: RegisterPair },
+    LWI     { dest: Register, addr: DoubleWord },
+    SW      { addr: RegisterPair, source: Register },
+    SWI     { addr: DoubleWord, source: Register },
+    MW      { dest: Register, source: Register },
+    MWI     { dest: Register, datum: Word },
+    JP      { addr: RegisterPair },
+    JPI     { addr: DoubleWord },
+    ALU     { dest: Register, op_a: Register, op_b: Register, op: ALUFunction },
+    ALUI    { dest: Register, op_a: Register, op_b: Word, op: ALUFunction },
+    ALUF    { dest: Register, op_a: Register, op_b: Register, op: ALUFunction },
+    ALUFI   { dest: Register, op_a: Register, op_b: Word, op: ALUFunction },
+    CMP     { op_a: Register, op_b: Register },
+    CMPI    { op_a: Register, op_b: Word },
+*/
+
+        match mnemonic {
+            Operation::NOP => if let None = tokens.get(1) {
+                Some(Instruction::NOP)
+            } else { None },
+            Operation::LW => if let (Some(Token::Register(dest)), Some(Token::RegisterPair(addr))) = (tokens.get(1), tokens.get(2)) {
+                Some(Instruction::LW { dest: *dest, addr: *addr })
+            } else { None },
+            Operation::LWI => if let (Some(Token::Register(dest)), Some(Token::Imm16(addr))) = (tokens.get(1), tokens.get(2)) {
+                Some(Instruction::LWI { dest: *dest, addr: *addr })
+            } else { None }
+            Operation::SW => if let (Some(Token::RegisterPair(addr)), Some(Token::Register(source))) = (tokens.get(1), tokens.get(2)) {
+                Some(Instruction::SW { addr: *addr, source: *source })
+            } else { None }
+            Operation::SWI => if let (Some(Token::Imm16(addr)), Some(Token::Register(source))) = (tokens.get(1), tokens.get(2)) {
+                Some(Instruction::SWI { addr: *addr, source: *source })
+            } else { None },
+            Operation::MW => if let (Some(Token::Register(dest)), Some(Token::Register(source))) = (tokens.get(1), tokens.get(2)) {
+                Some(Instruction::MW { dest: *dest, source: *source })
+            } else { None },
+            Operation::MWI => if let (Some(Token::Register(dest)), Some(Token::Imm8(datum))) = (tokens.get(1), tokens.get(2)) {
+                Some(Instruction::MWI { dest: *dest, datum: *datum })
+            } else { None },
+            Operation::JP => if let Some(Token::RegisterPair(addr)) = tokens.get(1) {
+                Some(Instruction::JP { addr: *addr })
+            } else { None },
+            Operation::JPI => if let Some(Token::Imm16(addr)) = tokens.get(1) {
+                Some(Instruction::JPI { addr: *addr })
+            } else { None },
+            Operation::ADD => todo!(),
+            Operation::ADC => todo!(),
+            Operation::SUB => todo!(),
+            Operation::SBB => todo!(),
+            Operation::OR => todo!(),
+            Operation::NOR => todo!(),
+            Operation::XOR => todo!(),
+            Operation::AND => todo!(),
+            Operation::ADDI => todo!(),
+            Operation::ADCI => todo!(),
+            Operation::SUBI => todo!(),
+            Operation::SBBI => todo!(),
+            Operation::ORI => todo!(),
+            Operation::NORI => todo!(),
+            Operation::XORI => todo!(),
+            Operation::ANDI => todo!(),
+            Operation::ADDF => todo!(),
+            Operation::ADCF => todo!(),
+            Operation::SUBF => todo!(),
+            Operation::SBBF => todo!(),
+            Operation::ORF => todo!(),
+            Operation::NORF => todo!(),
+            Operation::XORF => todo!(),
+            Operation::ANDF => todo!(),
+            Operation::ADDFI => todo!(),
+            Operation::ADCFI => todo!(),
+            Operation::SUBFI => todo!(),
+            Operation::SBBFI => todo!(),
+            Operation::ORFI => todo!(),
+            Operation::NORFI => todo!(),
+            Operation::XORFI => todo!(),
+            Operation::ANDFI => todo!(),
+            Operation::CMP => todo!(),
+            Operation::CMPI => todo!(),
+        }
+    }
+}
