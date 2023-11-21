@@ -1,9 +1,11 @@
+use crate::lexer;
 
-type Word = u8;
-type DoubleWord = u16;
-type QuadWord = u32;
 
-#[derive(Clone, Copy)]
+pub type Word = u8;
+pub type DoubleWord = u16;
+pub type QuadWord = u32;
+
+#[derive(Debug, Clone, Copy)]
 pub enum ALUFunction {
     ADD = 0,
     ADC = 1,
@@ -15,7 +17,7 @@ pub enum ALUFunction {
     AND = 7,
 }
 
-#[derive(Clone, Copy)]
+#[derive(Debug, Clone, Copy)]
 pub enum Register {
     R0 = 0,
     R1 = 1,
@@ -27,8 +29,72 @@ pub enum Register {
     RP = 7,
 }
 
-type RegisterPair = (Register, Register);
+pub type RegisterPair = (Register, Register);
+pub type Label = String;
 
+#[derive(Debug, Clone, Copy)]
+pub enum Operation {
+    NOP,
+    LW,
+    LWI,
+    SW,
+    SWI,
+    MW,
+    MWI,
+    JP,
+    JPI,
+
+    ADD,
+    ADC,
+    SUB,
+    SBB,
+    OR,
+    NOR,
+    XOR,
+    AND,
+
+    ADDI,
+    ADCI,
+    SUBI,
+    SBBI,
+    ORI,
+    NORI,
+    XORI,
+    ANDI,
+
+    ADDF,
+    ADCF,
+    SUBF,
+    SBBF,
+    ORF,
+    NORF,
+    XORF,
+    ANDF,
+
+    ADDFI,
+    ADCFI,
+    SUBFI,
+    SBBFI,
+    ORFI,
+    NORFI,
+    XORFI,
+    ANDFI,
+
+    CMP,
+    CMPI,
+}
+
+#[derive(Debug, Clone)]
+pub enum Token {
+    Imm8(Word),
+    Imm16(DoubleWord),
+    Register(Register),
+    RegisterPair(RegisterPair),
+    Operation(Operation),
+    Label(Label)
+}
+
+#[derive(Debug, Clone, Copy)]
 pub enum Instruction {
     NOP,
     LW      { dest: Register, addr: RegisterPair },
@@ -96,5 +162,51 @@ impl Instruction {
                 0xE0000000 | ((*op_a as u32) << 19) | ((*op_b as u32) << 8)
             },
         }
+    }
+}
+
+impl Register {
+    pub fn from_index(index: u8) -> Option<Self> {
+        match index {
+            0 => Some(Self::R0),
+            1 => Some(Self::R1),
+            2 => Some(Self::R2),
+            3 => Some(Self::R3),
+            4 => Some(Self::R4),
+            5 => Some(Self::R5),
+            6 => Some(Self::R6),
+            7 => Some(Self::RP),
+            _ => None
+        }
+    }
+}
+
+impl Token {
+    pub fn parse(input: &str) -> Option<Self> {
+        if let Some(parsed_imm8) = lexer::try_parse_word(input) {
+            return Some(Token::Imm8(parsed_imm8));
+        }
+
+        if let Some(parsed_imm16) = lexer::try_parse_doubleword(input) {
+            return Some(Token::Imm16(parsed_imm16));
+        }
+
+        if let Some(parsed_reg) = lexer::try_parse_register(input) {
+            return Some(Token::Register(parsed_reg));
+        }
+
+        if let Some(parsed_regpair) = lexer::try_parse_register_pair(input) {
+            return Some(Token::RegisterPair(parsed_regpair));
+        }
+
+        if let Some(parsed_operation) = lexer::try_parse_operation(input) {
+            return Some(Token::Operation(parsed_operation));
+        }
+
+        if let Some(parsed_label) = lexer::try_parse_label(input) {
+            return Some(Token::Label(parsed_label));
+        }
+
+        None
     }
 }
