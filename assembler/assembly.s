@@ -1,0 +1,5 @@
+MWI r0, 55
+MWI r1, 22
+NOP
+AND r2 r0 r1
+SWI 0x0000 r2

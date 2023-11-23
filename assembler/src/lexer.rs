@@ -36,24 +36,49 @@ pub fn try_parse_register_pair(input: &str) -> Option<RegisterPair> {
     Some((reg_first, reg_second))
 }
 
-pub fn try_parse_word(input: &str) -> Option<Word> {
-    if let Some(signed) = input.parse::<i8>().ok() {
+pub fn try_parse_word(mut input: &str) -> Option<Word> {
+
+    let mut radix = 10;
+    if input.starts_with("0x") {
+        input = &input[2..];
+        radix = 16;
+    } else if input.starts_with("$") {
+        input = &input[1..];
+        radix = 16;
+    } else if input.starts_with("0b") || input.starts_with("0B") {
+        input = &input[2..];
+        radix = 2;
+    }
+
+    if let Some(signed) = i8::from_str_radix(input, radix).ok() {
         return Some(unsafe { std::mem::transmute(signed) });
     }
     
-    if let Some(unsigned) = input.parse::<u8>().ok() {
+    if let Some(unsigned) = u8::from_str_radix(input, radix).ok() {
         return Some(unsigned);
     }
 
     None
 }
 
-pub fn try_parse_doubleword(input: &str) -> Option<DoubleWord> {
-    if let Some(signed) = input.parse::<i16>().ok() {
+pub fn try_parse_doubleword(mut input: &str) -> Option<DoubleWord> {
+    let mut radix = 10;
+    if input.starts_with("0x") {
+        input = &input[2..];
+        radix = 16;
+    } else if input.starts_with("$") {
+        input = &input[1..];
+        radix = 16;
+    } else if input.starts_with("0b") || input.starts_with("0B") {
+        input = &input[2..];
+        radix = 2;
+    }
+
+    if let Some(signed) = i16::from_str_radix(input, radix).ok() {
         return Some(unsafe { std::mem::transmute(signed) });
     }
     
-    if let Some(unsigned) = input.parse::<u16>().ok() {
+    if let Some(unsigned) = u16::from_str_radix(input, radix).ok() {
         return Some(unsigned);
     }
 
