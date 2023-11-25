@@ -78,11 +78,21 @@ PC cannot be directly accessed and is used as the 16 bit program counter. NOTE: 
 0xF
 ```
 
-# control lines
+## control lines
 RWEN:1   Register Write Enable            -> Whether the register file shall be updated with a new value
 FWEN:1   Flag Write Enable                -> Should the Flag register be updated?
-MWEN:1   Memory Write Enable              -> Should the memory read or write? (if none required, just read. no harm.)
+MREN:1   Memory Read Enable               -> Should the memory output onto the data bus?
+MWEN:1   Memory Write Enable              -> Should the memory input from the data bus?
 BSSEL:1  ALU Operand B source Selection   -> Selects if the B operand in the ALU is imm8 or ro2.
 MASSEL:1  Memory Address Selection        -> Selects the source for the memory address: [ro1:rp] or [imm16]
 RSSEL:2  Register Source Selection        -> Selects the source for register writes: [imm8, ALU result, memory read]
 PCSSEL:2 Program Counter Source Selection -> Selects whether the PC shall be loaded from imm16, the adder or ro1:ro2 or 0
+
+
+
+## parts list
+Quad NAND Gates:
+https://www.mouser.de/ProductDetail/Toshiba/TC74HC00APF?qs=W%252B8xM3gmGj%2F0AXEac47eSQ%3D%3D
+32k x 8 Parallel SRAM
+https://www.mouser.de/ProductDetail/Alliance-Memory/AS6C62256-55PCN?qs=LD2UibpCYJqgbIupMJnGTQ%3D%3D
+

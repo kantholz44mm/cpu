@@ -1,11 +1,7 @@
-MWIOF r0 55
-MWIZ r1 -234
-MWINZ r2 11
-MWINE r3 0
+MWI r0 0x56
+MWI r1 0x77
+SUBF r2 r0 r1
 
-ADDF r2, r2, r0
-ADCF r3, r3, r1
-MW r0, r2
-MW r1, r3
-
-JPI 4
+MWI r0 0x34
+MWI r1 0x16
+SBBF r2 r0 r1

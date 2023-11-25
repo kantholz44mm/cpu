@@ -21,7 +21,7 @@ type Line = Vec<Token>;
 fn compile_microcode() -> Vec<u16> {
     let mut encoded = vec![];
     for opcode in Opcode::iter() {
-        encoded.push(opcode.get_control_lines().encode());
+        encoded.push(opcode.get_control_lines().encode().to_be());
     }
     return encoded;
 }

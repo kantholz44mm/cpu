@@ -159,6 +159,7 @@ pub enum MASEL {
 pub struct ControlLines {
     pub RWEN: bool,
     pub FWEN: bool,
+    pub MREN: bool,
     pub MWEN: bool,
     pub BSSEL: BSSEL,
     pub MASEL: MASEL,
@@ -182,21 +183,21 @@ impl Instruction {
 impl Opcode {
     pub fn get_control_lines(&self) -> ControlLines {
         match self {
-            Opcode::NOP   => ControlLines { RWEN: false, FWEN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::Increment },
-            Opcode::LW    => ControlLines { RWEN: true, FWEN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::R1RP, RSSEL: RSSEL::Memory, PCSSEL: PCSSEL::Increment },
-            Opcode::LWI   => ControlLines { RWEN: true, FWEN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Memory, PCSSEL: PCSSEL::Increment },
-            Opcode::SW    => ControlLines { RWEN: false, FWEN: false, MWEN: true, BSSEL: BSSEL::Imm8, MASEL: MASEL::R1RP, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::Increment },
-            Opcode::SWI   => ControlLines { RWEN: false, FWEN: false, MWEN: true, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::Increment },
-            Opcode::MW    => ControlLines { RWEN: true, FWEN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Register1, PCSSEL: PCSSEL::Increment },
-            Opcode::MWI   => ControlLines { RWEN: true, FWEN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::Increment },
-            Opcode::JP    => ControlLines { RWEN: false, FWEN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::R1R2 },
-            Opcode::JPI   => ControlLines { RWEN: false, FWEN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::Imm16 },
-            Opcode::ALU   => ControlLines { RWEN: true, FWEN: false, MWEN: false, BSSEL: BSSEL::Register2, MASEL: MASEL::Imm16, RSSEL: RSSEL::ALU, PCSSEL: PCSSEL::Increment },
-            Opcode::ALUI  => ControlLines { RWEN: true, FWEN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::ALU, PCSSEL: PCSSEL::Increment },
-            Opcode::ALUF  => ControlLines { RWEN: true, FWEN: true, MWEN: false, BSSEL: BSSEL::Register2, MASEL: MASEL::Imm16, RSSEL: RSSEL::ALU, PCSSEL: PCSSEL::Increment },
-            Opcode::ALUFI => ControlLines { RWEN: true, FWEN: true, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::ALU, PCSSEL: PCSSEL::Increment },
-            Opcode::CMP   => ControlLines { RWEN: false, FWEN: true, MWEN: false, BSSEL: BSSEL::Register2, MASEL: MASEL::Imm16, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::Increment },
-            Opcode::CMPI  => ControlLines { RWEN: false, FWEN: true, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::Increment },
+            Opcode::NOP   => ControlLines { RWEN: false, FWEN: false, MREN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::Increment },
+            Opcode::LW    => ControlLines { RWEN: true, FWEN: false, MREN: true, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::R1RP, RSSEL: RSSEL::Memory, PCSSEL: PCSSEL::Increment },
+            Opcode::LWI   => ControlLines { RWEN: true, FWEN: false, MREN: true, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Memory, PCSSEL: PCSSEL::Increment },
+            Opcode::SW    => ControlLines { RWEN: false, FWEN: false, MREN: false, MWEN: true, BSSEL: BSSEL::Imm8, MASEL: MASEL::R1RP, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::Increment },
+            Opcode::SWI   => ControlLines { RWEN: false, FWEN: false, MREN: false, MWEN: true, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::Increment },
+            Opcode::MW    => ControlLines { RWEN: true, FWEN: false, MREN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Register1, PCSSEL: PCSSEL::Increment },
+            Opcode::MWI   => ControlLines { RWEN: true, FWEN: false, MREN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::Increment },
+            Opcode::JP    => ControlLines { RWEN: false, FWEN: false, MREN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::R1R2 },
+            Opcode::JPI   => ControlLines { RWEN: false, FWEN: false, MREN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::Imm16 },
+            Opcode::ALU   => ControlLines { RWEN: true, FWEN: false, MREN: false, MWEN: false, BSSEL: BSSEL::Register2, MASEL: MASEL::Imm16, RSSEL: RSSEL::ALU, PCSSEL: PCSSEL::Increment },
+            Opcode::ALUI  => ControlLines { RWEN: true, FWEN: false, MREN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::ALU, PCSSEL: PCSSEL::Increment },
+            Opcode::ALUF  => ControlLines { RWEN: true, FWEN: true, MREN: false, MWEN: false, BSSEL: BSSEL::Register2, MASEL: MASEL::Imm16, RSSEL: RSSEL::ALU, PCSSEL: PCSSEL::Increment },
+            Opcode::ALUFI => ControlLines { RWEN: true, FWEN: true, MREN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::ALU, PCSSEL: PCSSEL::Increment },
+            Opcode::CMP   => ControlLines { RWEN: false, FWEN: true, MREN: false, MWEN: false, BSSEL: BSSEL::Register2, MASEL: MASEL::Imm16, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::Increment },
+            Opcode::CMPI  => ControlLines { RWEN: false, FWEN: true, MREN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::Increment },
         }
     }
 }
@@ -244,11 +245,12 @@ impl ControlLines {
         (0 as u16)
         | (self.RWEN as u16) << 0
         | (self.FWEN as u16) << 1
-        | (self.MWEN as u16) << 2
-        | (self.BSSEL as u16) << 3
-        | (self.MASEL as u16) << 4
-        | (self.RSSEL as u16) << 5
-        | (self.PCSSEL as u16) << 7
+        | (self.MREN as u16) << 2
+        | (self.MWEN as u16) << 3
+        | (self.BSSEL as u16) << 4
+        | (self.MASEL as u16) << 5
+        | (self.RSSEL as u16) << 6
+        | (self.PCSSEL as u16) << 8
     }
 }
 

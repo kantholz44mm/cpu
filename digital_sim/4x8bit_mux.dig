@@ -170,7 +170,7 @@
         </entry>
         <entry>
           <string>Bits</string>
-          <int>16</int>
+          <int>8</int>
         </entry>
       </elementAttributes>
       <pos x="1620" y="160"/>
