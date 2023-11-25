@@ -1,6 +1,6 @@
 use regex::Regex;
 
-use crate::instructions::{Register, RegisterPair, Word, DoubleWord, Operation, Label};
+use crate::instructions::{Register, RegisterPair, Word, DoubleWord, Operation, Label, Condition};
 
 
 pub fn try_parse_register(input: &str) -> Option<Register> {
@@ -36,31 +36,6 @@ pub fn try_parse_register_pair(input: &str) -> Option<RegisterPair> {
     Some((reg_first, reg_second))
 }
 
-pub fn try_parse_word(mut input: &str) -> Option<Word> {
-
-    let mut radix = 10;
-    if input.starts_with("0x") {
-        input = &input[2..];
-        radix = 16;
-    } else if input.starts_with("$") {
-        input = &input[1..];
-        radix = 16;
-    } else if input.starts_with("0b") || input.starts_with("0B") {
-        input = &input[2..];
-        radix = 2;
-    }
-
-    if let Some(signed) = i8::from_str_radix(input, radix).ok() {
-        return Some(unsafe { std::mem::transmute(signed) });
-    }
-    
-    if let Some(unsigned) = u8::from_str_radix(input, radix).ok() {
-        return Some(unsigned);
-    }
-
-    None
-}
-
 pub fn try_parse_doubleword(mut input: &str) -> Option<DoubleWord> {
     let mut radix = 10;
     if input.starts_with("0x") {
@@ -85,9 +60,41 @@ pub fn try_parse_doubleword(mut input: &str) -> Option<DoubleWord> {
     None
 }
 
-pub fn try_parse_operation(input: &str) -> Option<Operation> {
-    match input.to_uppercase().as_str() {
-        "NOP" => Some(Operation::NOP),
+pub fn try_parse_operation(input: &str) -> Option<(Operation, Condition)> {
+    
+    let mut token = input.to_uppercase();
+
+    let condition = if token.ends_with("CB") {
+        token.pop()?;
+        token.pop()?;
+        Condition::CarryOrBorrow
+    } else if token.ends_with("OF") {
+        token.pop()?;
+        token.pop()?;
+        Condition::Overflow
+    } else if token.ends_with("EQ") {
+        token.pop()?;
+        token.pop()?;
+        Condition::Equal
+    } else if token.ends_with("NE") {
+        token.pop()?;
+        token.pop()?;
+        Condition::NotEqual
+    } else if token.ends_with("NZ") {
+        token.pop()?;
+        token.pop()?;
+        Condition::NotZero
+    } else if token.ends_with("N") {
+        token.pop()?;
+        Condition::Negative
+    } else if token.ends_with("Z") {
+        token.pop()?;
+        Condition::Zero
+    } else {
+        Condition::Always
+    };
+
+    let operation = match token.as_str() {
         "NOP" => Some(Operation::NOP),
         "LW" => Some(Operation::LW),
         "LWI" => Some(Operation::LWI),
@@ -132,7 +139,9 @@ pub fn try_parse_operation(input: &str) -> Option<Operation> {
         "CMP" => Some(Operation::CMP),
         "CMPI" => Some(Operation::CMPI),
         _ => None
-    }
+    };
+
+    Some((operation?, condition))
 }
 
 pub fn try_parse_label(input: &str) -> Option<Label> {

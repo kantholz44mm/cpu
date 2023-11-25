@@ -3,6 +3,7 @@
 ## general
 - 8 bit word size
 - 16 bit address bus
+- 32 bit instruction size
 - little endian
 
 ## sources:
@@ -12,18 +13,13 @@
 
 
 ## registers
-8 registers: r0 - r7
-r7 = rp
-r6 = GP
-r5 = GP
-r4 = GP
-r3 = GP
+4 registers: r0 - r3
+r3 = rp
 r2 = GP
 r1 = GP
 r0 = GP
 PC
 
-r6 used as page register in store instructions.
 PC cannot be directly accessed and is used as the 16 bit program counter. NOTE: not in bytes, but in instructions. Each instruction is 32 bits wide.
 
 ## ALU ops:
@@ -43,23 +39,26 @@ PC cannot be directly accessed and is used as the 16 bit program counter. NOTE: 
 3: Negative
 4: Zero
 
+## conditionals:
+0: Always
+1: Carry/Borrow
+2: Overflow
+3: Equal
+4: Negative
+5: Zero
+6: NotEqual
+7: NotZero
+
 ## instruction encoding
-- fixed size, 4 bytes
-- "cond" are the conditional execution bits (see conditional flags above.)
-- "rd", "ro1" and "ro2" are registers, encoded 0-7 with 3 bits each.
-- "aluop" are the last 3 bits of the instruction and specify which operation is executed by the ALU.
 
 ```
 | Byte                 |           0            |           1           |           2           |           4            |
 | Bit                  | 1F 1E 1D 1C 1B 1A 19 18 17 16 15 14 13 12 11 10 0F 0E 0D 0C 0B 0A 09 08 07 06 05 04 03 02 01 00 |
-| Instruction          |   opcode   |  cond  |  rd    |  ro1   |  ro2   |                      imm16                     |
-| Instruction          |   opcode   |  cond  |  rd    |  ro1   |  ro2   |         imm8          |     res      |  aluop  |
+| Instruction          |   opcode   |  cond  |  alu   | rd  | ro1 | ro2 |                      imm16                     |
+| Instruction          |   opcode   |  cond  |  alu   | rd  | ro1 | ro2 |                       |          imm8          |
 ```
 
 ## instructions:
-all instructions marked with ^(i.e the ALU operations) modify the flags register r7/rf.
-all instruction taking either imm16 or imm8 are 4 bytes long, otherwise they are 2.
-all instructions can be conditionally executed based on the state of r7/rf.
 ```
 0x0 NOP
 0x1 LW    rd, [ro1:rp]      : rd = memory[ro1:rp]
