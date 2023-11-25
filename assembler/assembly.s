@@ -1,7 +1,9 @@
-MWI r0 0x56
-MWI r1 0x77
-SUBF r2 r0 r1
+MWI r0 0
+MWI r1 1
 
-MWI r0 0x34
-MWI r1 0x16
-SBBF r2 r0 r1
+ADD r2 r0 r1
+MW r0, r1
+MW r1, r2
+
+SWI 0x9000 r0
+JPI 2
