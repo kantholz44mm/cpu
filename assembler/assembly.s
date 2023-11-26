@@ -1,9 +1,41 @@
 MWI r0 0
-MWI r1 1
+MWI r1 0
+SWI 0 r0
+SWI 1 r1
 
-ADD r2 r0 r1
-MW r0, r1
-MW r1, r2
+MWI r0 1
+MWI r1 0
+SWI 2 r0
+SWI 3 r1
 
-SWI 0x9000 r0
-JPI 2
+MWI r0 1
+MWI r1 0
+SWI 4 r0
+SWI 5 r1
+
+
+
+LWI r0 0
+LWI r1 2
+ADDF r2 r0 r1
+SWI 4 r2
+
+LWI r0 1
+LWI r1 3
+ADCF r2 r0 r1
+SWI 5 r2
+
+LWI r0 2
+LWI r1 3
+SWI 0 r0
+SWI 1 r1
+
+LWI r0 4
+LWI r1 5
+SWI 2 r0
+SWI 3 r1
+
+SWI 0x8000 r0
+SWI 0x8001 r1
+
+JPI 12
