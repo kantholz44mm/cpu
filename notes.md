@@ -75,7 +75,7 @@ PC cannot be directly accessed and is used as the 16 bit program counter. NOTE: 
 0xC ALUFI rd, ro1, imm8     : same as ALUI, but updates Flags register
 0xD CMP   ro1, ro2          : rf = compare(ro1, ro2)
 0xE CMPI  ro1, imm8         : rf = compare(ro1, imm8)
-0xF
+0xF HCF                     : Halt and Catch Fire.
 ```
 
 ## control lines
