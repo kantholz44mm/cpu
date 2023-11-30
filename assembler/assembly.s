@@ -35,5 +35,5 @@ LWI r1 5
 SWI 2 r0
 SWI 3 r1
 
-HCF
+HCFOF
 JPI 12
