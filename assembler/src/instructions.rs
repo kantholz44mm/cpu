@@ -79,6 +79,7 @@ pub enum Operation {
 
     CMP,
     CMPI,
+    HCF,
 }
 
 #[derive(Debug, Clone)]
@@ -107,6 +108,7 @@ pub enum Opcode {
     ALUFI = 0xC,
     CMP   = 0xD,
     CMPI  = 0xE,
+    HCF   = 0xF,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -198,6 +200,7 @@ impl Opcode {
             Opcode::ALUFI => ControlLines { RWEN: true, FWEN: true, MREN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::ALU, PCSSEL: PCSSEL::Increment },
             Opcode::CMP   => ControlLines { RWEN: false, FWEN: true, MREN: false, MWEN: false, BSSEL: BSSEL::Register2, MASEL: MASEL::Imm16, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::Increment },
             Opcode::CMPI  => ControlLines { RWEN: false, FWEN: true, MREN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::Increment },
+            Opcode::HCF   => ControlLines { RWEN: false, FWEN: false, MREN: false, MWEN: false, BSSEL: BSSEL::Imm8, MASEL: MASEL::Imm16, RSSEL: RSSEL::Imm8, PCSSEL: PCSSEL::Increment },
         }
     }
 }
@@ -271,206 +274,211 @@ impl Instruction {
                     alu: ALUFunction::ADD,
                 })),
                 Operation::LW => if let (Token::Register(dest), Token::RegisterPair((lower_addr, Register::RP))) = (tokens.get(1)?, tokens.get(2)?) {
-                        Some((3, Instruction
-                        {
-                            operation: Opcode::LW,
-                            destination: *dest,
-                            operand1: *lower_addr,
-                            operand2: Register::RP,
-                            immediate: 0,
-                            condition: *condition,
-                            alu: ALUFunction::ADD,
-                        }))
-                    } else { None },
+                    Some((3, Instruction
+                    {
+                        operation: Opcode::LW,
+                        destination: *dest,
+                        operand1: *lower_addr,
+                        operand2: Register::RP,
+                        immediate: 0,
+                        condition: *condition,
+                        alu: ALUFunction::ADD,
+                    }))
+                } else { None },
                 Operation::LWI => if let (Some(Token::Register(dest)), Some(Token::Immediate(addr))) = (tokens.get(1), tokens.get(2)) {
-                        Some((3, Instruction
-                        {
-                            operation: Opcode::LWI,
-                            destination: *dest,
-                            operand1: Register::R0,
-                            operand2: Register::R0,
-                            immediate: *addr,
-                            condition: *condition,
-                            alu: ALUFunction::ADD,
-                        }))
-                    } else { None },
+                    Some((3, Instruction
+                    {
+                        operation: Opcode::LWI,
+                        destination: *dest,
+                        operand1: Register::R0,
+                        operand2: Register::R0,
+                        immediate: *addr,
+                        condition: *condition,
+                        alu: ALUFunction::ADD,
+                    }))
+                } else { None },
                 Operation::SW => if let (Some(Token::RegisterPair((lower_addr, Register::RP))), Some(Token::Register(source))) = (tokens.get(1), tokens.get(2)) {
-                        Some((3, Instruction
-                        {
-                            operation: Opcode::SW,
-                            destination: Register::R0,
-                            operand1: *lower_addr,
-                            operand2: *source,
-                            immediate: 0,
-                            condition: *condition,
-                            alu: ALUFunction::ADD,
-                        }))
-                    } else { None },
+                    Some((3, Instruction
+                    {
+                        operation: Opcode::SW,
+                        destination: Register::R0,
+                        operand1: *lower_addr,
+                        operand2: *source,
+                        immediate: 0,
+                        condition: *condition,
+                        alu: ALUFunction::ADD,
+                    }))
+                } else { None },
                 Operation::SWI => if let (Some(Token::Immediate(addr)), Some(Token::Register(source))) = (tokens.get(1), tokens.get(2)) {
-                        Some((3, Instruction
-                        {
-                            operation: Opcode::SWI,
-                            destination: Register::R0,
-                            operand1: Register::R0,
-                            operand2: *source,
-                            immediate: *addr,
-                            condition: *condition,
-                            alu: ALUFunction::ADD,
-                        }))
-                    } else { None },
+                    Some((3, Instruction
+                    {
+                        operation: Opcode::SWI,
+                        destination: Register::R0,
+                        operand1: Register::R0,
+                        operand2: *source,
+                        immediate: *addr,
+                        condition: *condition,
+                        alu: ALUFunction::ADD,
+                    }))
+                } else { None },
                 Operation::MW => if let (Some(Token::Register(dest)), Some(Token::Register(source))) = (tokens.get(1), tokens.get(2)) {
-                        Some((3, Instruction
-                        {
-                            operation: Opcode::MW,
-                            destination: *dest,
-                            operand1: *source,
-                            operand2: Register::R0,
-                            immediate: 0,
-                            condition: *condition,
-                            alu: ALUFunction::ADD,
-                        }))
-                    } else { None },
+                    Some((3, Instruction
+                    {
+                        operation: Opcode::MW,
+                        destination: *dest,
+                        operand1: *source,
+                        operand2: Register::R0,
+                        immediate: 0,
+                        condition: *condition,
+                        alu: ALUFunction::ADD,
+                    }))
+                } else { None },
                 Operation::MWI => if let (Some(Token::Register(dest)), Some(Token::Immediate(datum))) = (tokens.get(1), tokens.get(2)) {
-                        Some((3, Instruction
-                        {
-                            operation: Opcode::MWI,
-                            destination: *dest,
-                            operand1: Register::R0,
-                            operand2: Register::R0,
-                            immediate: *datum,
-                            condition: *condition,
-                            alu: ALUFunction::ADD,
-                        }))
-                    } else { None },
+                    Some((3, Instruction
+                    {
+                        operation: Opcode::MWI,
+                        destination: *dest,
+                        operand1: Register::R0,
+                        operand2: Register::R0,
+                        immediate: *datum,
+                        condition: *condition,
+                        alu: ALUFunction::ADD,
+                    }))
+                } else { None },
                 Operation::JP => if let Some(Token::RegisterPair((lower, upper))) = tokens.get(1) {
-                        Some((2, Instruction
-                        {
-                            operation: Opcode::JP,
-                            destination: Register::R0,
-                            operand1: *lower,
-                            operand2: *upper,
-                            immediate: 0,
-                            condition: *condition,
-                            alu: ALUFunction::ADD,
-                        }))
-                    } else { None },
+                    Some((2, Instruction
+                    {
+                        operation: Opcode::JP,
+                        destination: Register::R0,
+                        operand1: *lower,
+                        operand2: *upper,
+                        immediate: 0,
+                        condition: *condition,
+                        alu: ALUFunction::ADD,
+                    }))
+                } else { None },
                 Operation::JPI => if let Some(Token::Immediate(addr)) = tokens.get(1) {
-                        Some((2, Instruction
+                    Some((2, Instruction
+                    {
+                        operation: Opcode::JPI,
+                        destination: Register::R0,
+                        operand1: Register::R0,
+                        operand2: Register::R0,
+                        immediate: *addr,
+                        condition: *condition,
+                        alu: ALUFunction::ADD,
+                    }))
+                } else { None },
+                Operation::ADD |
+                Operation::ADC |
+                Operation::SUB |
+                Operation::SBB |
+                Operation::OR |
+                Operation::NOR |
+                Operation::XOR |
+                Operation::AND => if let (Token::Register(dest), Token::Register(op_a), Token::Register(op_b)) = (tokens.get(1)?, tokens.get(2)?, tokens.get(3)?) {
+                    Some((4, Instruction
                         {
-                            operation: Opcode::JPI,
-                            destination: Register::R0,
-                            operand1: Register::R0,
-                            operand2: Register::R0,
-                            immediate: *addr,
-                            condition: *condition,
-                            alu: ALUFunction::ADD,
-                        }))
-                    } else { None },
-    
-                    Operation::ADD |
-                    Operation::ADC |
-                    Operation::SUB |
-                    Operation::SBB |
-                    Operation::OR |
-                    Operation::NOR |
-                    Operation::XOR |
-                    Operation::AND => if let (Token::Register(dest), Token::Register(op_a), Token::Register(op_b)) = (tokens.get(1)?, tokens.get(2)?, tokens.get(3)?) {
-                        Some((4, Instruction
-                            {
-                                operation: Opcode::ALU,
-                                destination: *dest,
-                                operand1: *op_a,
-                                operand2: *op_b,
-                                immediate: 0,
-                                condition: *condition,
-                                alu: operation.get_alu_function(),
-                            }))
-                    } else { None },
-    
-                    Operation::ADDI |
-                    Operation::ADCI |
-                    Operation::SUBI |
-                    Operation::SBBI |
-                    Operation::ORI |
-                    Operation::NORI |
-                    Operation::XORI |
-                    Operation::ANDI => if let (Token::Register(dest), Token::Register(op_a), Token::Immediate(op_b)) = (tokens.get(1)?, tokens.get(2)?, tokens.get(3)?) {
-                        Some((4, Instruction
-                            {
-                                operation: Opcode::ALUI,
-                                destination: *dest,
-                                operand1: *op_a,
-                                operand2: Register::R0,
-                                immediate: *op_b,
-                                condition: *condition,
-                                alu: operation.get_alu_function(),
-                            }))
-                    } else { None },
-                
-                    Operation::ADDF |
-                    Operation::ADCF |
-                    Operation::SUBF |
-                    Operation::SBBF |
-                    Operation::ORF |
-                    Operation::NORF |
-                    Operation::XORF |
-                    Operation::ANDF => if let (Token::Register(dest), Token::Register(op_a), Token::Register(op_b)) = (tokens.get(1)?, tokens.get(2)?, tokens.get(3)?) {
-                        Some((4, Instruction
-                            {
-                                operation: Opcode::ALUF,
-                                destination: *dest,
-                                operand1: *op_a,
-                                operand2: *op_b,
-                                immediate: 0,
-                                condition: *condition,
-                                alu: operation.get_alu_function(),
-                            }))
-                    } else { None },
-    
-                    Operation::ADDFI |
-                    Operation::ADCFI |
-                    Operation::SUBFI |
-                    Operation::SBBFI |
-                    Operation::ORFI |
-                    Operation::NORFI |
-                    Operation::XORFI |
-                    Operation::ANDFI => if let (Token::Register(dest), Token::Register(op_a), Token::Immediate(op_b)) = (tokens.get(1)?, tokens.get(2)?, tokens.get(3)?) {
-                        Some((4, Instruction
-                            {
-                                operation: Opcode::ALUFI,
-                                destination: *dest,
-                                operand1: *op_a,
-                                operand2: Register::R0,
-                                immediate: *op_b,
-                                condition: *condition,
-                                alu: operation.get_alu_function(),
-                            }))
-                    } else { None },
-    
-                Operation::CMP => if let (Some(Token::Register(op_a)), Some(Token::Register(op_b))) = (tokens.get(1), tokens.get(2)) {
-                        Some((3, Instruction
-                        {
-                            operation: Opcode::CMP,
-                            destination: Register::R0,
+                            operation: Opcode::ALU,
+                            destination: *dest,
                             operand1: *op_a,
                             operand2: *op_b,
                             immediate: 0,
                             condition: *condition,
-                            alu: ALUFunction::ADD,
+                            alu: operation.get_alu_function(),
                         }))
-                    } else { None },
-                Operation::CMPI => if let (Some(Token::Register(op_a)), Some(Token::Immediate(op_b))) = (tokens.get(1), tokens.get(2)) {
-                        Some((3, Instruction
+                } else { None },
+                Operation::ADDI |
+                Operation::ADCI |
+                Operation::SUBI |
+                Operation::SBBI |
+                Operation::ORI |
+                Operation::NORI |
+                Operation::XORI |
+                Operation::ANDI => if let (Token::Register(dest), Token::Register(op_a), Token::Immediate(op_b)) = (tokens.get(1)?, tokens.get(2)?, tokens.get(3)?) {
+                    Some((4, Instruction
                         {
-                            operation: Opcode::CMPI,
-                            destination: Register::R0,
+                            operation: Opcode::ALUI,
+                            destination: *dest,
                             operand1: *op_a,
                             operand2: Register::R0,
                             immediate: *op_b,
                             condition: *condition,
-                            alu: ALUFunction::ADD,
+                            alu: operation.get_alu_function(),
                         }))
-                    } else { None },
+                } else { None },
+                Operation::ADDF |
+                Operation::ADCF |
+                Operation::SUBF |
+                Operation::SBBF |
+                Operation::ORF |
+                Operation::NORF |
+                Operation::XORF |
+                Operation::ANDF => if let (Token::Register(dest), Token::Register(op_a), Token::Register(op_b)) = (tokens.get(1)?, tokens.get(2)?, tokens.get(3)?) {
+                    Some((4, Instruction
+                        {
+                            operation: Opcode::ALUF,
+                            destination: *dest,
+                            operand1: *op_a,
+                            operand2: *op_b,
+                            immediate: 0,
+                            condition: *condition,
+                            alu: operation.get_alu_function(),
+                        }))
+                } else { None },
+                Operation::ADDFI |
+                Operation::ADCFI |
+                Operation::SUBFI |
+                Operation::SBBFI |
+                Operation::ORFI |
+                Operation::NORFI |
+                Operation::XORFI |
+                Operation::ANDFI => if let (Token::Register(dest), Token::Register(op_a), Token::Immediate(op_b)) = (tokens.get(1)?, tokens.get(2)?, tokens.get(3)?) {
+                    Some((4, Instruction
+                        {
+                            operation: Opcode::ALUFI,
+                            destination: *dest,
+                            operand1: *op_a,
+                            operand2: Register::R0,
+                            immediate: *op_b,
+                            condition: *condition,
+                            alu: operation.get_alu_function(),
+                        }))
+                } else { None },
+                Operation::CMP => if let (Some(Token::Register(op_a)), Some(Token::Register(op_b))) = (tokens.get(1), tokens.get(2)) {
+                    Some((3, Instruction
+                    {
+                        operation: Opcode::CMP,
+                        destination: Register::R0,
+                        operand1: *op_a,
+                        operand2: *op_b,
+                        immediate: 0,
+                        condition: *condition,
+                        alu: ALUFunction::ADD,
+                    }))
+                } else { None },
+                Operation::CMPI => if let (Some(Token::Register(op_a)), Some(Token::Immediate(op_b))) = (tokens.get(1), tokens.get(2)) {
+                    Some((3, Instruction
+                    {
+                        operation: Opcode::CMPI,
+                        destination: Register::R0,
+                        operand1: *op_a,
+                        operand2: Register::R0,
+                        immediate: *op_b,
+                        condition: *condition,
+                        alu: ALUFunction::ADD,
+                    }))
+                } else { None },
+                Operation::HCF => Some((1, Instruction
+                {
+                    operation: Opcode::HCF,
+                    destination: Register::R0,
+                    operand1: Register::R0,
+                    operand2: Register::R0,
+                    immediate: 0,
+                    condition: *condition,
+                    alu: ALUFunction::ADD,
+                })),
                 _ => None,
             };
         }
@@ -525,6 +533,7 @@ impl Operation {
             Operation::ANDFI => ALUFunction::AND,
             Operation::CMP => ALUFunction::ADD,
             Operation::CMPI => ALUFunction::ADD,
+            Operation::HCF => ALUFunction::ADD,
         }
     }
 }

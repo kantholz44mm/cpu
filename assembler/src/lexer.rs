@@ -138,6 +138,7 @@ pub fn try_parse_operation(input: &str) -> Option<(Operation, Condition)> {
         "ANDFI" => Some(Operation::ANDFI),
         "CMP" => Some(Operation::CMP),
         "CMPI" => Some(Operation::CMPI),
+        "HCF" => Some(Operation::HCF),
         _ => None
     };
 
