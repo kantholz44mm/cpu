@@ -35,7 +35,4 @@ LWI r1 5
 SWI 2 r0
 SWI 3 r1
 
-SWI 0x8000 r0
-SWI 0x8001 r1
-
 JPI 12
