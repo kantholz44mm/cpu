@@ -20,7 +20,7 @@ pub fn try_parse_register(input: &str) -> Option<Register> {
         return Some(Register::RP);
     }
 
-    let register = Register::from_index(index.to_digit(8)? as u8)?;
+    let register = Register::from_index(index.to_digit(4)? as u8)?;
     return Some(register);
 }
 
