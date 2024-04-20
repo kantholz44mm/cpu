@@ -9,8 +9,8 @@ pub type Lexer = fn(&str) -> Option<Token>;
 pub enum Token {
     IntegerLiteral(DoubleWord),
     RegisterIdentifier(Register),
-    RegisterIdentifierPair(Register, Register),
     ImmediateAddress(DoubleWord),
+    RegisterAddress(Register),
     Operation(Operation),
     Conditional(Condition),
 }
@@ -20,7 +20,7 @@ pub fn lexer(input: &str) -> Option<Token> {
         lexer_integer(input),
         lexer_operation(input),
         lexer_register(input),
-        lexer_registerpair(input),
+        lexer_register_address(input),
         lexer_immediate_address(input),
         lexer_conditional(input)
     ].iter().filter_map(|&token| token).nth(0)
@@ -42,7 +42,7 @@ pub fn lexer_register(input: &str) -> Option<Token> {
         "R0" => Some(Token::RegisterIdentifier(Register::R0)),
         "R1" => Some(Token::RegisterIdentifier(Register::R1)),
         "R2" => Some(Token::RegisterIdentifier(Register::R2)),
-        "R3" | "RP" => Some(Token::RegisterIdentifier(Register::R3)),
+        "R3" => Some(Token::RegisterIdentifier(Register::R3)),
         _ => None
     }
 }
@@ -64,17 +64,12 @@ pub fn lexer_conditional(input: &str) -> Option<Token> {
     }
 }
 
-pub fn lexer_registerpair(input: &str) -> Option<Token> {
-    let input = input.strip_suffix(']')?.strip_prefix('[')?;
-    let parts = input.split(':').collect::<Vec<&str>>();
-    
-    if let [a, b] = parts.as_slice() {
-        if let (Some(Token::RegisterIdentifier(reg_a)), Some(Token::RegisterIdentifier(reg_b))) = (lexer_register(a), lexer_register(b)) {
-            return Some(Token::RegisterIdentifierPair(reg_a, reg_b));
-        }
+pub fn lexer_register_address(input: &str) -> Option<Token> {
+    if let Some(Token::RegisterIdentifier(reg)) = lexer_register(input.strip_suffix(']')?.strip_prefix('[')?) {
+        Some(Token::RegisterAddress(reg))
+    } else {
+        None
     }
-    
-    None
 }
 
 pub fn lexer_operation(input: &str) -> Option<Token> {
@@ -131,6 +126,8 @@ pub fn lexer_operation(input: &str) -> Option<Token> {
         "CSHLI"   => Some(Token::Operation(Operation::CMPI(ALUFunction::SHL))),
         "CSHRI"   => Some(Token::Operation(Operation::CMPI(ALUFunction::SHR))),
 
+        "WPR"   => Some(Token::Operation(Operation::WPR)),
+        "WPRI"  => Some(Token::Operation(Operation::WPRI)),
         "HCF"   => Some(Token::Operation(Operation::HCF)),
         _ => None
     }

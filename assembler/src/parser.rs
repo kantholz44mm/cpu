@@ -19,7 +19,7 @@ pub fn parse_line(mut tokens: Vec<Token>) -> Option<Instruction> {
                 op2: Register::R0, 
                 imm: 0
             }),
-        [Token::Operation(Operation::LW), Token::RegisterIdentifier(rd), Token::RegisterIdentifierPair(Register::R3, ro1)] => Some(Instruction { 
+        [Token::Operation(Operation::LW), Token::RegisterIdentifier(rd), Token::RegisterAddress(ro1)] => Some(Instruction { 
                 op: Operation::LW, 
                 cond: condition, 
                 dest: *rd, 
@@ -35,7 +35,7 @@ pub fn parse_line(mut tokens: Vec<Token>) -> Option<Instruction> {
                 op2: Register::R0, 
                 imm: *imm
             }),
-        [Token::Operation(Operation::SW), Token::RegisterIdentifierPair(Register::R3, ro1), Token::RegisterIdentifier(ro2)] => Some(Instruction { 
+        [Token::Operation(Operation::SW), Token::RegisterAddress(ro1), Token::RegisterIdentifier(ro2)] => Some(Instruction { 
                 op: Operation::SW, 
                 cond: condition, 
                 dest: Register::R0, 
@@ -51,7 +51,7 @@ pub fn parse_line(mut tokens: Vec<Token>) -> Option<Instruction> {
                 op2: *ro2, 
                 imm: *imm
             }),
-        [Token::Operation(Operation::JP), Token::RegisterIdentifierPair(Register::R3, ro1)] => Some(Instruction { 
+        [Token::Operation(Operation::JP), Token::RegisterAddress(ro1)] => Some(Instruction { 
                 op: Operation::JP, 
                 cond: condition, 
                 dest: Register::R0, 
@@ -83,19 +83,35 @@ pub fn parse_line(mut tokens: Vec<Token>) -> Option<Instruction> {
                 op2: Register::R0,
                 imm: *imm
             }),
-        [Token::Operation(Operation::CMP(aluop)), Token::RegisterIdentifier(rd), Token::RegisterIdentifier(ro1), Token::RegisterIdentifier(ro2)] => Some(Instruction {
+        [Token::Operation(Operation::CMP(aluop)), Token::RegisterIdentifier(ro1), Token::RegisterIdentifier(ro2)] => Some(Instruction {
                 op: Operation::CMP(*aluop),
                 cond: condition,
-                dest: *rd,
+                dest: Register::R0,
                 op1: *ro1,
                 op2: *ro2,
                 imm: 0
             }),
-        [Token::Operation(Operation::CMPI(aluop)), Token::RegisterIdentifier(rd), Token::RegisterIdentifier(ro1), Token::IntegerLiteral(imm)] => Some(Instruction {
+        [Token::Operation(Operation::CMPI(aluop)), Token::RegisterIdentifier(ro1), Token::IntegerLiteral(imm)] => Some(Instruction {
                 op: Operation::CMPI(*aluop),
                 cond: condition,
-                dest: *rd,
+                dest: Register::R0,
                 op1: *ro1,
+                op2: Register::R0,
+                imm: *imm
+            }),
+        [Token::Operation(Operation::WPR), Token::RegisterIdentifier(ro1)] => Some(Instruction {
+                op: Operation::WPR,
+                cond: condition,
+                dest: Register::R0,
+                op1: *ro1,
+                op2: Register::R0,
+                imm: 0
+            }),
+        [Token::Operation(Operation::WPRI), Token::IntegerLiteral(imm)] => Some(Instruction {
+                op: Operation::WPRI,
+                cond: condition,
+                dest: Register::R0,
+                op1: Register::R0,
                 op2: Register::R0,
                 imm: *imm
             }),

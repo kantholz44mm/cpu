@@ -1,16 +1,11 @@
 NOP
-ADDI r0 r0 7
-SUBI r0 r0 14
-ANDI r0 r0 0b10000000
-JPI [13]
-NOP
-NOP
-NOP
-NOP
-NOP
-NOP
-NOP
-NOP
-XOR r0 r0 r0
-ADDI r0 r0 0xAB
+ADDI r3 r3 0xFF
+WPRI 0x1
+
+SUBI r3 r3 0x01
+JPI  (Z) [0x8]
+SHLI r0 r3 0x1
+SW   [r3] r0
+JPI      [0x3]
+
 HCF

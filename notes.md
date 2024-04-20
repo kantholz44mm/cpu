@@ -13,14 +13,16 @@
 
 
 ## registers
-4 registers: r0 - r3
-r3 = rp
-r2 = GP
-r1 = GP
-r0 = GP
+r3
+r2
+r1
+r0
+
+PR
 PC
 
 PC cannot be directly accessed and is used as the 16 bit program counter. NOTE: not in bytes, but in instructions. Each instruction is 32 bits wide.
+PR is used for paged operations such as memory operations
 
 ## ALU ops:
 0x0 | 0b0000 ADD
@@ -62,33 +64,33 @@ PC cannot be directly accessed and is used as the 16 bit program counter. NOTE: 
 ## instructions:
 ```
 0x0 NOP
-0x1 LW    rd, [rp:ro1]      : rd = memory[rp:ro1]
+0x1 LW    rd, [ro1]         : rd = memory[PR:ro1]
 0x2 LWI   rd, [imm16]       : rd = memory[imm16]
-0x3 SW    [rp:ro1], ro2     : memory[rp:ro1] = ro2
+0x3 SW    [ro1], ro2        : memory[PR:ro1] = ro2
 0x4 SWI   [imm16], ro2      : memory[imm16] = ro2
-0x5 JP    [rp:ro1]          : PC = rp:ro1
+0x5 JP    [ro1]             : PC = PR:ro1
 0x6 JPI   [imm16]           : PC = imm16
 0x7 ALU   rd, ro1, ro2      : rd = ALU(ro1, ro2, aluop)
 0x8 ALUI  rd, ro1, imm8     : rd = ALU(ro1, imm8, aluop)
-0x9
-0xA
-0xB
-0xC
+0x9 CMP   ro1, ro2          : Same as ALU but without writeback
+0xA CMPI  ro1, ro2          : Same as ALUI but without writeback
+0xB WPR   ro2               : PR = [ro2]
+0xC WPRI  imm8              : PR = imm8
 0xD
 0xE
 0xF HCF                     : Halt and Catch Fire.
 ```
 
 ## control lines
-RWEN:1   Register Write Enable            -> Whether the register file shall be updated with a new value
-FWEN:1   Flag Write Enable                -> Whether the ALU flag register shall be updated
-IOREN:1   Memory Read Enable               -> Should the memory output onto the data bus?
-IOWEN:1   Memory Write Enable              -> Should the memory input from the data bus?
-BSSEL:1  ALU Operand B source Selection   -> Selects if the B operand in the ALU is imm8 or ro2.
-ASSEL:1 Memory Address Selection         -> Selects the source for the memory address: [rp:ro1] or [imm16]
-RSSEL:1  Register Source Selection        -> Selects the source for register writes: ALU result or memory bus input
-PCSSEL:1 Program Counter Source Selection -> Selects either PC+1 or, depending on MASSEL, one of [rp:ro1, imm16] for next PC value
-
+RWEN   :1 Register Write Enable            -> Whether the register file shall be updated with a new value
+FWEN   :1 Flag Write Enable                -> Whether the ALU flag register shall be updated
+IOREN  :1 Memory Read Enable               -> Should the memory output onto the data bus?
+IOWEN  :1 Memory Write Enable              -> Should the memory input from the data bus?
+BSSEL  :1 ALU Operand B source Selection   -> Selects if the B operand in the ALU is imm8 or ro2.
+ASSEL  :1 Memory Address Selection         -> Selects the source for the memory address: [rp:ro1] or [imm16]
+RSSEL  :1 Register Source Selection        -> Selects the source for register writes: ALU result or memory bus input
+PCSSEL :1 Program Counter Source Selection -> Selects either PC+1 or, depending on MASSEL, one of [rp:ro1, imm16] for next PC value
+PRWEN  :1 Page register Write Enable       -> Whether the page register gets written to
 
 
 ## parts list

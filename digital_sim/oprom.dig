@@ -63,7 +63,7 @@
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>MASSEL</string>
+          <string>ASSEL</string>
         </entry>
       </elementAttributes>
       <pos x="1240" y="360"/>
@@ -83,11 +83,11 @@
       <elementAttributes>
         <entry>
           <string>Input Splitting</string>
-          <string>8</string>
+          <string>9</string>
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>1*8</string>
+          <string>1*9</string>
         </entry>
       </elementAttributes>
       <pos x="1060" y="180"/>
@@ -313,7 +313,7 @@
         </entry>
         <entry>
           <string>Bits</string>
-          <int>8</int>
+          <int>9</int>
         </entry>
         <entry>
           <string>lastDataFile</string>
@@ -330,6 +330,16 @@
       <elementName>Const</elementName>
       <elementAttributes/>
       <pos x="820" y="200"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>PRWEN</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1240" y="480"/>
     </visualElement>
   </visualElements>
   <wires>
@@ -384,6 +394,10 @@
     <wire>
       <p1 x="400" y="160"/>
       <p2 x="500" y="160"/>
+    </wire>
+    <wire>
+      <p1 x="1100" y="480"/>
+      <p2 x="1240" y="480"/>
     </wire>
     <wire>
       <p1 x="260" y="260"/>
@@ -546,6 +560,10 @@
       <p2 x="140" y="340"/>
     </wire>
     <wire>
+      <p1 x="1080" y="340"/>
+      <p2 x="1100" y="340"/>
+    </wire>
+    <wire>
       <p1 x="760" y="660"/>
       <p2 x="780" y="660"/>
     </wire>
@@ -704,6 +722,10 @@
     <wire>
       <p1 x="460" y="400"/>
       <p2 x="460" y="560"/>
+    </wire>
+    <wire>
+      <p1 x="1100" y="340"/>
+      <p2 x="1100" y="480"/>
     </wire>
     <wire>
       <p1 x="1200" y="240"/>

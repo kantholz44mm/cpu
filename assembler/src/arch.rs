@@ -30,6 +30,7 @@ pub struct ControlFlags {
     pub assel: bool,
     pub rssel: bool,
     pub pcssel: bool,
+    pub prwen: bool
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, PartialOrd, FromPrimitive, ToPrimitive, Eq)]
@@ -67,6 +68,8 @@ pub enum Operation {
     ALUI(ALUFunction),
     CMP(ALUFunction),
     CMPI(ALUFunction),
+    WPR,
+    WPRI,
     HCF,
 }
 
@@ -110,34 +113,37 @@ impl Instruction {
 }
 
 impl ControlFlags {
-    pub fn encode(&self) -> Word {
-        0 as Word
-        | (self.rwen as Word)   << 0
-        | (self.fwen as Word)   << 1
-        | (self.ioren as Word)  << 2
-        | (self.iowen as Word)  << 3
-        | (self.bssel as Word)  << 4
-        | (self.assel as Word)  << 5
-        | (self.rssel as Word)  << 6
-        | (self.pcssel as Word) << 7
+    pub fn encode(&self) -> DoubleWord {
+        0 as DoubleWord
+        | (self.rwen as DoubleWord)   << 0
+        | (self.fwen as DoubleWord)   << 1
+        | (self.ioren as DoubleWord)  << 2
+        | (self.iowen as DoubleWord)  << 3
+        | (self.bssel as DoubleWord)  << 4
+        | (self.assel as DoubleWord)  << 5
+        | (self.rssel as DoubleWord)  << 6
+        | (self.pcssel as DoubleWord) << 7
+        | (self.prwen as DoubleWord)  << 8
     }
 }
 
 impl Operation {
     pub fn control_flags(&self) -> ControlFlags {
         match self {
-            Operation::NOP      => ControlFlags { rwen: false, fwen: false, ioren: false, iowen: false, bssel: false, assel: false, rssel: true , pcssel: false },
-            Operation::LW       => ControlFlags { rwen: true , fwen: false, ioren: true , iowen: false, bssel: false, assel: false, rssel: true , pcssel: false },
-            Operation::LWI      => ControlFlags { rwen: true , fwen: false, ioren: true , iowen: false, bssel: false, assel: true , rssel: true , pcssel: false },
-            Operation::SW       => ControlFlags { rwen: false, fwen: false, ioren: false, iowen: true , bssel: false, assel: false, rssel: true , pcssel: false },
-            Operation::SWI      => ControlFlags { rwen: false, fwen: false, ioren: false, iowen: true , bssel: false, assel: true , rssel: true , pcssel: false },
-            Operation::JP       => ControlFlags { rwen: false, fwen: false, ioren: false, iowen: false, bssel: false, assel: false, rssel: true , pcssel: true  },
-            Operation::JPI      => ControlFlags { rwen: false, fwen: false, ioren: false, iowen: false, bssel: false, assel: true , rssel: false, pcssel: true  },
-            Operation::ALU(_)   => ControlFlags { rwen: true , fwen: true , ioren: false, iowen: false, bssel: false, assel: false, rssel: false, pcssel: false },
-            Operation::ALUI(_)  => ControlFlags { rwen: true , fwen: true , ioren: false, iowen: false, bssel: true , assel: false, rssel: false, pcssel: false },
-            Operation::CMP(_)   => ControlFlags { rwen: false, fwen: true , ioren: false, iowen: false, bssel: false, assel: false, rssel: false, pcssel: false },
-            Operation::CMPI(_)  => ControlFlags { rwen: false, fwen: true , ioren: false, iowen: false, bssel: true , assel: false, rssel: false, pcssel: false },
-            Operation::HCF      => ControlFlags { rwen: false, fwen: false, ioren: false, iowen: false, bssel: false, assel: false, rssel: false, pcssel: false },
+            Operation::NOP      => ControlFlags { rwen: false, fwen: false, ioren: false, iowen: false, bssel: false, assel: false, rssel: true , pcssel: false, prwen: false },
+            Operation::LW       => ControlFlags { rwen: true , fwen: false, ioren: true , iowen: false, bssel: false, assel: false, rssel: true , pcssel: false, prwen: false },
+            Operation::LWI      => ControlFlags { rwen: true , fwen: false, ioren: true , iowen: false, bssel: false, assel: true , rssel: true , pcssel: false, prwen: false },
+            Operation::SW       => ControlFlags { rwen: false, fwen: false, ioren: false, iowen: true , bssel: false, assel: false, rssel: true , pcssel: false, prwen: false },
+            Operation::SWI      => ControlFlags { rwen: false, fwen: false, ioren: false, iowen: true , bssel: false, assel: true , rssel: true , pcssel: false, prwen: false },
+            Operation::JP       => ControlFlags { rwen: false, fwen: false, ioren: false, iowen: false, bssel: false, assel: false, rssel: true , pcssel: true , prwen: false },
+            Operation::JPI      => ControlFlags { rwen: false, fwen: false, ioren: false, iowen: false, bssel: false, assel: true , rssel: false, pcssel: true , prwen: false },
+            Operation::ALU(_)   => ControlFlags { rwen: true , fwen: true , ioren: false, iowen: false, bssel: false, assel: false, rssel: false, pcssel: false, prwen: false },
+            Operation::ALUI(_)  => ControlFlags { rwen: true , fwen: true , ioren: false, iowen: false, bssel: true , assel: false, rssel: false, pcssel: false, prwen: false },
+            Operation::CMP(_)   => ControlFlags { rwen: false, fwen: true , ioren: false, iowen: false, bssel: false, assel: false, rssel: false, pcssel: false, prwen: false },
+            Operation::CMPI(_)  => ControlFlags { rwen: false, fwen: true , ioren: false, iowen: false, bssel: true , assel: false, rssel: false, pcssel: false, prwen: false },
+            Operation::WPR      => ControlFlags { rwen: false, fwen: false, ioren: false, iowen: false, bssel: true , assel: false, rssel: false, pcssel: false, prwen: true  },
+            Operation::WPRI     => ControlFlags { rwen: false, fwen: false, ioren: false, iowen: false, bssel: false, assel: false, rssel: false, pcssel: false, prwen: true  },
+            Operation::HCF      => ControlFlags { rwen: false, fwen: false, ioren: false, iowen: false, bssel: false, assel: false, rssel: false, pcssel: false, prwen: false },
         }
     }
 
@@ -154,12 +160,14 @@ impl Operation {
             Operation::ALUI(_)  => 0x8,
             Operation::CMP(_)   => 0x9,
             Operation::CMPI(_)  => 0xA,
+            Operation::WPR      => 0xB,
+            Operation::WPRI     => 0xC,
             Operation::HCF      => 0xF,
         }
     }
 }
 
-pub fn compile_microcode() -> [Word; NUM_INSTRUCTIONS] {
+pub fn compile_microcode() -> [DoubleWord; NUM_INSTRUCTIONS] {
     [
         Operation::NOP,
         Operation::LW,
@@ -172,8 +180,8 @@ pub fn compile_microcode() -> [Word; NUM_INSTRUCTIONS] {
         Operation::ALUI(ALUFunction::ADD),
         Operation::CMP(ALUFunction::ADD),
         Operation::CMPI(ALUFunction::ADD),
-        Operation::NOP, // reserved
-        Operation::NOP, // reserved
+        Operation::WPR,
+        Operation::WPRI,
         Operation::NOP, // reserved
         Operation::NOP, // reserved
         Operation::HCF,

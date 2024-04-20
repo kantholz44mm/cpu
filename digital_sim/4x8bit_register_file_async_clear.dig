@@ -241,20 +241,6 @@
       <pos x="-760" y="-20"/>
     </visualElement>
     <visualElement>
-      <elementName>Out</elementName>
-      <elementAttributes>
-        <entry>
-          <string>Label</string>
-          <string>READP</string>
-        </entry>
-        <entry>
-          <string>Bits</string>
-          <int>8</int>
-        </entry>
-      </elementAttributes>
-      <pos x="1020" y="1320"/>
-    </visualElement>
-    <visualElement>
       <elementName>4x8bit_interleave.dig</elementName>
       <elementAttributes>
         <entry>
@@ -728,10 +714,6 @@
     <wire>
       <p1 x="460" y="1320"/>
       <p2 x="960" y="1320"/>
-    </wire>
-    <wire>
-      <p1 x="960" y="1320"/>
-      <p2 x="1020" y="1320"/>
     </wire>
     <wire>
       <p1 x="260" y="-940"/>

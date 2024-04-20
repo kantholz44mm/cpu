@@ -14,7 +14,8 @@ fn read_source_lines(filename: &str) -> Vec<String> {
 
 fn main() {
     let mut microcode_file = File::create("microcode.bin").unwrap();
-    microcode_file.write_all(&compile_microcode()).unwrap();
+    let microcode_bytes = compile_microcode().iter().flat_map(|i| i.to_le_bytes()).collect::<Vec<u8>>();
+    microcode_file.write_all(&microcode_bytes).unwrap();
     microcode_file.flush().unwrap();
 
     let mut instructions = Vec::new();
