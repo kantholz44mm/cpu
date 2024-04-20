@@ -1,52 +1,44 @@
-use core::panic;
-use std::fs::File;
-use std::io::Read;
-use std::io::Write;
-use std::io::stdin;
+use std::{fs::File, io::{self, Read, Write}};
+use assembler::{arch::{compile_microcode, Instruction}, lexer::{lexer, Token}, parser::parse_line};
 
-use instructions::ControlLines;
-use instructions::DoubleWord;
-use instructions::Opcode;
-use strum::IntoEnumIterator;
+fn read_source_lines(filename: &str) -> Vec<String> {
+    let mut source_code = String::new();
+    io::stdin().read_to_string(&mut source_code).unwrap();
 
-use crate::instructions::Instruction;
-use crate::instructions::Register::*;
-use crate::instructions::Token;
-
-mod instructions;
-mod lexer;
-
-type Line = Vec<Token>;
-
-fn compile_microcode() -> Vec<u16> {
-    let mut encoded = vec![];
-    for opcode in Opcode::iter() {
-        encoded.push(opcode.get_control_lines().encode().to_be());
-    }
-    return encoded;
+    source_code.split('\n')
+               .map(|l| if let Some(comment_start) = l.find(';') {&l[..comment_start]} else {l})
+               .filter(|l| !l.is_empty())
+               .map(|l| l.to_string())
+               .collect()
 }
 
 fn main() {
-
     let mut microcode_file = File::create("microcode.bin").unwrap();
-    for microcode in compile_microcode() {
-        microcode_file.write(&microcode.to_le_bytes()).unwrap();
+    microcode_file.write_all(&compile_microcode()).unwrap();
+    microcode_file.flush().unwrap();
+
+    let mut instructions = Vec::new();
+    
+    for line in read_source_lines("assembly.rs") {
+        let lexemes = line.split(&['\t', ' ']).filter(|lex| !lex.is_empty());
+        let tokens: Vec<Option<Token>> = lexemes.map(|lex| lexer(lex)).collect();
+
+        if tokens.iter().any(|token| token.is_none()) {
+            panic!("Invalid token in line: {}", &line);
+        }
+
+        let tokens = tokens.iter().map(|token| token.unwrap()).collect();
+        if let Some(instruction) = parse_line(tokens) {
+            println!("{:?}", instruction);
+            instructions.push(instruction);
+        } else {
+            panic!("Invalid instruction: {}", line);
+        }
     }
 
-    let mut outfile = File::create("compiled_binary.arx").unwrap();
-    let mut infile = File::open("assembly.s").unwrap();
-    let mut assembly_content = String::new();
-    infile.read_to_string(&mut assembly_content).unwrap();
-    let tokens: Vec<Token> = assembly_content.split([',', '\n', '\t', '\r', ' ']).filter(|t| !t.is_empty()).map(|t| Token::parse(t).expect(format!("discovered invalid token: {}", t).as_str())).collect();
-    let mut current_token_index = 0;
-
-    while let Some((num_tokens, instruction)) = Instruction::from_tokens(&tokens[current_token_index..]) {
-        println!("instruction({}): {:08x?}", instruction.encode().to_le_bytes().len(), instruction);
-        outfile.write_all(&instruction.encode().to_le_bytes()).unwrap();
-        current_token_index += num_tokens;
-    }
-
-    if current_token_index < tokens.len() {
-        println!("error: {}/{} here: {:?}", current_token_index, tokens.len(), tokens[current_token_index]);
+    let mut program_file = File::create("program.bin").unwrap();
+    for instruction in instructions {
+        let bytes = instruction.encode().to_le_bytes();
+        program_file.write(&bytes).unwrap();
     }
 }

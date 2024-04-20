@@ -23,10 +23,10 @@
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>WEN</string>
+          <string>!CLR</string>
         </entry>
       </elementAttributes>
-      <pos x="-760" y="200"/>
+      <pos x="-760" y="280"/>
     </visualElement>
     <visualElement>
       <elementName>NAnd</elementName>
@@ -175,14 +175,14 @@
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>WRITE</string>
+          <string>WSEL</string>
         </entry>
         <entry>
           <string>Bits</string>
-          <int>8</int>
+          <int>2</int>
         </entry>
       </elementAttributes>
-      <pos x="-760" y="240"/>
+      <pos x="-760" y="620"/>
     </visualElement>
     <visualElement>
       <elementName>Splitter</elementName>
@@ -231,14 +231,14 @@
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>WSEL</string>
+          <string>R2SEL</string>
         </entry>
         <entry>
           <string>Bits</string>
           <int>2</int>
         </entry>
       </elementAttributes>
-      <pos x="-760" y="620"/>
+      <pos x="-760" y="-20"/>
     </visualElement>
     <visualElement>
       <elementName>Out</elementName>
@@ -307,14 +307,10 @@
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>R2SEL</string>
-        </entry>
-        <entry>
-          <string>Bits</string>
-          <int>2</int>
+          <string>WEN</string>
         </entry>
       </elementAttributes>
-      <pos x="-760" y="-20"/>
+      <pos x="-760" y="200"/>
     </visualElement>
     <visualElement>
       <elementName>select2.dig</elementName>
@@ -506,10 +502,14 @@
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>!CLR</string>
+          <string>WRITE</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>8</int>
         </entry>
       </elementAttributes>
-      <pos x="-760" y="280"/>
+      <pos x="-760" y="240"/>
     </visualElement>
   </visualElements>
   <wires>

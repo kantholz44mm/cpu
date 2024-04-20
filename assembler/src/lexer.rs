@@ -1,152 +1,137 @@
+use num_traits::FromPrimitive;
 use regex::Regex;
 
-use crate::instructions::{Register, RegisterPair, Word, DoubleWord, Operation, Label, Condition};
+use crate::arch::{ALUFunction, Condition, DoubleWord, Operation, Register};
 
+pub type Lexer = fn(&str) -> Option<Token>;
 
-pub fn try_parse_register(input: &str) -> Option<Register> {
-    let mut chars = input.chars();
-    let first_char = chars.next()?;
-    let index = chars.next()?;
-    
-    if let Some(_) = chars.next() {
-        return None;
-    }
-
-    if first_char != 'r' && first_char != 'R' {
-        return None;
-    }
-
-    if index == 'P' || index == 'p' {
-        return Some(Register::RP);
-    }
-
-    let register = Register::from_index(index.to_digit(4)? as u8)?;
-    return Some(register);
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub enum Token {
+    IntegerLiteral(DoubleWord),
+    RegisterIdentifier(Register),
+    RegisterIdentifierPair(Register, Register),
+    ImmediateAddress(DoubleWord),
+    Operation(Operation),
+    Conditional(Condition),
 }
 
-pub fn try_parse_register_pair(input: &str) -> Option<RegisterPair> {
-    let tokens: Vec<&str> = input.split(':').collect();
-    if tokens.len() != 2 {
-        return None;
-    }
-
-    let reg_first = try_parse_register(tokens.get(0)?)?;
-    let reg_second = try_parse_register(tokens.get(1)?)?;
-
-    Some((reg_first, reg_second))
+pub fn lexer(input: &str) -> Option<Token> {
+    [
+        lexer_integer(input),
+        lexer_operation(input),
+        lexer_register(input),
+        lexer_registerpair(input),
+        lexer_immediate_address(input),
+        lexer_conditional(input)
+    ].iter().filter_map(|&token| token).nth(0)
 }
 
-pub fn try_parse_doubleword(mut input: &str) -> Option<DoubleWord> {
-    let mut radix = 10;
-    if input.starts_with("0x") {
-        input = &input[2..];
-        radix = 16;
-    } else if input.starts_with("$") {
-        input = &input[1..];
-        radix = 16;
-    } else if input.starts_with("0b") || input.starts_with("0B") {
-        input = &input[2..];
-        radix = 2;
-    }
+pub fn lexer_integer(input: &str) -> Option<Token> {
+    let regex = Regex::new(r"^(?<sign>\+|\-)?(?<radix>0x|0b)?(?<value>[0-9a-fA-F]+)").unwrap();
+    let captures = regex.captures(&input)?;
+    let sign = captures.name("sign").map_or(1, |m| if m.as_str() == "-" {-1} else {1});
+    let radix = captures.name("radix").map_or(10, |m| if m.as_str() == "0x" {16} else {2});
+    let value_literal = captures.name("value")?.as_str();
+    let value = i32::from_str_radix(value_literal, radix).ok()?;
 
-    if let Some(signed) = i16::from_str_radix(input, radix).ok() {
-        return Some(unsafe { std::mem::transmute(signed) });
+    Some(Token::IntegerLiteral((value * sign) as DoubleWord))
+}
+
+pub fn lexer_register(input: &str) -> Option<Token> {
+    match input.to_uppercase().as_str() {
+        "R0" => Some(Token::RegisterIdentifier(Register::R0)),
+        "R1" => Some(Token::RegisterIdentifier(Register::R1)),
+        "R2" => Some(Token::RegisterIdentifier(Register::R2)),
+        "R3" | "RP" => Some(Token::RegisterIdentifier(Register::R3)),
+        _ => None
+    }
+}
+
+pub fn lexer_immediate_address(input: &str) -> Option<Token> {
+    if let Some(Token::IntegerLiteral(imm)) = lexer_integer(input.strip_suffix(']')?.strip_prefix('[')?) {
+        Some(Token::ImmediateAddress(imm))
+    } else {
+        None
+    }
+}
+
+pub fn lexer_conditional(input: &str) -> Option<Token> {
+    match input.to_uppercase().as_str() {
+        "(CB)" => Some(Token::Conditional(Condition::CarryOrBorrow)),
+        "(EQ)" => Some(Token::Conditional(Condition::Equality)),
+        "(Z)"  => Some(Token::Conditional(Condition::Zero)),
+        _ => None
+    }
+}
+
+pub fn lexer_registerpair(input: &str) -> Option<Token> {
+    let input = input.strip_suffix(']')?.strip_prefix('[')?;
+    let parts = input.split(':').collect::<Vec<&str>>();
+    
+    if let [a, b] = parts.as_slice() {
+        if let (Some(Token::RegisterIdentifier(reg_a)), Some(Token::RegisterIdentifier(reg_b))) = (lexer_register(a), lexer_register(b)) {
+            return Some(Token::RegisterIdentifierPair(reg_a, reg_b));
+        }
     }
     
-    if let Some(unsigned) = u16::from_str_radix(input, radix).ok() {
-        return Some(unsigned);
-    }
-
     None
 }
 
-pub fn try_parse_operation(input: &str) -> Option<(Operation, Condition)> {
-    
-    let mut token = input.to_uppercase();
+pub fn lexer_operation(input: &str) -> Option<Token> {
+    match input.to_uppercase().as_str() {
+        "NOP"   => Some(Token::Operation(Operation::NOP)),
+        "LW"    => Some(Token::Operation(Operation::LW)),
+        "LWI"   => Some(Token::Operation(Operation::LWI)),
+        "SW"    => Some(Token::Operation(Operation::SW)),
+        "SWI"   => Some(Token::Operation(Operation::SWI)),
+        "JP"    => Some(Token::Operation(Operation::JP)),
+        "JPI"   => Some(Token::Operation(Operation::JPI)),
 
-    let condition = if token.ends_with("CB") {
-        token.pop()?;
-        token.pop()?;
-        Condition::CarryOrBorrow
-    } else if token.ends_with("OF") {
-        token.pop()?;
-        token.pop()?;
-        Condition::Overflow
-    } else if token.ends_with("EQ") {
-        token.pop()?;
-        token.pop()?;
-        Condition::Equal
-    } else if token.ends_with("NE") {
-        token.pop()?;
-        token.pop()?;
-        Condition::NotEqual
-    } else if token.ends_with("NZ") {
-        token.pop()?;
-        token.pop()?;
-        Condition::NotZero
-    } else if token.ends_with("N") {
-        token.pop()?;
-        Condition::Negative
-    } else if token.ends_with("Z") {
-        token.pop()?;
-        Condition::Zero
-    } else {
-        Condition::Always
-    };
+        "ADD"   => Some(Token::Operation(Operation::ALU(ALUFunction::ADD))),
+        "ADC"   => Some(Token::Operation(Operation::ALU(ALUFunction::ADC))),
+        "SUB"   => Some(Token::Operation(Operation::ALU(ALUFunction::SUB))),
+        "SBB"   => Some(Token::Operation(Operation::ALU(ALUFunction::SBB))),
+        "OR"    => Some(Token::Operation(Operation::ALU(ALUFunction::OR))),
+        "NOR"   => Some(Token::Operation(Operation::ALU(ALUFunction::NOR))),
+        "XOR"   => Some(Token::Operation(Operation::ALU(ALUFunction::XOR))),
+        "AND"   => Some(Token::Operation(Operation::ALU(ALUFunction::AND))),
+        "SHL"   => Some(Token::Operation(Operation::ALU(ALUFunction::SHL))),
+        "SHR"   => Some(Token::Operation(Operation::ALU(ALUFunction::SHR))),
 
-    let operation = match token.as_str() {
-        "NOP" => Some(Operation::NOP),
-        "LW" => Some(Operation::LW),
-        "LWI" => Some(Operation::LWI),
-        "SW" => Some(Operation::SW),
-        "SWI" => Some(Operation::SWI),
-        "MW" => Some(Operation::MW),
-        "MWI" => Some(Operation::MWI),
-        "JP" => Some(Operation::JP),
-        "JPI" => Some(Operation::JPI),
-        "ADD" => Some(Operation::ADD),
-        "ADC" => Some(Operation::ADC),
-        "SUB" => Some(Operation::SUB),
-        "SBB" => Some(Operation::SBB),
-        "OR" => Some(Operation::OR),
-        "NOR" => Some(Operation::NOR),
-        "XOR" => Some(Operation::XOR),
-        "AND" => Some(Operation::AND),
-        "ADDI" => Some(Operation::ADDI),
-        "ADCI" => Some(Operation::ADCI),
-        "SUBI" => Some(Operation::SUBI),
-        "SBBI" => Some(Operation::SBBI),
-        "ORI" => Some(Operation::ORI),
-        "NORI" => Some(Operation::NORI),
-        "XORI" => Some(Operation::XORI),
-        "ANDI" => Some(Operation::ANDI),
-        "ADDF" => Some(Operation::ADDF),
-        "ADCF" => Some(Operation::ADCF),
-        "SUBF" => Some(Operation::SUBF),
-        "SBBF" => Some(Operation::SBBF),
-        "ORF" => Some(Operation::ORF),
-        "NORF" => Some(Operation::NORF),
-        "XORF" => Some(Operation::XORF),
-        "ANDF" => Some(Operation::ANDF),
-        "ADDFI" => Some(Operation::ADDFI),
-        "ADCFI" => Some(Operation::ADCFI),
-        "SUBFI" => Some(Operation::SUBFI),
-        "SBBFI" => Some(Operation::SBBFI),
-        "ORFI" => Some(Operation::ORFI),
-        "NORFI" => Some(Operation::NORFI),
-        "XORFI" => Some(Operation::XORFI),
-        "ANDFI" => Some(Operation::ANDFI),
-        "CMP" => Some(Operation::CMP),
-        "CMPI" => Some(Operation::CMPI),
-        "HCF" => Some(Operation::HCF),
+        "ADDI"   => Some(Token::Operation(Operation::ALUI(ALUFunction::ADD))),
+        "ADCI"   => Some(Token::Operation(Operation::ALUI(ALUFunction::ADC))),
+        "SUBI"   => Some(Token::Operation(Operation::ALUI(ALUFunction::SUB))),
+        "SBBI"   => Some(Token::Operation(Operation::ALUI(ALUFunction::SBB))),
+        "ORI"    => Some(Token::Operation(Operation::ALUI(ALUFunction::OR))),
+        "NORI"   => Some(Token::Operation(Operation::ALUI(ALUFunction::NOR))),
+        "XORI"   => Some(Token::Operation(Operation::ALUI(ALUFunction::XOR))),
+        "ANDI"   => Some(Token::Operation(Operation::ALUI(ALUFunction::AND))),
+        "SHLI"   => Some(Token::Operation(Operation::ALUI(ALUFunction::SHL))),
+        "SHRI"   => Some(Token::Operation(Operation::ALUI(ALUFunction::SHR))),
+
+        "CADD"   => Some(Token::Operation(Operation::CMP(ALUFunction::ADD))),
+        "CADC"   => Some(Token::Operation(Operation::CMP(ALUFunction::ADC))),
+        "CSUB"   => Some(Token::Operation(Operation::CMP(ALUFunction::SUB))),
+        "CSBB"   => Some(Token::Operation(Operation::CMP(ALUFunction::SBB))),
+        "COR"    => Some(Token::Operation(Operation::CMP(ALUFunction::OR))),
+        "CNOR"   => Some(Token::Operation(Operation::CMP(ALUFunction::NOR))),
+        "CXOR"   => Some(Token::Operation(Operation::CMP(ALUFunction::XOR))),
+        "CAND"   => Some(Token::Operation(Operation::CMP(ALUFunction::AND))),
+        "CSHL"   => Some(Token::Operation(Operation::CMP(ALUFunction::SHL))),
+        "CSHR"   => Some(Token::Operation(Operation::CMP(ALUFunction::SHR))),
+
+        "CADDI"   => Some(Token::Operation(Operation::CMPI(ALUFunction::ADD))),
+        "CADCI"   => Some(Token::Operation(Operation::CMPI(ALUFunction::ADC))),
+        "CSUBI"   => Some(Token::Operation(Operation::CMPI(ALUFunction::SUB))),
+        "CSBBI"   => Some(Token::Operation(Operation::CMPI(ALUFunction::SBB))),
+        "CORI"    => Some(Token::Operation(Operation::CMPI(ALUFunction::OR))),
+        "CNORI"   => Some(Token::Operation(Operation::CMPI(ALUFunction::NOR))),
+        "CXORI"   => Some(Token::Operation(Operation::CMPI(ALUFunction::XOR))),
+        "CANDI"   => Some(Token::Operation(Operation::CMPI(ALUFunction::AND))),
+        "CSHLI"   => Some(Token::Operation(Operation::CMPI(ALUFunction::SHL))),
+        "CSHRI"   => Some(Token::Operation(Operation::CMPI(ALUFunction::SHR))),
+
+        "HCF"   => Some(Token::Operation(Operation::HCF)),
         _ => None
-    };
-
-    Some((operation?, condition))
-}
-
-pub fn try_parse_label(input: &str) -> Option<Label> {
-    let pattern = Regex::new("^(?P<label>[a-zA-Z_][a-zA-Z0-9_]*):$").unwrap();
-    let name = pattern.captures(input)?.name("label")?.as_str();
-    Some(name.to_string())
+    }
 }
