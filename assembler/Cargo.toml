@@ -1,7 +1,10 @@
 [package]
-name = "assembler"
+name = "archas"
 version = "0.1.0"
 edition = "2021"
+
+[toolchain]
+channel = "nightly"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -9,5 +12,4 @@ edition = "2021"
 num-derive = "0.4.2"
 num-traits = "0.2.18"
 regex = "1.10.2"
-strum = "0.25.0"
 strum_macros = "0.25.3"

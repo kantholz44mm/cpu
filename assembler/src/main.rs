@@ -1,45 +1,53 @@
-use std::{fs::File, io::{self, Read, Write}};
-use assembler::{arch::{compile_microcode, Instruction}, lexer::{lexer, Token}, parser::parse_line};
+use core::panic;
+use std::{env, fs::File, io::{self, Read, Write}, os};
+use archas::{arch::compile_microcode, assembler::assemble_program, lexer::lex_program, parser::parse_program};
 
-fn read_source_lines(filename: &str) -> Vec<String> {
-    let mut source_code = String::new();
-    io::stdin().read_to_string(&mut source_code).unwrap();
-
-    source_code.split('\n')
-               .map(|l| if let Some(comment_start) = l.find(';') {&l[..comment_start]} else {l})
-               .filter(|l| !l.is_empty())
-               .map(|l| l.to_string())
-               .collect()
+fn assemble_microcode(filename: &str) {
+    let mut file = File::create(filename).unwrap();
+    file.write_all(&compile_microcode()).unwrap();
 }
 
-fn main() {
-    let mut microcode_file = File::create("microcode.bin").unwrap();
-    let microcode_bytes = compile_microcode().iter().flat_map(|i| i.to_le_bytes()).collect::<Vec<u8>>();
-    microcode_file.write_all(&microcode_bytes).unwrap();
-    microcode_file.flush().unwrap();
+fn assemble_sourcecode(inputfile: &str, outputfile: &str) {
+    let mut source_code = String::new();
+    let mut file = File::open(inputfile).unwrap();
+    file.read_to_string(&mut source_code).unwrap();
 
-    let mut instructions = Vec::new();
-    
-    for line in read_source_lines("assembly.rs") {
-        let lexemes = line.split(&['\t', ' ']).filter(|lex| !lex.is_empty());
-        let tokens: Vec<Option<Token>> = lexemes.map(|lex| lexer(lex)).collect();
+    // lexical analysis
+    let tokens = match lex_program(&source_code) {
+        Ok(tokens) => tokens,
+        Err(after) => panic!("Lexical error at position: {}", after),
+    };
 
-        if tokens.iter().any(|token| token.is_none()) {
-            panic!("Invalid token in line: {}", &line);
-        }
+    // parsing
+    let program = match parse_program(tokens) {
+        Ok(program) => program,
+        Err(error_line) => panic!("Parse error in line: {}", error_line + 1),
+    };
 
-        let tokens = tokens.iter().map(|token| token.unwrap()).collect();
-        if let Some(instruction) = parse_line(tokens) {
-            println!("{:?}", instruction);
-            instructions.push(instruction);
-        } else {
-            panic!("Invalid instruction: {}", line);
-        }
-    }
+    // assembling
+    let instructions = match assemble_program(program) {
+        Ok(ins) => ins,
+        Err(error) => panic!("Assembly error: {:?}", error),
+    };
 
-    let mut program_file = File::create("program.bin").unwrap();
+    // dump into binary file
+    let mut program_file = File::create(outputfile).unwrap();
     for instruction in instructions {
         let bytes = instruction.encode().to_le_bytes();
         program_file.write(&bytes).unwrap();
+    }
+}
+
+fn main() {
+    let args: Vec<String> = env::args().collect();
+    if args.contains(&String::from("--assemble-microcode")) {
+        assemble_microcode("microcode.bin");
+    } else {
+        let (source, target): (&str, &str) = match args.as_slice() {
+            [_, source] => (source, "a.out"),
+            [_, source, target] => (source, target),
+            _ => panic!("Usage: archas --assemble-microcode\n       archas <inputfile> [outputfile]")
+        };
+        assemble_sourcecode(source, target);
     }
 }

@@ -1,11 +1,8 @@
-NOP
-ADDI r3 r3 0xFF
-WPRI 0x1
+        NOP
+        NOP
 
-SUBI r3 r3 0x01
-JPI  (Z) [0x8]
-SHLI r0 r3 0x1
-SW   [r3] r0
-JPI      [0x3]
-
-HCF
+someshit: ; this will be hit once only
+    EQ> LWI r1 [0x55]
+    Z>  LWI r2 [0x44]
+        JPI [someshit]
+someothershit:

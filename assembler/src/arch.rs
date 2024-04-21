@@ -1,8 +1,5 @@
-use std::{collections::HashMap, hash::Hash};
-
 use num_derive::{FromPrimitive, ToPrimitive};
-
-use crate::lexer::Token;
+use num_traits::ToBytes;
 
 pub type Word = u8;
 pub type DoubleWord = u16;
@@ -10,7 +7,7 @@ pub type QuadWord = u32;
 
 const NUM_INSTRUCTIONS: usize = 16;
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, Default)]
 pub struct Instruction {
     pub op: Operation,
     pub cond: Condition,
@@ -167,7 +164,7 @@ impl Operation {
     }
 }
 
-pub fn compile_microcode() -> [DoubleWord; NUM_INSTRUCTIONS] {
+pub fn compile_microcode() -> Vec<u8> {
     [
         Operation::NOP,
         Operation::LW,
@@ -185,5 +182,29 @@ pub fn compile_microcode() -> [DoubleWord; NUM_INSTRUCTIONS] {
         Operation::NOP, // reserved
         Operation::NOP, // reserved
         Operation::HCF,
-    ].map(|opcode| opcode.control_flags().encode())
+    ].iter().flat_map(|opcode| opcode.control_flags().encode().to_le_bytes()).collect()
+}
+
+impl Default for Operation {
+    fn default() -> Self {
+        Self::NOP
+    }
+}
+
+impl Default for Condition {
+    fn default() -> Self {
+        Self::Always
+    }
+}
+
+impl Default for Register {
+    fn default() -> Self {
+        Self::R0
+    }
+}
+
+impl Default for ALUFunction {
+    fn default() -> Self {
+        Self::ADD
+    }
 }

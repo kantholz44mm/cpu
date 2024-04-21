@@ -73,7 +73,7 @@ PR is used for paged operations such as memory operations
 0x7 ALU   rd, ro1, ro2      : rd = ALU(ro1, ro2, aluop)
 0x8 ALUI  rd, ro1, imm8     : rd = ALU(ro1, imm8, aluop)
 0x9 CMP   ro1, ro2          : Same as ALU but without writeback
-0xA CMPI  ro1, ro2          : Same as ALUI but without writeback
+0xA CMPI  ro1, imm8         : Same as ALUI but without writeback
 0xB WPR   ro2               : PR = [ro2]
 0xC WPRI  imm8              : PR = imm8
 0xD
