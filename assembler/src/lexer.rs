@@ -76,7 +76,7 @@ pub fn lex_program(mut input: &str) -> Result<Vec<Token>, usize> {
 }
 
 pub fn lexer_whitespace(input: &str) -> Option<(Token, usize)> {
-    match input.chars().take_while(|c| "\t ".contains(*c)).count() {
+    match input.chars().take_while(|c| "\t ,".contains(*c)).count() {
         0 => None,
         len => Some((Token::Whitespace, len)),
     }
