@@ -15,7 +15,7 @@ fn assemble_sourcecode(inputfile: &str, outputfile: &str) {
     // lexical analysis
     let tokens = match lex_program(&source_code) {
         Ok(tokens) => tokens,
-        Err(after) => panic!("Lexical error at position: {}", after),
+        Err(after) => panic!("Lexical error at position: {}:\n{}", after, &source_code[after..]),
     };
 
     // parsing

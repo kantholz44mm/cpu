@@ -55,6 +55,12 @@ pub fn assemble_program(mut program: Program) -> Result<Vec<Instruction>, Assemb
             (Operation::ALUI(_), [Operand::Register(rd), Operand::Register(ro1), Operand::Immediate(imm8)]) => Instruction {
                 dest: *rd, op1: *ro1, imm: *imm8, ..Default::default()
             },
+            (Operation::ALUF(_), [Operand::Register(rd), Operand::Register(ro1), Operand::Register(ro2)]) => Instruction {
+                dest: *rd, op1: *ro1, op2: *ro2, ..Default::default()
+            },
+            (Operation::ALUFI(_), [Operand::Register(rd), Operand::Register(ro1), Operand::Immediate(imm8)]) => Instruction {
+                dest: *rd, op1: *ro1, imm: *imm8, ..Default::default()
+            },
             (Operation::CMP(_), [Operand::Register(ro1), Operand::Register(ro2)]) => Instruction {
                 op1: *ro1, op2: *ro2, ..Default::default()
             },

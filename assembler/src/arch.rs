@@ -63,6 +63,8 @@ pub enum Operation {
     JPI,
     ALU(ALUFunction),
     ALUI(ALUFunction),
+    ALUF(ALUFunction),
+    ALUFI(ALUFunction),
     CMP(ALUFunction),
     CMPI(ALUFunction),
     WPR,
@@ -134,8 +136,10 @@ impl Operation {
             Operation::SWI      => ControlFlags { rwen: false, fwen: false, ioren: false, iowen: true , bssel: false, assel: true , rssel: true , pcssel: false, prwen: false },
             Operation::JP       => ControlFlags { rwen: false, fwen: false, ioren: false, iowen: false, bssel: false, assel: false, rssel: true , pcssel: true , prwen: false },
             Operation::JPI      => ControlFlags { rwen: false, fwen: false, ioren: false, iowen: false, bssel: false, assel: true , rssel: false, pcssel: true , prwen: false },
-            Operation::ALU(_)   => ControlFlags { rwen: true , fwen: true , ioren: false, iowen: false, bssel: true , assel: false, rssel: false, pcssel: false, prwen: false },
-            Operation::ALUI(_)  => ControlFlags { rwen: true , fwen: true , ioren: false, iowen: false, bssel: false, assel: false, rssel: false, pcssel: false, prwen: false },
+            Operation::ALU(_)   => ControlFlags { rwen: true , fwen: false, ioren: false, iowen: false, bssel: true , assel: false, rssel: false, pcssel: false, prwen: false },
+            Operation::ALUI(_)  => ControlFlags { rwen: true , fwen: false, ioren: false, iowen: false, bssel: false, assel: false, rssel: false, pcssel: false, prwen: false },
+            Operation::ALUF(_)  => ControlFlags { rwen: true , fwen: true , ioren: false, iowen: false, bssel: true , assel: false, rssel: false, pcssel: false, prwen: false },
+            Operation::ALUFI(_) => ControlFlags { rwen: true , fwen: true , ioren: false, iowen: false, bssel: false, assel: false, rssel: false, pcssel: false, prwen: false },
             Operation::CMP(_)   => ControlFlags { rwen: false, fwen: true , ioren: false, iowen: false, bssel: true , assel: false, rssel: false, pcssel: false, prwen: false },
             Operation::CMPI(_)  => ControlFlags { rwen: false, fwen: true , ioren: false, iowen: false, bssel: false, assel: false, rssel: false, pcssel: false, prwen: false },
             Operation::WPR      => ControlFlags { rwen: false, fwen: false, ioren: false, iowen: false, bssel: true , assel: false, rssel: false, pcssel: false, prwen: true  },
@@ -155,10 +159,12 @@ impl Operation {
             Operation::JPI      => 0x6,
             Operation::ALU(_)   => 0x7,
             Operation::ALUI(_)  => 0x8,
-            Operation::CMP(_)   => 0x9,
-            Operation::CMPI(_)  => 0xA,
-            Operation::WPR      => 0xB,
-            Operation::WPRI     => 0xC,
+            Operation::ALUF(_)  => 0x9,
+            Operation::ALUFI(_) => 0xA,
+            Operation::CMP(_)   => 0xB,
+            Operation::CMPI(_)  => 0xC,
+            Operation::WPR      => 0xD,
+            Operation::WPRI     => 0xE,
             Operation::HCF      => 0xF,
         }
     }
@@ -175,12 +181,12 @@ pub fn compile_microcode() -> Vec<u8> {
         Operation::JPI,
         Operation::ALU(ALUFunction::ADD),
         Operation::ALUI(ALUFunction::ADD),
+        Operation::ALUF(ALUFunction::ADD),
+        Operation::ALUFI(ALUFunction::ADD),
         Operation::CMP(ALUFunction::ADD),
         Operation::CMPI(ALUFunction::ADD),
         Operation::WPR,
         Operation::WPRI,
-        Operation::NOP, // reserved
-        Operation::NOP, // reserved
         Operation::HCF,
     ].iter().flat_map(|opcode| opcode.control_flags().encode().to_le_bytes()).collect()
 }

@@ -10,28 +10,11 @@ pub enum Token {
     Condition(Condition),
     Symbol(char),
     Identifier(String),
+    Comment(String),
     EndOfInput,
 }
 
 pub type Lexer = fn(&str) -> Option<(Token, usize)>;
-
-fn strip_comments(mut tokens: Vec<Token>) -> Vec<Token> {
-    let find_comment_start: fn(&[Token]) -> Option<usize> = |t| t.iter().position(|token| matches!(token, Token::Symbol(';')));
-    let find_comment_end: fn(&[Token]) -> Option<usize> = |t| t.iter().position(|token| matches!(token, Token::Symbol('\n'))
-                                                                                        || matches!(token, Token::EndOfInput));
-
-    while let Some(comment_start) = find_comment_start(&tokens) {
-        let comment_end = comment_start + find_comment_end(&tokens[comment_start..]).unwrap();
-        tokens.drain(comment_start..comment_end);
-    }
-
-    tokens
-}
-
-fn strip_whitespace(mut tokens: Vec<Token>) -> Vec<Token> {
-    tokens.retain(|t| !matches!(t, Token::Whitespace));
-    tokens
-}
 
 fn fold_longest_token(longest: Option<(Token, usize)>, current: (Token, usize)) -> Option<(Token, usize)> {
     if let Some((_, longest_len)) = longest {
@@ -46,7 +29,7 @@ fn fold_longest_token(longest: Option<(Token, usize)>, current: (Token, usize)) 
 }
 
 pub fn lex_program(mut input: &str) -> Result<Vec<Token>, usize> {
-    const LEXERS: [Lexer; 7] = [
+    const LEXERS: [Lexer; 8] = [
         lexer_whitespace,
         lexer_number,
         lexer_register,
@@ -54,6 +37,7 @@ pub fn lex_program(mut input: &str) -> Result<Vec<Token>, usize> {
         lexer_symbol,
         lexer_condition,
         lexer_identifier,
+        lexer_comment
     ];
 
     let mut tokens = Vec::new();
@@ -69,10 +53,24 @@ pub fn lex_program(mut input: &str) -> Result<Vec<Token>, usize> {
         return Err(consumed);
     }
 
+    tokens.retain(|token| {
+        match token {
+            Token::Comment(_) |
+            Token::Whitespace => false,
+            _ => true
+        }
+    });
     tokens.push(Token::EndOfInput);
-    tokens = strip_whitespace(tokens);
-    tokens = strip_comments(tokens);
     Ok(tokens)
+}
+
+pub fn lexer_comment(input: &str) -> Option<(Token, usize)> {
+    if input.starts_with(";") {
+        let comment_length = input.chars().position(|c| c == '\n').unwrap_or(input.chars().count());
+        Some((Token::Comment(input[..comment_length].to_string()), comment_length))
+    } else {
+        None
+    }
 }
 
 pub fn lexer_whitespace(input: &str) -> Option<(Token, usize)> {
@@ -135,6 +133,28 @@ pub fn lexer_operation(input: &str) -> Option<(Token, usize)> {
         s if s.starts_with("SW")    => Some((Token::Operation(Operation::SW),  2)),
         s if s.starts_with("JPI")   => Some((Token::Operation(Operation::JPI), 3)),
         s if s.starts_with("JP")    => Some((Token::Operation(Operation::JP),  2)),
+
+        s if s.starts_with("ADDFI")  => Some((Token::Operation(Operation::ALUFI(ALUFunction::ADD)), 5)),
+        s if s.starts_with("ADCFI")  => Some((Token::Operation(Operation::ALUFI(ALUFunction::ADC)), 5)),
+        s if s.starts_with("SUBFI")  => Some((Token::Operation(Operation::ALUFI(ALUFunction::SUB)), 5)),
+        s if s.starts_with("SBBFI")  => Some((Token::Operation(Operation::ALUFI(ALUFunction::SBB)), 5)),
+        s if s.starts_with("ORFI")   => Some((Token::Operation(Operation::ALUFI(ALUFunction::OR)),  4)),
+        s if s.starts_with("NORFI")  => Some((Token::Operation(Operation::ALUFI(ALUFunction::NOR)), 5)),
+        s if s.starts_with("XORFI")  => Some((Token::Operation(Operation::ALUFI(ALUFunction::XOR)), 5)),
+        s if s.starts_with("ANDFI")  => Some((Token::Operation(Operation::ALUFI(ALUFunction::AND)), 5)),
+        s if s.starts_with("SHLFI")  => Some((Token::Operation(Operation::ALUFI(ALUFunction::SHL)), 5)),
+        s if s.starts_with("SHRFI")  => Some((Token::Operation(Operation::ALUFI(ALUFunction::SHR)), 5)),
+
+        s if s.starts_with("ADDF")  => Some((Token::Operation(Operation::ALUF(ALUFunction::ADD)), 4)),
+        s if s.starts_with("ADCF")  => Some((Token::Operation(Operation::ALUF(ALUFunction::ADC)), 4)),
+        s if s.starts_with("SUBF")  => Some((Token::Operation(Operation::ALUF(ALUFunction::SUB)), 4)),
+        s if s.starts_with("SBBF")  => Some((Token::Operation(Operation::ALUF(ALUFunction::SBB)), 4)),
+        s if s.starts_with("ORF")   => Some((Token::Operation(Operation::ALUF(ALUFunction::OR)),  3)),
+        s if s.starts_with("NORF")  => Some((Token::Operation(Operation::ALUF(ALUFunction::NOR)), 4)),
+        s if s.starts_with("XORF")  => Some((Token::Operation(Operation::ALUF(ALUFunction::XOR)), 4)),
+        s if s.starts_with("ANDF")  => Some((Token::Operation(Operation::ALUF(ALUFunction::AND)), 4)),
+        s if s.starts_with("SHLF")  => Some((Token::Operation(Operation::ALUF(ALUFunction::SHL)), 4)),
+        s if s.starts_with("SHRF")  => Some((Token::Operation(Operation::ALUF(ALUFunction::SHR)), 4)),
 
         s if s.starts_with("ADDI")   => Some((Token::Operation(Operation::ALUI(ALUFunction::ADD)), 4)),
         s if s.starts_with("ADCI")   => Some((Token::Operation(Operation::ALUI(ALUFunction::ADC)), 4)),
