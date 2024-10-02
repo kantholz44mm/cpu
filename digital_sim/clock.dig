@@ -59,16 +59,6 @@
       <pos x="1260" y="60"/>
     </visualElement>
     <visualElement>
-      <elementName>NAnd</elementName>
-      <elementAttributes>
-        <entry>
-          <string>wideShape</string>
-          <boolean>true</boolean>
-        </entry>
-      </elementAttributes>
-      <pos x="1400" y="60"/>
-    </visualElement>
-    <visualElement>
       <elementName>In</elementName>
       <elementAttributes>
         <entry>
@@ -223,7 +213,7 @@
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>CLKOUT</string>
+          <string>!CLKOUT</string>
         </entry>
       </elementAttributes>
       <pos x="1780" y="80"/>
@@ -359,15 +349,11 @@
       <p2 x="540" y="140"/>
     </wire>
     <wire>
-      <p1 x="1360" y="80"/>
-      <p2 x="1380" y="80"/>
-    </wire>
-    <wire>
       <p1 x="640" y="80"/>
       <p2 x="660" y="80"/>
     </wire>
     <wire>
-      <p1 x="1500" y="80"/>
+      <p1 x="1360" y="80"/>
       <p2 x="1780" y="80"/>
     </wire>
     <wire>
@@ -445,10 +431,6 @@
     <wire>
       <p1 x="740" y="420"/>
       <p2 x="760" y="420"/>
-    </wire>
-    <wire>
-      <p1 x="1380" y="100"/>
-      <p2 x="1400" y="100"/>
     </wire>
     <wire>
       <p1 x="1080" y="100"/>
@@ -547,10 +529,6 @@
       <p2 x="360" y="380"/>
     </wire>
     <wire>
-      <p1 x="1380" y="60"/>
-      <p2 x="1400" y="60"/>
-    </wire>
-    <wire>
       <p1 x="1120" y="60"/>
       <p2 x="1260" y="60"/>
     </wire>
@@ -609,14 +587,6 @@
     <wire>
       <p1 x="740" y="420"/>
       <p2 x="740" y="460"/>
-    </wire>
-    <wire>
-      <p1 x="1380" y="60"/>
-      <p2 x="1380" y="80"/>
-    </wire>
-    <wire>
-      <p1 x="1380" y="80"/>
-      <p2 x="1380" y="100"/>
     </wire>
     <wire>
       <p1 x="40" y="220"/>

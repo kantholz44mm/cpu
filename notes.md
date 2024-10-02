@@ -13,89 +13,69 @@
 
 
 ## registers
-r3
-r2
-r1
-r0
+R7: H (High address byte)
+R6: L (Low address byte)
+R5: F (Flags)
+R4: General Purpose
+R3: General Purpose
+R2: General Purpose
+R1: General Purpose
+R0: Null register
 
-PR
-PC
+PC: 16 bit program counter
 
 PC cannot be directly accessed and is used as the 16 bit program counter. NOTE: not in bytes, but in instructions. Each instruction is 32 bits wide.
-PR is used for paged operations such as memory operations
-
-## ALU ops:
-0x0 | 0b0000 ADD
-0x1 | 0b0001 ADC
-0x2 | 0b0010 SUB
-0x3 | 0b0011 SBB
-0x4 | 0b0100 OR
-0x5 | 0b0101 NOR
-0x6 | 0b0110 XOR
-0x7 | 0b0111 AND
-0x8 | 0b1000 SHL
-0x9 | 0b1001 SHR
-0xA | 0b1010 /
-0xB | 0b1011 /
-0xC | 0b1100 /
-0xD | 0b1101 /
-0xE | 0b1110 /
-0xF | 0b1111 /
+R7 / RP is implicitly used for memory operations as the "page" (i.e higher) part of the address. R0 is hardwired to be 0 when read, with writes having no effect.
+R6 & R7 are used for memory address operations.
+R5 / F is the flags register. It is updated by performing an ALU operation.
 
 ## flags
-0: Carry/Borrow
-1: Equal
-2: Zero
-
-## conditionals:
-0: Always
+0: Zero
 1: Carry/Borrow
-2: Equal
-3: Zero
+2: Overflow
+3: Negative
 
 ## instruction encoding
 
 ```
 | Byte                 |           0            |           1           |           2           |           4            |
-| Bit                  | 1F 1E 1D 1C 1B 1A 19 18 17 16 15 14 13 12 11 10 0F 0E 0D 0C 0B 0A 09 08 07 06 05 04 03 02 01 00 |
-| Instruction          |   opcode   |cond |    alu    | rd  | ro1 | ro2 |                      imm16                     |
+| Bit                  | 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 09 08 07 06 05 04 03 02 01 00 |
+| Field                |   OPCODE   |OS|WF|  |   RD   |   RO1  |   RO2  |                      IMM                       |
 ```
+
+OPCODE :  4 : Identifies the operation
+OS     :  1 : Selects operand mode; 0 means register, 1 means immediate
+WF     :  1 : Whether to update the flag register. If 0, The register can be written to like any other register.
+RD     :  3 : is the index of the destination register
+RO1    :  3 : Index of first operand register
+RO1    :  3 : Index of second operand register
+IMM    : 16 : 16 or 8 bit immediate operand (depending on operation)
 
 ## instructions:
 ```
-0x0 NOP
-0x1 LW    rd, [ro1]         : rd = memory[PR:ro1]
-0x2 LWI   rd, [imm16]       : rd = memory[imm16]
-0x3 SW    [ro1], ro2        : memory[PR:ro1] = ro2
-0x4 SWI   [imm16], ro2      : memory[imm16] = ro2
-0x5 JP    [ro1]             : PC = PR:ro1
-0x6 JPI   [imm16]           : PC = imm16
-0x7 ALU   rd, ro1, ro2      : rd = ALU(ro1, ro2, aluop)
-0x8 ALUI  rd, ro1, imm8     : rd = ALU(ro1, imm8, aluop)
-0x9 CMP   ro1, ro2          : Same as ALU but without writeback
-0xA CMPI  ro1, imm8         : Same as ALUI but without writeback
-0xB WPR   ro2               : PR = [ro2]
-0xC WPRI  imm8              : PR = imm8
-0xD
-0xE
-0xF HCF                     : Halt and Catch Fire.
+0 | ADC    RD, RO1, [RO2/IMM8]             : RD = RO1 + RO2/IMM8 + Carry/Borrow
+1 | SBB    RD, RO1, [RO2/IMM8]             : RD = RO1 - RO2/IMM8 - Carry/Borrow
+2 | SHL    RD, RO1, [RO2/IMM8]             : RD = RO1 << RO2/IMM8
+3 | SHR    RD, RO1, [RO2/IMM8]             : RD = RO1 >> RO2/IMM8
+4 | OR     RD, RO1, [RO2/IMM8]             : RD = RO1 | RO2/IMM8
+5 | NOR    RD, RO1, [RO2/IMM8]             : RD = ~(RO1 | RO2/IMM8)
+6 | XOR    RD, RO1, [RO2/IMM8]             : RD = RO1 ^ RO2/IMM8
+7 | AND    RD, RO1, [RO2/IMM8]             : RD = RO1 & RO2/IMM8
+
+8 | LW     RD, [RH:RL/IMM16]               : RD = Memory[RH:RL/IMM16]
+9 | SW     [RH:RL/IMM16], RO2              : Memory[RH:RL/IMM16] = RO2
+A | BZ     R02/IMM8                        : If RO2/IMM8 == 0 ? PC = RH:RL : NOP
+B | BNZ    RO2/IMM8                        : If RO2/IMM8 != 0 ? PC = RH:RL : NOP
+C | JZ     IMM16                           : If RF == 0 ? PC = IMM16
+D | JNZ    IMM16                           : If RF != 0 ? PC = IMM16
+E | LA     IMM16                           : RH:HL = IMM16
+F | HCF
 ```
 
-## control lines
-RWEN   :1 Register Write Enable            -> Whether the register file shall be updated with a new value
-FWEN   :1 Flag Write Enable                -> Whether the ALU flag register shall be updated
-IOREN  :1 Memory Read Enable               -> Should the memory output onto the data bus?
-IOWEN  :1 Memory Write Enable              -> Should the memory input from the data bus?
-BSSEL  :1 ALU Operand B source Selection   -> Selects if the B operand in the ALU is imm8 or ro2.
-ASSEL  :1 Memory Address Selection         -> Selects the source for the memory address: [rp:ro1] or [imm16]
-RSSEL  :1 Register Source Selection        -> Selects the source for register writes: ALU result or memory bus input
-PCSSEL :1 Program Counter Source Selection -> Selects either PC+1 or, depending on MASSEL, one of [rp:ro1, imm16] for next PC value
-PRWEN  :1 Page register Write Enable       -> Whether the page register gets written to
+All ALU operations (0-7) can be suffixed with *. If the suffix is found, the flags register will not be updated.
 
-
-## parts list
-Quad NAND Gates:
-https://www.mouser.de/ProductDetail/Toshiba/TC74HC00APF?qs=W%252B8xM3gmGj%2F0AXEac47eSQ%3D%3D
-32k x 8 Parallel SRAM
-https://www.mouser.de/ProductDetail/Alliance-Memory/AS6C62256-55PCN?qs=LD2UibpCYJqgbIupMJnGTQ%3D%3D
-
+## Flag setting behavior
+                ZCVN
+ADC/SBB:        FFFF
+OR/NOR/XOR/AND: F00F
+SHL/SHR:        FF0F

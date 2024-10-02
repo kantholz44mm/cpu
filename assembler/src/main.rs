@@ -1,53 +1,69 @@
 use core::panic;
-use std::{env, fs::File, io::{self, Read, Write}, os};
-use archas::{arch::compile_microcode, assembler::assemble_program, lexer::lex_program, parser::parse_program};
+use std::{i8, io::{stdin, Read}, os, path::Path};
 
-fn assemble_microcode(filename: &str) {
-    let mut file = File::create(filename).unwrap();
-    file.write_all(&compile_microcode()).unwrap();
+use isa::arch::{FlagWriteMode, Instruction, Opcode};
+use lexer::lex;
+use parser::parse;
+use preprocessor::preprocess;
+use strum::IntoEnumIterator;
+use strum_macros::EnumIter;
+
+
+mod lexer;
+mod parser;
+mod preprocessor;
+
+fn assemble_microcode() -> Vec<u8> {
+    let instructions: [Opcode; 16] = [
+        Opcode::ADC,
+        Opcode::SBB,
+        Opcode::SHL,
+        Opcode::SHR,
+        Opcode::OR,
+        Opcode::NOR,
+        Opcode::XOR,
+        Opcode::AND,
+        Opcode::LW,
+        Opcode::SW,
+        Opcode::BZ,
+        Opcode::BNZ,
+        Opcode::JZ,
+        Opcode::JNZ,
+        Opcode::LA,
+        Opcode::HCF,
+    ];
+    instructions.iter().flat_map(|opcode| opcode.control_flags().encode().to_le_bytes()).collect()
 }
 
-fn assemble_sourcecode(inputfile: &str, outputfile: &str) {
-    let mut source_code = String::new();
-    let mut file = File::open(inputfile).unwrap();
-    file.read_to_string(&mut source_code).unwrap();
+fn main() -> Result<(), String> {
+    
+    let args: Vec<String> = std::env::args().collect();
 
-    // lexical analysis
-    let tokens = match lex_program(&source_code) {
-        Ok(tokens) => tokens,
-        Err(after) => panic!("Lexical error at position: {}:\n{}", after, &source_code[after..]),
-    };
+    if args.contains(&String::from("--microcode")) {
+        let assembly = assemble_microcode();
+        std::fs::write("microcode.bin", &assembly).map_err(|err| err.to_string())?;
 
-    // parsing
-    let program = match parse_program(tokens) {
-        Ok(program) => program,
-        Err(error_line) => panic!("Parse error in line: {}", error_line + 1),
-    };
-
-    // assembling
-    let instructions = match assemble_program(program) {
-        Ok(ins) => ins,
-        Err(error) => panic!("Assembly error: {:?}", error),
-    };
-
-    // dump into binary file
-    let mut program_file = File::create(outputfile).unwrap();
-    for instruction in instructions {
-        let bytes = instruction.encode().to_le_bytes();
-        program_file.write(&bytes).unwrap();
-    }
-}
-
-fn main() {
-    let args: Vec<String> = env::args().collect();
-    if args.contains(&String::from("--assemble-microcode")) {
-        assemble_microcode("microcode.bin");
+        println!("Assembled microcode, binary size: {} B", assembly.len());
+        Ok(())
+    } else if args.len() < 2 {
+        Err(String::from("missing arguments."))
     } else {
-        let (source, target): (&str, &str) = match args.as_slice() {
-            [_, source] => (source, "a.out"),
-            [_, source, target] => (source, target),
-            _ => panic!("Usage: archas --assemble-microcode\n       archas <inputfile> [outputfile]")
-        };
-        assemble_sourcecode(source, target);
+        let input_file = Path::new(args.last().unwrap());
+        let output_file = input_file.with_extension("bin");
+        let input = preprocess(input_file)?;
+
+        if args.contains(&String::from("--dump_preprocessed")) {
+            let preprocessed_file = input_file.with_extension("preprocessed.s");
+            std::fs::write(preprocessed_file, &input).map_err(|err| err.to_string())?;
+        }
+
+        let tokens = lex(&input)?;
+        let instructions = parse(tokens)?;
+        let assembly: Vec<u8> = instructions.iter().flat_map(|ins| ins.encode().to_le_bytes()).collect();
+    
+        std::fs::write(output_file, &assembly).map_err(|err| err.to_string())?;
+    
+        println!("Assembled {} instructions, binary size: {} B", instructions.len(), assembly.len());
+        Ok(())
     }
 }

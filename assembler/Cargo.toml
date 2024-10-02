@@ -13,3 +13,5 @@ num-derive = "0.4.2"
 num-traits = "0.2.18"
 regex = "1.10.2"
 strum_macros = "0.25.3"
+isa = { path = "../isa" }
+strum = "0.26.3"

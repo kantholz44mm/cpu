@@ -1,0 +1,10 @@
+[package]
+name = "isa"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+num-derive = "0.4.2"
+num-traits = "0.2.19"
+strum = "0.26.3"
+strum_macros = "0.26.4"

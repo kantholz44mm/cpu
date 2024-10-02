@@ -1,262 +1,235 @@
 use std::collections::HashMap;
+use isa::arch::{DoubleWord, FlagWriteMode, Instruction, Opcode, OperandSelect, Register, Word};
+use crate::lexer::Token;
 
-use crate::{arch::{Condition, DoubleWord, Instruction, Operation, Register}, lexer::Token};
+fn parse_line<'a>(tokens: &[Token<'a>]) -> Result<Option<Instruction>, String> {
 
-#[derive(Clone, Debug)]
-pub enum Statement {
-    Empty,
-    Label(String),
-    Instruction(Instruction)
-}
-
-#[derive(Clone, Debug)]
-pub struct Program {
-    pub labels: HashMap<String, DoubleWord>,
-    pub instructions: Vec<ProgramInstruction>
-}
-
-#[derive(Clone, Debug)]
-pub struct ProgramInstruction {
-    pub condition: Condition,
-    pub operation: Operation,
-    pub operands: Vec<Operand>
-}
-
-#[derive(Clone, Debug)]
-pub enum Operand {
-    Register(Register),
-    Immediate(DoubleWord),
-    AddressRegister(Register),
-    AddressImmediate(DoubleWord),
-    AddressLabel(String),
-}
-
-fn parse_label(tokens: &[Token]) -> Option<String> {
-    if let [Token::Identifier(label), Token::Symbol(':')] = tokens {
-        Some(label.clone())
-    } else {
-        None
-    }
-}
-
-fn parse_instruction(mut tokens: &[Token]) -> Option<ProgramInstruction> {
-    let condition = if let Some(Token::Condition(cond)) = tokens.get(0) {
-        tokens = &tokens[1..];
-        *cond
-    } else {
-        Condition::Always
-    };
-
-    let operation = if let Some(Token::Operation(operation)) = tokens.get(0) {
-        tokens = &tokens[1..];
-        Some(*operation)
-    } else {
-        None
-    }?;
-
-    let mut operands = Vec::new();
-
-    while !tokens.is_empty() {
-        let potential_operand: Option<(usize, Operand)> = {
-            if let Token::Register(register) = tokens[0] {
-                Some((1, Operand::Register(register)))
-            } else if let Token::Number(imm) = tokens[0] {
-                Some((1, Operand::Immediate(imm)))
-            } else if tokens.len() >= 3 && tokens[0] == Token::Symbol('[') && tokens[2] == Token::Symbol(']') {
-                match &tokens[1] {
-                    Token::Register(register) => Some((3, Operand::AddressRegister(*register))),
-                    Token::Number(imm)        => Some((3, Operand::AddressImmediate(*imm))),
-                    Token::Identifier(label)  => Some((3, Operand::AddressLabel(label.clone()))),
-                    _ => None
-                }
-            } else {
-                None
-            }
-        };
-
-        if let Some((consumed_tokens, operand)) = potential_operand {
-            operands.push(operand);
-            tokens = &tokens[consumed_tokens..];
-        } else {
-            return None;
-        }
-    }
-
-    Some(ProgramInstruction { condition, operation, operands })
-}
-
-fn parse_statement(mut tokens: &[Token], labels: &HashMap<String, DoubleWord>) -> Option<Statement> {
-    let condition = if let Some(Token::Condition(cond)) = tokens.get(0) {
-        tokens = &tokens[1..];
-        *cond
-    } else {
-        Condition::Always
-    };
-    
+    // optionally, an instruction
     match tokens {
-        [] if condition == Condition::Always => Some(Statement::Empty),
-        [Token::Identifier(identifier), Token::Symbol(':')] if condition == Condition::Always => Some(Statement::Label(identifier.to_string())),
-        [Token::Operation(Operation::NOP)] => Some(Statement::Instruction(Instruction { 
-            op: Operation::NOP, 
-            cond: condition, 
-            dest: Register::R0, 
-            op1: Register::R0, 
-            op2: Register::R0, 
-            imm: 0
-        })),
-        [Token::Operation(Operation::LW), Token::Register(rd), Token::Symbol('['), Token::Register(ro1), Token::Symbol(']')] => Some(Statement::Instruction(Instruction { 
-            op: Operation::LW, 
-            cond: condition, 
-            dest: *rd, 
-            op1: *ro1, 
-            op2: *ro1, 
-            imm: 0
-        })),
-        [Token::Operation(Operation::LWI), Token::Register(rd), Token::Symbol('['), Token::Number(imm), Token::Symbol(']')] => Some(Statement::Instruction(Instruction { 
-            op: Operation::LWI, 
-            cond: condition, 
-            dest: *rd, 
-            op1: Register::R0, 
-            op2: Register::R0, 
-            imm: *imm
-        })),
-        [Token::Operation(Operation::SW), Token::Symbol('['), Token::Register(ro1), Token::Symbol(']'), Token::Register(ro2)] => Some(Statement::Instruction(Instruction { 
-            op: Operation::SW, 
-            cond: condition, 
-            dest: Register::R0, 
-            op1: *ro1, 
-            op2: *ro2, 
-            imm: 0
-        })),
-        [Token::Operation(Operation::SWI), Token::Symbol('['), Token::Number(imm), Token::Symbol(']'), Token::Register(ro2)] => Some(Statement::Instruction(Instruction { 
-            op: Operation::SWI, 
-            cond: condition, 
-            dest: Register::R0, 
-            op1: Register::R0, 
-            op2: *ro2, 
-            imm: *imm
-        })),
-        [Token::Operation(Operation::JP), Token::Symbol('['), Token::Register(ro1), Token::Symbol(']')] => Some(Statement::Instruction(Instruction { 
-            op: Operation::JP, 
-            cond: condition, 
-            dest: Register::R0, 
-            op1: *ro1, 
-            op2: Register::R0, 
-            imm: 0
-        })),
-        [Token::Operation(Operation::JPI), Token::Symbol('['), Token::Number(imm), Token::Symbol(']')] => Some(Statement::Instruction(Instruction {
-            op: Operation::JPI,
-            cond: condition,
-            dest: Register::R0,
-            op1: Register::R0,
-            op2: Register::R0,
-            imm: *imm
-        })),
-        [Token::Operation(Operation::JPI), Token::Symbol('['), Token::Identifier(label), Token::Symbol(']')] if labels.contains_key(label) => Some(Statement::Instruction(Instruction {
-            op: Operation::JPI,
-            cond: condition,
-            dest: Register::R0,
-            op1: Register::R0,
-            op2: Register::R0,
-            imm: labels[label]
-        })),
-        [Token::Operation(Operation::ALU(aluop)), Token::Register(rd), Token::Register(ro1), Token::Register(ro2)] => Some(Statement::Instruction(Instruction {
-            op: Operation::ALU(*aluop),
-            cond: condition,
-            dest: *rd,
-            op1: *ro1,
-            op2: *ro2,
-            imm: 0
-        })),
-        [Token::Operation(Operation::ALUI(aluop)), Token::Register(rd), Token::Register(ro1), Token::Number(imm)] => Some(Statement::Instruction(Instruction {
-            op: Operation::ALU(*aluop),
-            cond: condition,
-            dest: *rd,
-            op1: *ro1,
-            op2: Register::R0,
-            imm: *imm
-        })),
-        [Token::Operation(Operation::CMP(aluop)), Token::Register(ro1), Token::Register(ro2)] => Some(Statement::Instruction(Instruction {
-            op: Operation::CMP(*aluop),
-            cond: condition,
-            dest: Register::R0,
-            op1: *ro1,
-            op2: *ro2,
-            imm: 0
-        })),
-        [Token::Operation(Operation::CMPI(aluop)), Token::Register(ro1), Token::Number(imm)] => Some(Statement::Instruction(Instruction {
-            op: Operation::CMPI(*aluop),
-            cond: condition,
-            dest: Register::R0,
-            op1: *ro1,
-            op2: Register::R0,
-            imm: *imm
-        })),
-        [Token::Operation(Operation::WPR), Token::Register(ro1)] => Some(Statement::Instruction(Instruction {
-            op: Operation::WPR,
-            cond: condition,
-            dest: Register::R0,
-            op1: *ro1,
-            op2: Register::R0,
-            imm: 0
-        })),
-        [Token::Operation(Operation::WPRI), Token::Number(imm)] => Some(Statement::Instruction(Instruction {
-            op: Operation::WPRI,
-            cond: condition,
-            dest: Register::R0,
-            op1: Register::R0,
-            op2: Register::R0,
-            imm: *imm
-        })),
-        [Token::Operation(Operation::HCF)] => Some(Statement::Instruction(Instruction { 
-            op: Operation::HCF, 
-            cond: condition, 
-            dest: Register::R0, 
-            op1: Register::R0, 
-            op2: Register::R0, 
-            imm: 0
-        })),
-        [] | _ => None
+        [] => Ok(None), // empty line, no instruction
+        [Token::Operation(Opcode::HCF)] => Ok(Some(Instruction { opcode: Opcode::HCF, ..Default::default() })),
+        [
+            Token::Operation(opcode),
+            modifiers@..,
+            Token::Register(rd),
+            Token::Symbol(','),
+            Token::Register(ro1),
+            Token::Symbol(','),
+            Token::Register(ro2)
+        ] if opcode.is_arithmetic() => {
+            let flagmode = match modifiers {
+                [] => FlagWriteMode::WriteFlags,
+                [Token::Symbol('*')] => FlagWriteMode::DontWriteFlags,
+                _ => { return Err(format!("Expected modifier or parameter list after operation '{:?}' but got {:?}", opcode, &tokens[..tokens.len().min(8)])); }
+            };
+
+            Ok(Some(Instruction {
+                opcode: *opcode,
+                operand: OperandSelect::OperandRegister,
+                flags: flagmode,
+                rd: *rd,
+                ro1: *ro1,
+                ro2: *ro2,
+                immediate: 0x0000,
+            }))
+        },
+        [
+            Token::Operation(opcode),
+            modifiers@..,
+            Token::Register(rd),
+            Token::Symbol(','),
+            Token::Register(ro1),
+            Token::Symbol(','),
+            Token::Number(immediate)
+        ] if opcode.is_arithmetic() => {
+            let flagmode = match modifiers {
+                [] => FlagWriteMode::WriteFlags,
+                [Token::Symbol('*')] => FlagWriteMode::DontWriteFlags,
+                _ => { return Err(format!("Expected modifier or parameter list after operation '{:?}' but got {:?}", opcode, &tokens[..tokens.len().min(8)])); }
+            };
+            Ok(Some(Instruction {
+                opcode: *opcode,
+                operand: OperandSelect::OperandImmediate,
+                flags: flagmode,
+                rd: *rd,
+                ro1: *ro1,
+                ro2: Register::RZ,
+                immediate: *immediate as Word as DoubleWord,
+            }))
+        },
+        [
+            Token::Operation(Opcode::LW),
+            Token::Register(rd),
+            Token::Symbol(','),
+            Token::Symbol('['),
+            Token::Register(Register::RH),
+            Token::Symbol(':'),
+            Token::Register(Register::RL),
+            Token::Symbol(']')
+        ] => {
+            Ok(Some(Instruction {
+                opcode: Opcode::LW,
+                operand: OperandSelect::OperandRegister,
+                rd: *rd,
+                ..Default::default()
+            }))
+        },
+        [
+            Token::Operation(Opcode::LW),
+            Token::Register(rd),
+            Token::Symbol(','),
+            Token::Symbol('['),
+            Token::Number(address),
+            Token::Symbol(']')
+        ] => {
+            Ok(Some(Instruction {
+                opcode: Opcode::LW,
+                operand: OperandSelect::OperandImmediate,
+                rd: *rd,
+                immediate: *address as DoubleWord,
+                ..Default::default()
+            }))
+        },
+        [
+            Token::Operation(Opcode::SW),
+            Token::Symbol('['),
+            Token::Register(Register::RH),
+            Token::Symbol(':'),
+            Token::Register(Register::RL),
+            Token::Symbol(']'),
+            Token::Symbol(','),
+            Token::Register(ro2)
+        ] => {
+            Ok(Some(Instruction {
+                opcode: Opcode::SW,
+                operand: OperandSelect::OperandRegister,
+                ro2: *ro2,
+                ..Default::default()
+            }))
+        },
+        [
+            Token::Operation(Opcode::SW),
+            Token::Symbol('['),
+            Token::Number(address),
+            Token::Symbol(']'),
+            Token::Symbol(','),
+            Token::Register(ro2)
+        ] => {
+            Ok(Some(Instruction {
+                opcode: Opcode::SW,
+                operand: OperandSelect::OperandImmediate,
+                ro2: *ro2,
+                immediate: *address as DoubleWord,
+                ..Default::default()
+            }))
+        },
+        [
+            Token::Operation(opcode),
+            Token::Register(ro2)
+        ] if opcode.is_branch() => {
+            Ok(Some(Instruction {
+                opcode: *opcode,
+                operand: OperandSelect::OperandRegister,
+                ro2: *ro2,
+                ..Default::default()
+            }))
+        },
+        [
+            Token::Operation(opcode),
+            Token::Number(immediate)
+        ] if opcode.is_branch() => {
+            Ok(Some(Instruction {
+                opcode: *opcode,
+                operand: OperandSelect::OperandImmediate,
+                immediate: *immediate as DoubleWord,
+                ..Default::default()
+            }))
+        },
+        [
+            Token::Operation(opcode),
+            Token::Number(immediate)
+        ] if opcode.is_jump() => {
+            Ok(Some(Instruction {
+                opcode: *opcode,
+                operand: OperandSelect::OperandImmediate,
+                immediate: *immediate as DoubleWord,
+                ..Default::default()
+            }))
+        },
+        [
+            Token::Operation(Opcode::LA),
+            Token::Number(immediate)
+        ] => {
+            Ok(Some(Instruction {
+                opcode: Opcode::LA,
+                operand: OperandSelect::OperandImmediate,
+                immediate: *immediate as DoubleWord,
+                ..Default::default()
+            }))
+        },
+        [Token::Operation(opcode), paramlist @..] => Err(format!("invalid parameters for Opcode {opcode:?}: {:?}", paramlist)),
+        _ => Err(format!("invalid input sequence: {:?}", &tokens[..tokens.len().min(8)]))
     }
 }
 
-pub fn parse_program(mut tokens: Vec<Token>) -> Result<Program, usize> {
-    let find_line_terminator: fn(&[Token]) -> Option<usize> = |toks| toks.iter().position(|t| matches!(t, Token::Symbol('\n')) 
-                                                                                           || matches!(t, Token::EndOfInput));
+fn resolve_labels<'a>(tokens: &[Token<'a>]) -> Result<Vec<Token<'a>>, String> {
 
-    let mut program = Program::new();
-    let mut lines_processed: usize = 0;
+    let mut label_map: HashMap<&str, usize> = HashMap::new();
+    let mut resolved_tokens = Vec::new();
 
-    while !tokens.is_empty() {
-        // unwrap is safe here because we have at least the end terminator.
-        let line_length = find_line_terminator(&tokens).unwrap();
-        let line_tokens = &tokens[..line_length];
-
-        if let Some(label) = parse_label(&line_tokens) {
-            let label_target = program.instructions.len() as DoubleWord;
-            let existing_label = program.labels.insert(label, label_target);
-            if existing_label.is_some() {
-                return Err(lines_processed);
+    // build label map
+    let mut i = 0;
+    let mut address = 0;
+    while let Some(token) = tokens.get(i) {
+        match token {
+            Token::Identifier(label) => {
+                if let Some(Token::Symbol(':')) = tokens.get(i + 1) {
+                    if let Some(previous) = label_map.insert(label, address) {
+                        return Err(format!("duplicate label: '{label}' ({previous:x})"));
+                    }
+                    i += 2;
+                } else {
+                    resolved_tokens.push(Token::Identifier(*label));
+                    i += 1;
+                }
+            },
+            Token::Operation(op) => {
+                resolved_tokens.push(Token::Operation(*op));
+                address += 1;
+                i += 1;
             }
-        } else if let Some(instruction) = parse_instruction(&line_tokens) {
-            program.instructions.push(instruction);
-        } else if let [] = &line_tokens {
-            // skip empty lines.
-        } else {
-            return Err(lines_processed);
+            anything_else => {
+                resolved_tokens.push(*anything_else);
+                i += 1;
+            }
         }
-
-        lines_processed += 1;
-        tokens.drain(..=line_length);
     }
-    Ok(program)
+
+    for token in resolved_tokens.iter_mut() {
+        if let Token::Identifier(label) = token {
+            match label_map.get(label) {
+                Some(address) => *token = Token::Number(*address as i64),
+                None => return Err(format!("undefined identifier: '{label}'")),
+            }
+        }
+    }
+
+    Ok(resolved_tokens)
 }
 
-impl Program {
-    pub fn new() -> Self {
-        Program {
-            labels: HashMap::new(),
-            instructions: Vec::new()
+pub fn parse(mut tokens: Vec<Token>) -> Result<Vec<Instruction>, String> {
+    
+    tokens = resolve_labels(&tokens)?;
+    let lines = tokens.split(|token| *token == Token::Symbol('\n')).enumerate();
+    let mut instructions = Vec::new();
+
+    for (line_index, tokens) in lines {
+        match parse_line(tokens) {
+            Ok(Some(parsed_line)) => { instructions.push(parsed_line); },
+            Ok(None) => { /* empty line, don't care. */ }
+            Err(error) => return Err(format!("error in line {}: {}", line_index + 1, error)),
         }
     }
+
+    Ok(instructions)
 }
