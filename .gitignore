@@ -1,7 +1,4 @@
-/assembler/target/
+/software/assembler/target/
+/software/isa/target/
 .vscode/
-/assembler/.vscode/
-/assembler/compiled_binary.arx
-/pcb/register/register-backups/
-/pcb/register_file/register_file-backups/
-/pcb/register/gerber/
+/software/assembler/.vscode/
