@@ -6,12 +6,8 @@
 - 32 bit instruction size
 - little endian
 
-## sources:
-- [SingleCycleCPU.pdf](https://ee.usc.edu/~redekopp/ee457/slides/EE457Unit5_SingleCycleCPU.pdf)
-- [Berkeley Lecture](https://inst.eecs.berkeley.edu/~cs61c/fa14/lec/27/2014Fa-CS61C-L27-sc-CPU-1up.pdf)
-- [Adder/Subtractor 4bit ADC,ADD,SBB,SUB](https://electronics.stackexchange.com/questions/555425/are-carry-flags-set-even-when-we-discard-the-carry-in-an-arithmetic-logic-unit)
-
 ## registers
+```
 R7: H (High address byte)
 R6: L (Low address byte)
 R5: F (Flags)
@@ -27,12 +23,15 @@ PC cannot be directly accessed and is used as the 16 bit program counter. NOTE: 
 R7 / RP is implicitly used for memory operations as the "page" (i.e higher) part of the address. R0 is hardwired to be 0 when read, with writes having no effect.
 R6 & R7 are used for memory address operations.
 R5 / F is the flags register. It is updated by performing an ALU operation.
+```
 
 ## flags
+```
 0: Zero
 1: Carry/Borrow
 2: Overflow
 3: Negative
+```
 
 ## instruction encoding
 
@@ -40,7 +39,6 @@ R5 / F is the flags register. It is updated by performing an ALU operation.
 | Byte                 |           0            |           1           |           2           |           4            |
 | Bit                  | 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 09 08 07 06 05 04 03 02 01 00 |
 | Field                |   OPCODE   |OS|WF|  |   RD   |   RO1  |   RO2  |                      IMM                       |
-```
 
 OPCODE :  4 : Identifies the operation
 OS     :  1 : Selects operand mode; 0 means register, 1 means immediate
@@ -49,6 +47,7 @@ RD     :  3 : is the index of the destination register
 RO1    :  3 : Index of first operand register
 RO1    :  3 : Index of second operand register
 IMM    : 16 : 16 or 8 bit immediate operand (depending on operation)
+```
 
 ## instructions:
 ```
