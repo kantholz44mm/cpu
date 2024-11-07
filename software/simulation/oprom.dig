@@ -187,7 +187,7 @@
         </entry>
         <entry>
           <string>lastDataFile</string>
-          <file>/home/mrab/Desktop/dev/rust/arch/assembler/assembly/microcode.bin</file>
+          <file>/home/mrab/Desktop/dev/rust/arch/software/assembler/assembly/microcode.bin</file>
         </entry>
         <entry>
           <string>autoReload</string>
