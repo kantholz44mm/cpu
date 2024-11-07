@@ -1,0 +1,83 @@
+\documentclass[12pt, parskip=half, headheight=12pt, BCOR=8mm, footheight=16pt]{extarticle}
+
+% General document formatting
+\usepackage[margin=1.0in]{geometry}
+\usepackage[parfill]{parskip}
+\usepackage[utf8]{inputenc}
+\usepackage{acro}
+\usepackage{cite}
+\usepackage{enumitem}
+\usepackage{titling}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[english]{babel}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{multirow}
+\usepackage{eurosym}
+\usepackage{tocloft}
+\usepackage{tabularray}
+\usepackage{siunitx}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{nicefrac}
+
+\hypersetup{
+  colorlinks=true, % Use colored text instead of boxes
+  linkcolor=blue,  % Color for internal links
+  citecolor=green, % Color for citations
+  urlcolor=gray % Color for URLs
+}
+
+% Related to math
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+
+\input{acronyms.tex}
+\input{config.tex}
+
+\let\clearpage\relax
+
+\begin{document}
+
+\include{cover}
+\newpage
+\include{statutory}
+\newpage
+\include{abstract}
+\newpage
+
+{
+  \addcontentsline{toc}{section}{Abbreviations}
+  \addcontentsline{toc}{section}{List of tables}
+  \addcontentsline{toc}{section}{List of figures}
+
+  \hypersetup{linkcolor=black}
+  \tableofcontents
+  \newpage
+
+  \acuseall
+  \printacronyms[name=Acronyms]
+  \newpage
+  \acresetall
+  
+  \listoftables
+  \listoffigures
+  \newpage
+}
+
+\input{sections/intro}
+\newpage
+
+\addcontentsline{toc}{section}{Literature}
+\nocite{*}
+\renewcommand\refname{Literature}
+\bibliographystyle{alphaurl}
+\bibliography{literature}
+
+
+\end{document}
