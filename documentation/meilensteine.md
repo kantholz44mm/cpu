@@ -9,7 +9,7 @@
 - 16.03.2025 (Ende erste Praxisphase):
   - Vollständige Planung aller elektrischen Baugruppen
   - Funktionsfähige ALU + Register
-  - Alle Hardware muss bestellt sein
+  - Geplante Hardware muss bestellt sein
   - Ausarbeitung: Implementierung
 
 - 09.06.2025 (Ende zweite Theoriephase):

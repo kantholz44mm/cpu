@@ -13,6 +13,7 @@
        - Single- & Multicycle
        - Von Neumann/Harvard
        - RISC/CISC
+       - synchron/asynchron
    - Instruction Set Architecture (ISA): 
      - Was ist eine ISA
      - Wofür braucht man sie?
