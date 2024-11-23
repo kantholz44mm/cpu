@@ -62,8 +62,8 @@ pub fn lex_operation<'a>(input: &'a str) -> Option<(Token, usize)> {
         "LW"  | "lw"  => Some((Token::Operation(Opcode::LW),  mnemonic_length)),
         "BZ"  | "bz"  => Some((Token::Operation(Opcode::BZ),  mnemonic_length)),
         "BNZ" | "bnz" => Some((Token::Operation(Opcode::BNZ), mnemonic_length)),
-        "JZ"  | "jz"  => Some((Token::Operation(Opcode::JZ),  mnemonic_length)),
-        "JNZ" | "jnz" => Some((Token::Operation(Opcode::JNZ), mnemonic_length)),
+        //RES0
+        //RES1
         "LA"  | "la"  => Some((Token::Operation(Opcode::LA),  mnemonic_length)),
         "HCF" | "hcf" => Some((Token::Operation(Opcode::HCF), mnemonic_length)),
         _ => None

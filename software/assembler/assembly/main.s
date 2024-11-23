@@ -24,13 +24,12 @@ fib_loop:
     MOV R4, RL
 
     ; check overflow
-    AND RZ, RF, 0x2
-    JNZ done
+    AND* RF, RF, 0x2
+    BNZ done, RF
 
     PUSH16 R3, R4
 
-    MOV RF, 0
-    JNZ fib_loop
+    BZ fib_loop, RZ
 
 done:
     HCF

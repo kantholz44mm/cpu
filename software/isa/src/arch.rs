@@ -56,8 +56,8 @@ pub enum Opcode {
     BZ,
     BNZ,
 
-    JZ,
-    JNZ,
+    RES0,
+    RES1,
     LA,
     HCF,
 }
@@ -114,8 +114,8 @@ impl Opcode {
             Opcode::SW   => ControlFlags { regwen: false, adrwen: false, ioren: false, iowen: true , pcssel: false },
             Opcode::BZ   => ControlFlags { regwen: false, adrwen: false, ioren: false, iowen: false, pcssel: true  },
             Opcode::BNZ  => ControlFlags { regwen: false, adrwen: false, ioren: false, iowen: false, pcssel: true  },
-            Opcode::JZ   => ControlFlags { regwen: false, adrwen: false, ioren: false, iowen: false, pcssel: true  },
-            Opcode::JNZ  => ControlFlags { regwen: false, adrwen: false, ioren: false, iowen: false, pcssel: true  },
+            Opcode::RES0 => ControlFlags { regwen: false, adrwen: false, ioren: false, iowen: false, pcssel: false },
+            Opcode::RES1 => ControlFlags { regwen: false, adrwen: false, ioren: false, iowen: false, pcssel: false },
             Opcode::LA   => ControlFlags { regwen: false, adrwen: true , ioren: false, iowen: false, pcssel: false },
             Opcode::HCF  => ControlFlags { regwen: false, adrwen: false, ioren: false, iowen: false, pcssel: false },
         }
@@ -139,14 +139,6 @@ impl Opcode {
         match self {
             Opcode::BZ |
             Opcode::BNZ => true,
-            _ => false
-        }
-    }
-
-    pub fn is_jump(&self) -> bool {
-        match self {
-            Opcode::JZ |
-            Opcode::JNZ => true,
             _ => false
         }
     }

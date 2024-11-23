@@ -27,8 +27,8 @@ fn assemble_microcode() -> Vec<u8> {
         Opcode::SW,
         Opcode::BZ,
         Opcode::BNZ,
-        Opcode::JZ,
-        Opcode::JNZ,
+        Opcode::RES0,
+        Opcode::RES1,
         Opcode::LA,
         Opcode::HCF,
     ];

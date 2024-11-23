@@ -84,8 +84,8 @@ XOR* R3, RZ, RH
 XOR* R4, RZ, RL
 
     
-    AND RZ, RF, 0x2
-    JNZ done
+    AND* RF, RF, 0x2
+    BNZ done, RF
 XOR* RH, RZ, 0xFF
 LW  RL, [0xFEFF]
 SW [RH:RL], R3
@@ -98,8 +98,8 @@ SW [RH:RL], R4
 XOR* RF, RZ, 0
 ADC RL, RL, 1
 SW [0xFEFF], RL
-XOR* RF, RZ, 0
-    JNZ fib_loop
+
+    BZ fib_loop, RZ
 
 done:
     HCF

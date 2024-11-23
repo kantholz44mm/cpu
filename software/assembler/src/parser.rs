@@ -136,23 +136,30 @@ fn parse_line<'a>(tokens: &[Token<'a>]) -> Result<Option<Instruction>, String> {
         },
         [
             Token::Operation(opcode),
-            Token::Number(immediate)
+            Token::Number(address),
+            Token::Symbol(','),
+            Token::Register(ro2)
         ] if opcode.is_branch() => {
             Ok(Some(Instruction {
                 opcode: *opcode,
                 operand: OperandSelect::OperandImmediate,
-                immediate: *immediate as DoubleWord,
+                immediate: *address as DoubleWord,
+                ro2: *ro2,
                 ..Default::default()
             }))
         },
         [
             Token::Operation(opcode),
-            Token::Number(immediate)
-        ] if opcode.is_jump() => {
+            Token::Register(Register::RH),
+            Token::Symbol(':'),
+            Token::Register(Register::RL),
+            Token::Symbol(','),
+            Token::Register(ro2)
+        ] if opcode.is_branch() => {
             Ok(Some(Instruction {
                 opcode: *opcode,
-                operand: OperandSelect::OperandImmediate,
-                immediate: *immediate as DoubleWord,
+                operand: OperandSelect::OperandRegister,
+                ro2: *ro2,
                 ..Default::default()
             }))
         },
