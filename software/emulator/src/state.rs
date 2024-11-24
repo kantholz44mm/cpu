@@ -1,6 +1,8 @@
 use std::io::{self, Read};
 
-use isa::arch::{ControlFlags, DoubleWord, Instruction, QuadWord, Word, ADDRESS_RANGE, NUM_OPCODES, NUM_REGISTERS};
+use isa::arch::{ControlFlags, DoubleWord, FlagWriteMode, Instruction, Opcode, OperandSelect, QuadWord, Register, Word, ADDRESS_RANGE, NUM_OPCODES, NUM_REGISTERS};
+
+use crate::alu::alu;
 
 pub struct State {
     pub program_counter: DoubleWord,
@@ -68,6 +70,78 @@ impl State {
             return;
         }
 
+        // fetch & "decode"
+        let instruction = self.program_memory[self.program_counter as usize];
+        let control_lines = self.oprom[instruction.opcode as usize];
 
+        // propagate to register bank readout
+        let read_0 = self.registers[instruction.ro1 as usize];
+        let read_1 = self.registers[instruction.ro2 as usize];
+        let read_flag = self.registers[Register::RF as usize];
+        let read_addr = (self.registers[Register::RH as usize] as DoubleWord) << 8
+                      | (self.registers[Register::RL as usize] as DoubleWord) << 0;
+
+        let override_pc = control_lines.pcssel && ((read_1 == 0) != ((instruction.opcode as u8 & 1) == 1));
+        let override_address = match instruction.operand {
+            OperandSelect::OperandRegister => read_addr,
+            OperandSelect::OperandImmediate => instruction.immediate,
+        };
+
+        if override_pc {
+            self.program_counter = override_address;
+        } else {
+            self.program_counter += 1;
+        }
+
+        // pc has changed, we are now in the low half of the clock signal
+        // therefore we need to refetch the newly loaded instruction.
+
+        // fetch & "decode"
+        let instruction = self.program_memory[self.program_counter as usize];
+        let control_lines = self.oprom[instruction.opcode as usize];
+
+        // propagate to register bank readout
+        let read_0 = self.registers[instruction.ro1 as usize];
+        let read_1 = self.registers[instruction.ro2 as usize];
+        let read_flag = self.registers[Register::RF as usize];
+        let read_addr = (self.registers[Register::RH as usize] as DoubleWord) << 8
+                        | (self.registers[Register::RL as usize] as DoubleWord) << 0;
+
+        let alu_operand_b = match instruction.operand {
+            OperandSelect::OperandRegister => read_1,
+            OperandSelect::OperandImmediate => instruction.immediate as u8,
+        };
+
+        let (alu_result, alu_flags) = alu(instruction.opcode, read_0, alu_operand_b, (read_flag >> 1) & 1);
+
+        let address = match instruction.operand {
+            OperandSelect::OperandRegister => read_addr,
+            OperandSelect::OperandImmediate => instruction.immediate,
+        };
+
+        if control_lines.regwen {
+            if instruction.opcode.is_arithmetic() {
+                self.registers[instruction.rd as usize] = alu_result;
+            } else {
+                self.registers[instruction.rd as usize] = self.main_memory[address as usize];
+            }
+        }
+
+        if control_lines.adrwen {
+            self.registers[Register::RL as usize] = ((instruction.immediate >> 0) & 0xFF) as Word;
+            self.registers[Register::RH as usize] = ((instruction.immediate >> 8) & 0xFF) as Word;
+        }
+
+        if control_lines.iowen {
+            self.main_memory[address as usize] = read_1;
+        }
+
+        if instruction.flags == FlagWriteMode::WriteFlags {
+            self.registers[Register::RF as usize] = alu_flags;
+        }
+
+        if instruction.opcode == Opcode::HCF {
+            self.halted = true;
+        }
     }
 }
