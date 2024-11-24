@@ -1,24 +1,29 @@
 use num_derive::{FromPrimitive, ToPrimitive};
+use num_traits::FromPrimitive;
 
 pub type Word = u8;
 pub type DoubleWord = u16;
 pub type QuadWord = u32;
 
-#[derive(Debug, Clone, Copy)]
+pub const NUM_REGISTERS: usize = std::mem::variant_count::<Register>();
+pub const NUM_OPCODES: usize = std::mem::variant_count::<Opcode>();
+pub const ADDRESS_RANGE: usize = DoubleWord::MAX as usize;
+
+#[derive(Debug, Clone, Copy, FromPrimitive, ToPrimitive, PartialEq, Eq)]
 #[repr(u8)]
 pub enum OperandSelect {
     OperandRegister,
     OperandImmediate,
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, FromPrimitive, ToPrimitive, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FlagWriteMode {
     DontWriteFlags,
     WriteFlags,
 }
 
-#[derive(Debug, Clone, Copy, Default)]
+#[derive(Debug, Clone, Copy, Default, PartialEq, Eq)]
 pub struct Instruction {
     pub opcode: Opcode,
     pub operand: OperandSelect,
@@ -29,7 +34,7 @@ pub struct Instruction {
     pub immediate: DoubleWord,
 }
 
-#[derive(Debug, Clone, Copy)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Default)]
 pub struct ControlFlags {
     pub regwen: bool,
     pub adrwen: bool,
@@ -38,7 +43,7 @@ pub struct ControlFlags {
     pub pcssel: bool,
 }
 
-#[derive(Debug, Clone, Copy, PartialEq, PartialOrd, Eq)]
+#[derive(Debug, Clone, Copy, PartialEq, PartialOrd, Eq, FromPrimitive, ToPrimitive)]
 #[repr(u8)]
 pub enum Opcode {
     ADC,
@@ -86,6 +91,20 @@ impl Instruction {
         | (self.operand as QuadWord)        << 27
         | (self.opcode as QuadWord)         << 28
     }
+
+    pub fn decode(word: QuadWord) -> Self {
+        unsafe { 
+            Self {
+                opcode:     std::mem::transmute(((word >> 28) & 0xF) as Word),
+                operand:    std::mem::transmute(((word >> 27) & 0x1) as Word),
+                flags:      std::mem::transmute(((word >> 26) & 0x1) as Word),
+                rd:         std::mem::transmute(((word >> 22) & 0x7) as Word),
+                ro1:        std::mem::transmute(((word >> 19) & 0x7) as Word),
+                ro2:        std::mem::transmute(((word >> 16) & 0x7) as Word),
+                immediate:  word as DoubleWord
+            }
+        }
+    }
 }
 
 impl ControlFlags {
@@ -96,6 +115,18 @@ impl ControlFlags {
         | (self.ioren as Word)  << 2
         | (self.iowen as Word)  << 3
         | (self.pcssel as Word) << 4
+    }
+
+    pub fn decode(word: Word) -> Self {
+        unsafe { 
+            Self {
+                regwen: std::mem::transmute((word >> 0) & 0x1),
+                adrwen: std::mem::transmute((word >> 1) & 0x1),
+                ioren:  std::mem::transmute((word >> 2) & 0x1),
+                iowen:  std::mem::transmute((word >> 3) & 0x1),
+                pcssel: std::mem::transmute((word >> 4) & 0x1),
+            }
+        }
     }
 }
 
@@ -140,6 +171,50 @@ impl Opcode {
             Opcode::BZ |
             Opcode::BNZ => true,
             _ => false
+        }
+    }
+}
+
+impl TryFrom<QuadWord> for Opcode {
+    type Error = String;
+
+    fn try_from(value: u32) -> Result<Self, Self::Error> {
+        match FromPrimitive::from_u32(value) {
+            Some(opcode) => Ok(opcode),
+            None => Err(format!("unknown opcode: {value}")),
+        }
+    }
+}
+
+impl TryFrom<QuadWord> for OperandSelect {
+    type Error = String;
+
+    fn try_from(value: u32) -> Result<Self, Self::Error> {
+        match FromPrimitive::from_u32(value) {
+            Some(select) => Ok(select),
+            None => Err(format!("unknown operand select mode: {value}")),
+        }
+    }
+}
+
+impl TryFrom<QuadWord> for FlagWriteMode {
+    type Error = String;
+
+    fn try_from(value: u32) -> Result<Self, Self::Error> {
+        match FromPrimitive::from_u32(value) {
+            Some(flagmode) => Ok(flagmode),
+            None => Err(format!("unknown flag write mode: {value}")),
+        }
+    }
+}
+
+impl TryFrom<QuadWord> for Register {
+    type Error = String;
+
+    fn try_from(value: u32) -> Result<Self, Self::Error> {
+        match FromPrimitive::from_u32(value) {
+            Some(register) => Ok(register),
+            None => Err(format!("unknown register index: {value}")),
         }
     }
 }

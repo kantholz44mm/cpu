@@ -36,7 +36,6 @@ fn assemble_microcode() -> Vec<u8> {
 }
 
 fn main() -> Result<(), String> {
-    
     let args: Vec<String> = std::env::args().collect();
 
     if args.contains(&String::from("--microcode")) {

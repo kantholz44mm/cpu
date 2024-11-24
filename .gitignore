@@ -1,4 +1,5 @@
-/software/assembler/target/
-/software/isa/target/
+/software/*/target/
+/hardware/**/*.gbr
+/hardware/**/*.drl
 .vscode/
 /software/assembler/.vscode/
