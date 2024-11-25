@@ -1,5 +1,5 @@
 @macro NOP
-AND* RZ, RZ, RZ
+ADC* RZ, RZ, RZ
 @endmacro
 
 @macro MOV %0, %1

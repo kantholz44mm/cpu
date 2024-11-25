@@ -26,6 +26,4 @@ fn main() {
         let num16 = lower_byte as u16 | ((upper_byte as u16) << 8);
         println!("{num16}");
     }
-
-    println!("{:?}", &state.main_memory[0xFF00..])
 }

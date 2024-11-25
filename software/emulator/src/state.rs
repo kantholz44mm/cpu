@@ -86,8 +86,7 @@ impl State {
             OperandSelect::OperandImmediate => instruction.immediate as u8,
         };
 
-        // ([bool; 8], bool, bool, bool, bool)
-        let (alu_result, z, n, c, o) = alu(opcode_to_bools(instruction.opcode), u8_to_bools(read_0), u8_to_bools(alu_operand_b), (read_flag >> 1) & 1 != 0);
+        let (alu_result, z, n, c, o) = alu(opcode_to_bools(instruction.opcode), u8_to_bools(read_0), u8_to_bools(alu_operand_b), (read_flag >> 2) & 1 != 0);
 
         let address = match instruction.operand {
             OperandSelect::OperandRegister => read_addr,
