@@ -2,7 +2,7 @@ use std::io::{self, Read};
 
 use isa::arch::{ControlFlags, DoubleWord, FlagWriteMode, Instruction, Opcode, OperandSelect, QuadWord, Register, Word, ADDRESS_RANGE, NUM_OPCODES, NUM_REGISTERS};
 
-use crate::alu::alu;
+use crate::combinatorics::{alu, bools_to_u8, opcode_to_bools, u8_to_bools};
 
 pub struct State {
     pub program_counter: DoubleWord,
@@ -79,32 +79,6 @@ impl State {
         let read_1 = self.registers[instruction.ro2 as usize];
         let read_flag = self.registers[Register::RF as usize];
         let read_addr = (self.registers[Register::RH as usize] as DoubleWord) << 8
-                      | (self.registers[Register::RL as usize] as DoubleWord) << 0;
-
-        let override_pc = control_lines.pcssel && ((read_1 == 0) != ((instruction.opcode as u8 & 1) == 1));
-        let override_address = match instruction.operand {
-            OperandSelect::OperandRegister => read_addr,
-            OperandSelect::OperandImmediate => instruction.immediate,
-        };
-
-        if override_pc {
-            self.program_counter = override_address;
-        } else {
-            self.program_counter += 1;
-        }
-
-        // pc has changed, we are now in the low half of the clock signal
-        // therefore we need to refetch the newly loaded instruction.
-
-        // fetch & "decode"
-        let instruction = self.program_memory[self.program_counter as usize];
-        let control_lines = self.oprom[instruction.opcode as usize];
-
-        // propagate to register bank readout
-        let read_0 = self.registers[instruction.ro1 as usize];
-        let read_1 = self.registers[instruction.ro2 as usize];
-        let read_flag = self.registers[Register::RF as usize];
-        let read_addr = (self.registers[Register::RH as usize] as DoubleWord) << 8
                         | (self.registers[Register::RL as usize] as DoubleWord) << 0;
 
         let alu_operand_b = match instruction.operand {
@@ -112,7 +86,8 @@ impl State {
             OperandSelect::OperandImmediate => instruction.immediate as u8,
         };
 
-        let (alu_result, alu_flags) = alu(instruction.opcode, read_0, alu_operand_b, (read_flag >> 1) & 1);
+        // ([bool; 8], bool, bool, bool, bool)
+        let (alu_result, z, n, c, o) = alu(opcode_to_bools(instruction.opcode), u8_to_bools(read_0), u8_to_bools(alu_operand_b), (read_flag >> 1) & 1 != 0);
 
         let address = match instruction.operand {
             OperandSelect::OperandRegister => read_addr,
@@ -121,7 +96,7 @@ impl State {
 
         if control_lines.regwen {
             if instruction.opcode.is_arithmetic() {
-                self.registers[instruction.rd as usize] = alu_result;
+                self.registers[instruction.rd as usize] = bools_to_u8(alu_result);
             } else {
                 self.registers[instruction.rd as usize] = self.main_memory[address as usize];
             }
@@ -137,11 +112,24 @@ impl State {
         }
 
         if instruction.flags == FlagWriteMode::WriteFlags {
-            self.registers[Register::RF as usize] = alu_flags;
+            self.registers[Register::RF as usize] = bools_to_u8([z, n, c, o, false, false, false, false]);
         }
 
         if instruction.opcode == Opcode::HCF {
             self.halted = true;
+        }
+
+        // increment pc
+        let override_pc = control_lines.pcssel && ((read_1 == 0) != ((instruction.opcode as u8 & 1) == 1));
+        let override_address = match instruction.operand {
+            OperandSelect::OperandRegister => read_addr,
+            OperandSelect::OperandImmediate => instruction.immediate,
+        };
+
+        if override_pc {
+            self.program_counter = override_address;
+        } else {
+            self.program_counter += 1;
         }
     }
 }

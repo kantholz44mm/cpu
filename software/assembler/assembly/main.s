@@ -4,11 +4,6 @@
 ; first instruction is not guaranteed to be executed,
 ; depending on the initial state of the clock.
 NOP
-NOP
-NOP
-NOP
-
-HCF
 
 ; start at 0 and 1
 MOV R1, 0
