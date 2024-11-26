@@ -1,13 +1,8 @@
-use core::panic;
-use std::{i8, io::{stdin, Lines, Read}, os, path::Path};
-
-use isa::arch::{FlagWriteMode, Instruction, Opcode};
+use std::path::Path;
+use isa::arch::Opcode;
 use lexer::lex;
 use parser::parse;
 use preprocessor::preprocess;
-use strum::IntoEnumIterator;
-use strum_macros::EnumIter;
-
 
 mod lexer;
 mod parser;

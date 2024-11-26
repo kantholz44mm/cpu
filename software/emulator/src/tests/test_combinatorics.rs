@@ -1,7 +1,6 @@
 
 #[cfg(test)]
 mod tests {
-    use std::intrinsics::wrapping_add;
     use crate::combinatorics::{add_sub_word, alu, and, bools_to_u8, decode_2, deselect_2, full_adder, mux, mux_word, nand, nor, not, opcode_to_bools, or, or_nor_xor_and_word, shift_left_word, shift_right_word, shift_word, u8_to_bools, xor};
 
     #[test]

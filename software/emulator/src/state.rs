@@ -1,5 +1,5 @@
 use std::ops::Range;
-use std::{io::{self, Read}, ops::RangeBounds};
+use std::io;
 
 use image::{ImageBuffer, Luma};
 use isa::arch::{ControlFlags, DoubleWord, FlagWriteMode, Instruction, Opcode, OperandSelect, QuadWord, Register, Word, ADDRESS_RANGE, NUM_OPCODES, NUM_REGISTERS};

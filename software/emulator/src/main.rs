@@ -1,7 +1,6 @@
-use std::{any::type_name_of_val, time::Instant};
-
-use emulator::{combinatorics::{self, bools_to_u8, mux_word, u8_to_bools}, state::State};
-use isa::arch::{Opcode, ADDRESS_RANGE, NUM_REGISTERS};
+use std::time::Instant;
+use emulator::state::State;
+use isa::arch::{ADDRESS_RANGE, NUM_REGISTERS};
 
 fn main() {
 

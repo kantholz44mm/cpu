@@ -8,6 +8,7 @@
 @define COLOR   0xFF
 
 NOP
+
 MOV R1, X_START
 MOV R2, Y_START
 

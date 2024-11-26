@@ -1,5 +1,3 @@
-use core::panic;
-
 use regex::Regex;
 use isa::arch::{Opcode, Register};
 
@@ -26,7 +24,7 @@ pub fn lex_number<'a>(input: &'a str) -> Option<(Token<'a>, usize)> {
     Some((Token::Number(value as i64 * sign), captures[0].chars().count()))
 }
 
-pub fn lex_register<'a>(input: &'a str) -> Option<(Token, usize)> {
+pub fn lex_register<'a>(input: &'a str) -> Option<(Token<'a>, usize)> {
     if input.len() < 2 {
         None
     } else if input.len() > 2 && input.as_bytes()[2].is_ascii_alphanumeric() {
@@ -46,7 +44,7 @@ pub fn lex_register<'a>(input: &'a str) -> Option<(Token, usize)> {
     }
 }
 
-pub fn lex_operation<'a>(input: &'a str) -> Option<(Token, usize)> {
+pub fn lex_operation<'a>(input: &'a str) -> Option<(Token<'a>, usize)> {
     let mnemonic_length = input.find(|b: char| !b.is_alphanumeric()).unwrap_or(input.len());
     let mnemonic = &input[..mnemonic_length];
     match mnemonic {
@@ -70,7 +68,7 @@ pub fn lex_operation<'a>(input: &'a str) -> Option<(Token, usize)> {
     }
 }
 
-pub fn lex_identifier<'a>(input: &'a str) -> Option<(Token, usize)> {
+pub fn lex_identifier<'a>(input: &'a str) -> Option<(Token<'a>, usize)> {
     let token_length = input.find(|b: char| !(b.is_alphanumeric() || b == '_' || b == '-')).unwrap_or(input.len());
     let token = &input[..token_length];
 
@@ -81,7 +79,7 @@ pub fn lex_identifier<'a>(input: &'a str) -> Option<(Token, usize)> {
     }
 }
 
-pub fn lex_symbol<'a>(input: &'a str) -> Option<(Token, usize)> {
+pub fn lex_symbol<'a>(input: &'a str) -> Option<(Token<'a>, usize)> {
     Some((Token::Symbol(char::from(*input.as_bytes().get(0)?)), 1))
 }
 

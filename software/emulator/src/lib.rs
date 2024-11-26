@@ -1,4 +1,3 @@
-#![feature(core_intrinsics)]
 #![feature(new_range_api)]
 
 pub mod state;

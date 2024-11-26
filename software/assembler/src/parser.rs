@@ -200,6 +200,15 @@ fn resolve_labels<'a>(tokens: &[Token<'a>]) -> Result<Vec<Token<'a>>, String> {
                     i += 1;
                 }
             },
+            Token::Symbol('$') => {
+                if let Some([Token::Symbol('('), Token::Number(offset), Token::Symbol(')')]) = tokens.get(i+1..i+4) {
+                    resolved_tokens.push(Token::Number(address as i64 + offset));
+                    i += 4;
+                } else {
+                    resolved_tokens.push(Token::Number(address as i64));
+                    i += 1;
+                }
+            }
             Token::Operation(op) => {
                 resolved_tokens.push(Token::Operation(*op));
                 address += 1;
