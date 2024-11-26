@@ -24,7 +24,7 @@ fib_loop:
     MOV R4, RL
 
     ; check overflow
-    AND* RF, RF, 0x2
+    AND* RF, RF, 0x4
     BNZ done, RF
 
     PUSH16 R3, R4

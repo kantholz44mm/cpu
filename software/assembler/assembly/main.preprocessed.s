@@ -39,7 +39,7 @@
 
 
 
-AND* RZ, RZ, RZ
+ADC* RZ, RZ, RZ
 
 
 XOR* R1, RZ, 0
@@ -84,7 +84,7 @@ XOR* R3, RZ, RH
 XOR* R4, RZ, RL
 
     
-    AND* RF, RF, 0x2
+    AND* RF, RF, 0x4
     BNZ done, RF
 XOR* RH, RZ, 0xFF
 LW  RL, [0xFEFF]

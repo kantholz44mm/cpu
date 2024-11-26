@@ -1,5 +1,5 @@
 use core::panic;
-use std::{i8, io::{stdin, Read}, os, path::Path};
+use std::{i8, io::{stdin, Lines, Read}, os, path::Path};
 
 use isa::arch::{FlagWriteMode, Instruction, Opcode};
 use lexer::lex;
