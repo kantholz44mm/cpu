@@ -1,5 +1,7 @@
-use std::io::{self, Read};
+use std::ops::Range;
+use std::{io::{self, Read}, ops::RangeBounds};
 
+use image::{ImageBuffer, Luma};
 use isa::arch::{ControlFlags, DoubleWord, FlagWriteMode, Instruction, Opcode, OperandSelect, QuadWord, Register, Word, ADDRESS_RANGE, NUM_OPCODES, NUM_REGISTERS};
 
 use crate::combinatorics::{alu, bools_to_u8, opcode_to_bools, u8_to_bools};
@@ -95,9 +97,13 @@ impl State {
 
         if control_lines.regwen {
             if instruction.opcode.is_arithmetic() {
-                self.registers[instruction.rd as usize] = bools_to_u8(alu_result);
+                if instruction.rd != Register::RZ {
+                    self.registers[instruction.rd as usize] = bools_to_u8(alu_result);
+                }
             } else {
-                self.registers[instruction.rd as usize] = self.main_memory[address as usize];
+                if instruction.rd != Register::RZ {
+                    self.registers[instruction.rd as usize] = self.main_memory[address as usize];
+                }
             }
         }
 
@@ -130,5 +136,15 @@ impl State {
         } else {
             self.program_counter += 1;
         }
+    }
+
+    pub fn dump_ram_as_luma_bitmap(&self, range: Range<usize>, width: usize, path: &str) {
+        let num_bytes = range.end - range.start;
+        let height = (num_bytes as f32 / width as f32).ceil() as usize;
+        let mut luma_pixels = vec![0; width * height];
+
+        luma_pixels[0..num_bytes].copy_from_slice(&self.main_memory[range]);
+        let image = ImageBuffer::<Luma<u8>, _>::from_raw(width as u32, height as u32, luma_pixels).unwrap();
+        image.save(path).unwrap();
     }
 }

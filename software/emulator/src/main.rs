@@ -1,13 +1,13 @@
 use std::{any::type_name_of_val, time::Instant};
 
 use emulator::{combinatorics::{self, bools_to_u8, mux_word, u8_to_bools}, state::State};
-use isa::arch::{Opcode, NUM_REGISTERS};
+use isa::arch::{Opcode, ADDRESS_RANGE, NUM_REGISTERS};
 
 fn main() {
 
     let mut state = State::new();
     state.load_oprom("../assembler/assembly/microcode.bin").unwrap();
-    state.load_program("../assembler/assembly/main.bin").unwrap();
+    state.load_program("../assembler/assembly/graphics.bin").unwrap();
     state.main_memory.fill(0);
 
     state.halted = false;
@@ -32,10 +32,5 @@ fn main() {
     println!("halted at PC = {}", state.program_counter);
     println!("ran for {:?} @ ~{} instructions/second", runtime, instructions_executed as f32 / runtime.as_secs_f32());
 
-    for i in 0..32 {
-        let upper_byte = state.main_memory[0xFF00 + i * 2 + 0];
-        let lower_byte = state.main_memory[0xFF00 + i * 2 + 1];
-        let num16 = lower_byte as u16 | ((upper_byte as u16) << 8);
-        println!("{num16}");
-    }
+    state.dump_ram_as_luma_bitmap(0..(ADDRESS_RANGE as usize), 256, "memory_dump.bmp");
 }

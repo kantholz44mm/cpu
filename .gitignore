@@ -3,3 +3,4 @@
 /hardware/**/*.drl
 .vscode/
 /software/assembler/.vscode/
+/software/emulator/memory_dump.bmp
