@@ -15,12 +15,11 @@ fn main() {
     let start_timestamp = Instant::now();
 
     while !state.halted {
-        
-        const REGISTER_NAMES: [&'static str; NUM_REGISTERS] = [ "RZ", "R1", "R2", "R3", "R4", "RH", "RL", "RF" ];
+        const REGISTER_NAMES: [&'static str; NUM_REGISTERS] = [ "RZ", "R1", "R2", "R3", "R4", "RF", "RL", "RH" ];
         for i in 0..NUM_REGISTERS {
             print!("{}: {:02.X} ", REGISTER_NAMES[i], state.registers[i]);
         }
-        println!("");
+        println!(" PC: {:04.X}", state.program_counter);
         println!("instruction[{}]: {:?}", state.program_counter, state.program_memory[state.program_counter as usize]);
         state.tick();
         instructions_executed += 1;

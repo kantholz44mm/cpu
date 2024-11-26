@@ -42,40 +42,92 @@
 
 
 
+
+
+
+
 ADC* RZ, RZ, RZ
 XOR* R1, RZ, 50
-XOR* R2, RZ, 50
-
-start_line:
-XOR* R3, RZ, 150
-XOR* R1, RZ, 50
-line_loop:
+XOR* R2, RZ, 42
+XOR* RH, RZ, 0xFF
+LW  RL, [0xFEFF]
+SW [RH:RL], R1
 XOR* RF, RZ, 0
-SBB RZ, R3, R1
-
-    
-    AND* RF, RF, 0x1
-    BNZ next_line, RF
-
-    
-XOR* RH, RZ, R2
-XOR* RL, RZ, R1
-XOR* RF, RZ, 0xFF
-    SW [RH:RL], RF
+ADC RL, RL, 1
+SW [0xFEFF], RL
+XOR* RH, RZ, 0xFF
+LW  RL, [0xFEFF]
+SW [RH:RL], R2
 XOR* RF, RZ, 0
-ADC R1, R1, 1
+ADC RL, RL, 1
+SW [0xFEFF], RL
+LA $(1)
+BZ my_cool_function, RZ
 
-    BZ line_loop, RZ
+HCF
 
-next_line:
-XOR* R3, RZ, 100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+my_cool_function:
+XOR* R3, RZ, RH
+XOR* R4, RZ, RL
+XOR* RH, RZ, 0xFF
+LW  RL, [0xFEFF]
 XOR* RF, RZ, 0
-SBB RZ, R3, R2
-    AND* RF, RF, 0x1
-    BNZ done, RF
+SBB RL, RL, 1
+SW [0xFEFF], RL
+LW R1, [RH:RL]
+XOR* RH, RZ, 0xFF
+LW  RL, [0xFEFF]
 XOR* RF, RZ, 0
-ADC R2, R2, 1
-    BZ start_line, RZ
-
-done:
-    HCF
+SBB RL, RL, 1
+SW [0xFEFF], RL
+LW R2, [RH:RL]
+XOR* RF, RZ, 0
+ADC R1, R1, R2
+XOR* RH, RZ, 0xFF
+LW  RL, [0xFEFF]
+SW [RH:RL], R1
+XOR* RF, RZ, 0
+ADC RL, RL, 1
+SW [0xFEFF], RL
+XOR* RH, RZ, R3
+XOR* RL, RZ, R4
+BZ RH:RL, RZ

@@ -47,3 +47,12 @@ ADC %0, %0, 1
 MOV RF, 0
 SBB %0, %0, 1
 @endmacro
+
+@macro CALL %0
+LA $(1)
+BZ %0, RZ
+@endmacro
+
+@macro RET
+BZ RH:RL, RZ
+@endmacro

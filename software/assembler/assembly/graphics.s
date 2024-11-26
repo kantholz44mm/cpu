@@ -9,36 +9,50 @@
 
 NOP
 
-MOV R1, X_START
-MOV R2, Y_START
+MOV R1, 50
+MOV R2, 42
+PUSH R1
+PUSH R2
 
-start_line:
-    MOV R3, X_END
-    MOV R1, X_START
-line_loop:
-    SUB RZ, R3, R1
+CALL my_cool_function
+POP R1
 
-    ; check if zero, if yes, go to next line
-    AND* RF, RF, 0x1
-    BNZ next_line, RF
+HCF
 
-    ; draw pixel
-    MOV RH, R2
-    MOV RL, R1
-    MOV RF, COLOR
-    SW [RH:RL], RF
-    INC R1
 
-    BZ line_loop, RZ
+;MOV R1, X_START
+;MOV R2, Y_START
+;
+;start_line:
+;    MOV R3, X_END
+;    MOV R1, X_START
+;line_loop:
+;    SUB RZ, R3, R1
+;
+;    ; check if zero, if yes, go to next line
+;    AND* RF, RF, 0x1
+;    BNZ next_line, RF
+;
+;    ; draw pixel
+;    MOV RH, R2
+;    MOV RL, R1
+;    MOV RF, COLOR
+;    SW [RH:RL], RF
+;    INC R1
+;
+;    BZ line_loop, RZ
+;
+;next_line:
+;    MOV R3, Y_END
+;    SUB RZ, R3, R2
+;    AND* RF, RF, 0x1
+;    BNZ done, RF
+;
+;    INC R2
+;    BZ start_line, RZ
+;
+;done:
+;    HCF
 
-next_line:
-    MOV R3, Y_END
-    SUB RZ, R3, R2
-    AND* RF, RF, 0x1
-    BNZ done, RF
 
-    INC R2
-    BZ start_line, RZ
-
-done:
-    HCF
+@include? <function_calls.s>
