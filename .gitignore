@@ -1,6 +1,7 @@
 /software/*/target/
 /hardware/**/*.gbr
 /hardware/**/*.drl
+/hardware/**/*.zip
 .vscode/
 /software/assembler/.vscode/
 /software/emulator/memory_dump.bmp
