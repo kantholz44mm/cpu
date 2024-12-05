@@ -10786,15 +10786,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C6577912"
-			(at 524.51 381.3174 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "120526c4-ff5d-4756-b610-0ffca577d20d")
 		)
@@ -10859,15 +10850,6 @@
 		)
 		(property "Description" "Resistor"
 			(at 402.59 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C4410"
-			(at 405.13 107.9499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10941,15 +10923,6 @@
 		)
 		(property "Description" "6.3A Id, 20V Vds, 21mOhm Rds, N-Channel StrongIRFET Power MOSFET, SOT-23"
 			(at 270.51 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C5123965"
-			(at 264.16 76.1999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11031,15 +11004,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C17901"
-			(at 217.17 97.7899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "6051ea0f-f0b9-4311-8e11-e23ee7cc446b")
 		)
@@ -11104,15 +11068,6 @@
 		)
 		(property "Description" "Resistor"
 			(at 520.7 251.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C17901"
-			(at 523.24 250.1899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11185,15 +11140,6 @@
 		)
 		(property "Description" "6.3A Id, 20V Vds, 21mOhm Rds, N-Channel StrongIRFET Power MOSFET, SOT-23"
 			(at 518.16 370.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C5123965"
-			(at 524.51 369.5699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11498,15 +11444,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5586"
-			(at 320.0317 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "6"
 			(uuid "7a510459-650e-43c0-95d7-c78b5044155e")
 		)
@@ -11727,15 +11664,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C920964"
-			(at 226.06 469.8999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "28547198-a585-4083-96f4-8a2143903c2a")
 		)
@@ -11800,15 +11728,6 @@
 		)
 		(property "Description" "Resistor"
 			(at 347.98 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C4410"
-			(at 350.52 107.9499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11993,15 +11912,6 @@
 		)
 		(property "Description" "Resistor"
 			(at 520.7 436.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C17901"
-			(at 523.24 435.6099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12194,15 +12104,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5123965"
-			(at 524.51 184.1499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "c8c4800b-6967-4324-ac6c-1113f5194e7a")
 		)
@@ -12271,15 +12172,6 @@
 		)
 		(property "Description" "6.3A Id, 20V Vds, 21mOhm Rds, N-Channel StrongIRFET Power MOSFET, SOT-23"
 			(at 518.16 417.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C5123965"
-			(at 524.51 416.5599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12533,15 +12425,6 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 222.25 194.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C920964"
-			(at 226.06 193.0399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12930,15 +12813,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C6577912"
-			(at 524.51 242.8874 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "246566fe-8809-46f7-9f7c-18d16ecc7c1f")
 		)
@@ -13303,15 +13177,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C17901"
-			(at 523.24 342.8999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "9a7a936b-0536-420a-8d8e-1c02b80320f9")
 		)
@@ -13496,15 +13361,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C17901"
-			(at 523.24 157.4799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "886c0d89-0f67-48cd-a15e-700a86caa66b")
 		)
@@ -13570,15 +13426,6 @@
 		)
 		(property "Description" "6.3A Id, 20V Vds, 21mOhm Rds, N-Channel StrongIRFET Power MOSFET, SOT-23"
 			(at 518.16 232.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C5123965"
-			(at 524.51 231.1399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14519,15 +14366,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C920964"
-			(at 232.41 147.3199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "c9c5b655-4707-43b6-a1a6-6f9e36cca7ab")
 		)
@@ -15288,15 +15126,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C920964"
-			(at 232.41 335.2799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "2b1f4712-281d-4984-92e8-d10395947c78")
 		)
@@ -15361,15 +15190,6 @@
 		)
 		(property "Description" "Resistor"
 			(at 420.37 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C4410"
-			(at 422.91 107.9499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15735,15 +15555,6 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 215.9 427.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C920964"
-			(at 219.71 426.7199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17261,15 +17072,6 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 228.6 194.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C920964"
-			(at 232.41 193.0399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19326,15 +19128,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C920964"
-			(at 219.71 382.2699 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "9eaedae0-ab6b-442b-b799-744bf5c40fb4")
 		)
@@ -19397,15 +19190,6 @@
 		)
 		(property "Description" "Light emitting diode"
 			(at 237.49 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C6577912"
-			(at 241.3 89.2174 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19703,15 +19487,6 @@
 		)
 		(property "Description" "Resistor"
 			(at 252.73 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C17901"
-			(at 255.27 97.7899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20077,15 +19852,6 @@
 		)
 		(property "Description" "6.3A Id, 20V Vds, 21mOhm Rds, N-Channel StrongIRFET Power MOSFET, SOT-23"
 			(at 392.43 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C5123965"
-			(at 398.78 85.0899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21018,15 +20784,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5586"
-			(at 123.19 62.2299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "6"
 			(uuid "7a510459-650e-43c0-95d7-c78b5044155e")
 		)
@@ -21493,15 +21250,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C17901"
-			(at 240.03 97.7899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "aaba9ff6-7c48-4f89-b316-2f8d20702f8a")
 		)
@@ -21754,15 +21502,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5123965"
-			(at 524.51 462.2799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "a68516b8-8771-406b-a4f2-171d966a00a3")
 		)
@@ -21830,15 +21569,6 @@
 		)
 		(property "Description" "Resistor"
 			(at 520.7 389.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C17901"
-			(at 523.24 388.6199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22341,15 +22071,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C920964"
-			(at 226.06 382.2699 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "f0ae99e6-3a53-4a24-a60d-c5f223156f30")
 		)
@@ -22666,15 +22387,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C17901"
-			(at 523.24 481.3299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "6c8b1cb3-72b1-4093-b2d0-af9c489414b5")
 		)
@@ -22738,15 +22450,6 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 228.6 383.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C920964"
-			(at 232.41 382.2699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22933,15 +22636,6 @@
 		)
 		(property "Description" "6.3A Id, 20V Vds, 21mOhm Rds, N-Channel StrongIRFET Power MOSFET, SOT-23"
 			(at 255.27 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C5123965"
-			(at 248.92 76.1999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23356,15 +23050,6 @@
 		)
 		(property "Description" "6.3A Id, 20V Vds, 21mOhm Rds, N-Channel StrongIRFET Power MOSFET, SOT-23"
 			(at 518.16 278.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C5123965"
-			(at 524.51 276.8599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24255,15 +23940,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5586"
-			(at 370.8317 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "6"
 			(uuid "7a510459-650e-43c0-95d7-c78b5044155e")
 		)
@@ -24363,15 +24039,6 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 104.14 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C920964"
-			(at 107.95 62.2299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24555,15 +24222,6 @@
 		)
 		(property "Description" "Light emitting diode"
 			(at 520.7 335.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C6577912"
-			(at 524.51 335.5974 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25114,15 +24772,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C6577912"
-			(at 218.44 89.2174 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "0c5ae143-d8f9-467a-bddd-c8f99f003ef1")
 		)
@@ -25186,15 +24835,6 @@
 		)
 		(property "Description" "Light emitting diode"
 			(at 520.7 288.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C6577912"
-			(at 524.51 288.6074 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25791,15 +25431,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C920964"
-			(at 226.06 147.3199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "3a9e2c79-2a2b-4777-a467-533cd83fbe9f")
 		)
@@ -25870,15 +25501,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C920964"
-			(at 232.41 241.2999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "20f28db4-3fb4-4ceb-89c8-41808349037d")
 		)
@@ -25942,15 +25564,6 @@
 		)
 		(property "Description" "Light emitting diode"
 			(at 520.7 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C6577912"
-			(at 524.51 195.8974 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26492,15 +26105,6 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 222.25 287.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C920964"
-			(at 226.06 285.7499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27090,15 +26694,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C920964"
-			(at 219.71 241.2999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "2ef33c2a-c77c-490f-9bd7-01be9f1cb592")
 		)
@@ -27395,15 +26990,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C920964"
-			(at 232.41 469.8999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "af20506a-f054-4259-9fc1-bf165f5c0d86")
 		)
@@ -27467,15 +27053,6 @@
 		)
 		(property "Description" "Light emitting diode"
 			(at 252.73 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C6577912"
-			(at 256.54 89.2174 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -28318,15 +27895,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C920964"
-			(at 219.71 285.7499 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "7bf2c790-0a16-4121-8524-f822467216c4")
 		)
@@ -28390,15 +27958,6 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 228.6 287.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C920964"
-			(at 232.41 285.7499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29788,15 +29347,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C920964"
-			(at 219.71 469.8999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "e2948609-2d88-4025-9bb7-99d8cdbe2f25")
 		)
@@ -30045,15 +29595,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5586"
-			(at 355.5917 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "6"
 			(uuid "7a510459-650e-43c0-95d7-c78b5044155e")
 		)
@@ -30295,15 +29836,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5123965"
-			(at 233.68 76.1999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "7bd30fad-6eb1-41ae-8fe2-a949fc0de249")
 		)
@@ -30373,15 +29905,6 @@
 		)
 		(property "Description" "6.3A Id, 20V Vds, 21mOhm Rds, N-Channel StrongIRFET Power MOSFET, SOT-23"
 			(at 358.14 86.36 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C5123965"
-			(at 351.79 85.0899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30654,15 +30177,6 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 335.28 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C5586"
-			(at 335.2717 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31375,15 +30889,6 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 222.25 242.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C920964"
-			(at 226.06 241.2999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32271,15 +31776,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C920964"
-			(at 219.71 193.0399 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "61977137-657f-4944-aa0f-f968998b5493")
 		)
@@ -32345,15 +31841,6 @@
 		)
 		(property "Description" "6.3A Id, 20V Vds, 21mOhm Rds, N-Channel StrongIRFET Power MOSFET, SOT-23"
 			(at 518.16 325.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C5123965"
-			(at 524.51 323.8499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32493,15 +31980,6 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 228.6 427.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C920964"
-			(at 232.41 426.7199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32762,15 +32240,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5123965"
-			(at 416.56 85.0899 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "1b99b5a4-5f68-4c6b-97ca-f1b7f0d2fff2")
 		)
@@ -32904,15 +32373,6 @@
 		)
 		(property "Description" "Light emitting diode"
 			(at 520.7 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C6577912"
-			(at 524.51 150.1774 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -33104,15 +32564,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C17901"
-			(at 523.24 203.1999 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "4263760b-ceae-4b48-81cf-577add0395b7")
 		)
@@ -33176,15 +32627,6 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 215.9 336.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C920964"
-			(at 219.71 335.2799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -33323,15 +32765,6 @@
 		)
 		(property "Description" "Resistor"
 			(at 520.7 297.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C17901"
-			(at 523.24 295.9099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -34146,15 +33579,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C920964"
-			(at 226.06 426.7199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "462e5ba5-f3bf-4420-90f3-f87661b79685")
 		)
@@ -34747,15 +34171,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C920964"
-			(at 226.06 335.2799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "1"
 			(uuid "0044be4e-028d-4757-b3a7-f6d5dccd7f0d")
 		)
@@ -34819,15 +34234,6 @@
 		)
 		(property "Description" "Light emitting diode"
 			(at 267.97 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C6577912"
-			(at 271.78 89.2174 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -34899,15 +34305,6 @@
 		)
 		(property "Description" "Resistor"
 			(at 267.97 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C17901"
-			(at 270.51 97.7899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35460,15 +34857,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5123965"
-			(at 524.51 138.4299 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "57a42be8-a906-45bd-9555-37500739cf95")
 		)
@@ -35535,15 +34923,6 @@
 		)
 		(property "Description" "Light emitting diode"
 			(at 520.7 427.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C6577912"
-			(at 524.51 428.3074 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35621,15 +35000,6 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C6577912"
-			(at 524.51 474.0274 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
 		(pin "2"
 			(uuid "3264c677-8d33-4126-b5f3-99f892465074")
 		)
@@ -35693,15 +35063,6 @@
 		)
 		(property "Description" "Unpolarized capacitor"
 			(at 215.9 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C920964"
-			(at 219.71 147.3199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
