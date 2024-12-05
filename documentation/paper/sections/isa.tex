@@ -1,0 +1,52 @@
+\section{Instruction Set Architecture}
+
+An \ac{isa} defines the shared behaviour of different implementations of said \ac{isa}. It is an abstract model that guarantees compatibility of software between computers of different implementation. This is called binary intercompatibility. It describes the supported set of instructions, their behaviour, as well as a memory model. The memory model describes the number and roles of all registers, as well as the behaviour of accessing memory and external interfaces. The latter part is also called the ``IO-Model'' of the \ac{isa}. An \ac{isa} may be designed to be extensible or closed for future modifications. 
+
+\subsection{Memory Model}
+
+There are three major, proven memory models for organizing the program and main memory of a computing system:
+
+\begin{itemize}
+    \item Von Neumann
+    \item Harvard
+    \item Modified Harvard
+\end{itemize}
+
+\subsection{Execution Model}
+
+The execution model describes how the computer achieves computation. This means the order of execution and the number and location of operands and results. As with the memory model, there are multiple options to choose from:
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/drawio/stack_architecture.png} % Replace with your image file
+        \caption{Stack based architecture}
+        \label{fig:stack_based_architecture}
+    \end{subfigure}
+    \hfill % Adds spacing between subfigures
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/drawio/accumulator_architecture.png} % Replace with your image file
+        \caption{Accumulator architecture}
+        \label{fig:accumulator_architecture}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/drawio/register_architecture.png} % Replace with your image file
+        \caption{Register architecture}
+        \label{fig:register_architecture}
+    \end{subfigure}
+
+    \caption{Working principle of the three execution models Stack, Accumulator and Register}
+    \label{fig:execution_models}
+\end{figure}
+
+As shown in \autoref{fig:execution_models}, the stack based model uses a single memory, which is organised by the \ac{lifo} principle. The operands of an operation are always the elements at a specified offset from the stack top. For example, an addition may pop the top two elements off the top of the stack and push the result back ontop. This method has the advantage of not having to specify operand locations in the instruction, allowing for more compact code. However, it lacks the ability to randomly access memory and frequent stack operations can be slow. 
+
+The accumulator-based execution model has a fixed number of registers, one of which is the designated accumulator register. All operations that output a value will store this result in the accumulator register. The accumulator register is also always one of the operands to an operation. The other operand, if required, is read either from memory or from another register, which can either also be fixed or freely chosen by the programmer, depending on the instruction encoding scheme. This execution model is easy to implement and the instructions are also smaller compared to fully addressable operand/destination registers. It is often used in early \ac{cpu} such as the Intel 8008 and 6502. However, its performance is limited by the bottleneck of the accumulator register. it also requires frequent transfers between memory and registers or between registers to save intermediary results, which would otherwise be overwritten by another operation.
+
+The register based execution model provides a fixed set of registers. This model is subdivided further into the ``Register-Register'' and ``Memory-Register'' models. \autoref{fig:register_architecture} shows the former, which is also known as a ``Load-Store architecture'', since the only way of transferring data between registers and memory is via the dedicated load and store operations. All operands and result destinations of an arithmetic operation are registers. The ``Memory-Register'' model allows operations to be read from memory instead. Due to the bottleneck in speed of modern memories, nearly all modern register based architectures are of the Load-Store variant. The register based execution model is highly flexible and well understood. Operands and intermediary results can be reused efficiently and compilers can deterministically optimize register allocation, allowing for higher performance.
+
+The end result of this project is a physical implementation that must use one of these models. Since most of the popular modern architectures use the ``Load-Store'' model, this model was chosen for the \ac{isa}. Also, the lecture ``Rechnerarchitekturen'' develops a \ac{cpu} similar to the \ac{mips} architecture. \ac{mips} is also a ``Load-Store'' \ac{isa}. Therefore, the resulting physical \ac{cpu} can also be used for visualizing the working principles of this lecture.
