@@ -1,181 +1,120 @@
 use std::collections::HashMap;
-use isa::arch::{DoubleWord, FlagWriteMode, Instruction, Opcode, OperandSelect, Register, Word};
+use isa::arch::{Instruction, Opcode, Register};
 use crate::lexer::Token;
 
-fn parse_line<'a>(tokens: &[Token<'a>]) -> Result<Option<Instruction>, String> {
+pub fn parse_line<'a>(mut tokens: &[Token<'a>]) -> Result<Option<Instruction>, String> {
 
-    // optionally, an instruction
-    match tokens {
-        [] => Ok(None), // empty line, no instruction
-        [Token::Operation(Opcode::HCF)] => Ok(Some(Instruction { opcode: Opcode::HCF, ..Default::default() })),
-        [
-            Token::Operation(opcode),
-            modifiers@..,
-            Token::Register(rd),
-            Token::Symbol(','),
-            Token::Register(ro1),
-            Token::Symbol(','),
-            Token::Register(ro2)
-        ] if opcode.is_arithmetic() => {
-            let flagmode = match modifiers {
-                [] => FlagWriteMode::WriteFlags,
-                [Token::Symbol('*')] => FlagWriteMode::DontWriteFlags,
-                _ => { return Err(format!("Expected modifier or parameter list after operation '{:?}' but got {:?}", opcode, &tokens[..tokens.len().min(8)])); }
-            };
+    if let [] = tokens {
+        return Ok(None); // empty line, which is fine.
+    }
 
-            Ok(Some(Instruction {
-                opcode: *opcode,
-                operand: OperandSelect::OperandRegister,
-                flags: flagmode,
-                rd: *rd,
-                ro1: *ro1,
-                ro2: *ro2,
-                immediate: 0x0000,
-            }))
+    let opcode: Opcode;
+
+    if let [Token::Operation(op), ..] = tokens {
+        opcode = *op;
+        tokens = &tokens[1..];
+    } else {
+        return Err(format!("Expected Operation identifier as first token in line but got: {:?}", tokens[0]));
+    }
+
+    let operandlist_type = opcode.operandlist_type();
+    let operation = match operandlist_type {
+        isa::arch::OperandList::Empty => {
+            if let [] = tokens {
+                Some(Instruction {
+                    opcode,
+                    rd: Register::RZ,
+                    ro1: Register::RZ,
+                    ro2: Register::RZ,
+                    immediate: 0,
+                })
+            } else {
+                None
+            }
         },
-        [
-            Token::Operation(opcode),
-            modifiers@..,
-            Token::Register(rd),
-            Token::Symbol(','),
-            Token::Register(ro1),
-            Token::Symbol(','),
-            Token::Number(immediate)
-        ] if opcode.is_arithmetic() => {
-            let flagmode = match modifiers {
-                [] => FlagWriteMode::WriteFlags,
-                [Token::Symbol('*')] => FlagWriteMode::DontWriteFlags,
-                _ => { return Err(format!("Expected modifier or parameter list after operation '{:?}' but got {:?}", opcode, &tokens[..tokens.len().min(8)])); }
-            };
-            Ok(Some(Instruction {
-                opcode: *opcode,
-                operand: OperandSelect::OperandImmediate,
-                flags: flagmode,
-                rd: *rd,
-                ro1: *ro1,
-                ro2: Register::RZ,
-                immediate: *immediate as Word as DoubleWord,
-            }))
+        isa::arch::OperandList::RdRo1Ro2 => {
+            if let [Token::Register(rd), Token::Symbol(','), Token::Register(ro1), Token::Symbol(','), Token::Register(ro2)] = tokens {
+                Some(Instruction {
+                    opcode,
+                    rd: *rd,
+                    ro1: *ro1,
+                    ro2: *ro2,
+                    immediate: 0,
+                })
+            } else {
+                None
+            }
         },
-        [
-            Token::Operation(Opcode::LW),
-            Token::Register(rd),
-            Token::Symbol(','),
-            Token::Symbol('['),
-            Token::Register(Register::RH),
-            Token::Symbol(':'),
-            Token::Register(Register::RL),
-            Token::Symbol(']')
-        ] => {
-            Ok(Some(Instruction {
-                opcode: Opcode::LW,
-                operand: OperandSelect::OperandRegister,
-                rd: *rd,
-                ..Default::default()
-            }))
+        isa::arch::OperandList::RdRo1Imm8 => {
+            if let [Token::Register(rd), Token::Symbol(','), Token::Register(ro1), Token::Symbol(','), Token::Number(immediate)] = tokens {
+                Some(Instruction {
+                    opcode,
+                    rd: *rd,
+                    ro1: *ro1,
+                    ro2: Register::RZ,
+                    immediate: *immediate as u16,
+                })
+            } else {
+                None
+            }
         },
-        [
-            Token::Operation(Opcode::LW),
-            Token::Register(rd),
-            Token::Symbol(','),
-            Token::Symbol('['),
-            Token::Number(address),
-            Token::Symbol(']')
-        ] => {
-            Ok(Some(Instruction {
-                opcode: Opcode::LW,
-                operand: OperandSelect::OperandImmediate,
-                rd: *rd,
-                immediate: *address as DoubleWord,
-                ..Default::default()
-            }))
+        isa::arch::OperandList::RdBracketedRHRL => {
+            if let [Token::Register(rd), Token::Symbol(','), Token::Symbol('['), Token::Register(Register::RH), Token::Symbol(':'), Token::Register(Register::RL), Token::Symbol(']')] = tokens {
+                Some(Instruction {
+                    opcode,
+                    rd: *rd,
+                    ro1: Register::RZ,
+                    ro2: Register::RZ,
+                    immediate: 0,
+                })
+            } else {
+                None
+            }
         },
-        [
-            Token::Operation(Opcode::SW),
-            Token::Symbol('['),
-            Token::Register(Register::RH),
-            Token::Symbol(':'),
-            Token::Register(Register::RL),
-            Token::Symbol(']'),
-            Token::Symbol(','),
-            Token::Register(ro2)
-        ] => {
-            Ok(Some(Instruction {
-                opcode: Opcode::SW,
-                operand: OperandSelect::OperandRegister,
-                ro2: *ro2,
-                ..Default::default()
-            }))
+        isa::arch::OperandList::RdBracketedImm16 => {
+            if let [Token::Register(rd), Token::Symbol(','), Token::Symbol('['), Token::Number(immediate), Token::Symbol(']')] = tokens {
+                Some(Instruction {
+                    opcode,
+                    rd: *rd,
+                    ro1: Register::RZ,
+                    ro2: Register::RZ,
+                    immediate: *immediate as u16,
+                })
+            } else {
+                None
+            }
         },
-        [
-            Token::Operation(Opcode::SW),
-            Token::Symbol('['),
-            Token::Number(address),
-            Token::Symbol(']'),
-            Token::Symbol(','),
-            Token::Register(ro2)
-        ] => {
-            Ok(Some(Instruction {
-                opcode: Opcode::SW,
-                operand: OperandSelect::OperandImmediate,
-                ro2: *ro2,
-                immediate: *address as DoubleWord,
-                ..Default::default()
-            }))
+        isa::arch::OperandList::BracketedRHRLRo2 => {
+            if let [Token::Symbol('['), Token::Register(Register::RH), Token::Symbol(':'), Token::Register(Register::RL), Token::Symbol(']'), Token::Symbol(','), Token::Register(ro2)] = tokens {
+                Some(Instruction {
+                    opcode,
+                    rd: Register::RZ,
+                    ro1: Register::RZ,
+                    ro2: *ro2,
+                    immediate: 0,
+                })
+            } else {
+                None
+            }
         },
-        [
-            Token::Operation(opcode),
-            Token::Register(ro2)
-        ] if opcode.is_branch() => {
-            Ok(Some(Instruction {
-                opcode: *opcode,
-                operand: OperandSelect::OperandRegister,
-                ro2: *ro2,
-                ..Default::default()
-            }))
-        },
-        [
-            Token::Operation(opcode),
-            Token::Number(address),
-            Token::Symbol(','),
-            Token::Register(ro2)
-        ] if opcode.is_branch() => {
-            Ok(Some(Instruction {
-                opcode: *opcode,
-                operand: OperandSelect::OperandImmediate,
-                immediate: *address as DoubleWord,
-                ro2: *ro2,
-                ..Default::default()
-            }))
-        },
-        [
-            Token::Operation(opcode),
-            Token::Register(Register::RH),
-            Token::Symbol(':'),
-            Token::Register(Register::RL),
-            Token::Symbol(','),
-            Token::Register(ro2)
-        ] if opcode.is_branch() => {
-            Ok(Some(Instruction {
-                opcode: *opcode,
-                operand: OperandSelect::OperandRegister,
-                ro2: *ro2,
-                ..Default::default()
-            }))
-        },
-        [
-            Token::Operation(Opcode::LA),
-            Token::Number(immediate)
-        ] => {
-            Ok(Some(Instruction {
-                opcode: Opcode::LA,
-                operand: OperandSelect::OperandImmediate,
-                immediate: *immediate as DoubleWord,
-                ..Default::default()
-            }))
-        },
-        [Token::Operation(opcode), paramlist @..] => Err(format!("invalid parameters for Opcode {opcode:?}: {:?}", paramlist)),
-        _ => Err(format!("invalid input sequence: {:?}", &tokens[..tokens.len().min(8)]))
+        isa::arch::OperandList::BracketedImm16Ro2 => {
+            if let [Token::Symbol('['), Token::Number(immediate), Token::Symbol(']'), Token::Symbol(','), Token::Register(ro2)] = tokens {
+                Some(Instruction {
+                    opcode,
+                    rd: Register::RZ,
+                    ro1: Register::RZ,
+                    ro2: *ro2,
+                    immediate: *immediate as u16,
+                })
+            } else {
+                None
+            }
+        }
+    };
+
+    match operation {
+        Some(op) => Ok(Some(op)),
+        None => Err(format!("Opcode {:?} expected an operand list of this format: '{:?}' but got: {:?}", opcode, operandlist_type, tokens)),
     }
 }
 

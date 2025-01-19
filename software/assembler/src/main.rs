@@ -1,33 +1,18 @@
+#![feature(variant_count)]
+
 use std::path::Path;
 use isa::arch::Opcode;
 use lexer::lex;
 use parser::parse;
 use preprocessor::preprocess;
+use strum::IntoEnumIterator;
 
 mod lexer;
 mod parser;
 mod preprocessor;
 
 fn assemble_microcode() -> Vec<u8> {
-    let instructions: [Opcode; 16] = [
-        Opcode::ADC,
-        Opcode::SBB,
-        Opcode::SHL,
-        Opcode::SHR,
-        Opcode::OR,
-        Opcode::NOR,
-        Opcode::XOR,
-        Opcode::AND,
-        Opcode::LW,
-        Opcode::SW,
-        Opcode::BZ,
-        Opcode::BNZ,
-        Opcode::RES0,
-        Opcode::RES1,
-        Opcode::LA,
-        Opcode::HCF,
-    ];
-    instructions.iter().flat_map(|opcode| opcode.control_flags().encode().to_le_bytes()).collect()
+    Opcode::iter().flat_map(|opcode| opcode.control_flags().encode().to_le_bytes()).collect()
 }
 
 fn main() -> Result<(), String> {
@@ -37,7 +22,7 @@ fn main() -> Result<(), String> {
         let assembly = assemble_microcode();
         std::fs::write("microcode.bin", &assembly).map_err(|err| err.to_string())?;
 
-        println!("Assembled microcode, binary size: {} B", assembly.len());
+        println!("Assembled microcode for {} opcodes, binary size: {} B", std::mem::variant_count::<Opcode>(), assembly.len());
         Ok(())
     } else if args.len() < 2 {
         Err(String::from("missing arguments."))
@@ -46,7 +31,7 @@ fn main() -> Result<(), String> {
         let output_file = input_file.with_extension("bin");
         let input = preprocess(input_file)?;
 
-        if args.contains(&String::from("--dump_preprocessed")) {
+        if args.contains(&String::from("--preprocess")) {
             let preprocessed_file = input_file.with_extension("preprocessed.s");
             std::fs::write(preprocessed_file, &input).map_err(|err| err.to_string())?;
         }

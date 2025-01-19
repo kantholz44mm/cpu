@@ -47,24 +47,11 @@ pub fn lex_register<'a>(input: &'a str) -> Option<(Token<'a>, usize)> {
 pub fn lex_operation<'a>(input: &'a str) -> Option<(Token<'a>, usize)> {
     let mnemonic_length = input.find(|b: char| !b.is_alphanumeric()).unwrap_or(input.len());
     let mnemonic = &input[..mnemonic_length];
-    match mnemonic {
-        "ADC" | "adc" => Some((Token::Operation(Opcode::ADC), mnemonic_length)),
-        "SBB" | "sbb" => Some((Token::Operation(Opcode::SBB), mnemonic_length)),
-        "SHL" | "shl" => Some((Token::Operation(Opcode::SHL), mnemonic_length)),
-        "SHR" | "shr" => Some((Token::Operation(Opcode::SHR), mnemonic_length)),
-        "OR"  | "or"  => Some((Token::Operation(Opcode::OR),  mnemonic_length)),
-        "AND" | "and" => Some((Token::Operation(Opcode::AND), mnemonic_length)),
-        "XOR" | "xor" => Some((Token::Operation(Opcode::XOR), mnemonic_length)),
-        "NAND"| "nand"=> Some((Token::Operation(Opcode::NAND),mnemonic_length)),
-        "SW"  | "sw"  => Some((Token::Operation(Opcode::SW),  mnemonic_length)),
-        "LW"  | "lw"  => Some((Token::Operation(Opcode::LW),  mnemonic_length)),
-        "BZ"  | "bz"  => Some((Token::Operation(Opcode::BZ),  mnemonic_length)),
-        "BNZ" | "bnz" => Some((Token::Operation(Opcode::BNZ), mnemonic_length)),
-        //RES0
-        //RES1
-        "LA"  | "la"  => Some((Token::Operation(Opcode::LA),  mnemonic_length)),
-        "HCF" | "hcf" => Some((Token::Operation(Opcode::HCF), mnemonic_length)),
-        _ => None
+
+    if let Some(opcode) = mnemonic.parse::<Opcode>().ok() {
+        Some((Token::Operation(opcode), mnemonic_length))
+    } else {
+        None
     }
 }
 

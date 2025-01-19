@@ -4,42 +4,51 @@
 @define SP 0xFEFF
 
 @macro PUSH %0
-MOV RH, 0xFF
-LW  RL, [SP]
+MOVI RH, 0xFF
+LWI  RL, [SP]
 SW [RH:RL], %0
-INC RL
-SW [SP], RL
+INCNF RL
+SWI [SP], RL
 @endmacro
 
 @macro POP %0
-MOV RH, 0xFF
-LW  RL, [SP]
-DEC RL
-SW [SP], RL
+MOVI RH, 0xFF
+LWI  RL, [SP]
+DECNF RL
+SWI [SP], RL
 LW %0, [RH:RL]
 @endmacro
 
 @macro PEEK %0
-MOV RH, 0xFF
-LW  RL, [SP]
+MOVI RH, 0xFF
+LWI  RL, [SP]
 LW %0, [RH:RL]
 @endmacro
 
 @macro PUSH16 %0, %1
-PUSH %0
-PUSH %1
+MOVI RH, 0xFF
+LWI  RL, [SP]
+SW [RH:RL], %0
+INCNF RL
+SW [RH:RL], %1
+SWI [SP], RL
 @endmacro
 
 @macro POP16 %0, %1
-POP %1
-POP %0
+MOVI RH, 0xFF
+LWI  RL, [SP]
+DECNF RL
+LW %1, [RH:RL]
+DECNF RL
+LW %0, [RH:RL]
+SWI [SP], RL
 @endmacro
 
 @macro PEEK16 %0, %1
-MOV RH, 0xFF
-LW  RL, [SP]
-DEC RL
+MOVI RH, 0xFF
+LWI  RL, [SP]
+DECNF RL
 LW %1, [RH:RL]
-DEC RL
+DECNF RL
 LW %0, [RH:RL]
 @endmacro

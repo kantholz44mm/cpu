@@ -37,7 +37,7 @@ Alle Anweisungen sind mit einer festen Länge von 32 bits kodiert. Der Addressra
 ```
 | Byte                 |           0            |           1           |           2           |           4            |
 | Bit                  | 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 09 08 07 06 05 04 03 02 01 00 |
-| Field                |   OPCODE   |OS|WF|  |   RD   |   RO1  |   RO2  |                      IMM                       |
+| Field                |        OPCODE       |   RD   |   RO1  |   RO2  |                      IMM                       |
 ```
 
 | Name   | Langform             | Breite | Start | Ende | Beschreibung                                                                                                                                                                          |

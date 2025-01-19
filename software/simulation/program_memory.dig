@@ -47,28 +47,14 @@
         </entry>
         <entry>
           <string>Bits</string>
-          <int>4</int>
+          <int>7</int>
         </entry>
         <entry>
           <string>intFormat</string>
           <intFormat>hex</intFormat>
         </entry>
       </elementAttributes>
-      <pos x="1420" y="60"/>
-    </visualElement>
-    <visualElement>
-      <elementName>Out</elementName>
-      <elementAttributes>
-        <entry>
-          <string>Label</string>
-          <string>OPSEL</string>
-        </entry>
-        <entry>
-          <string>intFormat</string>
-          <intFormat>hex</intFormat>
-        </entry>
-      </elementAttributes>
-      <pos x="1420" y="120"/>
+      <pos x="1420" y="180"/>
     </visualElement>
     <visualElement>
       <elementName>Out</elementName>
@@ -137,7 +123,7 @@
         </entry>
         <entry>
           <string>Output Splitting</string>
-          <string>16,3,3,3,1,1,1,4</string>
+          <string>16,3,3,3,7</string>
         </entry>
       </elementAttributes>
       <pos x="1120" y="420"/>
@@ -179,20 +165,6 @@
       </elementAttributes>
       <pos x="1420" y="420"/>
     </visualElement>
-    <visualElement>
-      <elementName>Out</elementName>
-      <elementAttributes>
-        <entry>
-          <string>Label</string>
-          <string>WRITEFLAG</string>
-        </entry>
-        <entry>
-          <string>intFormat</string>
-          <intFormat>hex</intFormat>
-        </entry>
-      </elementAttributes>
-      <pos x="1420" y="180"/>
-    </visualElement>
   </visualElements>
   <wires>
     <wire>
@@ -208,16 +180,16 @@
       <p2 x="1420" y="240"/>
     </wire>
     <wire>
-      <p1 x="1140" y="320"/>
-      <p2 x="1340" y="320"/>
-    </wire>
-    <wire>
       <p1 x="1100" y="420"/>
       <p2 x="1120" y="420"/>
     </wire>
     <wire>
       <p1 x="1140" y="420"/>
       <p2 x="1420" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="1140" y="340"/>
+      <p2 x="1340" y="340"/>
     </wire>
     <wire>
       <p1 x="1340" y="180"/>
@@ -236,28 +208,12 @@
       <p2 x="1360" y="360"/>
     </wire>
     <wire>
-      <p1 x="1320" y="120"/>
-      <p2 x="1420" y="120"/>
-    </wire>
-    <wire>
-      <p1 x="1140" y="280"/>
-      <p2 x="1300" y="280"/>
-    </wire>
-    <wire>
       <p1 x="1140" y="380"/>
       <p2 x="1380" y="380"/>
     </wire>
     <wire>
       <p1 x="1380" y="300"/>
       <p2 x="1420" y="300"/>
-    </wire>
-    <wire>
-      <p1 x="1140" y="300"/>
-      <p2 x="1320" y="300"/>
-    </wire>
-    <wire>
-      <p1 x="1300" y="60"/>
-      <p2 x="1420" y="60"/>
     </wire>
     <wire>
       <p1 x="1360" y="240"/>
@@ -268,20 +224,12 @@
       <p2 x="1380" y="380"/>
     </wire>
     <wire>
-      <p1 x="1300" y="60"/>
-      <p2 x="1300" y="280"/>
-    </wire>
-    <wire>
       <p1 x="1400" y="360"/>
       <p2 x="1400" y="400"/>
     </wire>
     <wire>
-      <p1 x="1320" y="120"/>
-      <p2 x="1320" y="300"/>
-    </wire>
-    <wire>
       <p1 x="1340" y="180"/>
-      <p2 x="1340" y="320"/>
+      <p2 x="1340" y="340"/>
     </wire>
   </wires>
   <measurementOrdering/>
