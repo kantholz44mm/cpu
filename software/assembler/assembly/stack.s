@@ -31,6 +31,7 @@ LWI  RL, [SP]
 SW [RH:RL], %0
 INCNF RL
 SW [RH:RL], %1
+INCNF RL
 SWI [SP], RL
 @endmacro
 

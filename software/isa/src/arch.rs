@@ -17,12 +17,12 @@ pub const ADDRESS_RANGE: usize = DoubleWord::MAX as usize;
 pub enum ALUOperation {
     Add,
     Subtract,
+    ShiftLeft,
+    ShiftRight,
     Or,
     And,
     Xor,
-    Nand,
-    ShiftLeft,
-    ShiftRight
+    Nand
 }
 
 #[derive(Debug, Clone, Copy, Default, PartialEq, Eq)]

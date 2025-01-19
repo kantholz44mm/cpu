@@ -41,46 +41,52 @@
 
 
 NOP
+
+
 ADDINF R1, RZ, 0
 ADDINF R2, RZ, 0
 ADDINF R3, RZ, 0
 ADDINF R4, RZ, 1
 
-BZI [0xFFFF], R0
 
 
+ADDINF RH, RZ, 0xFF
+LWI  RL, [0xFEFF]
+SW [RH:RL], R1
+ADDINF RL, RL, 1
+SW [RH:RL], R2
+ADDINF RL, RL, 1
+SWI [0xFEFF], RL
+ADDINF RH, RZ, 0xFF
+LWI  RL, [0xFEFF]
+SW [RH:RL], R3
+ADDINF RL, RL, 1
+SW [RH:RL], R4
+ADDINF RL, RL, 1
+SWI [0xFEFF], RL
 
+fib_loop:
+    
+ADD RL, R2, R4
+ADC RH, R1, R3
+ADDNF R1, RZ, R3
+ADDNF R2, RZ, R4
+ADDNF R3, RZ, RH
+ADDNF R4, RZ, RL
 
+    
+    ANDINF RF, RF, 0x4
+    BNZI [done], RF
+ADDINF RH, RZ, 0xFF
+LWI  RL, [0xFEFF]
+SW [RH:RL], R3
+ADDINF RL, RL, 1
+SW [RH:RL], R4
+ADDINF RL, RL, 1
+SWI [0xFEFF], RL
 
+    BZI [fib_loop], RZ
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+done:
+    HCF
 
