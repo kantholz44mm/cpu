@@ -1,3 +1,87 @@
 \section{CPU}
 
-\subsection{}
+A \ac{cpu} is a digital logic unit that executes instructions of a computer program. This includes performing arithmetic and interacting with memories or external electrical components. As the name suggests, it is the most important processor in a digital computer.
+
+\subsection{Operation}
+
+The main purpose of a \ac{cpu} is to sequentially execute a set of instructions stored in some memory. An instruction performs a single action, modifying the state of the processor accordingly. For example, it may calculate the product or sum of two numbers and store them in some memory. Or it may transfer data between main memory and internal registers. This sequence of instructions is called the computer program. In most architectures, it is easily modifiable, making the computer programmable.
+
+The execution of a program is typically done in discrete, synchronous steps, as dictated by one or more clock signals. Within each steps, actions are taken to advance the instruction cycle. The instruction cycle consists of the three phases of Fetching, Decoding and Executing. In the fetch phase, the processor retrieves an instruction from program memory. Afterwards, within the decoding phase, the semantics of the fetched instruction are analysed and the internal state of the \ac{cpu} is setup. This involves extracting any operands and setting up the control signals that dictate what is done during the execution phase. In that phase, the desired operation is performed and any results are stored back into the relevant memories. If necessary, the internal state of the \ac{cpu} is further modified, for example, arithmetic operations may update the internal flags register. These three phases form the instruction cycle. Each of the phases may take one or more clock cycles, although there are designs that combine some or all phases into shared ones. There are also processors that do not have a global clock signal for synchronisation. These designs are called ``asynchronous processors''. However, synchronous processors are by far more prevalent.
+
+\subsection{Boolean Logic}
+
+Digital processors work with numbers. These numbers need to be represented in a base that allows efficient physical implementation. Nearly all modern \acp{cpu} work on binary numbers. While there are computers using the trinary number system \cite{wikipedia_setun}, the binary system has proven to be more simple and robust to implement. Binary numbers can take either one of the states `1' or `0'. A \ac{cpu} then works on such numbers by applying certain logical operations in a well defined order. These operations compute simple logical functions and form the building blocks for more complex operations. They are called ``logic gates''.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{images/drawio/logic_gates.png}  % Replace with your image file
+    \caption{Basic logic gates; Inputs are on the left, Outputs are on the right}
+    \label{fig:logic_gates}
+\end{figure}
+
+\autoref{fig:logic_gates} shows 3 exemplary, well known logic gates and their functions. Each gate maps the set of all possible input tuples to the set of possible output tuples. For gates with 2 inputs, there are $2^2 = 4$ possible combinations of input values. Therefore, there are $2^4 = 16$ distinct logic gates with 2 inputs and 1 output. However, to build a useful computer, only a subset of these gates is required. Each such subset is called ``functionally complete'', if all possible mappings of input to output tuples can be achieved by repeatedly applying logic gates from the subset. The subset of size 3 shown in \autoref{fig:logic_gates} is functionally complete, too. This means that all 16 2-input logic gates can be emulated by repeated combination of AND, OR and NOT. In fact, all logic gates of any type can be represented by this subset of primitive gates. Furthermore, OR is not even required. It can be emulated by using only AND gates, as shown in \autoref{fig:or_from_nand}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/drawio/or_from_and.png}  % Replace with your image file
+    \caption{OR gate, built from AND gates}
+    \label{fig:or_from_nand}
+\end{figure}
+
+There are many such functionally complete sets, but for this project, the subset consisting of only NAND is of particular interest. The NAND logic gate works in the same way as the AND gate followed by a NAND gate.
+
+\begin{figure}[h!]
+    \centering
+    \begin{minipage}[c]{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/drawio/nand_symbol.png} % Replace with your image file
+        \caption{Symbol of a NAND gate}
+        \label{fig:example-picture}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.45\textwidth}
+        \centering
+        \begin{tabular}{|l|l|l|} 
+            \hline
+            \textbf{A} & \multicolumn{1}{c|}{\textbf{B}} & \multicolumn{1}{c|}{\textbf{\textbf{A NAND B}}}  \\ 
+            \hline
+            0          & 0                               & 1                                                \\ 
+            \hline
+            0          & 1                               & 1                                                \\ 
+            \hline
+            1          & 0                               & 1                                                \\ 
+            \hline
+            1          & 1                               & 0                                                \\
+            \hline
+        \end{tabular}
+        \label{tab:nand_truth_table}
+        \captionof{table}{Truth table of a NAND gate}
+    \end{minipage}
+\end{figure}
+
+\subsection{Combinatorial and sequential logic}
+
+Combinatorial logic describes a circuit of digital gates that compute some pure boolean function. This means that the output of the circuit depends only on the present input and not on the history of the input. This is in contrast with sequential logic, in which, as the name suggests, the output also depends on the order of operations, i.e an output may depend on previous inputs. In a digital electrical computer, this can be realised by forming loops between logic gates.
+
+\subsection{Structure}
+
+A typical \ac{cpu} has 3 main components:
+
+\begin{itemize}
+    \item \ac{alu}
+    \item Register File
+    \item Control Unit
+\end{itemize}
+
+\autoref{fig:cpu_structure} shows the composition of a \ac{cpu} from these three components, as well as the external interfaces that interact directly with it. The \ac{alu} and register file combine to form the processor, whose actions are then orchestrated by a control unit.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth]{images/drawio/cpu_structure.png}  % Replace with your image file
+    \caption{Structure of register based CPU; arrows represent data flow. Blue components represent asynchronous circuitry, orange compontents represent synchronous circuitry. (Modified from Wikipedia, aggregated data flow arrows \cite{wikipedia_cpu})}
+    \label{fig:cpu_structure}
+\end{figure}
+
+The \ac{alu} is the device performing the actual computations within a processor. It contains digital logic circuits that perform arithmetic such as addition, subtraction, multiplication, division or logical operations such as AND, OR, NOT, etc. When a programmer requests the \ac{cpu} to calculate some mathematical formula, it is this device that does the calculations. It is asynchronous does not require any clock signal. 
+
+

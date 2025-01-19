@@ -1,0 +1,23 @@
+\section{Design philosophy}
+
+The design philosophy provides a basis on which design decisions can be made. These are high-level ideas of how to approach a problem and where to allocate attention to when creating a solution. They are given in their order of importance.
+
+\subsection{NAND only}
+
+Since the NAND gate forms a functionally complete set by itself, it is possible to implement any boolean function using only this gate. The choice to use only NAND gates to build the entire CPU is personal and rather arbitrary. One could just as well implement it using only NOR or a combination of multiple other gates such as AND, NOT. However, there is a certain beauty in a single gate being assembled into a device that can execute software, performing operations that seem far too complex for the simple components it consists of. It also demonstrates the functional completeness visually and serves as a good starting point for explaining De Morgan's Laws within lectures.
+
+\subsection{Visualisation}
+
+The primary objective of the finished product is to serve as a visualisation aid for lectures. Therefore, it is crucial to provide a good indication of what is happening within the device. Good visualisation also helps with debugging and testing the device. For these purposes, indicator \acp{led} may be used. The user should, at all times, be able to see the full internal state of the device. This includes relevant inputs and outputs of each module, as well as all persistent state such as the values stored in registers. To better demonstrate the control logic, all control signals should be equipped with \acp{led} as well. Furthermore, all input and output devices should have similar indicators installed.
+
+\subsection{Simplicity}
+
+Again, a \ac{cpu} is inherently a complex device. Complexity increases the likelihood of errors in design, manufacturing and testing. Any error in the physical device may require additional time to find and fix, let alone purchasing more hardware. Therefore, it is crucial to keep technical aspects of the project simple. If a design decision leads to increased cost by means of additional components or board space, it may still be worth it, if it also provides a significant simplification.
+
+\subsection{Modularity}
+
+A \ac{cpu} is a complex device. To make testing and manufacturing easier and improve the visualisation quality, it is divided up into smaller parts. Each module performs only one task and can be operated individually. This also reduces the hardware that is affected if there is an error in the design and allows incremental improvements to individual logical sections, as well as replacements for smaller, cheaper parts.
+
+\subsection{Cost}
+
+Keeping costs low during development is necessary since funds for research projects are limited and sought-after. Additionally, such constraints are conducive to innovative and creative ways of solving problems. Balancing costs and performance or featureset is a crucial skill in the engineering trades. Furthermore, by keeping costs low, there is room for additions and improvements to the project without the need for further funding.

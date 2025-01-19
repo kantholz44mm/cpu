@@ -1,0 +1,4 @@
+- Beschreibung Übersicht vervollständigen (Farbige Pfeile, Taktgesteuerte Elemente kennzeichnen?)
+- Synchrone/Asynchrone Logik erklären
+- Anfangs Designphilosophie erklären
+- Kleine Historie und Einordnung in diese

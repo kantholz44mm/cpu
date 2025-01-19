@@ -16,6 +16,3 @@
   - Vollständiger Aufbau der gesamten Hardware
   - Umfängliche Testkampagne & Verifizierung
   - Ausarbeitung fertig
-
-- Erste erfolgreiche Ausführung einer Software (Simulation)
-- Erste Hardware bestellt

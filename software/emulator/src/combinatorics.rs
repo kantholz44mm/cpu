@@ -78,25 +78,25 @@ pub fn add_sub_word(cin: bool, sub: bool, a: [bool; 8], b: [bool; 8]) -> ([bool;
     (sum, cout, overflow)
 }
 
-pub fn or_nor_xor_and(a: bool, b: bool) -> [bool; 4] {
+pub fn or_and_xor_nand(a: bool, b: bool) -> [bool; 4] {
     [
-        or (a, b),
-        nor(a, b),
-        xor(a, b),
-        and(a, b)
+        or  (a, b),
+        and (a, b),
+        xor (a, b),
+        nand(a, b)
     ]
 }
 
-pub fn or_nor_xor_and_word(sel: [bool; 2], a: [bool; 8], b: [bool; 8]) -> [bool; 8] {
+pub fn or_and_xor_nand_word(sel: [bool; 2], a: [bool; 8], b: [bool; 8]) -> [bool; 8] {
     [
-        deselect_2(or_nor_xor_and(a[0], b[0]), decode_2(sel)),
-        deselect_2(or_nor_xor_and(a[1], b[1]), decode_2(sel)),
-        deselect_2(or_nor_xor_and(a[2], b[2]), decode_2(sel)),
-        deselect_2(or_nor_xor_and(a[3], b[3]), decode_2(sel)),
-        deselect_2(or_nor_xor_and(a[4], b[4]), decode_2(sel)),
-        deselect_2(or_nor_xor_and(a[5], b[5]), decode_2(sel)),
-        deselect_2(or_nor_xor_and(a[6], b[6]), decode_2(sel)),
-        deselect_2(or_nor_xor_and(a[7], b[7]), decode_2(sel)),
+        deselect_2(or_and_xor_nand(a[0], b[0]), decode_2(sel)),
+        deselect_2(or_and_xor_nand(a[1], b[1]), decode_2(sel)),
+        deselect_2(or_and_xor_nand(a[2], b[2]), decode_2(sel)),
+        deselect_2(or_and_xor_nand(a[3], b[3]), decode_2(sel)),
+        deselect_2(or_and_xor_nand(a[4], b[4]), decode_2(sel)),
+        deselect_2(or_and_xor_nand(a[5], b[5]), decode_2(sel)),
+        deselect_2(or_and_xor_nand(a[6], b[6]), decode_2(sel)),
+        deselect_2(or_and_xor_nand(a[7], b[7]), decode_2(sel)),
     ]
 }
 
@@ -120,7 +120,7 @@ pub fn shift_word(a: [bool; 8], by: [bool; 8], dir: bool) -> ([bool; 8], bool) {
 
 pub fn alu(op: [bool; 4], a: [bool; 8], b: [bool; 8], cin: bool) -> ([bool; 8], bool, bool, bool, bool) {
     let (add_sub_result, add_sub_cout, add_sub_overflow) = add_sub_word(cin, op[0], a, b);
-    let or_nor_xor_and_result = or_nor_xor_and_word(op[0..2].try_into().unwrap(), a, b);
+    let or_nor_xor_and_result = or_and_xor_nand_word(op[0..2].try_into().unwrap(), a, b);
     let (shift_result, shift_out) = shift_word(a, b, op[0]);
 
     let result = mux_word(mux_word(mux_word(add_sub_result, shift_result, op[1]), or_nor_xor_and_result, op[2]), b, op[3]);

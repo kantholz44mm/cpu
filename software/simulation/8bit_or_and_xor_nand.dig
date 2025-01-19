@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <circuit>
-  <version>1</version>
+  <version>2</version>
   <attributes>
     <entry>
       <string>Width</string>
@@ -120,46 +120,6 @@
       <pos x="1200" y="-300"/>
     </visualElement>
     <visualElement>
-      <elementName>1bit_or_nor_xor_and.dig</elementName>
-      <elementAttributes/>
-      <pos x="680" y="-320"/>
-    </visualElement>
-    <visualElement>
-      <elementName>1bit_or_nor_xor_and.dig</elementName>
-      <elementAttributes/>
-      <pos x="680" y="-220"/>
-    </visualElement>
-    <visualElement>
-      <elementName>1bit_or_nor_xor_and.dig</elementName>
-      <elementAttributes/>
-      <pos x="680" y="-420"/>
-    </visualElement>
-    <visualElement>
-      <elementName>1bit_or_nor_xor_and.dig</elementName>
-      <elementAttributes/>
-      <pos x="680" y="-520"/>
-    </visualElement>
-    <visualElement>
-      <elementName>1bit_or_nor_xor_and.dig</elementName>
-      <elementAttributes/>
-      <pos x="680" y="-620"/>
-    </visualElement>
-    <visualElement>
-      <elementName>1bit_or_nor_xor_and.dig</elementName>
-      <elementAttributes/>
-      <pos x="680" y="-120"/>
-    </visualElement>
-    <visualElement>
-      <elementName>1bit_or_nor_xor_and.dig</elementName>
-      <elementAttributes/>
-      <pos x="680" y="-20"/>
-    </visualElement>
-    <visualElement>
-      <elementName>1bit_or_nor_xor_and.dig</elementName>
-      <elementAttributes/>
-      <pos x="680" y="80"/>
-    </visualElement>
-    <visualElement>
       <elementName>Splitter</elementName>
       <elementAttributes>
         <entry>
@@ -214,6 +174,46 @@
         </entry>
       </elementAttributes>
       <pos x="140" y="140"/>
+    </visualElement>
+    <visualElement>
+      <elementName>1bit_or_and_xor_nand.dig</elementName>
+      <elementAttributes/>
+      <pos x="680" y="-620"/>
+    </visualElement>
+    <visualElement>
+      <elementName>1bit_or_and_xor_nand.dig</elementName>
+      <elementAttributes/>
+      <pos x="680" y="-520"/>
+    </visualElement>
+    <visualElement>
+      <elementName>1bit_or_and_xor_nand.dig</elementName>
+      <elementAttributes/>
+      <pos x="680" y="-420"/>
+    </visualElement>
+    <visualElement>
+      <elementName>1bit_or_and_xor_nand.dig</elementName>
+      <elementAttributes/>
+      <pos x="680" y="-320"/>
+    </visualElement>
+    <visualElement>
+      <elementName>1bit_or_and_xor_nand.dig</elementName>
+      <elementAttributes/>
+      <pos x="680" y="-220"/>
+    </visualElement>
+    <visualElement>
+      <elementName>1bit_or_and_xor_nand.dig</elementName>
+      <elementAttributes/>
+      <pos x="680" y="-120"/>
+    </visualElement>
+    <visualElement>
+      <elementName>1bit_or_and_xor_nand.dig</elementName>
+      <elementAttributes/>
+      <pos x="680" y="-20"/>
+    </visualElement>
+    <visualElement>
+      <elementName>1bit_or_and_xor_nand.dig</elementName>
+      <elementAttributes/>
+      <pos x="680" y="80"/>
     </visualElement>
   </visualElements>
   <wires>

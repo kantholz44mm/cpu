@@ -52,9 +52,9 @@ pub enum Opcode {
     SHR,
     
     OR,
-    NOR,
-    XOR,
     AND,
+    XOR,
+    NAND,
 
     LW,
     SW,
@@ -138,9 +138,9 @@ impl Opcode {
             Opcode::SHL  => ControlFlags { regwen: true , adrwen: false, ioren: false, iowen: false, pcssel: false },
             Opcode::SHR  => ControlFlags { regwen: true , adrwen: false, ioren: false, iowen: false, pcssel: false },
             Opcode::OR   => ControlFlags { regwen: true , adrwen: false, ioren: false, iowen: false, pcssel: false },
-            Opcode::NOR  => ControlFlags { regwen: true , adrwen: false, ioren: false, iowen: false, pcssel: false },
-            Opcode::XOR  => ControlFlags { regwen: true , adrwen: false, ioren: false, iowen: false, pcssel: false },
             Opcode::AND  => ControlFlags { regwen: true , adrwen: false, ioren: false, iowen: false, pcssel: false },
+            Opcode::XOR  => ControlFlags { regwen: true , adrwen: false, ioren: false, iowen: false, pcssel: false },
+            Opcode::NAND => ControlFlags { regwen: true , adrwen: false, ioren: false, iowen: false, pcssel: false },
             Opcode::LW   => ControlFlags { regwen: true , adrwen: false, ioren: true , iowen: false, pcssel: false },
             Opcode::SW   => ControlFlags { regwen: false, adrwen: false, ioren: false, iowen: true , pcssel: false },
             Opcode::BZ   => ControlFlags { regwen: false, adrwen: false, ioren: false, iowen: false, pcssel: true  },
@@ -157,9 +157,9 @@ impl Opcode {
             Opcode::ADC |
             Opcode::SBB |
             Opcode::OR  |
-            Opcode::NOR |
-            Opcode::XOR |
             Opcode::AND |
+            Opcode::XOR |
+            Opcode::NAND|
             Opcode::SHL |
             Opcode::SHR => true,
             _ => false

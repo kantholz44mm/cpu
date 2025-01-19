@@ -14,11 +14,6 @@
       <pos x="1140" y="700"/>
     </visualElement>
     <visualElement>
-      <elementName>8bit_or_nor_xor_and.dig</elementName>
-      <elementAttributes/>
-      <pos x="1140" y="900"/>
-    </visualElement>
-    <visualElement>
       <elementName>Splitter</elementName>
       <elementAttributes>
         <entry>
@@ -287,6 +282,11 @@
       <elementName>2bit_mux.dig</elementName>
       <elementAttributes/>
       <pos x="2180" y="1000"/>
+    </visualElement>
+    <visualElement>
+      <elementName>8bit_or_and_xor_nand.dig</elementName>
+      <elementAttributes/>
+      <pos x="1140" y="900"/>
     </visualElement>
   </visualElements>
   <wires>
