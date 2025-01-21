@@ -973,108 +973,6 @@
 				)
 			)
 		)
-		(symbol "Connector:TestPoint"
-			(pin_numbers hide)
-			(pin_names
-				(offset 0.762) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "TP"
-				(at 0 6.858 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "TestPoint"
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 5.08 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 5.08 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "test point"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "test point tp"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Pin* Test*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "TestPoint_0_1"
-				(circle
-					(center 0 3.302)
-					(radius 0.762)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "TestPoint_1_1"
-				(pin passive line
-					(at 0 0 90)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Connector_Generic:Conn_02x21_Odd_Even"
 			(pin_names
 				(offset 1.016) hide)
@@ -3692,12 +3590,6 @@
 		(uuid "10402f84-1ff0-4d97-8133-f09b3170b5df")
 	)
 	(junction
-		(at 392.43 161.29)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "11d3679c-05d2-4833-af89-e5d784b6dde2")
-	)
-	(junction
 		(at 553.72 561.34)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4070,12 +3962,6 @@
 		(uuid "2f484b28-fb19-4cc4-be21-d47ebb74c20d")
 	)
 	(junction
-		(at 421.64 375.92)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2f62d496-7376-42b5-9ac6-cbf710a875e9")
-	)
-	(junction
 		(at 415.29 161.29)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4206,12 +4092,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3f164ad0-78c2-4947-bcb9-db9cf72c4039")
-	)
-	(junction
-		(at 394.97 551.18)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3f81e640-7e7a-452d-91f4-2206b2433d4e")
 	)
 	(junction
 		(at 506.73 467.36)
@@ -4394,12 +4274,6 @@
 		(uuid "5690451d-d2eb-4144-a0da-f16d762c729b")
 	)
 	(junction
-		(at 421.64 454.66)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "56be3ec0-1f92-45b2-881a-99e9893e6112")
-	)
-	(junction
 		(at 368.3 655.32)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4434,12 +4308,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "59d00b6b-af9e-4b46-95d0-0e6373e63ffe")
-	)
-	(junction
-		(at 394.97 628.65)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5a5b19ad-4a1a-4806-a148-15107c7ed56c")
 	)
 	(junction
 		(at 471.17 607.06)
@@ -4488,12 +4356,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "60ade746-4104-439f-bb5d-8118fff8e4a7")
-	)
-	(junction
-		(at 421.64 688.34)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "612800d0-bcda-48c6-a967-6141981f6c90")
 	)
 	(junction
 		(at 377.19 537.21)
@@ -4844,12 +4706,6 @@
 		(uuid "920ab0f8-9b26-4c71-bdb0-2f02cd9f8a06")
 	)
 	(junction
-		(at 394.97 707.39)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "927e03fd-4aa7-4394-848d-392976f5b5f4")
-	)
-	(junction
 		(at 469.9 340.36)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4892,12 +4748,6 @@
 		(uuid "9878fee2-a75d-42ac-ba36-495bb21e2671")
 	)
 	(junction
-		(at 420.37 219.71)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "98f46cd6-e8c5-4b01-991b-e65741178a4d")
-	)
-	(junction
 		(at 506.73 497.84)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4932,12 +4782,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9c9968b6-85cf-4b0e-84f9-7b3deef1a796")
-	)
-	(junction
-		(at 421.64 532.13)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9d0f3003-5d5b-4c6f-ac30-c0c0b425d5e1")
 	)
 	(junction
 		(at 127 537.21)
@@ -4994,22 +4838,10 @@
 		(uuid "a111b38f-0d38-4639-99b6-14d651842a82")
 	)
 	(junction
-		(at 393.7 316.23)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a17645a9-d909-4539-9e21-b1ba733ff9da")
-	)
-	(junction
 		(at 100.33 537.21)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a277dd76-ee90-4aaf-bf6f-676c2f23575e")
-	)
-	(junction
-		(at 420.37 297.18)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a2eca1c4-2d56-450d-8584-873b6803a1aa")
 	)
 	(junction
 		(at 508 701.04)
@@ -5294,12 +5126,6 @@
 		(uuid "c1ec8d3c-c343-4da4-a67d-182b897b91de")
 	)
 	(junction
-		(at 393.7 473.71)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c2df9638-79b8-4c1f-8fc4-1869c01cb1f9")
-	)
-	(junction
 		(at 375.92 224.79)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5322,12 +5148,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c4102e6b-aba5-49df-9c17-9f738dcb5652")
-	)
-	(junction
-		(at 421.64 142.24)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "c6160a2f-e01d-4d0a-bcf4-9eb2764453c0")
 	)
 	(junction
 		(at 393.7 491.49)
@@ -5534,12 +5354,6 @@
 		(uuid "e0acb0fc-2147-4b82-822d-ea42f420491f")
 	)
 	(junction
-		(at 393.7 238.76)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e10cdd60-17fd-44ec-bb03-2449b1e4e8c0")
-	)
-	(junction
 		(at 506.73 397.51)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5562,12 +5376,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e3164e87-5d20-4944-9483-92dcec6b3066")
-	)
-	(junction
-		(at 393.7 394.97)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e3733604-2780-4ebb-abab-86215a4c1cb3")
 	)
 	(junction
 		(at 731.52 44.45)
@@ -5688,12 +5496,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ee470414-7b99-47e6-b422-d08b35169606")
-	)
-	(junction
-		(at 422.91 609.6)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ee6f1a3c-244a-4e21-80df-d4a4f626a954")
 	)
 	(junction
 		(at 393.7 246.38)
@@ -6523,7 +6325,7 @@
 	)
 	(wire
 		(pts
-			(xy 410.21 142.24) (xy 421.64 142.24)
+			(xy 410.21 142.24) (xy 453.39 142.24)
 		)
 		(stroke
 			(width 0)
@@ -8363,16 +8165,6 @@
 	)
 	(wire
 		(pts
-			(xy 420.37 219.71) (xy 454.66 219.71)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "31dbf5c1-4c36-4d3f-9744-06b75d2c1a8b")
-	)
-	(wire
-		(pts
 			(xy 139.7 215.9) (xy 139.7 224.79)
 		)
 		(stroke
@@ -9870,16 +9662,6 @@
 			(type default)
 		)
 		(uuid "518d9e6b-cd13-49ea-a0f7-a35f980a2006")
-	)
-	(wire
-		(pts
-			(xy 421.64 142.24) (xy 453.39 142.24)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5204cafa-ffa3-4b63-acf0-0e8ba7b7d137")
 	)
 	(wire
 		(pts
@@ -12223,7 +12005,7 @@
 	)
 	(wire
 		(pts
-			(xy 411.48 297.18) (xy 420.37 297.18)
+			(xy 411.48 297.18) (xy 454.66 297.18)
 		)
 		(stroke
 			(width 0)
@@ -12430,16 +12212,6 @@
 			(type default)
 		)
 		(uuid "860e1b28-935f-4911-b0f5-75fa77e89bf7")
-	)
-	(wire
-		(pts
-			(xy 422.91 609.6) (xy 455.93 609.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "865f7541-62ad-4333-86bd-bcaf009d6a06")
 	)
 	(wire
 		(pts
@@ -13193,16 +12965,6 @@
 	)
 	(wire
 		(pts
-			(xy 421.64 688.34) (xy 455.93 688.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "98b810f6-c187-47c2-937f-fce792a71f17")
-	)
-	(wire
-		(pts
 			(xy 506.73 429.26) (xy 506.73 433.07)
 		)
 		(stroke
@@ -13730,16 +13492,6 @@
 			(type default)
 		)
 		(uuid "a12fdb55-94bc-4dbb-b8d1-b63bfc0605d3")
-	)
-	(wire
-		(pts
-			(xy 421.64 532.13) (xy 455.93 532.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a1537586-220f-442b-831a-561166b3e7c7")
 	)
 	(wire
 		(pts
@@ -14393,7 +14145,7 @@
 	)
 	(wire
 		(pts
-			(xy 411.48 454.66) (xy 421.64 454.66)
+			(xy 411.48 454.66) (xy 454.66 454.66)
 		)
 		(stroke
 			(width 0)
@@ -14533,7 +14285,7 @@
 	)
 	(wire
 		(pts
-			(xy 411.48 375.92) (xy 421.64 375.92)
+			(xy 411.48 375.92) (xy 454.66 375.92)
 		)
 		(stroke
 			(width 0)
@@ -14643,7 +14395,7 @@
 	)
 	(wire
 		(pts
-			(xy 412.75 532.13) (xy 421.64 532.13)
+			(xy 412.75 532.13) (xy 455.93 532.13)
 		)
 		(stroke
 			(width 0)
@@ -15343,7 +15095,7 @@
 	)
 	(wire
 		(pts
-			(xy 411.48 219.71) (xy 420.37 219.71)
+			(xy 411.48 219.71) (xy 454.66 219.71)
 		)
 		(stroke
 			(width 0)
@@ -16283,7 +16035,7 @@
 	)
 	(wire
 		(pts
-			(xy 412.75 609.6) (xy 422.91 609.6)
+			(xy 412.75 609.6) (xy 455.93 609.6)
 		)
 		(stroke
 			(width 0)
@@ -16423,7 +16175,7 @@
 	)
 	(wire
 		(pts
-			(xy 412.75 688.34) (xy 421.64 688.34)
+			(xy 412.75 688.34) (xy 455.93 688.34)
 		)
 		(stroke
 			(width 0)
@@ -16610,16 +16362,6 @@
 			(type default)
 		)
 		(uuid "dc5af780-f405-49a9-bc13-79d963692a50")
-	)
-	(wire
-		(pts
-			(xy 420.37 297.18) (xy 454.66 297.18)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dc678d15-3a32-4b54-849e-3ee02bc964cf")
 	)
 	(wire
 		(pts
@@ -17483,16 +17225,6 @@
 	)
 	(wire
 		(pts
-			(xy 421.64 375.92) (xy 454.66 375.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ec60a15d-3386-4c08-bc5b-08a52a9eb41d")
-	)
-	(wire
-		(pts
 			(xy 415.29 650.24) (xy 417.83 650.24)
 		)
 		(stroke
@@ -18060,16 +17792,6 @@
 			(type default)
 		)
 		(uuid "f92df113-c53b-46f8-9451-faa289b9449e")
-	)
-	(wire
-		(pts
-			(xy 421.64 454.66) (xy 454.66 454.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f97cec5c-044e-4e21-af07-4fc49a894463")
 	)
 	(wire
 		(pts
@@ -19125,73 +18847,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 420.37 219.71 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "02db8848-0103-491f-81cf-76a9f7cf40c9")
-		(property "Reference" "TP2"
-			(at 422.91 215.1379 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 422.91 217.6779 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 425.45 219.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 425.45 219.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 420.37 219.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "fe0980fd-1232-4a07-aa03-8e302b976fcc")
-		)
-		(instances
-			(project "alu_bitops"
-				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
-					(reference "TP2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 552.45 497.84 0)
 		(unit 1)
@@ -20079,9 +19734,9 @@
 		(at 496.57 716.28 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "09315799-7961-4b2d-abfa-0bd06f6eabb5")
 		(property "Reference" "D61"
@@ -20921,9 +20576,9 @@
 		(at 496.57 701.04 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0ea5aa3d-3d20-46a8-a792-a3f43ec58d65")
 		(property "Reference" "D60"
@@ -21093,9 +20748,9 @@
 		(at 496.57 607.06 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0f42153f-0a25-4383-a593-9be0d8822e56")
 		(property "Reference" "D55"
@@ -21398,9 +21053,9 @@
 		(at 496.57 652.78 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "10d8f33c-bc8d-469b-a5b3-e453342d3e9f")
 		(property "Reference" "D58"
@@ -21724,73 +21379,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 420.37 297.18 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "13a76a31-862c-471b-b940-004b866fe28f")
-		(property "Reference" "TP3"
-			(at 422.91 292.6079 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 422.91 295.1479 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 425.45 297.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 425.45 297.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 420.37 297.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "209e6e77-e679-43d7-b001-7e5a67be97ed")
-		)
-		(instances
-			(project "alu_bitops"
-				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
-					(reference "TP3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 142.24 491.49 0)
 		(unit 1)
@@ -21851,73 +21439,6 @@
 			(project "alu_bitops"
 				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
 					(reference "#PWR060")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 393.7 473.71 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "1423854e-9acd-4f39-b685-6a656d09d080")
-		(property "Reference" "TP13"
-			(at 396.24 469.1379 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 396.24 471.6779 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 398.78 473.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 398.78 473.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 393.7 473.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "eaa84382-3caa-42b6-a17c-9f34b384830b")
-		)
-		(instances
-			(project "alu_bitops"
-				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
-					(reference "TP13")
 					(unit 1)
 				)
 			)
@@ -22107,73 +21628,6 @@
 			(project "alu_bitops"
 				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
 					(reference "U11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 421.64 532.13 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "15492ad3-0166-4158-b210-a1f89f3dd570")
-		(property "Reference" "TP6"
-			(at 424.18 527.5579 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 424.18 530.0979 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 426.72 532.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 426.72 532.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 421.64 532.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9ec0c3ec-99f0-4a3d-8bf1-033def9f09fb")
-		)
-		(instances
-			(project "alu_bitops"
-				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
-					(reference "TP6")
 					(unit 1)
 				)
 			)
@@ -22446,9 +21900,9 @@
 		(at 496.57 544.83 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "17e4ff10-bded-4242-917a-8cefae4620db")
 		(property "Reference" "D52"
@@ -23285,9 +22739,9 @@
 		(at 496.57 560.07 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1ba125c4-ff1e-4df3-bd94-4e00f47af405")
 		(property "Reference" "D53"
@@ -23353,9 +22807,9 @@
 		(at 494.03 170.18 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1bbe5703-a826-4804-a27c-05eb88bd0fb1")
 		(property "Reference" "D33"
@@ -23648,73 +23102,6 @@
 			(project "alu_bitops"
 				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
 					(reference "#PWR031")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 694.69 251.46 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "1ced9e15-d19a-4ca8-9cfd-2f382343f3fe")
-		(property "Reference" "TP20"
-			(at 697.23 253.4919 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 697.23 256.0319 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 689.61 251.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 689.61 251.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 694.69 251.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3c88d480-cec1-474d-98cf-b1f9bb25808a")
-		)
-		(instances
-			(project "alu_bitops"
-				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
-					(reference "TP20")
 					(unit 1)
 				)
 			)
@@ -25296,140 +24683,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 421.64 454.66 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "26fdc070-82c9-448a-ac14-bdde5ba01d7f")
-		(property "Reference" "TP5"
-			(at 424.18 450.0879 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 424.18 452.6279 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 426.72 454.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 426.72 454.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 421.64 454.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "fd1e9e9a-e1b8-4fb7-a964-e92ec6598a31")
-		)
-		(instances
-			(project "alu_bitops"
-				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
-					(reference "TP5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 421.64 142.24 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "270b1ca9-c002-46de-b17d-cdeeba9bb05f")
-		(property "Reference" "TP1"
-			(at 424.18 137.6679 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 424.18 140.2079 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 426.72 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 426.72 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 421.64 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a99de5b3-2d68-49ad-96c8-aad3afbca10b")
-		)
-		(instances
-			(project ""
-				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
-					(reference "TP1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 370.84 427.99 0)
 		(mirror y)
@@ -26427,73 +25680,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 394.97 551.18 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "2b758de2-e0c3-47e2-8b90-84beef8dd09d")
-		(property "Reference" "TP14"
-			(at 397.51 546.6079 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 397.51 549.1479 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 400.05 551.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 400.05 551.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 394.97 551.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a6ccf3ec-8b83-4f8a-82b0-b6e8bf7e0ab0")
-		)
-		(instances
-			(project "alu_bitops"
-				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
-					(reference "TP14")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "74xx:74HC00")
 		(at 718.82 245.11 0)
 		(unit 3)
@@ -26835,73 +26021,6 @@
 			(project "alu_bitops"
 				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
 					(reference "C11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 655.32 251.46 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "2dbe36e1-d486-47b6-b8a3-50b5e4b0c09e")
-		(property "Reference" "TP17"
-			(at 657.86 253.4919 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 657.86 256.0319 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 650.24 251.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 650.24 251.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 655.32 251.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a1bf49a5-5592-46f1-986b-7c9adb9805bb")
-		)
-		(instances
-			(project "alu_bitops"
-				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
-					(reference "TP17")
 					(unit 1)
 				)
 			)
@@ -29363,80 +28482,13 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 421.64 375.92 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "422093d2-ae10-4e9a-b787-8906358297c3")
-		(property "Reference" "TP4"
-			(at 424.18 371.3479 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 424.18 373.8879 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 426.72 375.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 426.72 375.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 421.64 375.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "1cdce352-52c9-48ed-bd22-76f3c83c2d59")
-		)
-		(instances
-			(project "alu_bitops"
-				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
-					(reference "TP4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector_Generic:Conn_02x21_Odd_Even")
 		(at 214.63 67.31 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "42ac831a-14a0-4f12-862c-899fcc1dc232")
 		(property "Reference" "J1"
@@ -30447,73 +29499,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 393.7 238.76 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "4765bad6-6f02-4650-95b6-4bab2ebf42cf")
-		(property "Reference" "TP10"
-			(at 396.24 234.1879 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 396.24 236.7279 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 398.78 238.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 398.78 238.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 393.7 238.76 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ffbf94a9-c5dd-4d7b-93b4-ef3f53de1d8f")
-		)
-		(instances
-			(project "alu_bitops"
-				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
-					(reference "TP10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "74xx:74HC00")
 		(at 424.18 473.71 0)
 		(unit 4)
@@ -31021,9 +30006,9 @@
 		(at 496.57 731.52 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "49250570-ff83-4dd7-ac85-24ecb0c65992")
 		(property "Reference" "D62"
@@ -33066,9 +32051,9 @@
 		(at 495.3 467.36 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "508b75f2-3cae-43bc-b743-30d0998a6a49")
 		(property "Reference" "D48"
@@ -33484,140 +32469,6 @@
 			(project "alu_bitops"
 				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
 					(reference "#PWR039")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 676.91 251.46 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "5403bb27-0fb8-4b95-af07-10153e808f04")
-		(property "Reference" "TP19"
-			(at 679.45 253.4919 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 679.45 256.0319 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 671.83 251.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 671.83 251.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 676.91 251.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ad615406-9eb3-4975-ac3f-20688a9ccda5")
-		)
-		(instances
-			(project "alu_bitops"
-				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
-					(reference "TP19")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 673.1 251.46 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "5431df48-46ab-4900-b044-ed763b86879d")
-		(property "Reference" "TP18"
-			(at 675.64 253.4919 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 675.64 256.0319 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 668.02 251.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 668.02 251.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 673.1 251.46 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "64cdfe00-dbe4-4634-ad58-7fbf4cdbc675")
-		)
-		(instances
-			(project "alu_bitops"
-				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
-					(reference "TP18")
 					(unit 1)
 				)
 			)
@@ -34731,9 +33582,9 @@
 		(at 494.03 185.42 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5d01bac7-4f72-452c-b916-930996f02ec9")
 		(property "Reference" "D34"
@@ -35128,9 +33979,9 @@
 		(at 495.3 232.41 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "606d4b50-d439-4e3e-be72-2514d89edae3")
 		(property "Reference" "D36"
@@ -35300,9 +34151,9 @@
 		(at 495.3 217.17 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "61ac72e2-a650-4a93-8da6-ed06f001dae2")
 		(property "Reference" "D35"
@@ -36018,9 +34869,9 @@
 		(at 495.3 262.89 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "67f79ac1-746f-48ba-8543-2d36defdd9ba")
 		(property "Reference" "D38"
@@ -36855,9 +35706,9 @@
 		(at 496.57 622.3 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6be0e69b-2441-480c-98a7-b58948fc479c")
 		(property "Reference" "D56"
@@ -37592,9 +36443,9 @@
 		(at 495.3 309.88 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "75148b28-805a-455b-9da7-daf2f3c92d45")
 		(property "Reference" "D40"
@@ -37745,9 +36596,9 @@
 		(at 495.3 325.12 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7721dadb-f869-49c7-b855-40de71ec83da")
 		(property "Reference" "D41"
@@ -38474,9 +37325,9 @@
 		(at 495.3 294.64 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7c2f6d45-645a-4b73-9e34-60cc698a7ea6")
 		(property "Reference" "D39"
@@ -39473,9 +38324,9 @@
 		(at 496.57 685.8 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7fb8fffc-447e-4062-ab4b-9b70947e9b45")
 		(property "Reference" "D59"
@@ -40307,9 +39158,9 @@
 		(at 495.3 403.86 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "89a9198d-7d50-4c18-8a04-4cc52405e3d1")
 		(property "Reference" "D45"
@@ -41483,73 +40334,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 394.97 628.65 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "9015e977-c5da-4a5b-856a-ef544b8279e7")
-		(property "Reference" "TP15"
-			(at 397.51 624.0779 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 397.51 626.6179 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 400.05 628.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 400.05 628.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 394.97 628.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ccb9b70c-4797-44d8-9b13-c4ab5a8ed153")
-		)
-		(instances
-			(project "alu_bitops"
-				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
-					(reference "TP15")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "74xx:74HC00")
 		(at 384.81 539.75 0)
 		(unit 2)
@@ -42049,9 +40833,9 @@
 		(at 496.57 575.31 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "93db3989-12b8-49a7-a0e1-55e4ee353f6d")
 		(property "Reference" "D54"
@@ -42499,9 +41283,9 @@
 		(at 495.3 482.6 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "96ba752d-6a7b-48a9-b1b5-33c6e8d8f9eb")
 		(property "Reference" "D49"
@@ -44496,73 +43280,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 394.97 707.39 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "a5f3fb67-b4d6-4eb8-bd33-f9fbf36c91dd")
-		(property "Reference" "TP16"
-			(at 397.51 702.8179 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 397.51 705.3579 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 400.05 707.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 400.05 707.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 394.97 707.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7bbc9882-ea58-46f7-a470-0de5db96c1d3")
-		)
-		(instances
-			(project "alu_bitops"
-				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
-					(reference "TP16")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "74xx:74HC00")
 		(at 402.59 142.24 0)
 		(unit 3)
@@ -45444,73 +44161,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 393.7 316.23 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "ae19bed7-6ce9-4f2f-b610-9d2d9f63da5b")
-		(property "Reference" "TP11"
-			(at 396.24 311.6579 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 396.24 314.1979 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 398.78 316.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 398.78 316.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 393.7 316.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7a0bab5a-174f-4733-ab48-78aaf4f2385a")
-		)
-		(instances
-			(project "alu_bitops"
-				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
-					(reference "TP11")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "74xx:74HC00")
 		(at 384.81 524.51 0)
 		(unit 1)
@@ -46295,80 +44945,13 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 392.43 161.29 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "affa970c-f21e-470b-8af9-1b529c2db71b")
-		(property "Reference" "TP9"
-			(at 394.97 156.7179 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 394.97 159.2579 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 397.51 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 397.51 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 392.43 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3da3a1b0-44bb-4224-9cdb-b90efbaf981c")
-		)
-		(instances
-			(project "alu_bitops"
-				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
-					(reference "TP9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:D_Schottky")
 		(at 495.3 419.1 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b2557af5-84c7-45c1-b88e-582685c35975")
 		(property "Reference" "D46"
@@ -46992,9 +45575,9 @@
 		(at 495.3 388.62 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b72e55ee-5b56-40cc-a347-a4e747a0b1df")
 		(property "Reference" "D44"
@@ -47366,73 +45949,6 @@
 				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
 					(reference "U26")
 					(unit 2)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 393.7 394.97 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "bcd9a769-e763-48c7-a625-60311cb95f04")
-		(property "Reference" "TP12"
-			(at 396.24 390.3979 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 396.24 392.9379 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 398.78 394.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 398.78 394.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 393.7 394.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "2a282f80-1e6c-41be-90ec-e7d9527a3c7f")
-		)
-		(instances
-			(project "alu_bitops"
-				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
-					(reference "TP12")
-					(unit 1)
 				)
 			)
 		)
@@ -48851,9 +47367,9 @@
 		(at 495.3 497.84 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c38384cc-cfc5-417a-b954-7ee7f815edd5")
 		(property "Reference" "D50"
@@ -49835,9 +48351,9 @@
 		(at 494.03 139.7 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c7524710-c36f-424a-bae2-2f694f4d339a")
 		(property "Reference" "D31"
@@ -51268,9 +49784,9 @@
 		(at 495.3 340.36 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d0134623-ac44-47d1-b6ec-ace3c1ae729d")
 		(property "Reference" "D42"
@@ -52016,9 +50532,9 @@
 		(at 495.3 373.38 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d3b6b08d-6129-416a-b3ba-68d49500904d")
 		(property "Reference" "D43"
@@ -52311,73 +50827,6 @@
 			(project "alu_bitops"
 				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
 					(reference "R5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 421.64 688.34 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "d5b5a937-a400-4e66-a7bd-503403cb56f9")
-		(property "Reference" "TP8"
-			(at 424.18 683.7679 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 424.18 686.3079 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 426.72 688.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 426.72 688.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 421.64 688.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "bd7d0616-9251-40f2-acbb-c3a6a5f9e056")
-		)
-		(instances
-			(project "alu_bitops"
-				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
-					(reference "TP8")
 					(unit 1)
 				)
 			)
@@ -53599,9 +52048,9 @@
 		(at 496.57 637.54 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e28edc73-b967-4916-9d78-f31cbe4efb39")
 		(property "Reference" "D57"
@@ -56780,9 +55229,9 @@
 		(at 495.3 452.12 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f59a60df-fb63-424e-866f-283546db9b05")
 		(property "Reference" "D47"
@@ -57059,9 +55508,9 @@
 		(at 496.57 529.59 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f79eda45-89c0-4a3e-927b-3b342253938d")
 		(property "Reference" "D51"
@@ -57260,9 +55709,9 @@
 		(at 495.3 247.65 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f81138b5-aee1-406f-b55b-952da0989fcf")
 		(property "Reference" "D37"
@@ -57846,73 +56295,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 422.91 609.6 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "f9c4ef1f-6b3f-4af7-b414-4f65d779d663")
-		(property "Reference" "TP7"
-			(at 425.45 605.0279 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 425.45 607.5679 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
-			(at 427.99 609.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 427.99 609.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 422.91 609.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9ac1d8ba-054a-4e0c-b5cc-6ffe1e365cf2")
-		)
-		(instances
-			(project "alu_bitops"
-				(path "/b10d27fe-2fb0-4bb9-9f18-04e972d7cda2"
-					(reference "TP7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+5V")
 		(at 396.24 53.34 0)
 		(mirror y)
@@ -58129,9 +56511,9 @@
 		(at 494.03 154.94 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fe753880-fb88-4b83-b7ce-6ef8f026229e")
 		(property "Reference" "D32"

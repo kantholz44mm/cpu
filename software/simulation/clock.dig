@@ -269,11 +269,6 @@
       <pos x="360" y="340"/>
     </visualElement>
     <visualElement>
-      <elementName>4bit_johnson_counter.dig</elementName>
-      <elementAttributes/>
-      <pos x="1460" y="80"/>
-    </visualElement>
-    <visualElement>
       <elementName>Out</elementName>
       <elementAttributes>
         <entry>
@@ -282,7 +277,7 @@
         </entry>
         <entry>
           <string>Bits</string>
-          <int>4</int>
+          <int>3</int>
         </entry>
       </elementAttributes>
       <pos x="1780" y="100"/>
@@ -296,6 +291,11 @@
         </entry>
       </elementAttributes>
       <pos x="1280" y="60"/>
+    </visualElement>
+    <visualElement>
+      <elementName>3bit_johnson_counter.dig</elementName>
+      <elementAttributes/>
+      <pos x="1460" y="80"/>
     </visualElement>
   </visualElements>
   <wires>
