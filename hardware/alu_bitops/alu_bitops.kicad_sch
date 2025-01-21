@@ -18808,6 +18808,17 @@
 		(uuid "ea0011c7-7b17-4718-9633-a1517e35797c")
 	)
 	(label "GND"
+		(at 219.71 41.91 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ea314265-1c06-47c3-a07d-304b66192bdd")
+	)
+	(label "GND"
 		(at 207.01 67.31 180)
 		(fields_autoplaced yes)
 		(effects
