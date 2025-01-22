@@ -14,7 +14,7 @@ There are three major, proven memory models for organizing the program and main 
 
 In a machine obeying the Von Neumann memory model, there is only one global memory space, which contains both data and program instructions. In a harvard architecture, these memories have a separate address space. A modified harvard architecture is functionally the same as a regular harvard one, but the software can access the instruction memory as if it was data. This is the memory model used by many modern \ac{isa}. For this project, the Harvard memory model is chosen due to its simplicity. The software can be oblivious of the layout of the program memory, which can be directly addressed by a program counter register. This also enables the cell size of the data and program memory to be different, which simplifies instruction addressing and decoding.
 
-The word size of an \ac{isa} is the size of the smallest, atomic unit of data. Since arithmetic operations must be performed on all bits of a word, the number of logic gates and traces scales approximately linearly with the word size. Early processors such as the Intel 4004 had a word size of 4 bits, meaning one word can represent 16 distinct values. However, even in modern systems, the smallest individually addressable unit of bits is the venerable byte, consisting of 8 bits each. It can represent 256 distinct values. Even in modern architectures, the word size is usually an integer multiple of 8. Due to the prevalence and experience with 8 bit systems, this was chosen as the word size for this project. A larger datum can be represented by multiple 8 bit data, which also works for arithmetic operations.
+The word size of an \ac{isa} is the size of the smallest, atomic unit of data. Since arithmetic operations must be performed on all bits of a word, the number of logic gates and traces scales approximately linearly with the word size. Early processors such as the Intel 4004 had a word size of 4 bits, meaning one word can represent 16 distinct values. However, even in modern systems, the smallest individually addressable unit of bits is the venerable byte, consisting of 8 bits each. It can represent 256 distinct values. Even in modern architectures, the word size is usually an integer multiple of 8. Data larger than the native word size can be emulated by multiple native word length data, which also works for many arithmetic operations.
 
 \subsection{Execution Model}
 
@@ -53,8 +53,6 @@ The accumulator-based execution model has a fixed number of registers, one of wh
 
 The register based execution model provides a fixed set of registers. This model is subdivided further into the ``Register-Register'' and ``Memory-Register'' models. \autoref{fig:register_architecture} shows the former, which is also known as a ``Load-Store architecture'', since the only way of transferring data between registers and memory is via the dedicated load and store operations. All operands and result destinations of an arithmetic operation are registers. The ``Memory-Register'' model allows operations to be read from memory instead. Due to the bottleneck in speed of modern memories, many modern register based architectures are of the Load-Store variant. The register based execution model is highly flexible and well understood. Operands and intermediary results can be reused efficiently and compilers can deterministically optimize register allocation, allowing for higher performance.
 
-The end result of this project is a physical implementation that must use one of these models. Since many of the popular modern architectures use the ``Load-Store'' model, this model was chosen for the \ac{isa}. Also, the lecture ``Rechnerarchitekturen'' develops a \ac{cpu} similar to the \ac{mips} architecture. \ac{mips} is also a ``Load-Store'' \ac{isa}. Therefore, the resulting physical \ac{cpu} can also be used for visualizing the working principles of this lecture.
-
 \subsection{Addressing modes}
 
 There are many different modes of addressing memories. An addressing mode specifies which memory is accessed, and how the address for that memory is calculated.
@@ -72,20 +70,9 @@ $$ \text{Base} + \text{Index} * \text{Scale} + \text{Displacement} $$
 
 This requires additional hardware for performing the additions and multiplication. Note that the ``Scale'' is restricted to 1, 2, 4 or 8 and can therefore be implemented by shifting the index to the left by 1, 2, 3 or 4 bits. In most modern, and some older architectures, the addressing modes can be quite numerous and complex. For example, the Intel 6502 alone has 13 different addressing modes \cite[13.2.1]{schlyter200513}. However, an \ac{isa} need not implement a large number of addressing modes in order to be useful. For example, the Intel 8008 \ac{cpu} only has 3 addressing modes (Register, Register Indirect and Immediate) \cite{cpu-world8008}.
 
-For this project, minimizing the number of gates required is the core metric. Therefore, the addressing modes that need additional arithmetic operations are not implemented. This, in turn, means that accessing sequential members of an array requires an additional operation to advance the index via addition, lowering throughput. The following modes are included in the \ac{isa}:
-
-\begin{itemize}
-    \item Register
-    \item Immediate
-    \item Register Indirect
-    \item Immediate Indirect
-\end{itemize}
-
-These modes can be differentiated nicely by using two control lines, one each for deciding the source (register or immediate) and directness.
-
 \subsection{Instruction Set}
 
-The instruction set specifies what the \ac{cpu} can do. It lists all available operations and details all operands, affected flags/registers and the effects of the operation when executed. The effects of an instruction can range in complexity. This chapter explains the choices made when designing the \ac{isa} implemented in this project.
+The instruction set specifies what the \ac{cpu} can do. It contains all available operations and details all operands, affected flags/registers and the effects of the operation when executed. The effects of an instruction can range in complexity.
 
 \subsubsection{Opcodes}
 
@@ -93,7 +80,7 @@ Every instruction is identified by its unique ``Opcode'', which is a discrete nu
 
 \subsubsection{RISC vs. CISC}
 
-Early microprocessors had - by necessity - simple instructions. There were typically also fewer instructions compared to modern systems. This was dictated by the technology at the time. More functionality requires more transistors, which require space on the die, as well as more capabilities for shedding heat. With the shrinking sizes of transistors, more complex instructions became feasible. As with the instructions, the complexity of other systems of a \ac{cpu} grew as well. For example, the Intel 8008 processor released in 1972 \cite{intel4004history} had only 48 instructions \cite{cpu-world8008}, whereas a modern x86 implementation supporting all extensions has $\approx 1795$ instructions \cite[Chapter 7]{heule2016stratified}. Depending on the complexity and number of instructions, an architecture is classified as either \ac{risc} or \ac{cisc}. Since the architecture discussed in ``Rechnerarchitekturen'' is of a \ac{risc} nature, as well as the simpler overall design of such an \ac{isa}, this is the type used within this project.
+Early microprocessors had - by necessity - simple instructions. There were typically also fewer instructions compared to modern systems. This was dictated by the technology at the time. More functionality requires more transistors, which require space on the die, as well as more capabilities for shedding heat. With the shrinking sizes of transistors, more complex instructions became feasible. As with the instructions, the complexity of other systems of a \ac{cpu} grew as well. For example, the Intel 8008 processor released in 1972 \cite{intel4004history} had only 48 instructions \cite{cpu-world8008}, whereas a modern x86 implementation supporting all extensions has $\approx 1795$ instructions \cite[Chapter 7]{heule2016stratified}. Depending on the complexity and number of instructions, an architecture is classified as either \ac{risc} or \ac{cisc}. There is no exact definition of either of these types.
 
 \subsubsection{Types of Instruction}
 
@@ -101,7 +88,5 @@ Instructions can be divided up into different types based on their effects. Ther
 
 \subsection{Instruction Encoding}
 
-A digital processor requires a predefined encoding, according to which the program instructions are formatted. This encoding must include all information required for performing the desired operation. The encoding must include the opcode, all operands and any additional settings required for executing an operation. Since different operations require a different number and type of operand, it can be useful to define a variable length encoding scheme to save memory and increase code density. On the other hand, variable length encodings require additional logic to determine the length from a given opcode and fetch the required number of bytes from memory. This introduces complexity in an implementation, as well as increasing the number of logic gates required. Typically, this also causes the fetch phase to take more than a single clock cycle. For these reasons, many \ac{risc} architectures use a fixed length encoding. To allow for the simplest possible implementation, the \ac{isa} of this project uses a fixed length encoding.
-
-Since different types of instructions require different combinations of options and operands, \acp{isa} may define multiple distinct encoding schemes. The instruction decoder can then choose the corresponding format for each opcode, which is usually of a fixed length. Since this \ac{isa} obeys to the harvard architecture, the word size of the program and main memory can be different. Therefore, it is practical to have a single encoding scheme for all instructions and instead increase the program memories word size.
+A digital processor requires a predefined encoding, according to which the program instructions are formatted. This encoding must include all information required for performing the desired operation. The encoding must include the opcode, all operands and any additional settings required for executing an operation. Since different operations require a different number and type of operand, it can be useful to define a variable length encoding scheme to save memory and increase code density. On the other hand, variable length encodings require additional logic to determine the length from a given opcode and fetch the required number of bytes from memory. This introduces complexity in an implementation, as well as increasing the number of logic gates required. Typically, this also causes the fetch phase to take more than a single clock cycle. For these reasons, many \ac{risc} architectures use a fixed length encoding. Since different types of instructions require different combinations of options and operands, \acp{isa} may define multiple distinct encoding schemes. The instruction decoder can then choose the corresponding format for each opcode, which is usually of a fixed length. 
 
