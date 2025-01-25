@@ -48,7 +48,7 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.3
+          "min_clearance": 0.5
         }
       },
       "diff_pair_dimensions": [
@@ -101,7 +101,7 @@
         "silk_overlap": "warning",
         "skew_out_of_range": "error",
         "solder_mask_bridge": "error",
-        "starved_thermal": "warning",
+        "starved_thermal": "error",
         "text_height": "warning",
         "text_thickness": "warning",
         "through_hole_pad_without_hole": "error",
@@ -455,7 +455,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "alu_shift.kicad_pro",
+    "filename": "register.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -610,34 +610,6 @@
     [
       "aaf6bf5a-f60a-4604-acad-8ada22c0fabd",
       "Root"
-    ],
-    [
-      "0b62401d-b793-40b0-818b-2734a85adc66",
-      "MuxLeft1"
-    ],
-    [
-      "647ef48e-943b-4ce8-b10e-9411cb7be0d5",
-      "MuxRight1"
-    ],
-    [
-      "871f3f5d-5c9d-4369-8210-f657be1b4cec",
-      "MuxRight2"
-    ],
-    [
-      "c42f403e-b7d0-42ef-ac00-2449399344db",
-      "MuxRight4"
-    ],
-    [
-      "64452d8c-84b4-4da6-a178-691a8523b73c",
-      "MuxResult"
-    ],
-    [
-      "a66f574f-be5e-4347-aed2-dd689f74ae5f",
-      "MuxLeft4"
-    ],
-    [
-      "54ddbe49-dcb7-4b42-b521-a34e4004dba0",
-      "MuxLeft2"
     ]
   ],
   "text_variables": {}

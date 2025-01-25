@@ -18926,6 +18926,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 403.8517 322.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "df123d92-dc0d-46fc-874c-22de4a37601b")
 		)
@@ -19413,6 +19422,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 476.2417 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bfbc5410-a9cf-4611-9796-7d34889d2852")
 		)
@@ -19591,6 +19609,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 101.6 698.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 107.95 697.2299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20285,6 +20312,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 477.5117 458.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "ea5f925c-c344-4ecb-9fa6-856f273c0a91")
 		)
@@ -20382,6 +20418,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 424.18 238.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 424.1717 229.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -20706,6 +20751,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 78.74 148.5899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "df123d92-dc0d-46fc-874c-22de4a376018")
 		)
@@ -20803,6 +20857,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 403.86 375.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 403.8517 367.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21041,6 +21104,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 478.79 544.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 478.7817 535.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21346,6 +21418,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 463.55 685.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 463.5417 676.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -21676,6 +21757,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 405.13 660.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 405.1217 651.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22072,6 +22162,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 462.2717 285.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "ea5f925c-c344-4ecb-9fa6-856f273c0a93")
 		)
@@ -22236,6 +22335,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 384.81 680.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 384.8017 671.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -22658,6 +22766,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 383.5317 295.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "2a189612-f646-452c-944a-17569c349139")
 		)
@@ -22762,6 +22879,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 463.5417 628.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "cdf0eeb0-5cea-4851-8cfd-ff44dcfff456")
 		)
@@ -22859,6 +22985,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 739.14 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 739.1317 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23049,6 +23184,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 739.1317 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "843024d8-c17b-4f4f-8f63-f9f859958e82")
 		)
@@ -23148,6 +23292,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 100.33 474.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 106.68 473.7099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -23546,6 +23699,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 462.2717 394.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "dfbd3db3-2083-443e-9edb-79e34980643b")
 		)
@@ -23784,6 +23946,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 462.2717 331.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bfbc5410-a9cf-4611-9796-7d34889d2856")
 		)
@@ -23960,6 +24131,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 477.52 497.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 477.5117 488.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24145,6 +24325,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 74.93 474.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 81.28 473.7099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24394,6 +24583,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 734.06 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 734.0517 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24737,6 +24935,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 133.35 548.6399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bfbc5410-a9cf-4611-9796-7d34889d2854")
 		)
@@ -24834,6 +25041,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 662.94 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 662.9317 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25005,6 +25221,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 478.79 652.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 478.7817 643.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26020,6 +26245,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 403.8517 401.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "df123d92-dc0d-46fc-874c-22de4a37601c")
 		)
@@ -26117,6 +26351,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 405.13 582.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 405.1217 574.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26300,6 +26543,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 463.55 544.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 463.5417 535.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26550,6 +26802,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 718.82 245.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 718.8117 236.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27105,6 +27366,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 384.8017 593.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "2a189612-f646-452c-944a-17569c349138")
 		)
@@ -27354,6 +27624,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 462.2717 443.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "ea5f925c-c344-4ecb-9fa6-856f273c0a95")
 		)
@@ -27453,6 +27732,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 124.46 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 130.81 148.5899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27564,6 +27852,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 478.7817 551.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bfbc5410-a9cf-4611-9796-7d34889d2858")
 		)
@@ -27663,6 +27960,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 127 474.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 133.35 473.7099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -27991,6 +28297,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 734.0517 236.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "12"
 			(uuid "898f8a7e-28b8-47f8-8f0b-1a7faeb397ee")
 		)
@@ -28240,6 +28555,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 477.5117 394.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bfbc5410-a9cf-4611-9796-7d34889d285a")
 		)
@@ -28344,6 +28668,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 734.0517 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "12"
 			(uuid "2ecc76ed-b322-40fd-9887-889c76a6774c")
 		)
@@ -28441,6 +28774,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 478.79 637.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 478.7817 628.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29006,6 +29348,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 462.2717 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "ea5f925c-c344-4ecb-9fa6-856f273c0a94")
 		)
@@ -29170,6 +29521,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 405.13 688.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 405.1217 679.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -29683,6 +30043,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 134.62 697.2299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bfbc5410-a9cf-4611-9796-7d34889d285b")
 		)
@@ -30132,6 +30501,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 718.8117 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "12"
 			(uuid "2ecc76ed-b322-40fd-9887-889c76a6774d")
 		)
@@ -30229,6 +30607,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 462.28 467.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 462.2717 458.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30406,6 +30793,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 384.8017 566.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "df123d92-dc0d-46fc-874c-22de4a376028")
 		)
@@ -30570,6 +30966,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 424.18 473.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 424.1717 464.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -30768,6 +31173,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 80.01 311.1499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "99d21451-f550-4561-a8cc-61edb0c4c8b5")
 		)
@@ -30872,6 +31286,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 384.8017 722.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "df123d92-dc0d-46fc-874c-22de4a376027")
 		)
@@ -30969,6 +31392,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 383.54 289.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 383.5317 280.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31141,6 +31573,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 425.45 628.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 425.4417 619.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31397,6 +31838,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 383.5317 331.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "df123d92-dc0d-46fc-874c-22de4a37601d")
 		)
@@ -31494,6 +31944,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 462.28 217.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 462.2717 208.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -31769,6 +32228,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 383.5317 203.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "2a189612-f646-452c-944a-17569c34913b")
 		)
@@ -31866,6 +32334,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 383.54 497.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 383.5317 488.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32288,6 +32765,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 840.74 40.6399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "12"
 			(uuid "2ecc76ed-b322-40fd-9887-889c76a6774f")
 		)
@@ -32392,6 +32878,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 382.2617 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "2a189612-f646-452c-944a-17569c34913c")
 		)
@@ -32489,6 +32984,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 405.13 532.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 405.1217 523.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32659,6 +33163,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 477.52 294.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 477.5117 285.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -32851,6 +33364,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 105.41 392.4299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "b294a18e-a329-42e6-ad0a-709ddd54ad1b")
 		)
@@ -32948,6 +33470,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 384.81 652.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 384.8017 643.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -33193,6 +33724,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 463.5417 613.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "ea5f925c-c344-4ecb-9fa6-856f273c0a9b")
 		)
@@ -33290,6 +33830,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 424.18 262.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 424.1717 254 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -33687,6 +34236,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 403.8517 210.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "71e76bb8-6aec-468c-bcf7-55f162518f11")
 		)
@@ -33784,6 +34342,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 422.91 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 422.9017 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -34186,6 +34753,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 405.1217 730.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "df123d92-dc0d-46fc-874c-22de4a376021")
 		)
@@ -34283,6 +34859,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 478.79 701.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 478.7817 692.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -34686,6 +35271,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 402.5817 184.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "df123d92-dc0d-46fc-874c-22de4a376022")
 		)
@@ -34930,6 +35524,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 463.55 731.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 463.5417 722.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35255,6 +35858,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 478.7817 566.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bfbc5410-a9cf-4611-9796-7d34889d285e")
 		)
@@ -35420,6 +36032,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 477.52 309.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 477.5117 300.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35616,6 +36237,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 403.8517 245.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "df123d92-dc0d-46fc-874c-22de4a376023")
 		)
@@ -35715,6 +36345,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 45.72 228.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 52.07 227.3299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -35900,6 +36539,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 74.93 623.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 81.28 622.2999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36230,6 +36878,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 477.5117 316.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bfbc5410-a9cf-4611-9796-7d34889d285f")
 		)
@@ -36334,6 +36991,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 424.1717 488.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "df123d92-dc0d-46fc-874c-22de4a376025")
 		)
@@ -36431,6 +37097,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 477.52 388.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 477.5117 379.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36706,6 +37381,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 425.4417 643.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "df123d92-dc0d-46fc-874c-22de4a376026")
 		)
@@ -36803,6 +37487,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 476.25 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 476.2417 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37291,6 +37984,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 384.81 617.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 384.8017 608.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38115,6 +38817,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 405.1217 557.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "df123d92-dc0d-46fc-874c-22de4a376029")
 		)
@@ -38214,6 +38925,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 100.33 549.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 106.68 548.6399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38325,6 +39045,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 422.9017 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "2a189612-f646-452c-944a-17569c349141")
 		)
@@ -38422,6 +39151,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 477.52 373.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 477.5117 364.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38603,6 +39341,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 130.81 227.3299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bfbc5410-a9cf-4611-9796-7d34889d2861")
 		)
@@ -38702,6 +39449,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 72.39 228.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 78.74 227.3299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38813,6 +39569,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 462.2717 364.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "ea5f925c-c344-4ecb-9fa6-856f273c0aa0")
 		)
@@ -38910,6 +39675,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 477.52 419.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 477.5117 410.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39021,6 +39795,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 405.1217 713.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "df123d92-dc0d-46fc-874c-22de4a37602a")
 		)
@@ -39118,6 +39901,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 425.45 575.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 425.4417 566.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39600,6 +40392,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 402.5817 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "df123d92-dc0d-46fc-874c-22de4a37602c")
 		)
@@ -39704,6 +40505,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 477.5117 223.52 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "ea5f925c-c344-4ecb-9fa6-856f273c0aa1")
 		)
@@ -39801,6 +40611,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 424.18 340.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 424.1717 331.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -40579,6 +41398,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 478.7817 676.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "ea5f925c-c344-4ecb-9fa6-856f273c0aa2")
 		)
@@ -40770,6 +41598,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 132.08 311.1499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bfbc5410-a9cf-4611-9796-7d34889d2863")
 		)
@@ -40869,6 +41706,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 97.79 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 104.14 148.5899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -41338,6 +42184,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 52.07 148.5899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "2a189612-f646-452c-944a-17569c349142")
 		)
@@ -41435,6 +42290,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 461.01 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 461.0017 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -41613,6 +42477,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 384.8017 530.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "2a189612-f646-452c-944a-17569c349143")
 		)
@@ -41710,6 +42583,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 382.27 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 382.2617 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -41821,6 +42703,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 478.7817 722.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bfbc5410-a9cf-4611-9796-7d34889d2865")
 		)
@@ -41918,6 +42809,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 462.28 262.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 462.2717 254 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -42178,6 +43078,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 53.34 311.1499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "2a189612-f646-452c-944a-17569c349145")
 		)
@@ -42350,6 +43259,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 55.88 697.2299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "2a189612-f646-452c-944a-17569c349146")
 		)
@@ -42447,6 +43365,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 403.86 347.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 403.8517 339.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -42619,6 +43546,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 477.52 262.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 477.5117 254 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -42815,6 +43751,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 476.2417 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "ea5f925c-c344-4ecb-9fa6-856f273c0aa3")
 		)
@@ -42912,6 +43857,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 477.52 217.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 477.5117 208.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -43247,6 +44201,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 462.2717 300.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "ea5f925c-c344-4ecb-9fa6-856f273c0aa5")
 		)
@@ -43430,6 +44393,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 463.5417 598.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "ea5f925c-c344-4ecb-9fa6-856f273c0aa6")
 		)
@@ -43527,6 +44499,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 463.55 701.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 463.5417 692.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -43633,6 +44614,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 882.65 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 889 40.6399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -44126,6 +45116,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 463.5417 707.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "4cd83938-80eb-4c40-9051-eb22c49a4429")
 		)
@@ -44223,6 +45222,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 477.52 452.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 477.5117 443.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -44626,6 +45634,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 402.5817 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "2a189612-f646-452c-944a-17569c349147")
 		)
@@ -44723,6 +45740,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 403.86 505.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 403.8517 496.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -45165,6 +46191,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 462.2717 410.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bfbc5410-a9cf-4611-9796-7d34889d2868")
 		)
@@ -45403,6 +46438,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 383.5317 218.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "2a189612-f646-452c-944a-17569c349148")
 		)
@@ -45574,6 +46618,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 384.8017 515.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "2a189612-f646-452c-944a-17569c349149")
 		)
@@ -45671,6 +46724,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 403.86 270.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 403.8517 261.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -45861,6 +46923,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 476.2417 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "ea5f925c-c344-4ecb-9fa6-856f273c0aa9")
 		)
@@ -45958,6 +47029,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 403.86 454.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 403.8517 445.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -46069,6 +47149,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 477.5117 331.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bfbc5410-a9cf-4611-9796-7d34889d2869")
 		)
@@ -46168,6 +47257,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 48.26 474.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 54.61 473.7099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -46881,6 +47979,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 383.5317 359.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "2a189612-f646-452c-944a-17569c34914b")
 		)
@@ -47330,6 +48437,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 462.2717 488.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bfbc5410-a9cf-4611-9796-7d34889d286a")
 		)
@@ -47503,6 +48619,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 864.87 40.6399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "12"
 			(uuid "2ecc76ed-b322-40fd-9887-889c76a67750")
 		)
@@ -47600,6 +48725,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 478.79 622.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 478.7817 613.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -47778,6 +48912,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 463.5417 566.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bfbc5410-a9cf-4611-9796-7d34889d286b")
 		)
@@ -47875,6 +49018,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 463.55 529.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 463.5417 520.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -48453,6 +49605,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 461.0017 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "ea5f925c-c344-4ecb-9fa6-856f273c0aac")
 		)
@@ -48702,6 +49863,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 461.0017 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bfbc5410-a9cf-4611-9796-7d34889d286c")
 		)
@@ -48799,6 +49969,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 461.01 154.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 461.0017 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -49408,6 +50587,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 54.61 622.2999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "2a189612-f646-452c-944a-17569c34914c")
 		)
@@ -49507,6 +50695,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 125.73 393.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 132.08 392.4299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -49684,6 +50881,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 383.5317 438.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "2a189612-f646-452c-944a-17569c34914d")
 		)
@@ -49783,6 +50989,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 76.2 698.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 82.55 697.2299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -49962,6 +51177,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 684.5217 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "843024d8-c17b-4f4f-8f63-f9f859958e85")
 		)
@@ -50059,6 +51283,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 383.54 419.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 383.5317 410.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -50317,6 +51550,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 383.5317 254 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "df123d92-dc0d-46fc-874c-22de4a376032")
 		)
@@ -50502,6 +51744,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 105.41 311.1499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "c1947556-1171-4d1b-b80c-f3b74b4593b9")
 		)
@@ -50665,6 +51916,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 424.18 419.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 424.1717 410.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -50934,6 +52194,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 425.4417 722.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "df123d92-dc0d-46fc-874c-22de4a376034")
 		)
@@ -51031,6 +52300,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 425.45 707.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 425.4417 698.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51137,6 +52415,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 97.79 228.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 104.14 227.3299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51474,6 +52761,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 478.7817 520.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "ea5f925c-c344-4ecb-9fa6-856f273c0aae")
 		)
@@ -51573,6 +52869,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 46.99 393.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 53.34 392.4299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51684,6 +52989,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 424.1717 386.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "2a189612-f646-452c-944a-17569c349150")
 		)
@@ -51781,6 +53095,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 463.55 560.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 463.5417 551.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -51964,6 +53287,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 462.28 325.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 462.2717 316.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -52447,6 +53779,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 734.0517 196.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "12"
 			(uuid "2ecc76ed-b322-40fd-9887-889c76a67751")
 		)
@@ -52755,6 +54096,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 718.82 205.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 718.8117 196.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53079,6 +54429,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 718.8117 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "12"
 			(uuid "2ecc76ed-b322-40fd-9887-889c76a67753")
 		)
@@ -53178,6 +54537,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 48.26 549.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 54.61 548.6399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -53554,6 +54922,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 462.2717 238.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "14f1b791-53ca-4a8e-bfad-e45dc99d1167")
 		)
@@ -53805,6 +55182,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 425.4417 542.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "2a189612-f646-452c-944a-17569c349152")
 		)
@@ -53904,6 +55290,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 74.93 549.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 81.28 548.6399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54094,6 +55489,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 478.7817 707.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bfbc5410-a9cf-4611-9796-7d34889d286e")
 		)
@@ -54191,6 +55595,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 462.28 388.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 462.2717 379.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54513,6 +55926,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 383.5317 453.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "2a189612-f646-452c-944a-17569c349153")
 		)
@@ -54610,6 +56032,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 403.86 297.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 403.8517 288.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54781,6 +56212,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 384.81 695.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 384.8017 687.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -55030,6 +56470,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 405.13 643.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 405.1217 635 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -55431,6 +56880,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 477.5117 473.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bfbc5410-a9cf-4611-9796-7d34889d286f")
 		)
@@ -55607,6 +57065,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 403.86 488.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 403.8517 480.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -55869,6 +57336,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 462.2717 473.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "c4561c5e-19fd-4e73-aa69-d8787502e21c")
 		)
@@ -56045,6 +57521,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 463.55 652.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 463.5417 643.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56288,6 +57773,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 405.1217 600.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "eb1ac027-d107-4064-9fe1-343f221c16ed")
 		)
@@ -56464,6 +57958,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 478.79 607.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 478.7817 598.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -56649,6 +58152,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 73.66 393.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 80.01 392.4299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -57387,6 +58899,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 383.5317 374.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "10"
 			(uuid "2a189612-f646-452c-944a-17569c349155")
 		)
@@ -57484,6 +59005,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 382.27 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 382.2617 176.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -57595,6 +59125,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 403.8517 417.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "df123d92-dc0d-46fc-874c-22de4a376038")
 		)
@@ -57692,6 +59231,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 424.18 316.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 424.1717 307.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -57798,6 +59346,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 127 623.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 133.35 622.2999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -58335,6 +59892,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 477.5117 238.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bfbc5410-a9cf-4611-9796-7d34889d2872")
 		)
@@ -58434,6 +60000,15 @@
 		)
 		(property "Description" "quad 2-input NAND gate"
 			(at 100.33 623.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 106.68 622.2999 0)
 			(effects
 				(font
 					(size 1.27 1.27)

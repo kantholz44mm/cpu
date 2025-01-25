@@ -10658,7 +10658,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "00c9960b-0096-4f93-9178-f1f2e20b3652")
-		(property "Reference" "Q18"
+		(property "Reference" "Q4"
 			(at 156.972 294.132 90)
 			(effects
 				(font
@@ -10676,7 +10676,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
 			(at 158.115 290.83 0)
 			(effects
 				(font
@@ -10727,7 +10727,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q18")
+					(reference "Q4")
 					(unit 1)
 				)
 			)
@@ -10743,7 +10743,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "057b2014-4698-4864-aecd-1aaaa212a8b8")
-		(property "Reference" "Q25"
+		(property "Reference" "Q16"
 			(at 756.412 301.752 90)
 			(effects
 				(font
@@ -10761,7 +10761,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
 			(at 757.555 298.45 0)
 			(effects
 				(font
@@ -10812,7 +10812,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q25")
+					(reference "Q16")
 					(unit 1)
 				)
 			)
@@ -10828,7 +10828,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0632a6a2-9b99-4527-926f-21dd01c88118")
-		(property "Reference" "#PWR0215"
+		(property "Reference" "#PWR016"
 			(at 182.88 295.91 0)
 			(effects
 				(font
@@ -10878,7 +10878,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0215")
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -10894,7 +10894,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "080dba5d-5f49-4f99-bd31-0de18c692aed")
-		(property "Reference" "#PWR0234"
+		(property "Reference" "#PWR048"
 			(at 782.32 303.53 0)
 			(effects
 				(font
@@ -10944,7 +10944,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0234")
+					(reference "#PWR048")
 					(unit 1)
 				)
 			)
@@ -10960,7 +10960,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0a49e873-4af0-4d2a-9e28-72d089388494")
-		(property "Reference" "Q17"
+		(property "Reference" "Q3"
 			(at 156.972 275.082 90)
 			(effects
 				(font
@@ -10978,7 +10978,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
 			(at 158.115 271.78 0)
 			(effects
 				(font
@@ -11029,7 +11029,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q17")
+					(reference "Q3")
 					(unit 1)
 				)
 			)
@@ -11046,7 +11046,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0b08b80f-c590-47fb-8966-d6e92b29b12f")
-		(property "Reference" "#PWR0229"
+		(property "Reference" "#PWR043"
 			(at 746.76 354.33 0)
 			(effects
 				(font
@@ -11096,7 +11096,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0229")
+					(reference "#PWR043")
 					(unit 1)
 				)
 			)
@@ -11113,7 +11113,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0cf5332b-5daf-4c3f-bd95-7d1d3ed37ddb")
-		(property "Reference" "#PWR0248"
+		(property "Reference" "#PWR025"
 			(at 287.02 45.72 0)
 			(effects
 				(font
@@ -11163,7 +11163,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0248")
+					(reference "#PWR025")
 					(unit 1)
 				)
 			)
@@ -11180,7 +11180,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "12717e45-c12e-44ee-a864-e2ae842b8089")
-		(property "Reference" "#PWR0217"
+		(property "Reference" "#PWR09"
 			(at 147.32 327.66 0)
 			(effects
 				(font
@@ -11230,7 +11230,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0217")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -11246,7 +11246,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1664d3f4-0fa0-4a44-9a6f-a0b34e7cffc6")
-		(property "Reference" "R26"
+		(property "Reference" "R5"
 			(at 179.07 304.8 90)
 			(effects
 				(font
@@ -11309,7 +11309,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R26")
+					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -11325,7 +11325,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "17b8b817-dd74-4a29-9a00-faf87da6d666")
-		(property "Reference" "Q28"
+		(property "Reference" "Q19"
 			(at 756.412 358.902 90)
 			(effects
 				(font
@@ -11343,7 +11343,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
 			(at 757.555 355.6 0)
 			(effects
 				(font
@@ -11394,7 +11394,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q28")
+					(reference "Q19")
 					(unit 1)
 				)
 			)
@@ -11516,7 +11516,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "19bf23c7-434f-4890-a81b-18a550a66812")
-		(property "Reference" "Q35"
+		(property "Reference" "Q11"
 			(at 296.672 50.292 90)
 			(effects
 				(font
@@ -11534,7 +11534,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
 			(at 297.815 46.99 0)
 			(effects
 				(font
@@ -11585,7 +11585,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q35")
+					(reference "Q11")
 					(unit 1)
 				)
 			)
@@ -11602,7 +11602,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1c4d7e50-86b9-419a-ae7d-4e7edf87f9b1")
-		(property "Reference" "#PWR0210"
+		(property "Reference" "#PWR05"
 			(at 147.32 251.46 0)
 			(effects
 				(font
@@ -11652,7 +11652,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0210")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -11668,7 +11668,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1d00460f-a9aa-4818-8f0a-bdb40921f975")
-		(property "Reference" "D11"
+		(property "Reference" "D4"
 			(at 166.116 285.242 0)
 			(effects
 				(font
@@ -11731,7 +11731,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D11")
+					(reference "D4")
 					(unit 1)
 				)
 			)
@@ -11813,7 +11813,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "20bf2bb9-626f-49b5-a77c-1db84f9b6359")
-		(property "Reference" "#PWR0236"
+		(property "Reference" "#PWR050"
 			(at 782.32 341.63 0)
 			(effects
 				(font
@@ -11863,7 +11863,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0236")
+					(reference "#PWR050")
 					(unit 1)
 				)
 			)
@@ -11879,7 +11879,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2149e7e5-fefc-4318-8dea-1fcb80c31f92")
-		(property "Reference" "R31"
+		(property "Reference" "R15"
 			(at 778.51 274.32 90)
 			(effects
 				(font
@@ -11942,7 +11942,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R31")
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -11958,7 +11958,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "23bffaad-2c02-4d3a-8b1f-c8fc912cce68")
-		(property "Reference" "D8"
+		(property "Reference" "D1"
 			(at 166.116 228.092 0)
 			(effects
 				(font
@@ -12021,7 +12021,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D8")
+					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -12202,7 +12202,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2bd94dd5-36d6-4089-b0a8-8ac5fef28d6e")
-		(property "Reference" "#PWR0219"
+		(property "Reference" "#PWR011"
 			(at 147.32 365.76 0)
 			(effects
 				(font
@@ -12252,7 +12252,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0219")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -12268,7 +12268,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2f3427e4-7ab4-45c2-b093-546b868c0449")
-		(property "Reference" "#PWR0220"
+		(property "Reference" "#PWR017"
 			(at 182.88 314.96 0)
 			(effects
 				(font
@@ -12318,7 +12318,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0220")
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -12334,7 +12334,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2f4c51c8-88bb-4375-843f-99985fdbee57")
-		(property "Reference" "#PWR0247"
+		(property "Reference" "#PWR022"
 			(at 255.27 50.8 0)
 			(effects
 				(font
@@ -12384,7 +12384,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0247")
+					(reference "#PWR022")
 					(unit 1)
 				)
 			)
@@ -12400,7 +12400,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "348258d6-3ed8-4bcc-a94f-7089d2ee4165")
-		(property "Reference" "R34"
+		(property "Reference" "R18"
 			(at 778.51 331.47 90)
 			(effects
 				(font
@@ -12463,7 +12463,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R34")
+					(reference "R18")
 					(unit 1)
 				)
 			)
@@ -12479,7 +12479,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "356e6a55-065e-4273-a721-00bcbb0caeee")
-		(property "Reference" "R33"
+		(property "Reference" "R17"
 			(at 778.51 312.42 90)
 			(effects
 				(font
@@ -12542,7 +12542,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R33")
+					(reference "R17")
 					(unit 1)
 				)
 			)
@@ -12558,7 +12558,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "368e9e0c-5c1f-42ca-8fe2-d1560d6966ca")
-		(property "Reference" "#PWR0245"
+		(property "Reference" "#PWR035"
 			(at 556.26 92.71 0)
 			(effects
 				(font
@@ -12608,7 +12608,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0245")
+					(reference "#PWR035")
 					(unit 1)
 				)
 			)
@@ -12624,7 +12624,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "38811782-543a-4d31-b311-df479066a3e8")
-		(property "Reference" "#PWR0249"
+		(property "Reference" "#PWR029"
 			(at 322.58 52.07 0)
 			(effects
 				(font
@@ -12674,7 +12674,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0249")
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
@@ -12690,7 +12690,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "44962395-0681-4d61-9442-54605a09817d")
-		(property "Reference" "Q21"
+		(property "Reference" "Q7"
 			(at 156.972 351.282 90)
 			(effects
 				(font
@@ -12708,7 +12708,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
 			(at 158.115 347.98 0)
 			(effects
 				(font
@@ -12759,7 +12759,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q21")
+					(reference "Q7")
 					(unit 1)
 				)
 			)
@@ -12775,7 +12775,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "44e7c404-c9f0-43a1-87fd-3c3aec8ef7e0")
-		(property "Reference" "D23"
+		(property "Reference" "D21"
 			(at 765.556 388.112 0)
 			(effects
 				(font
@@ -12838,7 +12838,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D23")
+					(reference "D21")
 					(unit 1)
 				)
 			)
@@ -12855,7 +12855,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4603153b-06b9-4e12-b8ba-48d910f11636")
-		(property "Reference" "#PWR0230"
+		(property "Reference" "#PWR044"
 			(at 746.76 373.38 0)
 			(effects
 				(font
@@ -12905,7 +12905,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0230")
+					(reference "#PWR044")
 					(unit 1)
 				)
 			)
@@ -12921,7 +12921,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "47e8e6be-03da-4e8a-a605-e3f07fe9441f")
-		(property "Reference" "D20"
+		(property "Reference" "D18"
 			(at 765.556 330.962 0)
 			(effects
 				(font
@@ -12984,7 +12984,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D20")
+					(reference "D18")
 					(unit 1)
 				)
 			)
@@ -13001,7 +13001,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "48756799-bb9a-4d30-9859-50f894e348a8")
-		(property "Reference" "#PWR0227"
+		(property "Reference" "#PWR041"
 			(at 746.76 316.23 0)
 			(effects
 				(font
@@ -13051,7 +13051,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0227")
+					(reference "#PWR041")
 					(unit 1)
 				)
 			)
@@ -13067,7 +13067,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "49c212fa-e13d-4997-a1f7-c018025a492c")
-		(property "Reference" "D25"
+		(property "Reference" "D12"
 			(at 411.226 82.042 0)
 			(effects
 				(font
@@ -13130,7 +13130,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D25")
+					(reference "D12")
 					(unit 1)
 				)
 			)
@@ -13146,7 +13146,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "49d2cd16-1887-4682-853c-62f6a67c202d")
-		(property "Reference" "Q34"
+		(property "Reference" "Q9"
 			(at 229.362 49.022 90)
 			(effects
 				(font
@@ -13164,7 +13164,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
 			(at 230.505 45.72 0)
 			(effects
 				(font
@@ -13215,7 +13215,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q34")
+					(reference "Q9")
 					(unit 1)
 				)
 			)
@@ -13231,7 +13231,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "49efa2b2-e4f0-4195-8a07-2fe23ad3d7e4")
-		(property "Reference" "R27"
+		(property "Reference" "R6"
 			(at 179.07 323.85 90)
 			(effects
 				(font
@@ -13294,7 +13294,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R27")
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -13310,7 +13310,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4bead43d-4172-4d91-98f1-bc9def30d2dd")
-		(property "Reference" "R41"
+		(property "Reference" "R9"
 			(at 251.46 40.64 90)
 			(effects
 				(font
@@ -13373,7 +13373,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R41")
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -13390,7 +13390,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4d3c41d2-33dc-4a0c-9fd8-741be15ab99a")
-		(property "Reference" "#PWR0246"
+		(property "Reference" "#PWR021"
 			(at 219.71 44.45 0)
 			(effects
 				(font
@@ -13440,7 +13440,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0246")
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -13456,7 +13456,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "528f34ac-e98a-4c59-b24b-199bbc21efc8")
-		(property "Reference" "Q22"
+		(property "Reference" "Q8"
 			(at 156.972 370.332 90)
 			(effects
 				(font
@@ -13474,7 +13474,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
 			(at 158.115 367.03 0)
 			(effects
 				(font
@@ -13525,7 +13525,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q22")
+					(reference "Q8")
 					(unit 1)
 				)
 			)
@@ -13542,7 +13542,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "54f00eab-778d-4177-ab53-71b75821f51e")
-		(property "Reference" "#PWR0240"
+		(property "Reference" "#PWR024"
 			(at 266.7 86.36 0)
 			(effects
 				(font
@@ -13592,7 +13592,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0240")
+					(reference "#PWR024")
 					(unit 1)
 				)
 			)
@@ -13608,7 +13608,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "554e60e8-c43b-41e7-baad-74cad4dcc81f")
-		(property "Reference" "D22"
+		(property "Reference" "D20"
 			(at 765.556 369.062 0)
 			(effects
 				(font
@@ -13671,7 +13671,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D22")
+					(reference "D20")
 					(unit 1)
 				)
 			)
@@ -13687,7 +13687,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "56c2ca73-cd29-4be7-a28e-05f76ced8d14")
-		(property "Reference" "#PWR0241"
+		(property "Reference" "#PWR028"
 			(at 302.26 92.71 0)
 			(effects
 				(font
@@ -13737,7 +13737,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0241")
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -13753,7 +13753,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5725d575-0eb7-4b15-a1c8-d5abfbd1f9bd")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR026"
 			(at 298.45 213.36 0)
 			(effects
 				(font
@@ -13803,7 +13803,7 @@
 		(instances
 			(project ""
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR06")
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
@@ -13819,7 +13819,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5a0e0dd9-3595-420f-934b-91a39a4ed99d")
-		(property "Reference" "#PWR0211"
+		(property "Reference" "#PWR014"
 			(at 182.88 257.81 0)
 			(effects
 				(font
@@ -13869,7 +13869,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0211")
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -13885,7 +13885,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5c016c44-f148-4f11-bb48-cd7792a2feba")
-		(property "Reference" "R29"
+		(property "Reference" "R8"
 			(at 179.07 361.95 90)
 			(effects
 				(font
@@ -13948,7 +13948,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R29")
+					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -13964,7 +13964,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5fbe1ec3-cb38-4047-9157-78e41947a3d1")
-		(property "Reference" "Q16"
+		(property "Reference" "Q2"
 			(at 156.972 256.032 90)
 			(effects
 				(font
@@ -13982,7 +13982,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
 			(at 158.115 252.73 0)
 			(effects
 				(font
@@ -14033,7 +14033,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q16")
+					(reference "Q2")
 					(unit 1)
 				)
 			)
@@ -14049,7 +14049,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "608777cf-bb52-4e23-9a64-1b6ac4985132")
-		(property "Reference" "R22"
+		(property "Reference" "R1"
 			(at 179.07 228.6 90)
 			(effects
 				(font
@@ -14112,7 +14112,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R22")
+					(reference "R1")
 					(unit 1)
 				)
 			)
@@ -14128,7 +14128,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "63eb8bc2-6f77-4f14-aac1-39eba86ad2ef")
-		(property "Reference" "Q29"
+		(property "Reference" "Q20"
 			(at 756.412 377.952 90)
 			(effects
 				(font
@@ -14146,7 +14146,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
 			(at 757.555 374.65 0)
 			(effects
 				(font
@@ -14197,7 +14197,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q29")
+					(reference "Q20")
 					(unit 1)
 				)
 			)
@@ -14213,7 +14213,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "647b3494-512d-4ac7-ac53-525875950021")
-		(property "Reference" "Q15"
+		(property "Reference" "Q1"
 			(at 156.972 236.982 90)
 			(effects
 				(font
@@ -14231,7 +14231,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
 			(at 158.115 233.68 0)
 			(effects
 				(font
@@ -14282,7 +14282,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q15")
+					(reference "Q1")
 					(unit 1)
 				)
 			)
@@ -14430,7 +14430,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "689de2c5-bf10-48c3-ba7e-aeb04138b33a")
-		(property "Reference" "Q20"
+		(property "Reference" "Q6"
 			(at 156.972 332.232 90)
 			(effects
 				(font
@@ -14448,7 +14448,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
 			(at 158.115 328.93 0)
 			(effects
 				(font
@@ -14499,7 +14499,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q20")
+					(reference "Q6")
 					(unit 1)
 				)
 			)
@@ -14515,7 +14515,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6c07cf97-da8f-4cb1-8fdd-8ac46d41d851")
-		(property "Reference" "R38"
+		(property "Reference" "R10"
 			(at 298.45 82.55 90)
 			(effects
 				(font
@@ -14578,7 +14578,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R38")
+					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -14595,7 +14595,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6c567717-b7da-450d-8481-d0d988c33c5a")
-		(property "Reference" "#PWR0231"
+		(property "Reference" "#PWR045"
 			(at 746.76 392.43 0)
 			(effects
 				(font
@@ -14645,7 +14645,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0231")
+					(reference "#PWR045")
 					(unit 1)
 				)
 			)
@@ -14765,7 +14765,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6dda53c8-41f9-448b-8d48-d0699c3b8116")
-		(property "Reference" "D28"
+		(property "Reference" "D11"
 			(at 305.816 41.402 0)
 			(effects
 				(font
@@ -14828,7 +14828,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D28")
+					(reference "D11")
 					(unit 1)
 				)
 			)
@@ -14844,7 +14844,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6eee89a7-80d4-4a9f-a528-ad0901a639de")
-		(property "Reference" "#PWR0213"
+		(property "Reference" "#PWR015"
 			(at 182.88 276.86 0)
 			(effects
 				(font
@@ -14894,7 +14894,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0213")
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -14910,7 +14910,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7242f6f8-03d1-4d5c-bf60-9f8d9ec27005")
-		(property "Reference" "#PWR0243"
+		(property "Reference" "#PWR031"
 			(at 427.99 92.71 0)
 			(effects
 				(font
@@ -14960,7 +14960,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0243")
+					(reference "#PWR031")
 					(unit 1)
 				)
 			)
@@ -14976,7 +14976,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "748f3ca5-f270-49c7-afd3-d079068d02c5")
-		(property "Reference" "#PWR0238"
+		(property "Reference" "#PWR052"
 			(at 782.32 379.73 0)
 			(effects
 				(font
@@ -15026,7 +15026,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0238")
+					(reference "#PWR052")
 					(unit 1)
 				)
 			)
@@ -15042,7 +15042,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7cacb8cb-1a88-4274-b77b-49338b704633")
-		(property "Reference" "Q33"
+		(property "Reference" "Q13"
 			(at 530.352 90.932 90)
 			(effects
 				(font
@@ -15060,7 +15060,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
 			(at 531.495 87.63 0)
 			(effects
 				(font
@@ -15111,7 +15111,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q33")
+					(reference "Q13")
 					(unit 1)
 				)
 			)
@@ -15127,7 +15127,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7d2ac08c-9814-41fb-903d-1e74f630f6b2")
-		(property "Reference" "#PWR0221"
+		(property "Reference" "#PWR018"
 			(at 182.88 334.01 0)
 			(effects
 				(font
@@ -15177,7 +15177,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0221")
+					(reference "#PWR018")
 					(unit 1)
 				)
 			)
@@ -15272,7 +15272,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7e5ad669-95b9-45c9-9dd1-b2af96f27c76")
-		(property "Reference" "D16"
+		(property "Reference" "D14"
 			(at 765.556 254.762 0)
 			(effects
 				(font
@@ -15335,7 +15335,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D16")
+					(reference "D14")
 					(unit 1)
 				)
 			)
@@ -15351,7 +15351,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8026e76d-2f27-4d9a-9f7b-71f055763494")
-		(property "Reference" "R24"
+		(property "Reference" "R3"
 			(at 179.07 266.7 90)
 			(effects
 				(font
@@ -15414,7 +15414,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R24")
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -15430,7 +15430,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "80d858db-31e7-485b-9350-2565b0865daa")
-		(property "Reference" "#PWR0232"
+		(property "Reference" "#PWR046"
 			(at 782.32 265.43 0)
 			(effects
 				(font
@@ -15480,7 +15480,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0232")
+					(reference "#PWR046")
 					(unit 1)
 				)
 			)
@@ -15496,7 +15496,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "827b2aa7-9e4d-4a62-afe5-b250f03f1b93")
-		(property "Reference" "D17"
+		(property "Reference" "D15"
 			(at 765.556 273.812 0)
 			(effects
 				(font
@@ -15559,7 +15559,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D17")
+					(reference "D15")
 					(unit 1)
 				)
 			)
@@ -15576,7 +15576,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "829029e0-323b-41ab-921b-bff9dab95f30")
-		(property "Reference" "#PWR0242"
+		(property "Reference" "#PWR030"
 			(at 392.43 86.36 0)
 			(effects
 				(font
@@ -15626,7 +15626,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0242")
+					(reference "#PWR030")
 					(unit 1)
 				)
 			)
@@ -15643,7 +15643,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "85dfc464-f692-4e61-bc27-40c5e49dea64")
-		(property "Reference" "#PWR0228"
+		(property "Reference" "#PWR042"
 			(at 746.76 335.28 0)
 			(effects
 				(font
@@ -15693,7 +15693,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0228")
+					(reference "#PWR042")
 					(unit 1)
 				)
 			)
@@ -15710,7 +15710,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8b32bc73-bbc4-445e-9571-f475c5853248")
-		(property "Reference" "#PWR0218"
+		(property "Reference" "#PWR010"
 			(at 147.32 346.71 0)
 			(effects
 				(font
@@ -15760,7 +15760,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0218")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -15880,7 +15880,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8dd0a88f-9230-48d6-ad55-3705bda5ebb5")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR023"
 			(at 257.81 104.14 0)
 			(effects
 				(font
@@ -15930,7 +15930,7 @@
 		(instances
 			(project ""
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR05")
+					(reference "#PWR023")
 					(unit 1)
 				)
 			)
@@ -15946,7 +15946,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8fa956a0-2c98-40c2-9543-93da82a46f6a")
-		(property "Reference" "D13"
+		(property "Reference" "D6"
 			(at 166.116 323.342 0)
 			(effects
 				(font
@@ -16009,7 +16009,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D13")
+					(reference "D6")
 					(unit 1)
 				)
 			)
@@ -16025,7 +16025,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "91b36325-d077-406c-82a3-8d608e57e5bb")
-		(property "Reference" "Q27"
+		(property "Reference" "Q18"
 			(at 756.412 339.852 90)
 			(effects
 				(font
@@ -16043,7 +16043,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
 			(at 757.555 336.55 0)
 			(effects
 				(font
@@ -16094,7 +16094,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q27")
+					(reference "Q18")
 					(unit 1)
 				)
 			)
@@ -16110,7 +16110,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "941890f9-18ce-41eb-98db-eec74d35a15a")
-		(property "Reference" "#PWR0209"
+		(property "Reference" "#PWR013"
 			(at 182.88 238.76 0)
 			(effects
 				(font
@@ -16160,7 +16160,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0209")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -16176,7 +16176,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "95161b9e-7ca1-4575-b296-0fb8468cf985")
-		(property "Reference" "Q26"
+		(property "Reference" "Q17"
 			(at 756.412 320.802 90)
 			(effects
 				(font
@@ -16194,7 +16194,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
 			(at 757.555 317.5 0)
 			(effects
 				(font
@@ -16245,7 +16245,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q26")
+					(reference "Q17")
 					(unit 1)
 				)
 			)
@@ -16365,7 +16365,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9a93ece4-7838-4afb-a136-8ee6900e4e11")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR037"
 			(at 568.96 331.47 0)
 			(effects
 				(font
@@ -16415,7 +16415,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR011")
+					(reference "#PWR037")
 					(unit 1)
 				)
 			)
@@ -16431,7 +16431,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9c636d8a-f224-48fe-91d2-856497ce401e")
-		(property "Reference" "R36"
+		(property "Reference" "R20"
 			(at 778.51 369.57 90)
 			(effects
 				(font
@@ -16494,7 +16494,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R36")
+					(reference "R20")
 					(unit 1)
 				)
 			)
@@ -16510,7 +16510,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a0bef791-8516-4318-ac2d-1d973f1fc972")
-		(property "Reference" "#PWR0239"
+		(property "Reference" "#PWR053"
 			(at 782.32 398.78 0)
 			(effects
 				(font
@@ -16560,7 +16560,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0239")
+					(reference "#PWR053")
 					(unit 1)
 				)
 			)
@@ -16576,7 +16576,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a145ba85-6401-4f82-9c62-b516e9d44822")
-		(property "Reference" "D10"
+		(property "Reference" "D3"
 			(at 166.116 266.192 0)
 			(effects
 				(font
@@ -16639,7 +16639,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D10")
+					(reference "D3")
 					(unit 1)
 				)
 			)
@@ -16655,7 +16655,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a1adb158-45ed-4dc3-ba26-de1acbfca88a")
-		(property "Reference" "R25"
+		(property "Reference" "R4"
 			(at 179.07 285.75 90)
 			(effects
 				(font
@@ -16718,7 +16718,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R25")
+					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -16734,7 +16734,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a1c952e6-e3bb-4383-9907-08eea62cded9")
-		(property "Reference" "Q23"
+		(property "Reference" "Q14"
 			(at 756.412 263.652 90)
 			(effects
 				(font
@@ -16752,7 +16752,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
 			(at 757.555 260.35 0)
 			(effects
 				(font
@@ -16803,7 +16803,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q23")
+					(reference "Q14")
 					(unit 1)
 				)
 			)
@@ -16819,7 +16819,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a3c5b3a5-b2d2-4fdd-9408-e7258b8c9f4a")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR033"
 			(at 436.88 331.47 0)
 			(effects
 				(font
@@ -16869,7 +16869,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR09")
+					(reference "#PWR033")
 					(unit 1)
 				)
 			)
@@ -16886,7 +16886,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a5ec740f-0a68-4a71-85f0-6eaf402c0b95")
-		(property "Reference" "#PWR0208"
+		(property "Reference" "#PWR04"
 			(at 147.32 232.41 0)
 			(effects
 				(font
@@ -16936,7 +16936,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0208")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -16952,7 +16952,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a8415099-7dde-4816-90c8-41e78634343a")
-		(property "Reference" "R28"
+		(property "Reference" "R7"
 			(at 179.07 342.9 90)
 			(effects
 				(font
@@ -17015,7 +17015,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R28")
+					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -17031,7 +17031,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "aa7c45bb-ecdc-473c-b293-9571c00b2aae")
-		(property "Reference" "D15"
+		(property "Reference" "D8"
 			(at 166.116 361.442 0)
 			(effects
 				(font
@@ -17094,7 +17094,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D15")
+					(reference "D8")
 					(unit 1)
 				)
 			)
@@ -17110,7 +17110,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b0291a47-f84a-441f-ab6e-3073f75adef4")
-		(property "Reference" "#PWR0222"
+		(property "Reference" "#PWR019"
 			(at 182.88 353.06 0)
 			(effects
 				(font
@@ -17160,7 +17160,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0222")
+					(reference "#PWR019")
 					(unit 1)
 				)
 			)
@@ -17176,7 +17176,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b21e2591-521e-4e50-b7b0-55b9b1b2da52")
-		(property "Reference" "D21"
+		(property "Reference" "D19"
 			(at 765.556 350.012 0)
 			(effects
 				(font
@@ -17239,7 +17239,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D21")
+					(reference "D19")
 					(unit 1)
 				)
 			)
@@ -17255,7 +17255,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b4234451-ac69-4bb5-8e5f-c46b18caff44")
-		(property "Reference" "#PWR0235"
+		(property "Reference" "#PWR049"
 			(at 782.32 322.58 0)
 			(effects
 				(font
@@ -17305,7 +17305,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0235")
+					(reference "#PWR049")
 					(unit 1)
 				)
 			)
@@ -17321,7 +17321,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b6006884-70eb-4265-b832-3bda5f415a0d")
-		(property "Reference" "D18"
+		(property "Reference" "D16"
 			(at 765.556 292.862 0)
 			(effects
 				(font
@@ -17384,7 +17384,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D18")
+					(reference "D16")
 					(unit 1)
 				)
 			)
@@ -17400,7 +17400,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b7ccf596-2e92-4332-92c8-668fff9f9d7b")
-		(property "Reference" "Q31"
+		(property "Reference" "Q10"
 			(at 276.352 90.932 90)
 			(effects
 				(font
@@ -17418,7 +17418,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
 			(at 277.495 87.63 0)
 			(effects
 				(font
@@ -17469,7 +17469,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q31")
+					(reference "Q10")
 					(unit 1)
 				)
 			)
@@ -17485,7 +17485,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b8a5d054-e549-46d1-b8ed-9777b0d9881b")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR012"
 			(at 176.53 50.8 0)
 			(effects
 				(font
@@ -17535,7 +17535,7 @@
 		(instances
 			(project ""
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR04")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -17551,7 +17551,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "baeb12ca-0c73-4370-af3f-d8b119b93f68")
-		(property "Reference" "D24"
+		(property "Reference" "D10"
 			(at 285.496 82.042 0)
 			(effects
 				(font
@@ -17614,7 +17614,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D24")
+					(reference "D10")
 					(unit 1)
 				)
 			)
@@ -17630,7 +17630,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bb181c3b-3a10-4f67-a95a-193afba1fc8d")
-		(property "Reference" "D19"
+		(property "Reference" "D17"
 			(at 765.556 311.912 0)
 			(effects
 				(font
@@ -17693,7 +17693,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D19")
+					(reference "D17")
 					(unit 1)
 				)
 			)
@@ -17813,7 +17813,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c163d344-9edb-4d65-9c7e-d563653e6985")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR036"
 			(at 568.96 213.36 0)
 			(effects
 				(font
@@ -17863,7 +17863,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR010")
+					(reference "#PWR036")
 					(unit 1)
 				)
 			)
@@ -17879,7 +17879,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c41b51d2-fe87-4da8-ba54-87e596f9c4fa")
-		(property "Reference" "D9"
+		(property "Reference" "D2"
 			(at 166.116 247.142 0)
 			(effects
 				(font
@@ -17942,7 +17942,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D9")
+					(reference "D2")
 					(unit 1)
 				)
 			)
@@ -17958,7 +17958,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c9285dcc-e208-4ee3-b21e-1bd37f3339ed")
-		(property "Reference" "R35"
+		(property "Reference" "R19"
 			(at 778.51 350.52 90)
 			(effects
 				(font
@@ -18021,7 +18021,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R35")
+					(reference "R19")
 					(unit 1)
 				)
 			)
@@ -18037,7 +18037,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cb18c807-48ee-4e45-aa18-33f2411b257d")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR032"
 			(at 436.88 213.36 0)
 			(effects
 				(font
@@ -18087,7 +18087,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR08")
+					(reference "#PWR032")
 					(unit 1)
 				)
 			)
@@ -18104,7 +18104,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cb1a320e-3e77-4d30-86c7-5d5e6e5863f8")
-		(property "Reference" "#PWR0216"
+		(property "Reference" "#PWR08"
 			(at 147.32 308.61 0)
 			(effects
 				(font
@@ -18154,7 +18154,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0216")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -18170,7 +18170,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cb35271d-560e-44bc-945d-77013e8f7530")
-		(property "Reference" "#PWR0223"
+		(property "Reference" "#PWR020"
 			(at 182.88 372.11 0)
 			(effects
 				(font
@@ -18220,7 +18220,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0223")
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -18236,7 +18236,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cfab6f86-f789-43cd-9f59-47febef98938")
-		(property "Reference" "D12"
+		(property "Reference" "D5"
 			(at 166.116 304.292 0)
 			(effects
 				(font
@@ -18299,7 +18299,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D12")
+					(reference "D5")
 					(unit 1)
 				)
 			)
@@ -18315,7 +18315,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cfc35e29-a78f-4848-b325-0f16baa1be21")
-		(property "Reference" "D27"
+		(property "Reference" "D9"
 			(at 238.506 40.132 0)
 			(effects
 				(font
@@ -18378,7 +18378,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D27")
+					(reference "D9")
 					(unit 1)
 				)
 			)
@@ -18394,7 +18394,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d777cf9d-f3a1-4782-85d7-3044e255d17d")
-		(property "Reference" "R37"
+		(property "Reference" "R21"
 			(at 778.51 388.62 90)
 			(effects
 				(font
@@ -18457,7 +18457,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R37")
+					(reference "R21")
 					(unit 1)
 				)
 			)
@@ -18473,7 +18473,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "daed47f7-390b-4fbe-93cd-cc1404128de1")
-		(property "Reference" "#PWR0233"
+		(property "Reference" "#PWR047"
 			(at 782.32 284.48 0)
 			(effects
 				(font
@@ -18523,7 +18523,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0233")
+					(reference "#PWR047")
 					(unit 1)
 				)
 			)
@@ -18539,7 +18539,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "de3d49b6-82cc-4b11-9838-ff9a1440d4ee")
-		(property "Reference" "R42"
+		(property "Reference" "R11"
 			(at 318.77 41.91 90)
 			(effects
 				(font
@@ -18602,7 +18602,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R42")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -18619,7 +18619,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e2025b98-f87b-4e64-88ea-a6b4401fa60a")
-		(property "Reference" "#PWR0212"
+		(property "Reference" "#PWR06"
 			(at 147.32 270.51 0)
 			(effects
 				(font
@@ -18669,7 +18669,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0212")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -18686,7 +18686,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e58fb854-5146-4fe7-8338-615e957cd837")
-		(property "Reference" "#PWR0225"
+		(property "Reference" "#PWR039"
 			(at 746.76 278.13 0)
 			(effects
 				(font
@@ -18736,7 +18736,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0225")
+					(reference "#PWR039")
 					(unit 1)
 				)
 			)
@@ -18752,7 +18752,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e6084966-49ca-4814-9ba8-40e8d0bd2512")
-		(property "Reference" "R32"
+		(property "Reference" "R16"
 			(at 778.51 293.37 90)
 			(effects
 				(font
@@ -18815,7 +18815,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R32")
+					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -18831,7 +18831,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e766c879-5b95-42dd-aae2-cd9de6261d99")
-		(property "Reference" "Q30"
+		(property "Reference" "Q21"
 			(at 756.412 397.002 90)
 			(effects
 				(font
@@ -18849,7 +18849,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
 			(at 757.555 393.7 0)
 			(effects
 				(font
@@ -18900,7 +18900,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q30")
+					(reference "Q21")
 					(unit 1)
 				)
 			)
@@ -18916,7 +18916,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e836a20b-d63b-46c7-b6db-d5cdcdce4bb9")
-		(property "Reference" "Q32"
+		(property "Reference" "Q12"
 			(at 402.082 90.932 90)
 			(effects
 				(font
@@ -18934,7 +18934,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
 			(at 403.225 87.63 0)
 			(effects
 				(font
@@ -18985,7 +18985,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q32")
+					(reference "Q12")
 					(unit 1)
 				)
 			)
@@ -19001,7 +19001,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "eab8a215-5410-480f-ad80-cafc2faa5acf")
-		(property "Reference" "R30"
+		(property "Reference" "R14"
 			(at 778.51 255.27 90)
 			(effects
 				(font
@@ -19064,7 +19064,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R30")
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -19080,7 +19080,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "eb1c70cb-4729-4c9e-8fbc-fd3601f1486e")
-		(property "Reference" "D26"
+		(property "Reference" "D13"
 			(at 539.496 82.042 0)
 			(effects
 				(font
@@ -19143,7 +19143,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D26")
+					(reference "D13")
 					(unit 1)
 				)
 			)
@@ -19160,7 +19160,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ed9bfcca-71ae-48c3-a5fe-fa662307fddd")
-		(property "Reference" "#PWR0214"
+		(property "Reference" "#PWR07"
 			(at 147.32 289.56 0)
 			(effects
 				(font
@@ -19210,7 +19210,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0214")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -19227,7 +19227,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f256e032-4ca6-4aea-9432-3bb1e51c12ff")
-		(property "Reference" "#PWR0226"
+		(property "Reference" "#PWR040"
 			(at 746.76 297.18 0)
 			(effects
 				(font
@@ -19277,7 +19277,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0226")
+					(reference "#PWR040")
 					(unit 1)
 				)
 			)
@@ -19293,7 +19293,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f3d3192e-13e7-4e49-ab01-6dd1b95e00ee")
-		(property "Reference" "#PWR0237"
+		(property "Reference" "#PWR051"
 			(at 782.32 360.68 0)
 			(effects
 				(font
@@ -19343,7 +19343,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0237")
+					(reference "#PWR051")
 					(unit 1)
 				)
 			)
@@ -19359,7 +19359,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f5400ef4-f623-4260-916e-3a0ad26c95c0")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR027"
 			(at 298.45 331.47 0)
 			(effects
 				(font
@@ -19409,7 +19409,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR07")
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)
@@ -19425,7 +19425,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f5959045-1f09-4b29-83ef-a0aee753a35f")
-		(property "Reference" "R23"
+		(property "Reference" "R2"
 			(at 179.07 247.65 90)
 			(effects
 				(font
@@ -19488,7 +19488,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R23")
+					(reference "R2")
 					(unit 1)
 				)
 			)
@@ -19505,7 +19505,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f893a381-69df-47e0-bad2-d58be7ca167e")
-		(property "Reference" "#PWR0244"
+		(property "Reference" "#PWR034"
 			(at 520.7 86.36 0)
 			(effects
 				(font
@@ -19555,7 +19555,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0244")
+					(reference "#PWR034")
 					(unit 1)
 				)
 			)
@@ -19571,7 +19571,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f8d8b122-b236-48de-b775-d776201db871")
-		(property "Reference" "R39"
+		(property "Reference" "R12"
 			(at 424.18 82.55 90)
 			(effects
 				(font
@@ -19634,7 +19634,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R39")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -19650,7 +19650,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fa6e3fb5-953e-4c94-ada2-1129ac9b0849")
-		(property "Reference" "R40"
+		(property "Reference" "R13"
 			(at 552.45 82.55 90)
 			(effects
 				(font
@@ -19713,7 +19713,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R40")
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -19729,7 +19729,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fa73dcbe-7afc-4131-a99d-802842e8b01e")
-		(property "Reference" "Q24"
+		(property "Reference" "Q15"
 			(at 756.412 282.702 90)
 			(effects
 				(font
@@ -19747,7 +19747,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
 			(at 757.555 279.4 0)
 			(effects
 				(font
@@ -19798,7 +19798,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q24")
+					(reference "Q15")
 					(unit 1)
 				)
 			)
@@ -19815,7 +19815,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fd6c21e7-f8fd-4127-ba94-3a15ffa9e12a")
-		(property "Reference" "#PWR0224"
+		(property "Reference" "#PWR038"
 			(at 746.76 259.08 0)
 			(effects
 				(font
@@ -19865,7 +19865,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0224")
+					(reference "#PWR038")
 					(unit 1)
 				)
 			)
@@ -19881,7 +19881,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ff98b700-d558-4e31-80c6-1404c997857d")
-		(property "Reference" "Q19"
+		(property "Reference" "Q5"
 			(at 156.972 313.182 90)
 			(effects
 				(font
@@ -19899,7 +19899,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23_Handsoldering"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-3"
 			(at 158.115 309.88 0)
 			(effects
 				(font
@@ -19950,7 +19950,7 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q19")
+					(reference "Q5")
 					(unit 1)
 				)
 			)
@@ -19966,7 +19966,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ffa773c5-1e0d-417b-8c8c-d61dd69202bc")
-		(property "Reference" "D14"
+		(property "Reference" "D7"
 			(at 166.116 342.392 0)
 			(effects
 				(font
@@ -20029,296 +20029,8 @@
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D14")
+					(reference "D7")
 					(unit 1)
-				)
-			)
-		)
-	)
-	(sheet
-		(at 584.2 266.7)
-		(size 41.91 62.23)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0.0000)
-		)
-		(uuid "046cd478-fed3-4ee1-ba74-f2a582349ea7")
-		(property "Sheetname" "MuxRight4"
-			(at 584.2 265.9884 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "mux.kicad_sch"
-			(at 584.2 329.5146 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "A4" input
-			(at 584.2 288.29 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "beb86985-cc63-4f14-b1c0-d6721515ae26")
-		)
-		(pin "B5" input
-			(at 584.2 316.23 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "afe8ea73-bb86-452a-b748-a9784256d1bf")
-		)
-		(pin "A5" input
-			(at 584.2 290.83 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "89c60d0b-97a9-4e83-ac72-cadd1d4744ee")
-		)
-		(pin "B7" input
-			(at 584.2 321.31 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "64ef7cfc-7a94-4629-8fb2-703424fb339a")
-		)
-		(pin "A7" input
-			(at 584.2 295.91 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "82ac69ae-a735-4ec6-978e-2312d15688fe")
-		)
-		(pin "B6" input
-			(at 584.2 318.77 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "b6f26f10-9a6b-4d30-936b-3d79cf732a7e")
-		)
-		(pin "A6" input
-			(at 584.2 293.37 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "ea42ae0f-e6b1-4dd9-b3cd-7cd0b3cec63b")
-		)
-		(pin "OUT5" output
-			(at 626.11 316.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "35a58008-061d-4e6e-80b7-5275fd492542")
-		)
-		(pin "OUT6" output
-			(at 626.11 318.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "43d548e3-cf0b-4c7f-b522-4fcefc92e2d8")
-		)
-		(pin "OUT7" output
-			(at 626.11 321.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "98702f7d-e6d5-4b2c-8a50-b06aca424e31")
-		)
-		(pin "OUT3" output
-			(at 626.11 311.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "163b94d4-ec40-481f-b09d-872974b52328")
-		)
-		(pin "OUT4" output
-			(at 626.11 313.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "227b45db-f402-4d8d-95e1-0e49faa41ff0")
-		)
-		(pin "OUT2" output
-			(at 626.11 308.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "ff758f21-f9eb-49bf-b696-e1a9b7e77b2d")
-		)
-		(pin "A2" input
-			(at 584.2 283.21 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "c46818e8-ba92-4787-bd84-f6acb2ac7f83")
-		)
-		(pin "B3" input
-			(at 584.2 311.15 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "c7db3e60-62b2-4cd7-a82f-723b848d6850")
-		)
-		(pin "A3" input
-			(at 584.2 285.75 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "7ed5bcc1-9f9e-4d72-a7fc-2e871a375325")
-		)
-		(pin "B4" input
-			(at 584.2 313.69 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "4e38b7f8-3c5f-4c47-8670-861a8fe3827b")
-		)
-		(pin "OUT0" output
-			(at 626.11 303.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "53688e89-fcf4-40ff-abe3-8dfd39a06e14")
-		)
-		(pin "OUT1" output
-			(at 626.11 306.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "776e818e-a6cb-418e-93a6-d3c5f139258d")
-		)
-		(pin "B0" input
-			(at 584.2 303.53 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "bdc0a789-7a57-48c9-80c5-764cfc571953")
-		)
-		(pin "A0" input
-			(at 584.2 278.13 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "9b8ae433-8f67-4fe5-902f-267a51485711")
-		)
-		(pin "SEL" input
-			(at 584.2 271.78 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "8b24ab73-3f64-481b-bfa7-7d229bf70716")
-		)
-		(pin "B1" input
-			(at 584.2 306.07 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "85f3e220-9039-421b-ad45-fb064459fc81")
-		)
-		(pin "A1" input
-			(at 584.2 280.67 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "7cf3e4a7-0673-416b-905a-a85331691f96")
-		)
-		(pin "B2" input
-			(at 584.2 308.61 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "0d3cfa1f-c408-4b6a-8f5d-9b910aeeb43f")
-		)
-		(instances
-			(project "alu_shift"
-				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(page "7")
 				)
 			)
 		)
@@ -20423,66 +20135,6 @@
 			)
 			(uuid "94c8c822-6748-4953-b075-5e8fbc08c0e7")
 		)
-		(pin "OUT5" output
-			(at 361.95 198.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "0a0c2297-5b16-4e9d-8247-f60170605be7")
-		)
-		(pin "OUT6" output
-			(at 361.95 200.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "00141c23-ee2c-4c1e-93be-685d5c7c1ceb")
-		)
-		(pin "OUT7" output
-			(at 361.95 203.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "b649e629-1495-45f3-a2ee-6ba7eea7bc0f")
-		)
-		(pin "OUT3" output
-			(at 361.95 193.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "12247c94-1e75-429c-8407-82931f67b40e")
-		)
-		(pin "OUT4" output
-			(at 361.95 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "408cb5af-9576-4491-b15e-68eef55666ce")
-		)
-		(pin "OUT2" output
-			(at 361.95 190.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "5bf3e213-b6db-4dc0-bf6e-38f968b9b1fe")
-		)
 		(pin "A2" input
 			(at 320.04 165.1 180)
 			(effects
@@ -20522,26 +20174,6 @@
 				(justify left)
 			)
 			(uuid "560cda27-76eb-4896-855f-40b4e48a9f20")
-		)
-		(pin "OUT0" output
-			(at 361.95 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "a0686987-c9af-4fef-99dc-eb92d43a66cc")
-		)
-		(pin "OUT1" output
-			(at 361.95 187.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "2901fd95-3ff5-4445-a85b-a584333a6c2f")
 		)
 		(pin "B0" input
 			(at 320.04 185.42 180)
@@ -20603,586 +20235,90 @@
 			)
 			(uuid "f3f19ebc-fe1d-4f3b-b76f-ba23fb377495")
 		)
+		(pin "RES2" output
+			(at 361.95 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "2e095858-16f8-44e8-97e6-1bcf36eab1a1")
+		)
+		(pin "RES1" output
+			(at 361.95 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "2deb939e-fa86-48e8-8a0d-d4fe9beb44b4")
+		)
+		(pin "RES0" output
+			(at 361.95 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "8694324d-abf0-45d7-aca6-ee880028e549")
+		)
+		(pin "RES3" output
+			(at 361.95 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "cc5805d9-926a-46bc-a2e0-0406143d1d0d")
+		)
+		(pin "RES5" output
+			(at 361.95 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "11c0cc5f-be85-4122-ba76-3b97a9f29e21")
+		)
+		(pin "RES6" output
+			(at 361.95 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "28f75d1c-33b3-4cb8-9f51-d1364fffa062")
+		)
+		(pin "RES7" output
+			(at 361.95 203.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "8621873c-556d-4813-9c53-b266691a8c95")
+		)
+		(pin "RES4" output
+			(at 361.95 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "26470b1c-6c65-453c-a081-25c62715c815")
+		)
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
 					(page "2")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 320.04 266.7)
-		(size 41.91 62.23)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0.0000)
-		)
-		(uuid "22fdaf12-e4a6-4c69-bdae-f3cf68667830")
-		(property "Sheetname" "MuxRight1"
-			(at 320.04 265.9884 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "mux.kicad_sch"
-			(at 320.04 329.5146 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "A4" input
-			(at 320.04 288.29 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "01083bc9-40bf-45c1-a97e-cc92ef0b0ab5")
-		)
-		(pin "B5" input
-			(at 320.04 316.23 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "14e20c45-5855-47cb-ae2e-0e5f1f0bc221")
-		)
-		(pin "A5" input
-			(at 320.04 290.83 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "9e1587b7-16be-40cf-8dc7-df6dc9d2ce74")
-		)
-		(pin "B7" input
-			(at 320.04 321.31 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "0d39cea5-a1de-4686-a03d-3a248c51d08d")
-		)
-		(pin "A7" input
-			(at 320.04 295.91 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "065ed799-9ab9-4e76-a10d-906b6e5958fb")
-		)
-		(pin "B6" input
-			(at 320.04 318.77 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "31fd8829-1f98-451c-a080-fb053da3367b")
-		)
-		(pin "A6" input
-			(at 320.04 293.37 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "5080efd9-5fce-4dc1-9d68-9e1d6616801f")
-		)
-		(pin "OUT5" output
-			(at 361.95 316.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "83345c12-7077-44f6-9295-70fcca6fedef")
-		)
-		(pin "OUT6" output
-			(at 361.95 318.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "56f5bbc3-1b43-4b61-b9f0-e54c1cf61396")
-		)
-		(pin "OUT7" output
-			(at 361.95 321.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "27716e66-2103-4e17-886b-549eee5bd269")
-		)
-		(pin "OUT3" output
-			(at 361.95 311.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "39e00622-e429-4e03-bdf7-35a31e0c5f0d")
-		)
-		(pin "OUT4" output
-			(at 361.95 313.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "5340cedd-d0a5-4fc1-95d4-1f08a2e0c80a")
-		)
-		(pin "OUT2" output
-			(at 361.95 308.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "cb9de0ca-057d-4aa6-bdfa-36cb147bff3a")
-		)
-		(pin "A2" input
-			(at 320.04 283.21 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "84f08bf7-9493-468a-9405-6f17440de5f9")
-		)
-		(pin "B3" input
-			(at 320.04 311.15 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "6c2fc319-0841-4b9a-8441-7357a41af5a4")
-		)
-		(pin "A3" input
-			(at 320.04 285.75 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "d041f698-bbf7-4390-9688-0a910c6f3a90")
-		)
-		(pin "B4" input
-			(at 320.04 313.69 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "a1a43c77-7c40-48fa-90ea-d01ad7589930")
-		)
-		(pin "OUT0" output
-			(at 361.95 303.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "54272055-5d66-4267-9572-2aaa8c1db2f7")
-		)
-		(pin "OUT1" output
-			(at 361.95 306.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "4f74409a-8a20-44af-be64-18a3d22070d7")
-		)
-		(pin "B0" input
-			(at 320.04 303.53 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "780862f6-4e7e-434c-8991-bf6d006c2b39")
-		)
-		(pin "A0" input
-			(at 320.04 278.13 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "36393216-cf19-4026-9e32-862d45a03bac")
-		)
-		(pin "SEL" input
-			(at 320.04 271.78 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "f9e67f76-247c-450c-b286-d7774cf26f25")
-		)
-		(pin "B1" input
-			(at 320.04 306.07 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "e50faff9-09b1-4b4a-9466-d11a8a5d0747")
-		)
-		(pin "A1" input
-			(at 320.04 280.67 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "253424d8-8f4f-42ed-a11a-484ec671e011")
-		)
-		(pin "B2" input
-			(at 320.04 308.61 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "fa514808-c71c-4b50-9172-b8291d50a3b4")
-		)
-		(instances
-			(project "alu_shift"
-				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(page "5")
-				)
-			)
-		)
-	)
-	(sheet
-		(at 665.48 208.28)
-		(size 41.91 62.23)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0.0000)
-		)
-		(uuid "3e387df2-708e-4081-836d-3c5a365b25f3")
-		(property "Sheetname" "MuxDirection"
-			(at 665.48 207.5684 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "mux.kicad_sch"
-			(at 665.48 271.0946 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "A4" input
-			(at 665.48 229.87 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "32c314be-e8a1-4c12-9e66-49e73d4563f0")
-		)
-		(pin "B5" input
-			(at 665.48 257.81 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "5324d051-4c1d-4315-8a7b-b2758327ef6d")
-		)
-		(pin "A5" input
-			(at 665.48 232.41 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "07609403-fea3-475f-b5e1-be29d771c5b3")
-		)
-		(pin "B7" input
-			(at 665.48 262.89 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "114e0ff3-a1f7-4675-9934-cc2c0ae61198")
-		)
-		(pin "A7" input
-			(at 665.48 237.49 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "7ae9b80d-a3b7-4f01-973a-e5e0cc84d875")
-		)
-		(pin "B6" input
-			(at 665.48 260.35 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "de0a8623-0c53-4e30-b974-854c3bd6f554")
-		)
-		(pin "A6" input
-			(at 665.48 234.95 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "ceea8249-f708-49dc-be83-0a135a76a36c")
-		)
-		(pin "OUT5" output
-			(at 707.39 257.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "cbc09a61-80eb-4c2a-87e9-d8f83454be9c")
-		)
-		(pin "OUT6" output
-			(at 707.39 260.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "e75e6680-bd13-4aa8-8d1b-fefd8c41d2cc")
-		)
-		(pin "OUT7" output
-			(at 707.39 262.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "cdd47d77-aaea-4482-afb2-12def984167c")
-		)
-		(pin "OUT3" output
-			(at 707.39 252.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "a210586d-d47b-4817-b239-e49889627682")
-		)
-		(pin "OUT4" output
-			(at 707.39 255.27 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "e6f289b4-804d-4151-8a79-57bdad879dd5")
-		)
-		(pin "OUT2" output
-			(at 707.39 250.19 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "b83616f5-1415-413c-94b7-c75c2e7d0155")
-		)
-		(pin "A2" input
-			(at 665.48 224.79 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "24043789-1695-4c08-a710-315a15d9b645")
-		)
-		(pin "B3" input
-			(at 665.48 252.73 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "9b884860-8af4-4b78-a7f4-1794d3426393")
-		)
-		(pin "A3" input
-			(at 665.48 227.33 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "51378cf7-5e4c-4bfe-b48c-922c6f2b32e5")
-		)
-		(pin "B4" input
-			(at 665.48 255.27 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "00e8c27a-efb0-425b-9758-2dda51c6e390")
-		)
-		(pin "OUT0" output
-			(at 707.39 245.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "13751a94-a2f8-4646-8aef-b54ed4511950")
-		)
-		(pin "OUT1" output
-			(at 707.39 247.65 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "18ac7b26-b40a-4082-ac48-2bfb2d5d9f45")
-		)
-		(pin "B0" input
-			(at 665.48 245.11 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "9147f15b-cfe4-4d41-a9d8-c698e20e34f8")
-		)
-		(pin "A0" input
-			(at 665.48 219.71 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "750b55bc-028c-4fab-a99b-ba47d3b4db12")
-		)
-		(pin "SEL" input
-			(at 665.48 213.36 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "031e996f-3bcb-4058-99fa-6b894b358ba2")
-		)
-		(pin "B1" input
-			(at 665.48 247.65 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "bee9b0eb-cb08-49d8-8453-5fdebcb3fed3")
-		)
-		(pin "A1" input
-			(at 665.48 222.25 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "7273e78b-10c2-4600-8afc-df36352804f1")
-		)
-		(pin "B2" input
-			(at 665.48 250.19 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "469da415-42a6-431d-bed2-3968c418c639")
-		)
-		(instances
-			(project "alu_shift"
-				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(page "8")
 				)
 			)
 		)
@@ -21198,7 +20334,7 @@
 		(fill
 			(color 0 0 0 0.0000)
 		)
-		(uuid "5cb2b931-263a-4c0d-be81-0aa1f90a3bc8")
+		(uuid "54ddbe49-dcb7-4b42-b521-a34e4004dba0")
 		(property "Sheetname" "MuxLeft2"
 			(at 452.12 147.8784 0)
 			(effects
@@ -21225,7 +20361,7 @@
 				)
 				(justify left)
 			)
-			(uuid "87d804a2-0eae-49c3-b2d9-a357763a0df0")
+			(uuid "47c23212-767f-47ad-bee1-17ad59515f4a")
 		)
 		(pin "B5" input
 			(at 452.12 198.12 180)
@@ -21235,7 +20371,7 @@
 				)
 				(justify left)
 			)
-			(uuid "3d590ee1-c940-43a9-a57d-a074dd3923db")
+			(uuid "61a01924-6cb3-459c-b4d7-40b300f830f2")
 		)
 		(pin "A5" input
 			(at 452.12 172.72 180)
@@ -21245,7 +20381,7 @@
 				)
 				(justify left)
 			)
-			(uuid "7da77c8a-a2a6-4409-b5b9-eadbef35639d")
+			(uuid "fd35cd5b-0467-4bd5-9f71-1ff16df7a58c")
 		)
 		(pin "B7" input
 			(at 452.12 203.2 180)
@@ -21255,7 +20391,7 @@
 				)
 				(justify left)
 			)
-			(uuid "d4241ee3-ac22-46b0-b185-7dd493a00c10")
+			(uuid "e5ee2959-f847-44b2-8ccb-df9b6fbb888a")
 		)
 		(pin "A7" input
 			(at 452.12 177.8 180)
@@ -21265,7 +20401,7 @@
 				)
 				(justify left)
 			)
-			(uuid "fdaa498f-cabf-4f2a-b55f-a2f2288b2454")
+			(uuid "5966324d-c8ae-4152-8c55-2ad8add5fc2c")
 		)
 		(pin "B6" input
 			(at 452.12 200.66 180)
@@ -21275,7 +20411,7 @@
 				)
 				(justify left)
 			)
-			(uuid "59c911f3-dc34-404d-9061-9c92f5511dfe")
+			(uuid "8c644b13-8c99-4b14-8db9-5c13dbfb11f0")
 		)
 		(pin "A6" input
 			(at 452.12 175.26 180)
@@ -21285,67 +20421,7 @@
 				)
 				(justify left)
 			)
-			(uuid "59788dd4-b793-4b08-9ecf-d1b002cf9b28")
-		)
-		(pin "OUT5" output
-			(at 494.03 198.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "07ecffbe-90d1-48e6-aa0f-29d529ccb95d")
-		)
-		(pin "OUT6" output
-			(at 494.03 200.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "e9fae3e1-9086-4437-a404-791d4deee474")
-		)
-		(pin "OUT7" output
-			(at 494.03 203.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "20b98cc4-01f1-4343-b471-323a2d02bfcc")
-		)
-		(pin "OUT3" output
-			(at 494.03 193.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "32e57af6-a556-46fc-a6e1-e4125b2935d4")
-		)
-		(pin "OUT4" output
-			(at 494.03 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "4f67ea6c-a5ae-462d-98e1-f9244e28f98d")
-		)
-		(pin "OUT2" output
-			(at 494.03 190.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "feec5109-bc48-4394-b71a-f0fdca2ace99")
+			(uuid "ea114627-f750-4ff8-bfb9-a8e219c19c7c")
 		)
 		(pin "A2" input
 			(at 452.12 165.1 180)
@@ -21355,7 +20431,7 @@
 				)
 				(justify left)
 			)
-			(uuid "eff6d8e1-9f56-46c4-af08-9278c3e95f9f")
+			(uuid "15d21837-2a9c-4a8c-bf4f-2a2b1224984d")
 		)
 		(pin "B3" input
 			(at 452.12 193.04 180)
@@ -21365,7 +20441,7 @@
 				)
 				(justify left)
 			)
-			(uuid "6fb1e9e0-d4af-4a22-947f-a86adf0792b1")
+			(uuid "e27308b2-77e2-4d7e-af94-4b6fa83f7caa")
 		)
 		(pin "A3" input
 			(at 452.12 167.64 180)
@@ -21375,7 +20451,7 @@
 				)
 				(justify left)
 			)
-			(uuid "79a719ad-2a5e-4dd4-9b64-fa9cbf46edd9")
+			(uuid "18ea9593-fa02-4a0a-84f6-35745e088ab8")
 		)
 		(pin "B4" input
 			(at 452.12 195.58 180)
@@ -21385,27 +20461,7 @@
 				)
 				(justify left)
 			)
-			(uuid "4b93e676-49d7-4404-916b-6eac95c96461")
-		)
-		(pin "OUT0" output
-			(at 494.03 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "51a2bad5-46ae-4eea-ac61-0ea5f0b18f5e")
-		)
-		(pin "OUT1" output
-			(at 494.03 187.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "d7104396-9789-4765-a581-21b317c6cfd1")
+			(uuid "b9d11d07-0cdd-4a9d-8037-90bc07bcec02")
 		)
 		(pin "B0" input
 			(at 452.12 185.42 180)
@@ -21415,7 +20471,7 @@
 				)
 				(justify left)
 			)
-			(uuid "f4e4e4ac-d1ea-40cd-a4bc-fe7bbef53ef0")
+			(uuid "9f402308-eb2b-4c64-9583-47e91098d226")
 		)
 		(pin "A0" input
 			(at 452.12 160.02 180)
@@ -21425,7 +20481,7 @@
 				)
 				(justify left)
 			)
-			(uuid "782c6507-6596-4bbd-9f4e-964bea9204ef")
+			(uuid "33f56487-f4b1-448a-af1e-eeb23e58b3b7")
 		)
 		(pin "SEL" input
 			(at 452.12 153.67 180)
@@ -21435,7 +20491,7 @@
 				)
 				(justify left)
 			)
-			(uuid "de0a7846-6794-4a98-a3fa-cd8b95442739")
+			(uuid "10264dc7-570a-4615-bbe3-879b5a27acd6")
 		)
 		(pin "B1" input
 			(at 452.12 187.96 180)
@@ -21445,7 +20501,7 @@
 				)
 				(justify left)
 			)
-			(uuid "c9c356b4-a8b7-4899-94cb-a9e012ee61ca")
+			(uuid "302e9a48-8d6b-4894-8963-84c88218a76c")
 		)
 		(pin "A1" input
 			(at 452.12 162.56 180)
@@ -21455,7 +20511,7 @@
 				)
 				(justify left)
 			)
-			(uuid "a97141eb-a637-42ef-b329-e04a2fc60b2c")
+			(uuid "d25b3153-2ee1-48d3-b93e-92743a51eb30")
 		)
 		(pin "B2" input
 			(at 452.12 190.5 180)
@@ -21465,7 +20521,663 @@
 				)
 				(justify left)
 			)
-			(uuid "28c1a8c3-97ab-4356-938e-3ad93e51fa9c")
+			(uuid "83f20f53-d941-4c82-ac72-5b2d0a374ea7")
+		)
+		(pin "RES2" output
+			(at 494.03 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "c5efa5ce-4cfc-4c3d-a30d-0a5e85545ecb")
+		)
+		(pin "RES1" output
+			(at 494.03 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "5f8bc1a7-6834-4a0d-a9ac-f789ada725f1")
+		)
+		(pin "RES0" output
+			(at 494.03 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "2b2c9b60-d3d3-4d91-a4f6-1678d0b7ebd6")
+		)
+		(pin "RES3" output
+			(at 494.03 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "5bb8139f-a3bb-45b1-88c0-c58ca8b43b1f")
+		)
+		(pin "RES5" output
+			(at 494.03 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "969a68f5-d6f7-4eea-ad3c-97539b3c9e18")
+		)
+		(pin "RES6" output
+			(at 494.03 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "ce01f0e1-cb0e-4fb9-a5eb-183595ab9b37")
+		)
+		(pin "RES7" output
+			(at 494.03 203.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "de5f9ed4-c458-4ce2-8733-904a318e4bba")
+		)
+		(pin "RES4" output
+			(at 494.03 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "b07241c7-5183-4a87-9f84-16f69bdf75d1")
+		)
+		(instances
+			(project "alu_shift"
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 665.48 208.28)
+		(size 41.91 62.23)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "64452d8c-84b4-4da6-a178-691a8523b73c")
+		(property "Sheetname" "MuxResult"
+			(at 665.48 207.5684 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "mux.kicad_sch"
+			(at 665.48 271.0946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "A4" input
+			(at 665.48 229.87 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "871885ae-83c1-4e76-a23a-d37f77f63f6d")
+		)
+		(pin "B5" input
+			(at 665.48 257.81 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "d4a20064-826a-4621-a60f-d9e8f186f1c4")
+		)
+		(pin "A5" input
+			(at 665.48 232.41 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "501fdd43-2040-49f7-9751-8d0d7fcf7c9c")
+		)
+		(pin "B7" input
+			(at 665.48 262.89 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "025ce69b-9d90-428d-8790-9606e9e4c461")
+		)
+		(pin "A7" input
+			(at 665.48 237.49 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "bf50b38e-210f-44e5-9218-07839bfb1b22")
+		)
+		(pin "B6" input
+			(at 665.48 260.35 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "ad1f7142-89f6-42b9-9cb1-e18acc112d6b")
+		)
+		(pin "A6" input
+			(at 665.48 234.95 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "87547268-5c08-47a8-b11e-787ca6a5b15a")
+		)
+		(pin "A2" input
+			(at 665.48 224.79 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "52a6b3f1-6e16-47f3-950a-ad2e8cb373ee")
+		)
+		(pin "B3" input
+			(at 665.48 252.73 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "2b73aeaa-1954-428e-b795-a904db3eaa65")
+		)
+		(pin "A3" input
+			(at 665.48 227.33 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "1d4025e0-3946-43dc-99d7-823ff950d463")
+		)
+		(pin "B4" input
+			(at 665.48 255.27 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "8f7d7394-59e7-4a61-baee-4fc2d3ab1c67")
+		)
+		(pin "B0" input
+			(at 665.48 245.11 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "198e4d2e-edf6-44e0-98f4-77a02f9c8465")
+		)
+		(pin "A0" input
+			(at 665.48 219.71 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "b97defe5-7aea-4f38-959c-b919d009cd69")
+		)
+		(pin "SEL" input
+			(at 665.48 213.36 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "6666667c-c120-4f93-b91b-7b939104b718")
+		)
+		(pin "B1" input
+			(at 665.48 247.65 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "217fbe0e-dd77-4eaf-8d18-5d7a30888f77")
+		)
+		(pin "A1" input
+			(at 665.48 222.25 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "af58dcc1-65dd-4f3d-8e1f-d75cb9af195a")
+		)
+		(pin "B2" input
+			(at 665.48 250.19 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "7706880f-882d-48e2-ada2-6b538f635a74")
+		)
+		(pin "RES2" output
+			(at 707.39 250.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "4040298c-81db-4950-b5dd-2b4225318226")
+		)
+		(pin "RES1" output
+			(at 707.39 247.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "6eeba4b8-4630-4578-af83-80038707af21")
+		)
+		(pin "RES0" output
+			(at 707.39 245.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "2580c080-1779-4955-807d-b8f36685f38f")
+		)
+		(pin "RES3" output
+			(at 707.39 252.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "2a8b9217-de30-4565-8cd0-e6c44a114b6b")
+		)
+		(pin "RES5" output
+			(at 707.39 257.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "245cf78f-4e7b-486e-a370-b3167282b796")
+		)
+		(pin "RES6" output
+			(at 707.39 260.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "8146cb74-8791-4297-8977-2bd02b79ff56")
+		)
+		(pin "RES7" output
+			(at 707.39 262.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "6fd3c8aa-83f8-4395-9ee4-ac4c1292113d")
+		)
+		(pin "RES4" output
+			(at 707.39 255.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "c49d26cc-b6b7-4904-afee-31dc80d509d5")
+		)
+		(instances
+			(project "alu_shift"
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 320.04 266.7)
+		(size 41.91 62.23)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "647ef48e-943b-4ce8-b10e-9411cb7be0d5")
+		(property "Sheetname" "MuxRight1"
+			(at 320.04 265.9884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "mux.kicad_sch"
+			(at 320.04 329.5146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "A4" input
+			(at 320.04 288.29 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "ff1a135c-c11a-4d7d-82f1-f0b5772528df")
+		)
+		(pin "B5" input
+			(at 320.04 316.23 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "5c4b2721-2116-49b1-ad3b-63c69d4625c5")
+		)
+		(pin "A5" input
+			(at 320.04 290.83 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "29eb994c-77ec-4f20-924b-136adbd7aed6")
+		)
+		(pin "B7" input
+			(at 320.04 321.31 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "368a0500-8c83-4878-b648-36c0fc176462")
+		)
+		(pin "A7" input
+			(at 320.04 295.91 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "d9fde69d-9b5c-4abf-89cd-b77496019642")
+		)
+		(pin "B6" input
+			(at 320.04 318.77 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "ba6c8025-ea7e-4f02-b285-9d35270214c0")
+		)
+		(pin "A6" input
+			(at 320.04 293.37 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "8aea7b0a-936e-4499-9165-4d2f73514cac")
+		)
+		(pin "A2" input
+			(at 320.04 283.21 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "bd8f6703-87d0-47f2-99b7-50a28892fafe")
+		)
+		(pin "B3" input
+			(at 320.04 311.15 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "76e8873d-c106-46e4-8a9e-6a4f16371bc4")
+		)
+		(pin "A3" input
+			(at 320.04 285.75 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "fe21736c-7498-4971-9b1f-7f1004c8d769")
+		)
+		(pin "B4" input
+			(at 320.04 313.69 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "79d27f5d-e1c2-4631-bbd8-1db4e109d21a")
+		)
+		(pin "B0" input
+			(at 320.04 303.53 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "cf2de5b5-91d4-4636-a23d-341451a4f12d")
+		)
+		(pin "A0" input
+			(at 320.04 278.13 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "4328579f-d1fe-462a-96b0-760830583df6")
+		)
+		(pin "SEL" input
+			(at 320.04 271.78 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "2a99c16f-4c55-4617-a041-782d491821bc")
+		)
+		(pin "B1" input
+			(at 320.04 306.07 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "62c8e33f-33a7-4296-9142-8f328b3cc5fc")
+		)
+		(pin "A1" input
+			(at 320.04 280.67 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "7df11785-e977-43da-8484-70451b91199f")
+		)
+		(pin "B2" input
+			(at 320.04 308.61 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "b5214a3e-d339-4762-9efd-40afde4ba57d")
+		)
+		(pin "RES2" output
+			(at 361.95 308.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "19ef2623-f46b-4d3a-bd3b-9a5f859c82e9")
+		)
+		(pin "RES1" output
+			(at 361.95 306.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "cb4ef532-1508-42bf-ab50-882d3893472c")
+		)
+		(pin "RES0" output
+			(at 361.95 303.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "0191ee0e-4d87-4196-a263-2cc11121dd2b")
+		)
+		(pin "RES3" output
+			(at 361.95 311.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "4296d8ae-d2d9-42cd-bb45-90d9f951d727")
+		)
+		(pin "RES5" output
+			(at 361.95 316.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "5540a668-641c-4b38-a49b-3ebd555339b5")
+		)
+		(pin "RES6" output
+			(at 361.95 318.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "f8cfa74a-b6f6-4169-b684-b60bbab07adb")
+		)
+		(pin "RES7" output
+			(at 361.95 321.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "00ddaf42-a100-4a25-a04d-0af200e1a2dd")
+		)
+		(pin "RES4" output
+			(at 361.95 313.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "f10e76f9-af79-4aa4-a312-5a822f776f58")
 		)
 		(instances
 			(project "alu_shift"
@@ -21486,7 +21198,7 @@
 		(fill
 			(color 0 0 0 0.0000)
 		)
-		(uuid "9949fce7-e52f-4601-9e45-d999cd0f3285")
+		(uuid "871f3f5d-5c9d-4369-8210-f657be1b4cec")
 		(property "Sheetname" "MuxRight2"
 			(at 452.12 265.9884 0)
 			(effects
@@ -21513,7 +21225,7 @@
 				)
 				(justify left)
 			)
-			(uuid "cd81f202-5081-46a9-a764-49f3afbb9b97")
+			(uuid "e2266788-31aa-461c-8da2-78937e043bc3")
 		)
 		(pin "B5" input
 			(at 452.12 316.23 180)
@@ -21523,7 +21235,7 @@
 				)
 				(justify left)
 			)
-			(uuid "1d2fcd79-9033-4682-afd6-459b46ecc3af")
+			(uuid "50961985-e827-40f6-8168-9386467f0d75")
 		)
 		(pin "A5" input
 			(at 452.12 290.83 180)
@@ -21533,7 +21245,7 @@
 				)
 				(justify left)
 			)
-			(uuid "a87a2632-f9f8-4b34-b780-f3831bbc2d55")
+			(uuid "03a3176a-6f57-43d9-9107-7b2cc5049734")
 		)
 		(pin "B7" input
 			(at 452.12 321.31 180)
@@ -21543,7 +21255,7 @@
 				)
 				(justify left)
 			)
-			(uuid "3c1dabad-1430-4f46-a3ac-fc6773e028bd")
+			(uuid "b66d69a3-4996-4f76-9fd6-478867b30cb5")
 		)
 		(pin "A7" input
 			(at 452.12 295.91 180)
@@ -21553,7 +21265,7 @@
 				)
 				(justify left)
 			)
-			(uuid "7dfd6ea2-4abc-4aa7-853b-1713aec3659c")
+			(uuid "a9fecf03-be98-4d29-8685-33f3e9f2ed26")
 		)
 		(pin "B6" input
 			(at 452.12 318.77 180)
@@ -21563,7 +21275,7 @@
 				)
 				(justify left)
 			)
-			(uuid "e7dc3e0f-3179-4699-b3b1-81af691528a2")
+			(uuid "e50d7375-14ac-4e09-9b44-abbfe6649d48")
 		)
 		(pin "A6" input
 			(at 452.12 293.37 180)
@@ -21573,67 +21285,7 @@
 				)
 				(justify left)
 			)
-			(uuid "c06e4f6f-c936-44f4-b023-04e3dd0142bd")
-		)
-		(pin "OUT5" output
-			(at 494.03 316.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "8906fbaf-5093-44c6-a5c4-7242a5e55f34")
-		)
-		(pin "OUT6" output
-			(at 494.03 318.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "81011702-dd9a-4fd8-9bbe-f2bde575a1a0")
-		)
-		(pin "OUT7" output
-			(at 494.03 321.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "774f8457-1129-4d0c-b715-514d0832f697")
-		)
-		(pin "OUT3" output
-			(at 494.03 311.15 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "572b1f46-0823-4310-9ed4-bf693c2b604a")
-		)
-		(pin "OUT4" output
-			(at 494.03 313.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "d0974a0a-f45a-4ac4-9574-74b802790588")
-		)
-		(pin "OUT2" output
-			(at 494.03 308.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "1c565fd4-7b1a-4f6f-bb40-efc80ebfadf2")
+			(uuid "ce1031a8-73cb-45de-ae6f-e2928b860e72")
 		)
 		(pin "A2" input
 			(at 452.12 283.21 180)
@@ -21643,7 +21295,7 @@
 				)
 				(justify left)
 			)
-			(uuid "ba90d655-47e5-4aa0-8c3e-4db58f6af076")
+			(uuid "15734b52-1e7b-461d-a727-756f41ba37b5")
 		)
 		(pin "B3" input
 			(at 452.12 311.15 180)
@@ -21653,7 +21305,7 @@
 				)
 				(justify left)
 			)
-			(uuid "73355313-cd3f-4b72-a435-631e4558dca6")
+			(uuid "04a45069-c458-4d36-9320-08e76b095e73")
 		)
 		(pin "A3" input
 			(at 452.12 285.75 180)
@@ -21663,7 +21315,7 @@
 				)
 				(justify left)
 			)
-			(uuid "f6ee0ab6-22c8-4dae-ac95-8d0bdb0e4864")
+			(uuid "a1e8f108-c6db-40b5-96ea-90c78b6455d9")
 		)
 		(pin "B4" input
 			(at 452.12 313.69 180)
@@ -21673,27 +21325,7 @@
 				)
 				(justify left)
 			)
-			(uuid "0466f0c1-d543-4389-9f15-1de34c0f0f64")
-		)
-		(pin "OUT0" output
-			(at 494.03 303.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "32e430f5-5025-4884-92dd-5207b21157fc")
-		)
-		(pin "OUT1" output
-			(at 494.03 306.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "df6ab965-ffb6-4eb0-90e5-88f55262e7d7")
+			(uuid "bc85f3bb-411e-41c9-9eec-411eba20a3d1")
 		)
 		(pin "B0" input
 			(at 452.12 303.53 180)
@@ -21703,7 +21335,7 @@
 				)
 				(justify left)
 			)
-			(uuid "2d4b0edd-85b7-4636-bdc7-cd53e49ba420")
+			(uuid "b0223805-c2c7-4ab8-b951-37c6d17465cc")
 		)
 		(pin "A0" input
 			(at 452.12 278.13 180)
@@ -21713,7 +21345,7 @@
 				)
 				(justify left)
 			)
-			(uuid "dab5e139-31c6-4039-a732-2f23f94b7a8e")
+			(uuid "bf39021a-d3cd-4629-bc2c-6c56a77807b8")
 		)
 		(pin "SEL" input
 			(at 452.12 271.78 180)
@@ -21723,7 +21355,7 @@
 				)
 				(justify left)
 			)
-			(uuid "b3eb27f1-353f-439a-adc0-8a33bd229547")
+			(uuid "904ae80a-573c-4d6c-a5bc-0f20482306b4")
 		)
 		(pin "B1" input
 			(at 452.12 306.07 180)
@@ -21733,7 +21365,7 @@
 				)
 				(justify left)
 			)
-			(uuid "b7acc953-843c-4604-8977-add5cef43b3e")
+			(uuid "6c7d1826-77b2-4fdf-af11-2c1d71ce15f7")
 		)
 		(pin "A1" input
 			(at 452.12 280.67 180)
@@ -21743,7 +21375,7 @@
 				)
 				(justify left)
 			)
-			(uuid "621b9a2f-c82d-4ab8-907f-9ed879abe51e")
+			(uuid "94eaf65d-88ea-44e8-b0f9-41f9af92aec8")
 		)
 		(pin "B2" input
 			(at 452.12 308.61 180)
@@ -21753,12 +21385,92 @@
 				)
 				(justify left)
 			)
-			(uuid "f6d2f721-6787-4ca8-a7ac-257ae196c056")
+			(uuid "b69c34da-128b-4ac0-8578-9f49d38b1110")
+		)
+		(pin "RES2" output
+			(at 494.03 308.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "c92f712a-9297-47fe-8d6d-5c465b01e25e")
+		)
+		(pin "RES1" output
+			(at 494.03 306.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "5593f1c6-d34a-418d-bd1c-0ffedee02a07")
+		)
+		(pin "RES0" output
+			(at 494.03 303.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "35ac3ee3-d4bb-471d-bf6f-507a9a1c05e3")
+		)
+		(pin "RES3" output
+			(at 494.03 311.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "71b87d05-bb4c-4f60-a690-e01a84560da3")
+		)
+		(pin "RES5" output
+			(at 494.03 316.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "09ea7195-2289-47b9-9d14-6de0b5094f2f")
+		)
+		(pin "RES6" output
+			(at 494.03 318.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "bc3aeff7-162e-4b9b-8176-d73f78dd019c")
+		)
+		(pin "RES7" output
+			(at 494.03 321.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "208949f9-3052-49eb-87c4-57043d695d59")
+		)
+		(pin "RES4" output
+			(at 494.03 313.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "60418ec8-97bd-4496-a3b1-8458995a88cb")
 		)
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(page "6")
+					(page "4")
 				)
 			)
 		)
@@ -21774,7 +21486,7 @@
 		(fill
 			(color 0 0 0 0.0000)
 		)
-		(uuid "bdd363fa-94b8-4727-8cee-c85871513ef9")
+		(uuid "a66f574f-be5e-4347-aed2-dd689f74ae5f")
 		(property "Sheetname" "MuxLeft4"
 			(at 584.2 147.8784 0)
 			(effects
@@ -21801,7 +21513,7 @@
 				)
 				(justify left)
 			)
-			(uuid "93df68e8-9255-4af0-8ab0-69acd2076503")
+			(uuid "faa2d429-a55e-4845-8e2d-068e25aa3df3")
 		)
 		(pin "B5" input
 			(at 584.2 198.12 180)
@@ -21811,7 +21523,7 @@
 				)
 				(justify left)
 			)
-			(uuid "32d332d1-3fae-457c-80fc-20bdb3757eaa")
+			(uuid "b568387f-eb69-45f1-9b45-692b54bc8444")
 		)
 		(pin "A5" input
 			(at 584.2 172.72 180)
@@ -21821,7 +21533,7 @@
 				)
 				(justify left)
 			)
-			(uuid "0ae41fd9-fb43-4777-bda7-114577a43cbb")
+			(uuid "3208182c-2ceb-4132-8f1d-631d0c531502")
 		)
 		(pin "B7" input
 			(at 584.2 203.2 180)
@@ -21831,7 +21543,7 @@
 				)
 				(justify left)
 			)
-			(uuid "afb3ee1c-4b93-4b6d-93ea-1b02657e7a8f")
+			(uuid "d92ec3ba-f9fd-4917-8ccb-3d1610641210")
 		)
 		(pin "A7" input
 			(at 584.2 177.8 180)
@@ -21841,7 +21553,7 @@
 				)
 				(justify left)
 			)
-			(uuid "8831972d-b922-4f07-b144-9e0d79b6c760")
+			(uuid "31e9ea16-f13f-426d-84f7-07d6f4c04f39")
 		)
 		(pin "B6" input
 			(at 584.2 200.66 180)
@@ -21851,7 +21563,7 @@
 				)
 				(justify left)
 			)
-			(uuid "f9a8e315-ec76-4d90-97ba-3de89c1076ce")
+			(uuid "8fa76663-fd44-4091-82a9-131690c9aa2c")
 		)
 		(pin "A6" input
 			(at 584.2 175.26 180)
@@ -21861,67 +21573,7 @@
 				)
 				(justify left)
 			)
-			(uuid "0fd9b94e-f8eb-4841-b44f-e79cffc10b82")
-		)
-		(pin "OUT5" output
-			(at 626.11 198.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "5a7f2405-65b9-4a4a-80e7-f82558ca1f86")
-		)
-		(pin "OUT6" output
-			(at 626.11 200.66 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "1de04cf2-22e0-4fc5-bbc9-e3b804b39a62")
-		)
-		(pin "OUT7" output
-			(at 626.11 203.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "3ac45791-809c-4930-abca-37d21d7329b5")
-		)
-		(pin "OUT3" output
-			(at 626.11 193.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "1046d15b-3991-458f-9a62-cfed7d1f0714")
-		)
-		(pin "OUT4" output
-			(at 626.11 195.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "1f0855c0-92c9-45af-a2ce-2b417ddffc0d")
-		)
-		(pin "OUT2" output
-			(at 626.11 190.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "8d8f761e-3dc3-4f4c-8df1-d3b364d06120")
+			(uuid "c9089443-a853-4e37-bf37-51c66fba44cf")
 		)
 		(pin "A2" input
 			(at 584.2 165.1 180)
@@ -21931,7 +21583,7 @@
 				)
 				(justify left)
 			)
-			(uuid "9be7c344-087e-44cb-b856-d32217b26c79")
+			(uuid "841e9f8e-af0c-45b8-bb4e-93fa5858838a")
 		)
 		(pin "B3" input
 			(at 584.2 193.04 180)
@@ -21941,7 +21593,7 @@
 				)
 				(justify left)
 			)
-			(uuid "d732b6da-6001-4dab-893b-ee11ccdae0c4")
+			(uuid "7f64e78d-751f-4dd9-bf38-357ce48324ff")
 		)
 		(pin "A3" input
 			(at 584.2 167.64 180)
@@ -21951,7 +21603,7 @@
 				)
 				(justify left)
 			)
-			(uuid "a6d97429-ca38-4998-a600-1f51f29ab4d0")
+			(uuid "f37414e7-3b82-445f-a9b5-b993a3958ba8")
 		)
 		(pin "B4" input
 			(at 584.2 195.58 180)
@@ -21961,27 +21613,7 @@
 				)
 				(justify left)
 			)
-			(uuid "27220e3c-40c8-45e3-848c-dc059ac6e891")
-		)
-		(pin "OUT0" output
-			(at 626.11 185.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "579720c4-9f9d-4122-84ac-d54dcef0473e")
-		)
-		(pin "OUT1" output
-			(at 626.11 187.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "638b4140-e735-4c23-b97b-52512a0d6ea6")
+			(uuid "891a9543-4494-4683-a251-3092efa6fa39")
 		)
 		(pin "B0" input
 			(at 584.2 185.42 180)
@@ -21991,7 +21623,7 @@
 				)
 				(justify left)
 			)
-			(uuid "620a1b06-f33e-4312-82ca-55729ecaf4f8")
+			(uuid "edd0c7e8-0b6e-41ff-ab7b-727f6a6eedc8")
 		)
 		(pin "A0" input
 			(at 584.2 160.02 180)
@@ -22001,7 +21633,7 @@
 				)
 				(justify left)
 			)
-			(uuid "466495af-638c-4e2e-a677-eb4334a04421")
+			(uuid "d14d3b81-f631-45a5-abe9-b984db2438b8")
 		)
 		(pin "SEL" input
 			(at 584.2 153.67 180)
@@ -22011,7 +21643,7 @@
 				)
 				(justify left)
 			)
-			(uuid "6bd2fed2-5e44-439b-9763-69ac79d2f857")
+			(uuid "ac63b6cb-bf51-449f-a065-cad8deae44ce")
 		)
 		(pin "B1" input
 			(at 584.2 187.96 180)
@@ -22021,7 +21653,7 @@
 				)
 				(justify left)
 			)
-			(uuid "102214ca-20cf-4a98-978c-b5ed52942441")
+			(uuid "500270ae-1dcf-4c5f-876f-e9f9ede4fcc2")
 		)
 		(pin "A1" input
 			(at 584.2 162.56 180)
@@ -22031,7 +21663,7 @@
 				)
 				(justify left)
 			)
-			(uuid "b10fcd7e-a66b-4e4d-b5c1-f2f4c78259b8")
+			(uuid "b17032fe-a9c8-4221-a324-fb79f4361bbb")
 		)
 		(pin "B2" input
 			(at 584.2 190.5 180)
@@ -22041,12 +21673,380 @@
 				)
 				(justify left)
 			)
-			(uuid "7f18ec2c-648c-4e56-9387-5940a76e2d5c")
+			(uuid "ea0c6bb9-792c-431d-b50c-cae37fc28dd2")
+		)
+		(pin "RES2" output
+			(at 626.11 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "549906f2-15fe-4c35-8627-7723123e7415")
+		)
+		(pin "RES1" output
+			(at 626.11 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "ea8e857a-46e9-4423-b85b-f257fc3fef4e")
+		)
+		(pin "RES0" output
+			(at 626.11 185.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "23770624-2358-480f-86e1-6b41119d469b")
+		)
+		(pin "RES3" output
+			(at 626.11 193.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "496bf5eb-e366-4dc8-aae8-ec8908d7f494")
+		)
+		(pin "RES5" output
+			(at 626.11 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "393584a6-0bc7-49a7-966d-cbe24f78f8e2")
+		)
+		(pin "RES6" output
+			(at 626.11 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "0dc09b01-48d8-4c7c-a327-dc36e5cd3874")
+		)
+		(pin "RES7" output
+			(at 626.11 203.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "16fd1c21-5520-4640-8fc9-85ad0bf898e0")
+		)
+		(pin "RES4" output
+			(at 626.11 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "20e9c2a7-8592-4d63-8822-5caf1210b6e7")
 		)
 		(instances
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(page "4")
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 584.2 266.7)
+		(size 41.91 62.23)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "c42f403e-b7d0-42ef-ac00-2449399344db")
+		(property "Sheetname" "MuxRight4"
+			(at 584.2 265.9884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "mux.kicad_sch"
+			(at 584.2 329.5146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "A4" input
+			(at 584.2 288.29 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "145f1a1c-67e1-4628-873c-640ed9f407c9")
+		)
+		(pin "B5" input
+			(at 584.2 316.23 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "753f5680-e50a-4d6e-afd8-27c2d4f3b21b")
+		)
+		(pin "A5" input
+			(at 584.2 290.83 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "62d84325-abbb-4464-9dcc-a72e0a2e51c8")
+		)
+		(pin "B7" input
+			(at 584.2 321.31 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "a5e9814b-d949-4f8b-8f3d-d1071aa27788")
+		)
+		(pin "A7" input
+			(at 584.2 295.91 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "e55a9cad-29fa-485b-bf89-44e8ca14edf9")
+		)
+		(pin "B6" input
+			(at 584.2 318.77 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "25dfd510-4e86-45c9-90d6-a9797d2f2cec")
+		)
+		(pin "A6" input
+			(at 584.2 293.37 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "0422c5bc-5fcc-40bb-9251-80c0ebda852e")
+		)
+		(pin "A2" input
+			(at 584.2 283.21 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "897f83d1-2895-45d1-b5cc-3eda50cc22b3")
+		)
+		(pin "B3" input
+			(at 584.2 311.15 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "484b2ff4-b69d-4723-adec-400695fd13d6")
+		)
+		(pin "A3" input
+			(at 584.2 285.75 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "a13cf35a-28a1-4d2b-b25f-e0167bd0a954")
+		)
+		(pin "B4" input
+			(at 584.2 313.69 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "d8be5837-9c23-4d04-a29d-35bec8876df5")
+		)
+		(pin "B0" input
+			(at 584.2 303.53 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "2047fc97-7ae5-440d-8539-1d5ebe503eae")
+		)
+		(pin "A0" input
+			(at 584.2 278.13 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "a6facbbb-e6b3-47eb-90d9-43af7d600e98")
+		)
+		(pin "SEL" input
+			(at 584.2 271.78 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "847d9427-b95f-406b-8725-18a6f8693e9a")
+		)
+		(pin "B1" input
+			(at 584.2 306.07 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "8b140e07-b158-4f81-b42e-88cf8fe9413b")
+		)
+		(pin "A1" input
+			(at 584.2 280.67 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "e0e9d577-8ee8-420a-accd-f78c4841a2b9")
+		)
+		(pin "B2" input
+			(at 584.2 308.61 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "f83ae6da-ea20-49bb-9da8-27bbaef29584")
+		)
+		(pin "RES2" output
+			(at 626.11 308.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "bfa9ae15-2b95-4dce-96b8-bd196123c6b9")
+		)
+		(pin "RES1" output
+			(at 626.11 306.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "f678f50c-6c22-4465-abb9-c4b970c1e298")
+		)
+		(pin "RES0" output
+			(at 626.11 303.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "3c595e76-bfbd-4069-b2a7-4f93fd03ec66")
+		)
+		(pin "RES3" output
+			(at 626.11 311.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "7feb9064-2969-4bff-bc45-3940a45b12ae")
+		)
+		(pin "RES5" output
+			(at 626.11 316.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "b618c498-9015-44cd-9c17-cb6b58aec6ce")
+		)
+		(pin "RES6" output
+			(at 626.11 318.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "1bec52c7-18b1-446e-be07-779c1dd12747")
+		)
+		(pin "RES7" output
+			(at 626.11 321.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "064e2806-7ac3-4f1e-92a0-0cec3a7d8c7b")
+		)
+		(pin "RES4" output
+			(at 626.11 313.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "ea0be1a3-33d2-49c7-a137-d294f34344b2")
+		)
+		(instances
+			(project "alu_shift"
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(page "5")
 				)
 			)
 		)

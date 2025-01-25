@@ -960,6 +960,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c728bf69-6588-4d49-8b6a-29e6b22b6737")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
 		(path "/e916d1a5-5b6d-4685-880c-2f41873d1019")
 		(sheetname "Root")
@@ -1321,6 +1334,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "85d00775-91fc-4d36-b461-e133fc617d2b")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -2153,7 +2179,7 @@
 		(path "/d0134623-ac44-47d1-b6ec-ace3c1ae729d")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -2285,7 +2311,7 @@
 		(path "/0ea5aa3d-3d20-46a8-a792-a3f43ec58d65")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -2408,6 +2434,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "beaa25c5-9953-4ece-bf25-85ce9bce2f2f")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -3971,7 +4010,7 @@
 		(path "/f81138b5-aee1-406f-b55b-952da0989fcf")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -4327,8 +4366,21 @@
 				)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "985500b4-9e2e-4b31-8823-94dd1db9d447")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
-		(path "/ff241c46-2b66-495a-bdd1-4ff4f10dea99")
+		(path "/e10b141d-f1e7-4a51-81e4-5d0ab797aeac")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
 		(attr smd)
@@ -6954,7 +7006,7 @@
 		(path "/5d01bac7-4f72-452c-b916-930996f02ec9")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -7379,7 +7431,7 @@
 		(path "/b2557af5-84c7-45c1-b88e-582685c35975")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -8024,6 +8076,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7a33ad16-174d-437b-9cb2-61833feb6d58")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -8942,7 +9007,7 @@
 		(path "/75148b28-805a-455b-9da7-daf2f3c92d45")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -9074,7 +9139,7 @@
 		(path "/6be0e69b-2441-480c-98a7-b58948fc479c")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -9490,6 +9555,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "419eb8c5-8efb-4e68-8e1d-b341145667b8")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -10157,7 +10235,7 @@
 		(path "/17e4ff10-bded-4242-917a-8cefae4620db")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -11813,7 +11891,7 @@
 		(path "/67f79ac1-746f-48ba-8543-2d36defdd9ba")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -11936,6 +12014,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e396999f-5ead-4cf0-88a3-f09875ff3ab1")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -12305,8 +12396,21 @@
 				)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9d8d8129-49c5-432c-9521-60d26b361faa")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
-		(path "/7fddee97-082c-417c-8e7e-b4fcb84a6698")
+		(path "/5cea3be7-4905-4036-b2ad-2af197d689f0")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
 		(attr smd)
@@ -13719,7 +13823,7 @@
 		(path "/96ba752d-6a7b-48a9-b1b5-33c6e8d8f9eb")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -14560,7 +14664,7 @@
 		(path "/508b75f2-3cae-43bc-b743-30d0998a6a49")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -14916,8 +15020,21 @@
 				)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "5096b36b-5c1e-40b7-889f-5f6cc0239e40")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
-		(path "/c2105438-78a1-4a60-86ac-3f3ac9e629a5")
+		(path "/8f9742ff-0419-4fdc-93d6-2246bcc204c4")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
 		(attr smd)
@@ -15995,7 +16112,7 @@
 		(path "/49250570-ff83-4dd7-ac85-24ecb0c65992")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -16900,7 +17017,7 @@
 		(path "/89a9198d-7d50-4c18-8a04-4cc52405e3d1")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -17023,6 +17140,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "703bf68a-39c6-41ca-ae1a-3312f1bcd25c")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -17388,6 +17518,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e9c5b292-6892-49a6-b027-ec7a2358df9a")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -18700,7 +18843,7 @@
 		(path "/f59a60df-fb63-424e-866f-283546db9b05")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -20314,7 +20457,7 @@
 		(path "/f79eda45-89c0-4a3e-927b-3b342253938d")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -20437,6 +20580,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8f6cb63d-261b-4162-9310-081c348269f6")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -22086,7 +22242,7 @@
 		(path "/93db3989-12b8-49a7-a0e1-55e4ee353f6d")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -22689,6 +22845,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "e68849af-48de-4065-93b8-79b3584dbb96")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -23538,6 +23707,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "7186ffa8-bec8-4890-a39d-bf227e2f9ef7")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
 		(path "/920d14e5-6edc-4985-bd3d-c8c8162270a0")
 		(sheetname "Root")
@@ -24366,7 +24548,7 @@
 		(path "/fe753880-fb88-4b83-b7ce-6ef8f026229e")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -26176,7 +26358,7 @@
 		(path "/e28edc73-b967-4916-9d78-f31cbe4efb39")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -27059,7 +27241,7 @@
 		(path "/606d4b50-d439-4e3e-be72-2514d89edae3")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -27442,7 +27624,7 @@
 		(path "/d3b6b08d-6129-416a-b3ba-68d49500904d")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -27794,6 +27976,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "71d1549a-3e6b-47c0-9edf-ba20d64a0b56")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -29034,6 +29229,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "3baf6c8e-57cf-4645-aa1e-420b981918db")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
 		(path "/7ef00a29-37f6-4745-b3ef-5504080ff0c3")
 		(sheetname "Root")
@@ -29697,7 +29905,7 @@
 		(path "/0f42153f-0a25-4383-a593-9be0d8822e56")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -30049,6 +30257,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "c0b28c48-fb39-45ea-9490-983af7a7da11")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -31649,6 +31870,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "8ee1270f-4214-466f-855b-5e330496cde1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
 		(path "/f433c8cc-29cc-42ec-be8e-0d923edbcf1b")
 		(sheetname "Root")
@@ -32770,7 +33004,7 @@
 		(path "/61ac72e2-a650-4a93-8da6-ed06f001dae2")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -33131,7 +33365,7 @@
 		(path "/c7524710-c36f-424a-bae2-2f694f4d339a")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -34592,7 +34826,7 @@
 		(path "/7721dadb-f869-49c7-b855-40de71ec83da")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -35411,7 +35645,7 @@
 		(path "/7c2f6d45-645a-4b73-9e34-60cc698a7ea6")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -35785,6 +36019,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "74328619-8ab1-494e-8421-ea7a4b47c155")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -36388,7 +36635,7 @@
 		(path "/1bbe5703-a826-4804-a27c-05eb88bd0fb1")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -36520,7 +36767,7 @@
 		(path "/10d8f33c-bc8d-469b-a5b3-e453342d3e9f")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -37105,6 +37352,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9f006371-f1b6-499d-9fe5-b3224d10602b")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
 		(path "/de2a2b56-2579-4726-bc11-016566669b58")
 		(sheetname "Root")
@@ -37470,6 +37730,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4312749c-4f34-4ee8-9378-f7cdb6992f33")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
 		(path "/bca8f0cc-343c-45da-81d4-267bc1c2128a")
 		(sheetname "Root")
@@ -37831,6 +38104,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "f8606462-f77d-4812-b3ee-10672529f934")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -39020,7 +39306,7 @@
 		(path "/b72e55ee-5b56-40cc-a347-a4e747a0b1df")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -39605,6 +39891,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "4ca0a13a-f6b6-49f6-bdef-a5f158466e75")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
 		(path "/ce9e10a4-6fad-4218-9c44-8188d3e674cd")
 		(sheetname "Root")
@@ -39970,6 +40269,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "37d42f06-591d-4e75-b116-00ae49ee7260")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
 		(path "/adb144b8-cc18-42cc-9d83-b296d771a952")
 		(sheetname "Root")
@@ -40331,6 +40643,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "10de461a-dd62-4917-a464-5a3498f3abbc")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -41995,6 +42320,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "730a9437-1910-44f4-ac9b-7667c1a88651")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
 		(path "/c5f69a26-c5f3-4696-805c-0f8fb5f6b420")
 		(sheetname "Root")
@@ -42616,7 +42954,7 @@
 		(path "/1ba125c4-ff1e-4df3-bd94-4e00f47af405")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -43521,7 +43859,7 @@
 		(path "/09315799-7961-4b2d-abfa-0bd06f6eabb5")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -43877,8 +44215,21 @@
 				)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "1d37238d-ce17-4caa-a2f2-a7da4cf9f929")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
-		(path "/ae9e143a-bb09-4b96-a7f2-15b2641db86a")
+		(path "/64fb3056-6a85-4f44-95de-2f0c36689eb3")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
 		(attr smd)
@@ -44238,6 +44589,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "0a8f4f2e-d9f5-4d44-927c-b4b709411a3d")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -49538,6 +49902,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "51b3b782-078c-40ff-80ad-2132e6ab2a94")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
 		(path "/10a8bcc9-5586-4a87-8889-ef7b600954d7")
 		(sheetname "Root")
@@ -50388,7 +50765,7 @@
 		(path "/c38384cc-cfc5-417a-b954-7ee7f815edd5")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -51724,6 +52101,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "d0e79618-a568-47cf-875f-6a47270b7181")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
 		(path "/da01c66f-58bb-44c5-beae-9012371c2302")
 		(sheetname "Root")
@@ -52085,6 +52475,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "20216c2f-58b5-427a-ba97-d9da45d3bbd4")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
@@ -53163,6 +53566,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "33d38965-5db0-4057-944d-39595476d1da")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
 		(path "/c5bca9da-8519-4140-9d11-026ccc2f6875")
 		(sheetname "Root")
@@ -53779,6 +54195,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "54e32d95-994b-48d5-a444-efcc2acf44e1")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
 		(path "/af65a0ab-e5f2-4490-b30e-a597c0b14de5")
 		(sheetname "Root")
@@ -54149,7 +54578,7 @@
 		(path "/7fb8fffc-447e-4062-ab4b-9b70947e9b45")
 		(sheetname "Root")
 		(sheetfile "alu_bitops.kicad_sch")
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 		(fp_rect
 			(start -4 -1.25)
 			(end 4 1.25)
@@ -55091,6 +55520,19 @@
 				)
 			)
 		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "6e77f78e-f255-48aa-b234-419b20ac6860")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
 		(property ki_fp_filters "DIP*W7.62mm* SO14*")
 		(path "/f9ab9f27-b247-46ca-97f9-1f7a24b61569")
 		(sheetname "Root")
@@ -55452,6 +55894,19 @@
 			(effects
 				(font
 					(size 1.27 1.27)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "LCSC" "C5586"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "49340d2d-5c16-4da7-a4bc-6287dadd8f8c")
+			(effects
+				(font
+					(size 1 1)
 					(thickness 0.15)
 				)
 			)
