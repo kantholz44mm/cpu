@@ -36,7 +36,7 @@ fn preprocess_include(initial_file: &Path, input: &String) -> Result<String, Str
         }
         
         match std::fs::read_to_string(file.to_path_buf()) {
-            Ok(content) => { text.replace_range(captures.get(0).unwrap().range(), &content); },
+            Ok(content) => { println!("include: {}", captures.get(0).unwrap().as_str()); text.replace_range(captures.get(0).unwrap().range(), &content); },
             Err(error) => { return Err(format!("Error when reading source file: '{}': {error}", file.to_str().unwrap())); }
         }
     }
@@ -78,7 +78,7 @@ fn preprocess_macros(input: &String) -> Result<String, String> {
         invocation_found = false;
 
         for m in macros.iter() {
-            let invocation_pattern = Regex::new(&format!(r"(?m)^\s*{}\b(?P<arguments>[^\n]*)\n", regex::escape(&m.name))).unwrap();
+            let invocation_pattern = Regex::new(&format!(r"(?m)^\s*{}\b(?P<arguments>[^\n]*)", regex::escape(&m.name))).unwrap();
             if let Some(invocation) = invocation_pattern.captures(&text) {
                 let args: Vec<String> = invocation.name("arguments").unwrap().as_str().split(',').filter_map(|arg| {
                     match arg.trim() {

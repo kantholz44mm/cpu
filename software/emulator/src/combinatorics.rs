@@ -1,5 +1,3 @@
-use isa::arch::Opcode;
-
 
 pub fn nand(a: bool, b: bool) -> bool {
     !(a && b)
@@ -39,6 +37,27 @@ pub fn mux_word(a: [bool; 8], b: [bool; 8], sel: bool) -> [bool; 8] {
         mux(a[5], b[5], sel),
         mux(a[6], b[6], sel),
         mux(a[7], b[7], sel),
+    ]
+}
+
+pub fn mux_doubleword(a: [bool; 16], b: [bool; 16], sel: bool) -> [bool; 16] {
+    [
+        mux(a[0], b[0], sel),
+        mux(a[1], b[1], sel),
+        mux(a[2], b[2], sel),
+        mux(a[3], b[3], sel),
+        mux(a[4], b[4], sel),
+        mux(a[5], b[5], sel),
+        mux(a[6], b[6], sel),
+        mux(a[7], b[7], sel),
+        mux(a[8], b[8], sel),
+        mux(a[9], b[9], sel),
+        mux(a[10], b[10], sel),
+        mux(a[11], b[11], sel),
+        mux(a[12], b[12], sel),
+        mux(a[13], b[13], sel),
+        mux(a[14], b[14], sel),
+        mux(a[15], b[15], sel),
     ]
 }
 
@@ -118,28 +137,16 @@ pub fn shift_word(a: [bool; 8], by: [bool; 8], dir: bool) -> ([bool; 8], bool) {
     (mux_word(shift_left_word(a, by), shift_right_word(a, by), dir), mux(a[7], a[0], dir))
 }
 
-pub fn alu(op: [bool; 4], a: [bool; 8], b: [bool; 8], cin: bool) -> ([bool; 8], bool, bool, bool, bool) {
+pub fn alu(op: [bool; 3], a: [bool; 8], b: [bool; 8], cin: bool) -> ([bool; 8], [bool; 4]) {
     let (add_sub_result, add_sub_cout, add_sub_overflow) = add_sub_word(cin, op[0], a, b);
     let or_nor_xor_and_result = or_and_xor_nand_word(op[0..2].try_into().unwrap(), a, b);
     let (shift_result, shift_out) = shift_word(a, b, op[0]);
 
-    let result = mux_word(mux_word(mux_word(add_sub_result, shift_result, op[1]), or_nor_xor_and_result, op[2]), b, op[3]);
+    let result = mux_word(mux_word(add_sub_result, shift_result, op[1]), or_nor_xor_and_result, op[2]);
     let zero = not(or(or(or(or(or(or(or(result[0], result[1]), result[2]), result[3]), result[4]), result[5]), result[6]), result[7]));
     let negative = result[7];
     let carry = mux(mux(add_sub_cout, shift_out, op[1]), false, op[2]);
     let overflow = mux(add_sub_overflow, false, or(op[1], op[2]));
 
-    (result, zero, negative, carry, overflow)
-}
-
-pub fn u8_to_bools(data: u8) -> [bool; 8] {
-    (0..8).map(|i| (data & (1 << i)) != 0).collect::<Vec<bool>>().try_into().unwrap()
-}
-
-pub fn bools_to_u8(data: [bool; 8]) -> u8 {
-    data.iter().enumerate().fold(0, |acc, (i, &b)| acc | ((b as u8) << i))
-}
-
-pub fn opcode_to_bools(opcode: Opcode) -> [bool; 4] {
-    u8_to_bools(opcode as u8)[0..4].try_into().unwrap()
+    (result, [zero, negative, carry, overflow])
 }

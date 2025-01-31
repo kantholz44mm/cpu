@@ -1,33 +1,18 @@
 
 #[cfg(test)]
 mod tests {
-    use crate::combinatorics::{add_sub_word, alu, and, bools_to_u8, decode_2, deselect_2, full_adder, mux, mux_word, nand, nor, not, opcode_to_bools, or, or_and_xor_nand_word, shift_left_word, shift_right_word, shift_word, u8_to_bools, xor};
+    use isa::arch::ALUOperation;
+    use crate::{combinatorics::{add_sub_word, alu, and, decode_2, deselect_2, full_adder, mux, mux_word, nand, nor, not, or, or_and_xor_nand_word, shift_left_word, shift_right_word, shift_word, xor}, state::{bools_to_u8, u8_to_bools}};
+
+    pub fn aluopcode_to_bools(opcode: ALUOperation) -> [bool; 3] {
+        u8_to_bools(opcode as u8)[0..3].try_into().unwrap()
+    }
 
     #[test]
     pub fn test_bools_conversion() {
         for i in 0..=u8::MAX {
             assert_eq!(bools_to_u8(u8_to_bools(i)), i);
         }
-    }
-
-    #[test]
-    pub fn test_opcode_conversion() {
-        assert_eq!(opcode_to_bools(isa::arch::Opcode::ADC ), [false, false, false, false]);
-        assert_eq!(opcode_to_bools(isa::arch::Opcode::SBB ), [true , false, false, false]);
-        assert_eq!(opcode_to_bools(isa::arch::Opcode::SHL ), [false, true , false, false]);
-        assert_eq!(opcode_to_bools(isa::arch::Opcode::SHR ), [true , true , false, false]);
-        assert_eq!(opcode_to_bools(isa::arch::Opcode::OR  ), [false, false, true , false]);
-        assert_eq!(opcode_to_bools(isa::arch::Opcode::AND ), [true , false, true , false]);
-        assert_eq!(opcode_to_bools(isa::arch::Opcode::XOR ), [false, true , true , false]);
-        assert_eq!(opcode_to_bools(isa::arch::Opcode::NAND), [true , true , true , false]);
-        assert_eq!(opcode_to_bools(isa::arch::Opcode::LW  ), [false, false, false, true ]);
-        assert_eq!(opcode_to_bools(isa::arch::Opcode::SW  ), [true , false, false, true ]);
-        assert_eq!(opcode_to_bools(isa::arch::Opcode::BZ  ), [false, true , false, true ]);
-        assert_eq!(opcode_to_bools(isa::arch::Opcode::BNZ ), [true , true , false, true ]);
-        assert_eq!(opcode_to_bools(isa::arch::Opcode::RES0), [false, false, true , true ]);
-        assert_eq!(opcode_to_bools(isa::arch::Opcode::RES1), [true , false, true , true ]);
-        assert_eq!(opcode_to_bools(isa::arch::Opcode::LA  ), [false, true , true , true ]);
-        assert_eq!(opcode_to_bools(isa::arch::Opcode::HCF ), [true , true , true , true ]);
     }
 
     #[test]
@@ -185,30 +170,30 @@ mod tests {
     #[test]
     pub fn test_alu() {
         // addition and subtraction
-        assert_eq!(alu(opcode_to_bools(isa::arch::Opcode::ADC), u8_to_bools(240), u8_to_bools(40), false), (u8_to_bools(24), false, false, true, false));
-        assert_eq!(alu(opcode_to_bools(isa::arch::Opcode::ADC), u8_to_bools(52) , u8_to_bools(-62 as i8 as u8), false), (u8_to_bools(-10 as i8 as u8), false, true, false, false));
-        assert_eq!(alu(opcode_to_bools(isa::arch::Opcode::SBB), u8_to_bools(52) , u8_to_bools(104), false), (u8_to_bools(-52 as i8 as u8), false, true, true, false));
-        assert_eq!(alu(opcode_to_bools(isa::arch::Opcode::SBB), u8_to_bools(0)  , u8_to_bools(150), false), (u8_to_bools(106), false, false, true, false));
+        assert_eq!(alu(aluopcode_to_bools(ALUOperation::Add), u8_to_bools(240), u8_to_bools(40), false), (u8_to_bools(24), [false, false, true, false]));
+        assert_eq!(alu(aluopcode_to_bools(ALUOperation::Add), u8_to_bools(52) , u8_to_bools(-62 as i8 as u8), false), (u8_to_bools(-10 as i8 as u8), [false, true, false, false]));
+        assert_eq!(alu(aluopcode_to_bools(ALUOperation::Subtract), u8_to_bools(52) , u8_to_bools(104), false), (u8_to_bools(-52 as i8 as u8), [false, true, true, false]));
+        assert_eq!(alu(aluopcode_to_bools(ALUOperation::Subtract), u8_to_bools(0)  , u8_to_bools(150), false), (u8_to_bools(106), [false, false, true, false]));
 
         // shifting
-        assert_eq!(alu(opcode_to_bools(isa::arch::Opcode::SHL), u8_to_bools(52) , u8_to_bools(1), false), (u8_to_bools(104), false, false, false, false));
-        assert_eq!(alu(opcode_to_bools(isa::arch::Opcode::SHL), u8_to_bools(255), u8_to_bools(1), false), (u8_to_bools(254), false, true , true , false));
-        assert_eq!(alu(opcode_to_bools(isa::arch::Opcode::SHR), u8_to_bools(52) , u8_to_bools(1), false), (u8_to_bools(26) , false, false, false, false));
-        assert_eq!(alu(opcode_to_bools(isa::arch::Opcode::SHR), u8_to_bools(255), u8_to_bools(1), false), (u8_to_bools(127), false, false, true , false));
+        assert_eq!(alu(aluopcode_to_bools(ALUOperation::ShiftLeft), u8_to_bools(52) , u8_to_bools(1), false), (u8_to_bools(104), [false, false, false, false]));
+        assert_eq!(alu(aluopcode_to_bools(ALUOperation::ShiftLeft), u8_to_bools(255), u8_to_bools(1), false), (u8_to_bools(254), [false, true , true , false]));
+        assert_eq!(alu(aluopcode_to_bools(ALUOperation::ShiftRight), u8_to_bools(52) , u8_to_bools(1), false), (u8_to_bools(26) , [false, false, false, false]));
+        assert_eq!(alu(aluopcode_to_bools(ALUOperation::ShiftRight), u8_to_bools(255), u8_to_bools(1), false), (u8_to_bools(127), [false, false, true , false]));
 
-        assert_eq!(alu(opcode_to_bools(isa::arch::Opcode::SHL), u8_to_bools(52) , u8_to_bools(3), false), (u8_to_bools(160), false, true , false, false));
-        assert_eq!(alu(opcode_to_bools(isa::arch::Opcode::SHL), u8_to_bools(255), u8_to_bools(3), false), (u8_to_bools(248), false, true , true , false));
-        assert_eq!(alu(opcode_to_bools(isa::arch::Opcode::SHR), u8_to_bools(52) , u8_to_bools(3), false), (u8_to_bools(6)  , false, false, false, false));
-        assert_eq!(alu(opcode_to_bools(isa::arch::Opcode::SHR), u8_to_bools(255), u8_to_bools(3), false), (u8_to_bools(31) , false, false, true , false));
+        assert_eq!(alu(aluopcode_to_bools(ALUOperation::ShiftLeft), u8_to_bools(52) , u8_to_bools(3), false), (u8_to_bools(160), [false, true , false, false]));
+        assert_eq!(alu(aluopcode_to_bools(ALUOperation::ShiftLeft), u8_to_bools(255), u8_to_bools(3), false), (u8_to_bools(248), [false, true , true , false]));
+        assert_eq!(alu(aluopcode_to_bools(ALUOperation::ShiftRight), u8_to_bools(52) , u8_to_bools(3), false), (u8_to_bools(6)  , [false, false, false, false]));
+        assert_eq!(alu(aluopcode_to_bools(ALUOperation::ShiftRight), u8_to_bools(255), u8_to_bools(3), false), (u8_to_bools(31) , [false, false, true , false]));
 
         // bitwise operations
-        assert_eq!(alu(opcode_to_bools(isa::arch::Opcode::OR),  u8_to_bools(0b01010101) , u8_to_bools(0b10101010), false), (u8_to_bools(255), false, true , false, false));
-        assert_eq!(alu(opcode_to_bools(isa::arch::Opcode::OR),  u8_to_bools(0b00000000) , u8_to_bools(0b00000000), false), (u8_to_bools(0),   true , false, false, false));
-        assert_eq!(alu(opcode_to_bools(isa::arch::Opcode::AND), u8_to_bools(0b01010101) , u8_to_bools(0b10101010), false), (u8_to_bools(0),   true , false, false, false));
-        assert_eq!(alu(opcode_to_bools(isa::arch::Opcode::AND), u8_to_bools(0b10101010) , u8_to_bools(0b10101010), false), (u8_to_bools(170), false, true , false, false));
-        assert_eq!(alu(opcode_to_bools(isa::arch::Opcode::XOR), u8_to_bools(0b01010101) , u8_to_bools(0b10101010), false), (u8_to_bools(255), false, true , false, false));
-        assert_eq!(alu(opcode_to_bools(isa::arch::Opcode::XOR), u8_to_bools(0b00000000) , u8_to_bools(0b11111111), false), (u8_to_bools(255), false, true , false, false));
-        assert_eq!(alu(opcode_to_bools(isa::arch::Opcode::NAND),u8_to_bools(0b01010101) , u8_to_bools(0b10101010), false), (u8_to_bools(255), false, true , false, false));
-        assert_eq!(alu(opcode_to_bools(isa::arch::Opcode::NAND),u8_to_bools(0b00000000) , u8_to_bools(0b00000000), false), (u8_to_bools(255), false, true , false, false));
+        assert_eq!(alu(aluopcode_to_bools(ALUOperation::Or),  u8_to_bools(0b01010101) , u8_to_bools(0b10101010), false), (u8_to_bools(255), [false, true , false, false]));
+        assert_eq!(alu(aluopcode_to_bools(ALUOperation::Or),  u8_to_bools(0b00000000) , u8_to_bools(0b00000000), false), (u8_to_bools(0),   [true , false, false, false]));
+        assert_eq!(alu(aluopcode_to_bools(ALUOperation::And), u8_to_bools(0b01010101) , u8_to_bools(0b10101010), false), (u8_to_bools(0),   [true , false, false, false]));
+        assert_eq!(alu(aluopcode_to_bools(ALUOperation::And), u8_to_bools(0b10101010) , u8_to_bools(0b10101010), false), (u8_to_bools(170), [false, true , false, false]));
+        assert_eq!(alu(aluopcode_to_bools(ALUOperation::Xor), u8_to_bools(0b01010101) , u8_to_bools(0b10101010), false), (u8_to_bools(255), [false, true , false, false]));
+        assert_eq!(alu(aluopcode_to_bools(ALUOperation::Xor), u8_to_bools(0b00000000) , u8_to_bools(0b11111111), false), (u8_to_bools(255), [false, true , false, false]));
+        assert_eq!(alu(aluopcode_to_bools(ALUOperation::Nand),u8_to_bools(0b01010101) , u8_to_bools(0b10101010), false), (u8_to_bools(255), [false, true , false, false]));
+        assert_eq!(alu(aluopcode_to_bools(ALUOperation::Nand),u8_to_bools(0b00000000) , u8_to_bools(0b00000000), false), (u8_to_bools(255), [false, true , false, false]));
     }
 }

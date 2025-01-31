@@ -53,3 +53,10 @@ LW %1, [RH:RL]
 DECNF RL
 LW %0, [RH:RL]
 @endmacro
+
+@macro PEEKAT %dest, %offset
+MOVI RH, 0xFF
+LWI  RL, [SP]
+SUBINF RL, RL, %offset
+LW %dest, [RH:RL]
+@endmacro

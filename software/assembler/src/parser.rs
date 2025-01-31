@@ -1,6 +1,7 @@
 use std::collections::HashMap;
 use isa::arch::{Instruction, Opcode, Register};
 use crate::lexer::Token;
+use crate::expression::Expression;
 
 pub fn parse_line<'a>(mut tokens: &[Token<'a>]) -> Result<Option<Instruction>, String> {
 
@@ -140,13 +141,8 @@ fn resolve_labels<'a>(tokens: &[Token<'a>]) -> Result<Vec<Token<'a>>, String> {
                 }
             },
             Token::Symbol('$') => {
-                if let Some([Token::Symbol('('), Token::Number(offset), Token::Symbol(')')]) = tokens.get(i+1..i+4) {
-                    resolved_tokens.push(Token::Number(address as i64 + offset));
-                    i += 4;
-                } else {
-                    resolved_tokens.push(Token::Number(address as i64));
-                    i += 1;
-                }
+                resolved_tokens.push(Token::Number(address as i64));
+                i += 1;
             }
             Token::Operation(op) => {
                 resolved_tokens.push(Token::Operation(*op));
@@ -172,9 +168,29 @@ fn resolve_labels<'a>(tokens: &[Token<'a>]) -> Result<Vec<Token<'a>>, String> {
     Ok(resolved_tokens)
 }
 
+fn evaluate_expressions<'a>(tokens: &mut Vec<Token<'a>>) -> Result<Vec<Token<'a>>, String> {
+    for i in 0..tokens.len() {
+        if let Some(Token::Symbol('{')) = tokens.get(i) {
+            if let Some(closing_brace) = tokens.iter().position(|token| *token == Token::Symbol('}')) {
+                let expression_tokens = &tokens[i + 1..closing_brace];
+                let expression = Expression::from_lexemes(&expression_tokens[..])?.infix_to_postfix();
+                let result = expression.evaluate()?;
+
+                tokens.drain(i..closing_brace+1);
+                tokens.insert(i, Token::Number(result));
+            } else {
+                return Err(format!("Expression starts here but doesn't have a closing brace: {:?}", &tokens[i..(i + 5).min(tokens.len() - 1)]));
+            }
+        }
+    }
+
+    Ok(tokens.iter().map(|x| *x).collect())
+}
+
 pub fn parse(mut tokens: Vec<Token>) -> Result<Vec<Instruction>, String> {
     
     tokens = resolve_labels(&tokens)?;
+    tokens = evaluate_expressions(&mut tokens)?;
     let lines = tokens.split(|token| *token == Token::Symbol('\n')).enumerate();
     let mut instructions = Vec::new();
 

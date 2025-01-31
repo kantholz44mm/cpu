@@ -1,7 +1,7 @@
 #![feature(variant_count)]
 
 use std::path::Path;
-use isa::arch::Opcode;
+use isa::arch::{DoubleWord, Opcode, QuadWord};
 use lexer::lex;
 use parser::parse;
 use preprocessor::preprocess;
@@ -10,9 +10,10 @@ use strum::IntoEnumIterator;
 mod lexer;
 mod parser;
 mod preprocessor;
+mod expression;
 
 fn assemble_microcode() -> Vec<u8> {
-    Opcode::iter().flat_map(|opcode| opcode.control_flags().encode().to_le_bytes()).collect()
+    Opcode::iter().flat_map(|opcode| DoubleWord::from(opcode.control_flags()).to_le_bytes()).collect()
 }
 
 fn main() -> Result<(), String> {
@@ -38,7 +39,7 @@ fn main() -> Result<(), String> {
 
         let tokens = lex(&input)?;
         let instructions = parse(tokens)?;
-        let assembly: Vec<u8> = instructions.iter().flat_map(|ins| ins.encode().to_le_bytes()).collect();
+        let assembly: Vec<u8> = instructions.iter().flat_map(|ins| QuadWord::from(*ins).to_le_bytes()).collect();
     
         std::fs::write(output_file, &assembly).map_err(|err| err.to_string())?;
     

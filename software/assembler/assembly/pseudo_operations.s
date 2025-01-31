@@ -43,3 +43,8 @@ ADDINF %0, %0, 1
 @macro DECNF %0
 SUBINF %0, %0, 1
 @endmacro
+
+@macro LDAI address
+MOVI RL, {address >> 0 & 0xFF}
+MOVI RH, {address >> 8 & 0xFF}
+@endmacro

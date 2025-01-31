@@ -131,61 +131,65 @@ pub enum OperandList {
     BracketedImm16Ro2,
 }
 
-impl Instruction {
-    pub fn encode(&self) -> QuadWord {
+impl From<Instruction> for QuadWord {
+    fn from(value: Instruction) -> Self {
         0 as QuadWord
-        | (self.immediate as QuadWord)      << 0
-        | (self.ro2 as QuadWord)            << 16
-        | (self.ro1 as QuadWord)            << 19
-        | (self.rd as QuadWord)             << 22
-        | (self.opcode as QuadWord)         << 25
+        | (value.immediate as QuadWord)      << 0
+        | (value.ro2 as QuadWord)            << 16
+        | (value.ro1 as QuadWord)            << 19
+        | (value.rd as QuadWord)             << 22
+        | (value.opcode as QuadWord)         << 25
     }
+}
 
-    pub fn decode(word: QuadWord) -> Self {
+impl From<QuadWord> for Instruction {
+    fn from(value: QuadWord) -> Self {
         unsafe { 
             Self {
-                opcode:     std::mem::transmute(((word >> 25) & 0x7F) as Word),
-                rd:         std::mem::transmute(((word >> 22) &  0x7) as Word),
-                ro1:        std::mem::transmute(((word >> 19) &  0x7) as Word),
-                ro2:        std::mem::transmute(((word >> 16) &  0x7) as Word),
-                immediate:  word as DoubleWord
+                opcode:     std::mem::transmute(((value >> 25) & 0x7F) as Word),
+                rd:         std::mem::transmute(((value >> 22) &  0x7) as Word),
+                ro1:        std::mem::transmute(((value >> 19) &  0x7) as Word),
+                ro2:        std::mem::transmute(((value >> 16) &  0x7) as Word),
+                immediate:  value as DoubleWord
             }
         }
     }
 }
 
-impl ControlFlags {
-    pub fn encode(&self) -> DoubleWord {
+impl From<ControlFlags> for DoubleWord {    
+    fn from(value: ControlFlags) -> Self {
         0 as DoubleWord
-        | (self.regwen as DoubleWord) << 0
-        | (self.ioren  as DoubleWord) << 1
-        | (self.iowen  as DoubleWord) << 2
-        | (self.pcssel as DoubleWord) << 3
-        | (self.halt   as DoubleWord) << 4
-        | (self.opsel  as DoubleWord) << 5
-        | (self.fwen   as DoubleWord) << 6
-        | (self.adrsel as DoubleWord) << 7
-        | (self.ressel as DoubleWord) << 8
-        | (self.zinv   as DoubleWord) << 9
-        | (self.aluop  as DoubleWord) << 10
-        | (self.cryen  as DoubleWord) << 13
+        | (value.regwen as DoubleWord) << 0
+        | (value.ioren  as DoubleWord) << 1
+        | (value.iowen  as DoubleWord) << 2
+        | (value.pcssel as DoubleWord) << 3
+        | (value.halt   as DoubleWord) << 4
+        | (value.opsel  as DoubleWord) << 5
+        | (value.fwen   as DoubleWord) << 6
+        | (value.adrsel as DoubleWord) << 7
+        | (value.ressel as DoubleWord) << 8
+        | (value.zinv   as DoubleWord) << 9
+        | (value.aluop  as DoubleWord) << 10
+        | (value.cryen  as DoubleWord) << 13
     }
+}
 
-    pub fn decode(word: DoubleWord) -> Self {
+impl From<DoubleWord> for ControlFlags {
+    fn from(value: DoubleWord) -> Self {
         unsafe { 
             Self {
-                regwen: std::mem::transmute(((word >> 0  ) & 0x1) as Word),
-                ioren:  std::mem::transmute(((word >> 1  ) & 0x1) as Word),
-                iowen:  std::mem::transmute(((word >> 2  ) & 0x1) as Word),
-                pcssel: std::mem::transmute(((word >> 3  ) & 0x1) as Word),
-                halt:   std::mem::transmute(((word >> 4  ) & 0x1) as Word),
-                opsel:  std::mem::transmute(((word >> 5  ) & 0x1) as Word),
-                fwen:   std::mem::transmute(((word >> 6  ) & 0x1) as Word),
-                adrsel: std::mem::transmute(((word >> 7  ) & 0x1) as Word),
-                ressel: std::mem::transmute(((word >> 8  ) & 0x1) as Word),
-                zinv:   std::mem::transmute(((word >> 9  ) & 0x1) as Word),
-                aluop:  std::mem::transmute(((word >> 10 ) & 0x7) as Word),
-                cryen:  std::mem::transmute(((word >> 13 ) & 0x1) as Word),
+                regwen: std::mem::transmute(((value >> 0  ) & 0x1) as Word),
+                ioren:  std::mem::transmute(((value >> 1  ) & 0x1) as Word),
+                iowen:  std::mem::transmute(((value >> 2  ) & 0x1) as Word),
+                pcssel: std::mem::transmute(((value >> 3  ) & 0x1) as Word),
+                halt:   std::mem::transmute(((value >> 4  ) & 0x1) as Word),
+                opsel:  std::mem::transmute(((value >> 5  ) & 0x1) as Word),
+                fwen:   std::mem::transmute(((value >> 6  ) & 0x1) as Word),
+                adrsel: std::mem::transmute(((value >> 7  ) & 0x1) as Word),
+                ressel: std::mem::transmute(((value >> 8  ) & 0x1) as Word),
+                zinv:   std::mem::transmute(((value >> 9  ) & 0x1) as Word),
+                aluop:  std::mem::transmute(((value >> 10 ) & 0x7) as Word),
+                cryen:  std::mem::transmute(((value >> 13 ) & 0x1) as Word),
             }
         }
     }
