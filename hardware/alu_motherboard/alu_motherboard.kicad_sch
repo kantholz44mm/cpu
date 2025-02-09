@@ -9226,6 +9226,16 @@
 	)
 	(wire
 		(pts
+			(xy 69.85 41.91) (xy 69.85 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "171368bb-a76f-410f-98f4-a877c65d06f2")
+	)
+	(wire
+		(pts
 			(xy 386.08 69.85) (xy 386.08 40.64)
 		)
 		(stroke
@@ -10046,6 +10056,16 @@
 	)
 	(wire
 		(pts
+			(xy 49.53 40.64) (xy 50.8 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "39302b07-6053-4811-b230-5b991251f133")
+	)
+	(wire
+		(pts
 			(xy 551.18 210.82) (xy 551.18 41.91)
 		)
 		(stroke
@@ -10653,6 +10673,16 @@
 			(type default)
 		)
 		(uuid "4bf9be31-b3a8-4056-bb29-618f8ce2132b")
+	)
+	(wire
+		(pts
+			(xy 58.42 40.64) (xy 60.96 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4bfa2be6-78c0-40b4-aa4f-13372e082be2")
 	)
 	(wire
 		(pts
@@ -11613,6 +11643,16 @@
 			(type default)
 		)
 		(uuid "6afeba52-8e61-465d-a3a3-aa22fc9c7ac6")
+	)
+	(wire
+		(pts
+			(xy 69.85 40.64) (xy 68.58 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b076d46-a9a7-48b1-ab40-03c77a0b9f83")
 	)
 	(wire
 		(pts
@@ -15083,6 +15123,16 @@
 			(type default)
 		)
 		(uuid "e1082bbf-bc4e-4f47-b7eb-9c1fca47cd17")
+	)
+	(wire
+		(pts
+			(xy 49.53 39.37) (xy 49.53 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e109c2bb-080b-470d-87bc-f8c66af51e25")
 	)
 	(wire
 		(pts
@@ -22051,6 +22101,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 49.53 39.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "56cab195-2e35-4024-b204-7898717c0be1")
+		(property "Reference" "#PWR0104"
+			(at 49.53 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 49.53 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 49.53 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 49.53 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "29e0bb39-8343-4eca-bcc8-eeb6affe1f1d")
+		)
+		(instances
+			(project "alu_motherboard"
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "#PWR0104")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
 		(at 657.86 71.12 0)
 		(unit 1)
@@ -26241,6 +26357,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 64.77 40.64 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b4512da2-40ff-4c37-80a9-e4c812371b0e")
+		(property "Reference" "R20"
+			(at 66.04 38.1 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1000"
+			(at 66.294 43.688 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 64.77 38.862 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 64.77 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 64.77 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C21190"
+			(at 66.04 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "66bb4321-c8ed-40b6-9c4d-07aaef0e15c5")
+		)
+		(pin "2"
+			(uuid "b3e436f9-6285-4990-8c36-fcb4f7b720a9")
+		)
+		(instances
+			(project "alu_motherboard"
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "R20")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 706.12 392.43 0)
 		(unit 1)
@@ -27357,6 +27552,72 @@
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
 					(reference "Q9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 69.85 41.91 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d4dcd379-b1b0-43a0-b09f-5450bcd17257")
+		(property "Reference" "#PWR0103"
+			(at 69.85 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 69.85 46.482 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 69.85 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 69.85 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 69.85 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "64a7a3c3-6590-4592-bc4c-deef2fe15989")
+		)
+		(instances
+			(project "alu_motherboard"
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "#PWR0103")
 					(unit 1)
 				)
 			)
@@ -28839,6 +29100,85 @@
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
 					(reference "D18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 54.61 40.64 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fa9c64e6-2ccc-471d-89d0-bc35077d0271")
+		(property "Reference" "D21"
+			(at 53.086 37.592 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LED"
+			(at 52.832 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+			(at 54.61 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 54.61 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 54.61 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C84267"
+			(at 53.086 37.592 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "899643bb-a6f9-483e-9b19-6a477c7e9212")
+		)
+		(pin "1"
+			(uuid "ae4633a0-0be2-4a40-af2e-5ad93694a555")
+		)
+		(instances
+			(project "alu_motherboard"
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "D21")
 					(unit 1)
 				)
 			)
