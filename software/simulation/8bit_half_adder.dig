@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <circuit>
-  <version>1</version>
+  <version>2</version>
   <attributes>
     <entry>
       <string>Width</string>
@@ -55,6 +55,10 @@
           <string>Label</string>
           <string>WORD</string>
         </entry>
+        <entry>
+          <string>Bits</string>
+          <int>8</int>
+        </entry>
       </elementAttributes>
       <pos x="600" y="500"/>
     </visualElement>
@@ -98,6 +102,10 @@
         <entry>
           <string>Label</string>
           <string>RESULT</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>8</int>
         </entry>
       </elementAttributes>
       <pos x="1300" y="520"/>

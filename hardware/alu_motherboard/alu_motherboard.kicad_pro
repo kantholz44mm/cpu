@@ -493,7 +493,7 @@
       "plot": "gerber/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "alu_motherboard.step",
       "svg": "",
       "vrml": ""
     },
