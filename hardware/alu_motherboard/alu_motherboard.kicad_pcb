@@ -39821,6 +39821,17 @@
 		(layer "B.SilkS")
 		(uuid "13a69350-4382-4b6e-924e-c91466782c2d")
 	)
+	(gr_rect
+		(start 188 72.4)
+		(end 202.2 128.8)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(fill none)
+		(layer "B.SilkS")
+		(uuid "1d1030b2-c92b-46e4-8f49-2d7cecfd946a")
+	)
 	(gr_line
 		(start 188 273.9)
 		(end 202.2 273.9)
@@ -42647,26 +42658,26 @@
 			)
 		)
 	)
-	(gr_text "+/-"
-		(at 189.5 103.75 0)
+	(gr_text "+-"
+		(at 188.7 104.8 0)
 		(layer "F.SilkS")
 		(uuid "7343f199-4dfc-42f5-85e7-2549968f1b7b")
 		(effects
 			(font
-				(size 3 3)
-				(thickness 0.75)
+				(size 5 5)
+				(thickness 1.25)
 				(bold yes)
 			)
 		)
 	)
 	(gr_text ">>"
-		(at 192.5 293.75 0)
+		(at 190.2 291.9 0)
 		(layer "F.SilkS")
 		(uuid "811a9f4f-2d68-4d3a-8f78-1a3abd5faebd")
 		(effects
 			(font
-				(size 3 3)
-				(thickness 0.75)
+				(size 5 5)
+				(thickness 1.25)
 				(bold yes)
 			)
 		)
@@ -42768,13 +42779,13 @@
 		)
 	)
 	(gr_text "&&"
-		(at 191.25 193.25 0)
+		(at 190.1 189.4 0)
 		(layer "F.SilkS")
 		(uuid "df465dce-b555-4177-9d51-d4f05637c774")
 		(effects
 			(font
-				(size 3 3)
-				(thickness 0.75)
+				(size 5 5)
+				(thickness 1.25)
 				(bold yes)
 			)
 		)

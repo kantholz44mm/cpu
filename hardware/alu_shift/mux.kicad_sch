@@ -3693,7 +3693,6 @@
 	(hierarchical_label "B2"
 		(shape input)
 		(at 205.74 289.56 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3705,7 +3704,6 @@
 	(hierarchical_label "RES6"
 		(shape output)
 		(at 383.54 170.18 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3717,7 +3715,6 @@
 	(hierarchical_label "A6"
 		(shape input)
 		(at 205.74 491.49 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3729,7 +3726,6 @@
 	(hierarchical_label "A5"
 		(shape input)
 		(at 205.74 445.77 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3741,7 +3737,6 @@
 	(hierarchical_label "RES1"
 		(shape output)
 		(at 383.54 157.48 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3753,7 +3748,6 @@
 	(hierarchical_label "RES2"
 		(shape output)
 		(at 383.54 160.02 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3765,7 +3759,6 @@
 	(hierarchical_label "B5"
 		(shape input)
 		(at 205.74 430.53 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3777,7 +3770,6 @@
 	(hierarchical_label "B7"
 		(shape input)
 		(at 205.74 524.51 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3789,7 +3781,6 @@
 	(hierarchical_label "B0"
 		(shape input)
 		(at 205.74 195.58 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3801,7 +3792,6 @@
 	(hierarchical_label "RES3"
 		(shape output)
 		(at 383.54 162.56 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3813,7 +3803,6 @@
 	(hierarchical_label "A1"
 		(shape input)
 		(at 205.74 257.81 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3825,7 +3814,6 @@
 	(hierarchical_label "SEL"
 		(shape input)
 		(at 209.55 125.73 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3837,7 +3825,6 @@
 	(hierarchical_label "A7"
 		(shape input)
 		(at 205.74 539.75 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3849,7 +3836,6 @@
 	(hierarchical_label "B4"
 		(shape input)
 		(at 205.74 383.54 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3861,7 +3847,6 @@
 	(hierarchical_label "B3"
 		(shape input)
 		(at 205.74 336.55 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3873,7 +3858,6 @@
 	(hierarchical_label "RES4"
 		(shape output)
 		(at 383.54 165.1 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3885,7 +3869,6 @@
 	(hierarchical_label "RES0"
 		(shape output)
 		(at 383.54 154.94 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3897,7 +3880,6 @@
 	(hierarchical_label "RES5"
 		(shape output)
 		(at 383.54 167.64 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3909,7 +3891,6 @@
 	(hierarchical_label "B6"
 		(shape input)
 		(at 205.74 476.25 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3921,7 +3902,6 @@
 	(hierarchical_label "RES7"
 		(shape output)
 		(at 383.54 172.72 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3933,7 +3913,6 @@
 	(hierarchical_label "A3"
 		(shape input)
 		(at 205.74 351.79 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3945,7 +3924,6 @@
 	(hierarchical_label "B1"
 		(shape input)
 		(at 205.74 242.57 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3957,7 +3935,6 @@
 	(hierarchical_label "A4"
 		(shape input)
 		(at 205.74 398.78 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3969,7 +3946,6 @@
 	(hierarchical_label "A2"
 		(shape input)
 		(at 205.74 304.8 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3981,7 +3957,6 @@
 	(hierarchical_label "A0"
 		(shape input)
 		(at 205.74 210.82 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)

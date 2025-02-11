@@ -6250,6 +6250,16 @@
 	)
 	(wire
 		(pts
+			(xy 97.79 45.72) (xy 100.33 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b300c7d-d278-4e54-a01a-9076be7df77b")
+	)
+	(wire
+		(pts
 			(xy 50.8 180.34) (xy 34.29 180.34)
 		)
 		(stroke
@@ -7850,6 +7860,16 @@
 	)
 	(wire
 		(pts
+			(xy 109.22 45.72) (xy 107.95 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7f50947b-1601-4428-9920-e2741d610a0f")
+	)
+	(wire
+		(pts
 			(xy 156.21 297.18) (xy 135.89 297.18)
 		)
 		(stroke
@@ -9210,6 +9230,16 @@
 	)
 	(wire
 		(pts
+			(xy 90.17 45.72) (xy 87.63 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ad2d6a2e-1b15-4612-99bc-fcebbe27b57f")
+	)
+	(wire
+		(pts
 			(xy 762 372.11) (xy 763.27 372.11)
 		)
 		(stroke
@@ -10037,6 +10067,16 @@
 			(type default)
 		)
 		(uuid "c8bd1016-6fe3-4f34-90c9-9d5e5c59b3c1")
+	)
+	(wire
+		(pts
+			(xy 87.63 45.72) (xy 87.63 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c931b931-47bb-4934-a39f-c9045bd94609")
 	)
 	(wire
 		(pts
@@ -11030,6 +11070,16 @@
 	)
 	(wire
 		(pts
+			(xy 109.22 46.99) (xy 109.22 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "edbf4e2d-f3fe-4d73-b113-a2cba6e70e54")
+	)
+	(wire
+		(pts
 			(xy 795.02 245.11) (xy 795.02 124.46)
 		)
 		(stroke
@@ -11550,7 +11600,6 @@
 	)
 	(label "A5"
 		(at 186.69 74.93 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11561,7 +11610,6 @@
 	)
 	(label "VCC"
 		(at 186.69 57.15 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11572,7 +11620,6 @@
 	)
 	(label "RES4"
 		(at 207.01 87.63 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11583,7 +11630,6 @@
 	)
 	(label "RES0"
 		(at 207.01 92.71 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11594,7 +11640,6 @@
 	)
 	(label "RES7"
 		(at 186.69 85.09 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11605,7 +11650,6 @@
 	)
 	(label "VCC"
 		(at 186.69 59.69 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11616,7 +11660,6 @@
 	)
 	(label "A6"
 		(at 207.01 72.39 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11627,7 +11670,6 @@
 	)
 	(label "GND"
 		(at 207.01 82.55 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11638,7 +11680,6 @@
 	)
 	(label "VCC"
 		(at 186.69 64.77 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11649,7 +11690,6 @@
 	)
 	(label "GND"
 		(at 207.01 54.61 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11660,7 +11700,6 @@
 	)
 	(label "RES5"
 		(at 186.69 87.63 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11671,7 +11710,6 @@
 	)
 	(label "BY1"
 		(at 207.01 59.69 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11682,7 +11720,6 @@
 	)
 	(label "GND"
 		(at 186.69 95.25 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11693,7 +11730,6 @@
 	)
 	(label "VCC"
 		(at 186.69 67.31 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11704,7 +11740,6 @@
 	)
 	(label "GND"
 		(at 207.01 95.25 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11715,7 +11750,6 @@
 	)
 	(label "A7"
 		(at 186.69 72.39 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11726,7 +11760,6 @@
 	)
 	(label "BY0"
 		(at 207.01 62.23 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11737,7 +11770,6 @@
 	)
 	(label "GND"
 		(at 186.69 69.85 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11748,7 +11780,6 @@
 	)
 	(label "VCC"
 		(at 186.69 62.23 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11759,7 +11790,6 @@
 	)
 	(label "SOB"
 		(at 207.01 67.31 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11770,7 +11800,6 @@
 	)
 	(label "GND"
 		(at 186.69 82.55 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11781,7 +11810,6 @@
 	)
 	(label "RES1"
 		(at 186.69 92.71 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11792,7 +11820,6 @@
 	)
 	(label "A0"
 		(at 207.01 80.01 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11803,7 +11830,6 @@
 	)
 	(label "DIR"
 		(at 207.01 64.77 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11814,7 +11840,6 @@
 	)
 	(label "GND"
 		(at 207.01 69.85 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11825,7 +11850,6 @@
 	)
 	(label "RES2"
 		(at 207.01 90.17 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11836,7 +11860,6 @@
 	)
 	(label "A1"
 		(at 186.69 80.01 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11847,7 +11870,6 @@
 	)
 	(label "BY2"
 		(at 207.01 57.15 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11858,7 +11880,6 @@
 	)
 	(label "RES3"
 		(at 186.69 90.17 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11869,7 +11890,6 @@
 	)
 	(label "A4"
 		(at 207.01 74.93 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11880,7 +11900,6 @@
 	)
 	(label "A3"
 		(at 186.69 77.47 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11891,7 +11910,6 @@
 	)
 	(label "RES6"
 		(at 207.01 85.09 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11902,7 +11920,6 @@
 	)
 	(label "GND"
 		(at 186.69 54.61 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11913,7 +11930,6 @@
 	)
 	(label "A2"
 		(at 207.01 77.47 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12069,6 +12085,85 @@
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
 					(reference "Q4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 104.14 45.72 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0217ec19-6399-4225-ab1e-e40c421ee4b8")
+		(property "Reference" "R43"
+			(at 105.41 43.18 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1000"
+			(at 105.664 48.768 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 104.14 43.942 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 104.14 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 104.14 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C21190"
+			(at 105.41 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4870f6ed-f3c0-4fda-a143-e1a3c8ae040b")
+		)
+		(pin "2"
+			(uuid "401f6c29-35d5-45e5-a01f-8c1c3451dbb4")
+		)
+		(instances
+			(project "alu_shift"
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "R43")
 					(unit 1)
 				)
 			)
@@ -13919,7 +14014,7 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
-		(on_board no)
+		(on_board yes)
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "249abcb6-313b-481e-a802-77f62b222608")
@@ -17879,6 +17974,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:LED")
+		(at 93.98 45.72 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7070e88a-14aa-42a9-9b6e-8d8435acbe0e")
+		(property "Reference" "D22"
+			(at 92.456 42.672 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LED"
+			(at 92.202 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+			(at 93.98 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 93.98 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 93.98 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C84267"
+			(at 92.456 42.672 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "3267595c-d206-46c3-b2ff-9938a85b70dd")
+		)
+		(pin "1"
+			(uuid "0cd8e556-2e91-4d61-8dfd-ea9cdfb7e3b6")
+		)
+		(instances
+			(project "alu_shift"
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "D22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 427.99 86.36 0)
 		(mirror y)
@@ -19193,6 +19367,72 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 109.22 46.99 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8d0c9458-136a-479f-919f-4469d1182ab3")
+		(property "Reference" "#PWR0133"
+			(at 109.22 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 109.22 51.562 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 109.22 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 109.22 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 109.22 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "473f36f1-ea49-48b2-8c43-347cfcb5e902")
+		)
+		(instances
+			(project "alu_shift"
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "#PWR0133")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 257.81 97.79 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -20080,6 +20320,72 @@
 			(project "alu_shift"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
 					(reference "TP6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 87.63 43.18 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9c61125e-8ef6-408d-824f-ed2d859bf507")
+		(property "Reference" "#PWR0134"
+			(at 87.63 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 87.63 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 87.63 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 87.63 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 87.63 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4189ea67-5aa8-44fe-a576-88dbd81cf75e")
+		)
+		(instances
+			(project "alu_shift"
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "#PWR0134")
 					(unit 1)
 				)
 			)
