@@ -97,8 +97,8 @@
         "pth_inside_courtyard": "ignore",
         "shorting_items": "error",
         "silk_edge_clearance": "ignore",
-        "silk_over_copper": "warning",
-        "silk_overlap": "warning",
+        "silk_over_copper": "ignore",
+        "silk_overlap": "ignore",
         "skew_out_of_range": "error",
         "solder_mask_bridge": "error",
         "starved_thermal": "ignore",
@@ -616,8 +616,8 @@
       "8Bit_Mux2"
     ],
     [
-      "96fad003-d28e-477f-aa83-b9eabc3f651c",
-      "8Bit_Mux1"
+      "dc56a371-d93c-4002-b2a1-7fd31d5dab89",
+      "8Bit_Mux3"
     ]
   ],
   "text_variables": {}
