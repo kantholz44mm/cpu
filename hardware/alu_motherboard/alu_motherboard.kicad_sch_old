@@ -6856,6 +6856,108 @@
 				)
 			)
 		)
+		(symbol "Mechanical:MountingHole_Pad"
+			(pin_numbers hide)
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim yes)
+			(in_bom no)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole_Pad"
+				(at 0 4.445 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Mounting Hole with connection"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*Pad*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MountingHole_Pad_0_1"
+				(circle
+					(center 0 1.27)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "MountingHole_Pad_1_1"
+				(pin input line
+					(at 0 -2.54 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Transistor_FET:IRLML6244"
 			(pin_names hide)
 			(exclude_from_sim no)
@@ -7615,6 +7717,12 @@
 		(uuid "40781775-a970-4118-9a7d-343f0bbd9f4f")
 	)
 	(junction
+		(at 652.78 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "456c7f84-713b-4b9e-88f9-74918a342c98")
+	)
+	(junction
 		(at 483.87 134.62)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7837,6 +7945,12 @@
 		(uuid "82cae6a3-9335-4d02-9d72-67014ed2efbc")
 	)
 	(junction
+		(at 642.62 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "82db535c-310c-4112-af0c-b876b958dad9")
+	)
+	(junction
 		(at 463.55 242.57)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -7993,12 +8107,6 @@
 		(uuid "b91a361f-b610-4a4b-accd-4532327e271b")
 	)
 	(junction
-		(at 411.48 382.27)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b9cd7563-0976-4c26-ab62-6dfb0a2d2abd")
-	)
-	(junction
 		(at 683.26 448.31)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -8057,6 +8165,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c38114b4-cad6-4b90-a35a-a5e8eb8fe815")
+	)
+	(junction
+		(at 647.7 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c3a488ce-16b3-46a9-a5da-9c069985b3f1")
 	)
 	(junction
 		(at 119.38 104.14)
@@ -8219,6 +8333,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "eebb8427-16a4-42b4-bd29-ec5bf4eb989f")
+	)
+	(junction
+		(at 364.49 59.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f04a56c6-ae52-4704-8d35-e9400de18c4e")
 	)
 	(junction
 		(at 786.13 422.91)
@@ -9106,6 +9226,16 @@
 	)
 	(wire
 		(pts
+			(xy 69.85 41.91) (xy 69.85 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "171368bb-a76f-410f-98f4-a877c65d06f2")
+	)
+	(wire
+		(pts
 			(xy 386.08 69.85) (xy 386.08 40.64)
 		)
 		(stroke
@@ -9926,6 +10056,16 @@
 	)
 	(wire
 		(pts
+			(xy 49.53 40.64) (xy 50.8 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "39302b07-6053-4811-b230-5b991251f133")
+	)
+	(wire
+		(pts
 			(xy 551.18 210.82) (xy 551.18 41.91)
 		)
 		(stroke
@@ -10106,7 +10246,7 @@
 	)
 	(wire
 		(pts
-			(xy 288.29 59.69) (xy 419.1 59.69)
+			(xy 288.29 59.69) (xy 364.49 59.69)
 		)
 		(stroke
 			(width 0)
@@ -10536,6 +10676,16 @@
 	)
 	(wire
 		(pts
+			(xy 58.42 40.64) (xy 60.96 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4bfa2be6-78c0-40b4-aa4f-13372e082be2")
+	)
+	(wire
+		(pts
 			(xy 111.76 265.43) (xy 111.76 273.05)
 		)
 		(stroke
@@ -10803,6 +10953,16 @@
 			(type default)
 		)
 		(uuid "56188b4a-7c7d-469b-a042-eff7eeab74ac")
+	)
+	(wire
+		(pts
+			(xy 364.49 59.69) (xy 419.1 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "564ecb50-8132-4d7c-8ffd-33ec7400b274")
 	)
 	(wire
 		(pts
@@ -11376,6 +11536,16 @@
 	)
 	(wire
 		(pts
+			(xy 642.62 73.66) (xy 647.7 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6901fa45-85eb-45ee-8ebe-05b4586f91a5")
+	)
+	(wire
+		(pts
 			(xy 198.12 414.02) (xy 198.12 416.56)
 		)
 		(stroke
@@ -11483,6 +11653,26 @@
 			(type default)
 		)
 		(uuid "6afeba52-8e61-465d-a3a3-aa22fc9c7ac6")
+	)
+	(wire
+		(pts
+			(xy 69.85 40.64) (xy 68.58 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b076d46-a9a7-48b1-ab40-03c77a0b9f83")
+	)
+	(wire
+		(pts
+			(xy 642.62 76.2) (xy 642.62 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b4928a4-489e-4961-ba7a-0eee04c89ff5")
 	)
 	(wire
 		(pts
@@ -12043,16 +12233,6 @@
 			(type default)
 		)
 		(uuid "7a1e203d-b8a4-4c2e-b452-2f239603190d")
-	)
-	(wire
-		(pts
-			(xy 424.18 384.81) (xy 411.48 384.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7a9572f6-dd8d-4a70-8517-369bc0c6634d")
 	)
 	(wire
 		(pts
@@ -13516,6 +13696,16 @@
 	)
 	(wire
 		(pts
+			(xy 652.78 73.66) (xy 657.86 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b0f382ee-c83e-49eb-88b0-785e233888ec")
+	)
+	(wire
+		(pts
 			(xy 692.15 138.43) (xy 689.61 138.43)
 		)
 		(stroke
@@ -14066,6 +14256,16 @@
 	)
 	(wire
 		(pts
+			(xy 364.49 59.69) (xy 364.49 384.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c50ce2f1-2d0b-4719-bc2c-57c2f9eae6f6")
+	)
+	(wire
+		(pts
 			(xy 480.06 130.81) (xy 480.06 187.96)
 		)
 		(stroke
@@ -14166,6 +14366,16 @@
 	)
 	(wire
 		(pts
+			(xy 364.49 384.81) (xy 424.18 384.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c6b1f925-d489-4e77-81b8-899802ecc0a4")
+	)
+	(wire
+		(pts
 			(xy 215.9 96.52) (xy 215.9 99.06)
 		)
 		(stroke
@@ -14263,6 +14473,16 @@
 			(type default)
 		)
 		(uuid "c8ec79b9-5b97-406e-9277-f9edc6c048f1")
+	)
+	(wire
+		(pts
+			(xy 647.7 73.66) (xy 652.78 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c961a883-5546-4bef-be48-b692d6c53dfa")
 	)
 	(wire
 		(pts
@@ -14926,6 +15146,16 @@
 	)
 	(wire
 		(pts
+			(xy 49.53 39.37) (xy 49.53 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e109c2bb-080b-470d-87bc-f8c66af51e25")
+	)
+	(wire
+		(pts
 			(xy 657.86 203.2) (xy 657.86 208.28)
 		)
 		(stroke
@@ -15173,16 +15403,6 @@
 			(type default)
 		)
 		(uuid "e773ae66-a101-416f-9f2e-837eaec5b48a")
-	)
-	(wire
-		(pts
-			(xy 411.48 382.27) (xy 411.48 384.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e7ceac82-e55a-404b-a4ac-1a4ce993622e")
 	)
 	(wire
 		(pts
@@ -15766,7 +15986,6 @@
 	)
 	(label "OP0"
 		(at 142.24 93.98 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15775,9 +15994,8 @@
 		)
 		(uuid "00b2b2f3-2405-4197-92b0-0f8bd871319b")
 	)
-	(label "ASOB"
+	(label "SSOB"
 		(at 438.15 384.81 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15788,7 +16006,6 @@
 	)
 	(label "VCC"
 		(at 142.24 81.28 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15799,7 +16016,6 @@
 	)
 	(label "B3"
 		(at 420.37 262.89 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15810,7 +16026,6 @@
 	)
 	(label "OVF"
 		(at 142.24 106.68 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15821,7 +16036,6 @@
 	)
 	(label "SRES1"
 		(at 422.91 410.21 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15832,7 +16046,6 @@
 	)
 	(label "A2"
 		(at 433.07 102.87 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15843,7 +16056,6 @@
 	)
 	(label "BRES2"
 		(at 435.61 275.59 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15854,7 +16066,6 @@
 	)
 	(label "A6"
 		(at 433.07 90.17 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15865,7 +16076,6 @@
 	)
 	(label "GND"
 		(at 417.83 72.39 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15874,9 +16084,8 @@
 		)
 		(uuid "133670a1-088b-45f2-a182-5e0291a9a348")
 	)
-	(label "ADIR"
+	(label "SDIR"
 		(at 438.15 382.27 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15887,7 +16096,6 @@
 	)
 	(label "A3"
 		(at 422.91 394.97 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15898,7 +16106,6 @@
 	)
 	(label "VCC"
 		(at 417.83 77.47 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15909,7 +16116,6 @@
 	)
 	(label "GND"
 		(at 433.07 110.49 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15918,9 +16124,8 @@
 		)
 		(uuid "1fd17c57-0e34-4383-b19f-8764afd10d94")
 	)
-	(label "ABY1"
+	(label "SBY1"
 		(at 438.15 377.19 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15931,7 +16136,6 @@
 	)
 	(label "A5"
 		(at 142.24 124.46 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15942,7 +16146,6 @@
 	)
 	(label "A3"
 		(at 433.07 100.33 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15953,7 +16156,6 @@
 	)
 	(label "GND"
 		(at 438.15 412.75 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15964,7 +16166,6 @@
 	)
 	(label "B6"
 		(at 435.61 257.81 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15975,7 +16176,6 @@
 	)
 	(label "GND"
 		(at 142.24 129.54 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15986,7 +16186,6 @@
 	)
 	(label "GND"
 		(at 142.24 104.14 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -15997,7 +16196,6 @@
 	)
 	(label "A5"
 		(at 433.07 92.71 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16008,7 +16206,6 @@
 	)
 	(label "MRES5"
 		(at 271.78 336.55 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16019,7 +16216,6 @@
 	)
 	(label "B4"
 		(at 435.61 260.35 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16030,7 +16226,6 @@
 	)
 	(label "A5"
 		(at 420.37 247.65 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16041,7 +16236,6 @@
 	)
 	(label "GND"
 		(at 438.15 387.35 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16052,7 +16246,6 @@
 	)
 	(label "A2"
 		(at 435.61 250.19 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16063,7 +16256,6 @@
 	)
 	(label "A0"
 		(at 435.61 252.73 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16074,7 +16266,6 @@
 	)
 	(label "ORES6"
 		(at 127 96.52 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16085,7 +16276,6 @@
 	)
 	(label "VCC"
 		(at 422.91 374.65 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16096,7 +16286,6 @@
 	)
 	(label "A5"
 		(at 422.91 392.43 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16107,7 +16296,6 @@
 	)
 	(label "A4"
 		(at 435.61 247.65 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16118,7 +16306,6 @@
 	)
 	(label "GND"
 		(at 417.83 57.15 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16129,7 +16316,6 @@
 	)
 	(label "A3"
 		(at 420.37 250.19 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16140,7 +16326,6 @@
 	)
 	(label "GND"
 		(at 422.91 372.11 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16151,7 +16336,6 @@
 	)
 	(label "GND"
 		(at 142.24 116.84 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16162,7 +16346,6 @@
 	)
 	(label "GND"
 		(at 433.07 57.15 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16173,7 +16356,6 @@
 	)
 	(label "MRES4"
 		(at 271.78 339.09 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16184,7 +16366,6 @@
 	)
 	(label "GND"
 		(at 142.24 86.36 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16195,7 +16376,6 @@
 	)
 	(label "B5"
 		(at 420.37 260.35 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16206,7 +16386,6 @@
 	)
 	(label "SRES0"
 		(at 438.15 410.21 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16217,7 +16396,6 @@
 	)
 	(label "ORES4"
 		(at 127 101.6 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16228,7 +16406,6 @@
 	)
 	(label "GND"
 		(at 435.61 240.03 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16239,7 +16416,6 @@
 	)
 	(label "GND"
 		(at 433.07 97.79 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16250,7 +16426,6 @@
 	)
 	(label "A6"
 		(at 142.24 121.92 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16261,7 +16436,6 @@
 	)
 	(label "SRES7"
 		(at 422.91 402.59 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16272,7 +16446,6 @@
 	)
 	(label "BRES0"
 		(at 435.61 278.13 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16283,7 +16456,6 @@
 	)
 	(label "VCC"
 		(at 127 81.28 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16294,7 +16466,6 @@
 	)
 	(label "SRES3"
 		(at 422.91 407.67 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16305,7 +16476,6 @@
 	)
 	(label "B1"
 		(at 127 137.16 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16316,7 +16486,6 @@
 	)
 	(label "GND"
 		(at 433.07 69.85 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16327,7 +16496,6 @@
 	)
 	(label "GND"
 		(at 438.15 372.11 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16338,7 +16506,6 @@
 	)
 	(label "A0"
 		(at 142.24 139.7 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16349,7 +16516,6 @@
 	)
 	(label "MRES2"
 		(at 271.78 344.17 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16360,7 +16526,6 @@
 	)
 	(label "A1"
 		(at 420.37 252.73 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16371,7 +16536,6 @@
 	)
 	(label "GND"
 		(at 422.91 412.75 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16382,7 +16546,6 @@
 	)
 	(label "SRES6"
 		(at 438.15 402.59 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16393,7 +16556,6 @@
 	)
 	(label "ARES3"
 		(at 417.83 100.33 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16404,7 +16566,6 @@
 	)
 	(label "B7"
 		(at 127 119.38 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16415,7 +16576,6 @@
 	)
 	(label "GND"
 		(at 433.07 82.55 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16426,7 +16586,6 @@
 	)
 	(label "GND"
 		(at 142.24 142.24 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16437,7 +16596,6 @@
 	)
 	(label "NEG"
 		(at 142.24 111.76 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16448,7 +16606,6 @@
 	)
 	(label "AOVF"
 		(at 417.83 69.85 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16457,9 +16614,8 @@
 		)
 		(uuid "6568a8bf-25dc-48da-8a3a-954c6984fb2f")
 	)
-	(label "ABY0"
+	(label "SBY0"
 		(at 438.15 379.73 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16470,7 +16626,6 @@
 	)
 	(label "A7"
 		(at 142.24 119.38 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16481,7 +16636,6 @@
 	)
 	(label "A1"
 		(at 433.07 105.41 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16492,7 +16646,6 @@
 	)
 	(label "B0"
 		(at 127 139.7 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16503,7 +16656,6 @@
 	)
 	(label "MRES0"
 		(at 271.78 349.25 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16514,7 +16666,6 @@
 	)
 	(label "CIN"
 		(at 142.24 101.6 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16525,7 +16676,6 @@
 	)
 	(label "SRES2"
 		(at 438.15 407.67 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16536,7 +16686,6 @@
 	)
 	(label "A4"
 		(at 142.24 127 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16547,7 +16696,6 @@
 	)
 	(label "GND"
 		(at 142.24 96.52 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16558,7 +16706,6 @@
 	)
 	(label "VCC"
 		(at 142.24 83.82 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16569,7 +16716,6 @@
 	)
 	(label "B2"
 		(at 433.07 74.93 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16580,7 +16726,6 @@
 	)
 	(label "GND"
 		(at 127 129.54 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16591,7 +16736,6 @@
 	)
 	(label "A4"
 		(at 438.15 392.43 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16602,7 +16746,6 @@
 	)
 	(label "VCC"
 		(at 417.83 74.93 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16613,7 +16756,6 @@
 	)
 	(label "GND"
 		(at 435.61 242.57 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16624,7 +16766,6 @@
 	)
 	(label "GND"
 		(at 435.61 255.27 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16635,7 +16776,6 @@
 	)
 	(label "B4"
 		(at 127 127 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16646,7 +16786,6 @@
 	)
 	(label "B5"
 		(at 127 124.46 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16657,7 +16796,6 @@
 	)
 	(label "GND"
 		(at 127 91.44 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16668,7 +16806,6 @@
 	)
 	(label "GND"
 		(at 435.61 267.97 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16679,7 +16816,6 @@
 	)
 	(label "BRES6"
 		(at 435.61 270.51 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16690,7 +16826,6 @@
 	)
 	(label "MRES1"
 		(at 271.6236 346.71 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16701,7 +16836,6 @@
 	)
 	(label "VCC"
 		(at 417.83 82.55 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16712,7 +16846,6 @@
 	)
 	(label "A2"
 		(at 438.15 394.97 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16723,7 +16856,6 @@
 	)
 	(label "A7"
 		(at 422.91 389.89 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16734,7 +16866,6 @@
 	)
 	(label "GND"
 		(at 438.15 400.05 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16745,7 +16876,6 @@
 	)
 	(label "A7"
 		(at 420.37 245.11 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16756,7 +16886,6 @@
 	)
 	(label "B7"
 		(at 420.37 257.81 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16767,7 +16896,6 @@
 	)
 	(label "A0"
 		(at 433.07 107.95 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16778,7 +16906,6 @@
 	)
 	(label "A6"
 		(at 438.15 389.89 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16789,7 +16916,6 @@
 	)
 	(label "GND"
 		(at 416.56 255.27 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16800,7 +16926,6 @@
 	)
 	(label "VCC"
 		(at 422.91 379.73 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16811,7 +16936,6 @@
 	)
 	(label "ACIN"
 		(at 417.83 59.69 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16822,7 +16946,6 @@
 	)
 	(label "MRES7"
 		(at 271.78 331.47 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16833,7 +16956,6 @@
 	)
 	(label "B3"
 		(at 433.07 72.39 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16844,7 +16966,6 @@
 	)
 	(label "B3"
 		(at 127 132.08 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16855,7 +16976,6 @@
 	)
 	(label "GND"
 		(at 127 142.24 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16866,7 +16986,6 @@
 	)
 	(label "GND"
 		(at 127 116.84 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16877,7 +16996,6 @@
 	)
 	(label "ARES4"
 		(at 417.83 95.25 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16888,7 +17006,6 @@
 	)
 	(label "B6"
 		(at 433.07 62.23 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16899,7 +17016,6 @@
 	)
 	(label "A1"
 		(at 142.24 137.16 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16910,7 +17026,6 @@
 	)
 	(label "ARES6"
 		(at 417.83 90.17 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16921,7 +17036,6 @@
 	)
 	(label "GND"
 		(at 435.61 229.87 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16932,7 +17046,6 @@
 	)
 	(label "BS1"
 		(at 435.61 234.95 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16943,7 +17056,6 @@
 	)
 	(label "OP2"
 		(at 142.24 88.9 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16954,7 +17066,6 @@
 	)
 	(label "VCC"
 		(at 127 86.36 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16965,7 +17076,6 @@
 	)
 	(label "B2"
 		(at 435.61 262.89 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16976,7 +17086,6 @@
 	)
 	(label "VCC"
 		(at 417.83 80.01 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16987,7 +17096,6 @@
 	)
 	(label "MRES6"
 		(at 271.78 334.01 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -16998,7 +17106,6 @@
 	)
 	(label "B2"
 		(at 127 134.62 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17009,7 +17116,6 @@
 	)
 	(label "A1"
 		(at 422.91 397.51 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17020,7 +17126,6 @@
 	)
 	(label "A3"
 		(at 142.24 132.08 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17031,7 +17136,6 @@
 	)
 	(label "GND"
 		(at 422.91 400.05 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17042,7 +17146,6 @@
 	)
 	(label "A6"
 		(at 435.61 245.11 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17053,7 +17156,6 @@
 	)
 	(label "ORES1"
 		(at 127 111.76 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17064,7 +17166,6 @@
 	)
 	(label "GND"
 		(at 433.07 85.09 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17075,7 +17176,6 @@
 	)
 	(label "ACOUT"
 		(at 417.83 67.31 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17086,7 +17186,6 @@
 	)
 	(label "B0"
 		(at 435.61 265.43 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17095,9 +17194,8 @@
 		)
 		(uuid "b3430968-5a32-49fb-a4dc-2cf52d5c8dde")
 	)
-	(label "ABY2"
+	(label "SBY2"
 		(at 438.15 374.65 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17108,7 +17206,6 @@
 	)
 	(label "GND"
 		(at 416.56 280.67 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17119,7 +17216,6 @@
 	)
 	(label "ZERO"
 		(at 142.24 114.3 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17130,7 +17226,6 @@
 	)
 	(label "GND"
 		(at 416.56 242.57 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17141,7 +17236,6 @@
 	)
 	(label "GND"
 		(at 417.83 97.79 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17152,7 +17246,6 @@
 	)
 	(label "GND"
 		(at 416.56 267.97 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17163,7 +17256,6 @@
 	)
 	(label "B5"
 		(at 433.07 64.77 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17174,7 +17266,6 @@
 	)
 	(label "VCC"
 		(at 420.37 237.49 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17185,7 +17276,6 @@
 	)
 	(label "ARES7"
 		(at 417.83 87.63 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17196,7 +17286,6 @@
 	)
 	(label "GND"
 		(at 127 104.14 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17207,7 +17296,6 @@
 	)
 	(label "BRES4"
 		(at 435.61 273.05 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17218,7 +17306,6 @@
 	)
 	(label "SRES5"
 		(at 422.91 405.13 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17229,7 +17316,6 @@
 	)
 	(label "GND"
 		(at 435.61 280.67 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17240,7 +17326,6 @@
 	)
 	(label "CEN"
 		(at 142.24 99.06 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17251,7 +17336,6 @@
 	)
 	(label "VCC"
 		(at 127 88.9 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17262,7 +17346,6 @@
 	)
 	(label "GND"
 		(at 435.61 232.41 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17273,7 +17356,6 @@
 	)
 	(label "ORES0"
 		(at 127 114.3 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17284,7 +17366,6 @@
 	)
 	(label "ARES5"
 		(at 417.83 92.71 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17295,7 +17376,6 @@
 	)
 	(label "SRES4"
 		(at 438.15 405.13 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17306,7 +17386,6 @@
 	)
 	(label "VCC"
 		(at 422.91 377.19 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17317,7 +17396,6 @@
 	)
 	(label "B4"
 		(at 433.07 67.31 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17328,7 +17406,6 @@
 	)
 	(label "B0"
 		(at 433.07 80.01 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17339,7 +17416,6 @@
 	)
 	(label "GND"
 		(at 416.56 229.87 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17350,7 +17426,6 @@
 	)
 	(label "AASS"
 		(at 417.83 62.23 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17361,7 +17436,6 @@
 	)
 	(label "A7"
 		(at 433.07 87.63 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17372,7 +17446,6 @@
 	)
 	(label "B6"
 		(at 127 121.92 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17383,7 +17456,6 @@
 	)
 	(label "GND"
 		(at 417.83 110.49 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17394,7 +17466,6 @@
 	)
 	(label "VCC"
 		(at 420.37 232.41 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17405,7 +17476,6 @@
 	)
 	(label "ARES2"
 		(at 417.83 102.87 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17416,7 +17486,6 @@
 	)
 	(label "BRES1"
 		(at 420.37 278.13 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17427,7 +17496,6 @@
 	)
 	(label "VCC"
 		(at 422.91 382.27 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17438,7 +17506,6 @@
 	)
 	(label "A2"
 		(at 142.24 134.62 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17449,7 +17516,6 @@
 	)
 	(label "B7"
 		(at 433.07 59.69 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17460,7 +17526,6 @@
 	)
 	(label "BRES3"
 		(at 420.37 275.59 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17471,7 +17536,6 @@
 	)
 	(label "GND"
 		(at 422.91 387.35 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17482,7 +17546,6 @@
 	)
 	(label "VCC"
 		(at 420.37 234.95 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17493,7 +17556,6 @@
 	)
 	(label "ARES0"
 		(at 417.83 107.95 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17502,9 +17564,8 @@
 		)
 		(uuid "e3fb252c-07f7-4f36-9eb2-5bb275450c38")
 	)
-	(label "VCC"
+	(label "SSIB"
 		(at 422.91 384.81 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17515,7 +17576,6 @@
 	)
 	(label "OP1"
 		(at 142.24 91.44 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17526,7 +17586,6 @@
 	)
 	(label "COUT"
 		(at 142.24 109.22 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17537,7 +17596,6 @@
 	)
 	(label "ARES1"
 		(at 417.83 105.41 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17548,7 +17606,6 @@
 	)
 	(label "ORES3"
 		(at 127 106.68 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17559,7 +17616,6 @@
 	)
 	(label "BS0"
 		(at 435.61 237.49 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17570,7 +17626,6 @@
 	)
 	(label "ORES7"
 		(at 127 93.98 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17581,7 +17636,6 @@
 	)
 	(label "BRES7"
 		(at 420.37 270.51 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17592,7 +17646,6 @@
 	)
 	(label "B1"
 		(at 420.37 265.43 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17603,7 +17656,6 @@
 	)
 	(label "ORES2"
 		(at 127 109.22 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17614,7 +17666,6 @@
 	)
 	(label "B1"
 		(at 433.07 77.47 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17625,7 +17676,6 @@
 	)
 	(label "GND"
 		(at 417.83 64.77 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17636,7 +17686,6 @@
 	)
 	(label "ORES5"
 		(at 127 99.06 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17647,7 +17696,6 @@
 	)
 	(label "A4"
 		(at 433.07 95.25 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17658,7 +17706,6 @@
 	)
 	(label "GND"
 		(at 417.83 85.09 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17669,7 +17716,6 @@
 	)
 	(label "MRES3"
 		(at 271.78 341.63 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17680,7 +17726,6 @@
 	)
 	(label "BRES5"
 		(at 420.37 273.05 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17691,7 +17736,6 @@
 	)
 	(label "GND"
 		(at 127 78.74 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17702,7 +17746,6 @@
 	)
 	(label "VCC"
 		(at 420.37 240.03 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17713,7 +17756,6 @@
 	)
 	(label "A0"
 		(at 438.15 397.51 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17724,7 +17766,6 @@
 	)
 	(label "VCC"
 		(at 127 83.82 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17735,7 +17776,6 @@
 	)
 	(label "GND"
 		(at 142.24 78.74 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -17753,7 +17793,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0033f3fa-76db-4980-aac8-756447426e16")
-		(property "Reference" "Q13"
+		(property "Reference" "Q9"
 			(at 188.468 441.452 90)
 			(effects
 				(font
@@ -17822,7 +17862,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q13")
+					(reference "Q9")
 					(unit 1)
 				)
 			)
@@ -17838,7 +17878,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "01ebb684-5534-49cb-b528-7731583ce21e")
-		(property "Reference" "R5"
+		(property "Reference" "R4"
 			(at 189.23 233.68 90)
 			(effects
 				(font
@@ -17901,7 +17941,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R5")
+					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -17917,7 +17957,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "04a08a81-6033-4141-b534-52a16a757275")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR08"
 			(at 452.12 119.38 0)
 			(effects
 				(font
@@ -17967,7 +18007,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR05")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -17983,7 +18023,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "05a3a482-6676-4ded-a0ff-aa56d6e2ac8c")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR025"
 			(at 198.12 360.68 0)
 			(effects
 				(font
@@ -18033,7 +18073,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR08")
+					(reference "#PWR025")
 					(unit 1)
 				)
 			)
@@ -18049,7 +18089,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "064e72c4-58f8-4ee6-99eb-2afe7bd4fe4a")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR04"
 			(at 110.49 78.74 0)
 			(effects
 				(font
@@ -18099,7 +18139,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR07")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -18199,7 +18239,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0840c6a6-f981-4e7b-89d7-a11665f2e3ee")
-		(property "Reference" "D10"
+		(property "Reference" "D2"
 			(at 727.71 157.7974 90)
 			(effects
 				(font
@@ -18262,7 +18302,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D10")
+					(reference "D2")
 					(unit 1)
 				)
 			)
@@ -18277,7 +18317,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0b9e20f5-8e7f-4972-8b2d-17915cafe1ee")
-		(property "Reference" "Q16"
+		(property "Reference" "Q12"
 			(at 188.468 498.602 90)
 			(effects
 				(font
@@ -18346,7 +18386,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q16")
+					(reference "Q12")
 					(unit 1)
 				)
 			)
@@ -18476,7 +18516,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "0dd86aec-0735-46c7-8e84-3953b670b30b")
-		(property "Reference" "C23"
+		(property "Reference" "C2"
 			(at 722.63 391.1599 0)
 			(effects
 				(font
@@ -18530,7 +18570,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "C23")
+					(reference "C2")
 					(unit 1)
 				)
 			)
@@ -18546,7 +18586,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0e56d9c9-2236-4498-a4d0-78864e3908e7")
-		(property "Reference" "#PWR044"
+		(property "Reference" "#PWR024"
 			(at 80.01 290.83 0)
 			(effects
 				(font
@@ -18596,7 +18636,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR044")
+					(reference "#PWR024")
 					(unit 1)
 				)
 			)
@@ -18612,7 +18652,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0ff7fcff-f338-41b8-9b69-b8a7dad92a51")
-		(property "Reference" "#PWR090"
+		(property "Reference" "#PWR040"
 			(at 198.12 436.88 0)
 			(effects
 				(font
@@ -18662,7 +18702,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR090")
+					(reference "#PWR040")
 					(unit 1)
 				)
 			)
@@ -18678,7 +18718,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "14453341-6c01-40d7-834e-08da1424bdd3")
-		(property "Reference" "D5"
+		(property "Reference" "D9"
 			(at 109.22 275.2724 90)
 			(effects
 				(font
@@ -18732,7 +18772,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D5")
+					(reference "D9")
 					(unit 1)
 				)
 			)
@@ -18748,7 +18788,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "17219573-0cbd-4335-bacf-f48518c1e44a")
-		(property "Reference" "R7"
+		(property "Reference" "R3"
 			(at 726.44 231.1399 0)
 			(effects
 				(font
@@ -18811,7 +18851,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R7")
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -18941,7 +18981,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1a370d0b-1eb1-4641-8910-6f7e7d150901")
-		(property "Reference" "#PWR013"
+		(property "Reference" "#PWR027"
 			(at 411.48 372.11 0)
 			(effects
 				(font
@@ -18991,7 +19031,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR013")
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)
@@ -19006,7 +19046,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1a4b1042-46f6-4141-bd8e-982518f16115")
-		(property "Reference" "R18"
+		(property "Reference" "R13"
 			(at 166.37 471.17 90)
 			(effects
 				(font
@@ -19069,7 +19109,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R18")
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -19199,7 +19239,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1f252438-0890-4100-938e-ca8dc648a282")
-		(property "Reference" "#PWR085"
+		(property "Reference" "#PWR031"
 			(at 662.94 398.78 0)
 			(effects
 				(font
@@ -19249,7 +19289,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR085")
+					(reference "#PWR031")
 					(unit 1)
 				)
 			)
@@ -19265,7 +19305,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "214331a9-ec53-430b-afa2-772fa0827744")
-		(property "Reference" "#PWR093"
+		(property "Reference" "#PWR047"
 			(at 198.12 494.03 0)
 			(effects
 				(font
@@ -19315,7 +19355,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR093")
+					(reference "#PWR047")
 					(unit 1)
 				)
 			)
@@ -19445,7 +19485,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2662a310-d04a-46bd-ba28-ba1a5405408d")
-		(property "Reference" "#PWR089"
+		(property "Reference" "#PWR035"
 			(at 198.12 417.83 0)
 			(effects
 				(font
@@ -19495,7 +19535,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR089")
+					(reference "#PWR035")
 					(unit 1)
 				)
 			)
@@ -19626,7 +19666,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "27592e97-e388-4999-8be4-39d2296ae4aa")
-		(property "Reference" "C20"
+		(property "Reference" "C10"
 			(at 777.24 434.3399 0)
 			(effects
 				(font
@@ -19689,7 +19729,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "C20")
+					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -19705,7 +19745,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "2838ac22-ebf6-431f-bd69-26d99013f3e7")
-		(property "Reference" "C27"
+		(property "Reference" "C6"
 			(at 773.43 391.1599 0)
 			(effects
 				(font
@@ -19759,7 +19799,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "C27")
+					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -19774,7 +19814,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2873268c-1aae-4b75-bb3b-968c3d0d2ee5")
-		(property "Reference" "#PWR094"
+		(property "Reference" "#PWR026"
 			(at 162.56 367.03 0)
 			(effects
 				(font
@@ -19824,7 +19864,74 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR094")
+					(reference "#PWR026")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 642.62 71.12 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2ecf030a-cb74-42de-86e1-77129bd6fb7a")
+		(property "Reference" "H1"
+			(at 645.16 68.5799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 645.16 71.1199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_Pad"
+			(at 642.62 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 642.62 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 642.62 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e7ee816f-9645-49ed-8365-bd931902028a")
+		)
+		(instances
+			(project ""
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "H1")
 					(unit 1)
 				)
 			)
@@ -19840,7 +19947,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "2edd935e-ff96-43c9-8798-9354d6820533")
-		(property "Reference" "C24"
+		(property "Reference" "C3"
 			(at 735.33 391.1599 0)
 			(effects
 				(font
@@ -19894,7 +20001,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "C24")
+					(reference "C3")
 					(unit 1)
 				)
 			)
@@ -20140,7 +20247,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "331bdfc2-c59e-43b5-aae2-b704eaacef63")
-		(property "Reference" "U6"
+		(property "Reference" "U1"
 			(at 223.5117 90.17 0)
 			(effects
 				(font
@@ -20237,7 +20344,7 @@
 		(instances
 			(project ""
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "U6")
+					(reference "U1")
 					(unit 1)
 				)
 			)
@@ -20253,7 +20360,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "335dbb3d-8473-452a-80b4-bb8734b26db6")
-		(property "Reference" "U6"
+		(property "Reference" "U1"
 			(at 670.5517 365.76 0)
 			(effects
 				(font
@@ -20350,7 +20457,7 @@
 		(instances
 			(project ""
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "U6")
+					(reference "U1")
 					(unit 3)
 				)
 			)
@@ -20366,7 +20473,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "34da4de1-fc9c-4815-ada9-e2fde516eec7")
-		(property "Reference" "C19"
+		(property "Reference" "C9"
 			(at 751.84 434.3399 0)
 			(effects
 				(font
@@ -20429,7 +20536,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "C19")
+					(reference "C9")
 					(unit 1)
 				)
 			)
@@ -20560,7 +20667,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3682e30d-6da5-4fb3-8b17-c393842a1680")
-		(property "Reference" "#PWR053"
+		(property "Reference" "#PWR018"
 			(at 201.93 237.49 0)
 			(effects
 				(font
@@ -20610,7 +20717,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR053")
+					(reference "#PWR018")
 					(unit 1)
 				)
 			)
@@ -20626,7 +20733,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3711c010-4210-406a-bf1b-1e3eeea1be76")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR05"
 			(at 158.75 78.74 0)
 			(effects
 				(font
@@ -20676,7 +20783,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR06")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -20691,7 +20798,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3913e0c6-1057-46eb-9748-a42865b1901a")
-		(property "Reference" "#PWR047"
+		(property "Reference" "#PWR012"
 			(at 654.05 165.1 0)
 			(effects
 				(font
@@ -20741,7 +20848,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR047")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -20756,7 +20863,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3d5713a4-0ab3-4347-987f-9ae90f8945ad")
-		(property "Reference" "#PWR048"
+		(property "Reference" "#PWR015"
 			(at 657.86 229.87 0)
 			(effects
 				(font
@@ -20806,7 +20913,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR048")
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -20822,7 +20929,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3e91668f-8a45-4460-9f0c-5d32bd6f56cc")
-		(property "Reference" "#PWR014"
+		(property "Reference" "#PWR036"
 			(at 382.27 421.64 0)
 			(effects
 				(font
@@ -20872,7 +20979,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR014")
+					(reference "#PWR036")
 					(unit 1)
 				)
 			)
@@ -20887,7 +20994,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3ee3911d-917d-46d1-a986-e60dc43615f6")
-		(property "Reference" "D19"
+		(property "Reference" "D20"
 			(at 179.324 470.662 0)
 			(effects
 				(font
@@ -20950,7 +21057,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D19")
+					(reference "D20")
 					(unit 1)
 				)
 			)
@@ -20966,7 +21073,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "4012410f-f067-47d8-9ae7-6237aa216228")
-		(property "Reference" "D6"
+		(property "Reference" "D8"
 			(at 104.14 275.2724 90)
 			(effects
 				(font
@@ -21020,7 +21127,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D6")
+					(reference "D8")
 					(unit 1)
 				)
 			)
@@ -21035,7 +21142,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "40a5f02a-b7ad-4464-9ab4-d0434c4a159c")
-		(property "Reference" "R17"
+		(property "Reference" "R12"
 			(at 166.37 452.12 90)
 			(effects
 				(font
@@ -21098,7 +21205,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R17")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -21228,7 +21335,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "441af5c0-1b5d-409c-88fa-46994268cf12")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR03"
 			(at 394.97 58.42 0)
 			(effects
 				(font
@@ -21278,7 +21385,7 @@
 		(instances
 			(project ""
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR01")
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -21294,7 +21401,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "44773152-155f-4305-a177-89003f82669f")
-		(property "Reference" "#PWR050"
+		(property "Reference" "#PWR013"
 			(at 723.9 180.34 0)
 			(effects
 				(font
@@ -21344,7 +21451,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR050")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -21360,7 +21467,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "483c5064-3bd9-4661-9fa9-d4c738ab6c26")
-		(property "Reference" "J3"
+		(property "Reference" "J1"
 			(at 425.45 50.8 0)
 			(effects
 				(font
@@ -21538,7 +21645,7 @@
 		(instances
 			(project ""
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "J3")
+					(reference "J1")
 					(unit 1)
 				)
 			)
@@ -21669,7 +21776,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "531fe804-551f-4fa3-a9c6-6369a81f1453")
-		(property "Reference" "J5"
+		(property "Reference" "J4"
 			(at 430.53 365.76 0)
 			(effects
 				(font
@@ -21817,7 +21924,140 @@
 		(instances
 			(project ""
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "J5")
+					(reference "J4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 49.53 39.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "56cab195-2e35-4024-b204-7898717c0be1")
+		(property "Reference" "#PWR01"
+			(at 49.53 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 49.53 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 49.53 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 49.53 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "29e0bb39-8343-4eca-bcc8-eeb6affe1f1d")
+		)
+		(instances
+			(project "alu_motherboard"
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 657.86 71.12 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "58069d9e-ef26-4815-a842-93447f0c611d")
+		(property "Reference" "H4"
+			(at 660.4 68.5799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 660.4 71.1199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_Pad"
+			(at 657.86 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 657.86 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 657.86 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "82432a0f-4583-47c9-8b1a-e29aee18e7fb")
+		)
+		(instances
+			(project "alu_motherboard"
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "H4")
 					(unit 1)
 				)
 			)
@@ -21833,7 +22073,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5904bb7e-1f41-4459-b7cb-dbd9074a7daf")
-		(property "Reference" "#PWR086"
+		(property "Reference" "#PWR034"
 			(at 769.62 405.13 0)
 			(effects
 				(font
@@ -21883,7 +22123,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR086")
+					(reference "#PWR034")
 					(unit 1)
 				)
 			)
@@ -21898,7 +22138,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5d3a208a-fc59-4fc5-af7c-7849099142a7")
-		(property "Reference" "#PWR095"
+		(property "Reference" "#PWR029"
 			(at 162.56 386.08 0)
 			(effects
 				(font
@@ -21948,7 +22188,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR095")
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
@@ -22078,7 +22318,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "62aa88a7-e211-4a87-8f8a-20b0a3fbd27d")
-		(property "Reference" "R8"
+		(property "Reference" "R5"
 			(at 233.68 233.68 90)
 			(effects
 				(font
@@ -22141,7 +22381,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R8")
+					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -22156,7 +22396,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "62d8fd0d-022e-47b7-a149-a221631c2280")
-		(property "Reference" "#PWR0100"
+		(property "Reference" "#PWR046"
 			(at 162.56 481.33 0)
 			(effects
 				(font
@@ -22206,7 +22446,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0100")
+					(reference "#PWR046")
 					(unit 1)
 				)
 			)
@@ -22221,7 +22461,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "63c252a6-dbfd-45a9-a24b-214e57e07b1e")
-		(property "Reference" "Q12"
+		(property "Reference" "Q8"
 			(at 188.468 422.402 90)
 			(effects
 				(font
@@ -22290,7 +22530,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q12")
+					(reference "Q8")
 					(unit 1)
 				)
 			)
@@ -22415,9 +22655,9 @@
 		(at 135.89 111.76 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "66917fb5-0d59-4b2a-b547-557661105c46")
 		(property "Reference" "J2"
@@ -22637,7 +22877,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "688c8340-8b3e-493a-9f63-faad614e4360")
-		(property "Reference" "D20"
+		(property "Reference" "D21"
 			(at 179.324 489.712 0)
 			(effects
 				(font
@@ -22700,7 +22940,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D20")
+					(reference "D21")
 					(unit 1)
 				)
 			)
@@ -22716,7 +22956,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "6896c867-3a9d-46fc-a92e-7b8b8f410612")
-		(property "Reference" "C26"
+		(property "Reference" "C5"
 			(at 760.73 391.1599 0)
 			(effects
 				(font
@@ -22770,7 +23010,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "C26")
+					(reference "C5")
 					(unit 1)
 				)
 			)
@@ -22786,7 +23026,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "694d803a-0fc3-4cd4-82bf-1a56d3dbd0c6")
-		(property "Reference" "D9"
+		(property "Reference" "D4"
 			(at 176.276 233.172 0)
 			(effects
 				(font
@@ -22849,7 +23089,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D9")
+					(reference "D4")
 					(unit 1)
 				)
 			)
@@ -22865,7 +23105,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6c046d41-105e-4c53-bebf-782fd882998b")
-		(property "Reference" "C17"
+		(property "Reference" "C7"
 			(at 699.77 434.3399 0)
 			(effects
 				(font
@@ -22928,7 +23168,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "C17")
+					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -22944,7 +23184,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6c6abaac-e009-4f29-ae94-b8f6e0d47254")
-		(property "Reference" "#PWR051"
+		(property "Reference" "#PWR014"
 			(at 723.9 205.74 0)
 			(effects
 				(font
@@ -22994,7 +23234,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR051")
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -23010,7 +23250,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6ce02ca3-78f9-4bc1-9f97-b2d946f66fa1")
-		(property "Reference" "U6"
+		(property "Reference" "U1"
 			(at 670.5517 377.19 0)
 			(effects
 				(font
@@ -23107,7 +23347,7 @@
 		(instances
 			(project ""
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "U6")
+					(reference "U1")
 					(unit 4)
 				)
 			)
@@ -23123,7 +23363,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6e0bd632-8bcb-459f-8e30-1f64a0ee8526")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR010"
 			(at 119.38 152.4 0)
 			(effects
 				(font
@@ -23173,7 +23413,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR02")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -23302,7 +23542,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "712ecb0b-7df9-4e06-80c2-1c57494888e5")
-		(property "Reference" "#PWR0101"
+		(property "Reference" "#PWR048"
 			(at 162.56 500.38 0)
 			(effects
 				(font
@@ -23352,7 +23592,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0101")
+					(reference "#PWR048")
 					(unit 1)
 				)
 			)
@@ -23367,7 +23607,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "717d26ce-9622-47bc-8eec-c075edae5748")
-		(property "Reference" "D15"
+		(property "Reference" "D16"
 			(at 179.324 394.462 0)
 			(effects
 				(font
@@ -23430,7 +23670,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D15")
+					(reference "D16")
 					(unit 1)
 				)
 			)
@@ -23445,7 +23685,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7b5325f1-7915-4995-aede-c85a6ac750a9")
-		(property "Reference" "#PWR098"
+		(property "Reference" "#PWR041"
 			(at 162.56 443.23 0)
 			(effects
 				(font
@@ -23495,7 +23735,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR098")
+					(reference "#PWR041")
 					(unit 1)
 				)
 			)
@@ -23511,7 +23751,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7d4d9f96-945e-4ea0-bdfb-e45bceac9aee")
-		(property "Reference" "R4"
+		(property "Reference" "R6"
 			(at 82.55 275.5899 0)
 			(effects
 				(font
@@ -23574,7 +23814,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R4")
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -23590,7 +23830,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8048d761-a44a-4257-8041-aa60063395c6")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR022"
 			(at 393.7 289.56 0)
 			(effects
 				(font
@@ -23640,7 +23880,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR010")
+					(reference "#PWR022")
 					(unit 1)
 				)
 			)
@@ -23655,7 +23895,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "81b5a709-4246-44c8-84b4-6203237ad3a2")
-		(property "Reference" "R13"
+		(property "Reference" "R8"
 			(at 166.37 375.92 90)
 			(effects
 				(font
@@ -23718,7 +23958,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R13")
+					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -23734,7 +23974,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "82bd44b9-4084-4d7a-9a9d-3213fd19f496")
-		(property "Reference" "D4"
+		(property "Reference" "D10"
 			(at 114.3 275.2724 90)
 			(effects
 				(font
@@ -23788,7 +24028,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D4")
+					(reference "D10")
 					(unit 1)
 				)
 			)
@@ -23803,7 +24043,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8387e0d0-498b-4f04-9d5c-97cbb189d746")
-		(property "Reference" "#PWR096"
+		(property "Reference" "#PWR033"
 			(at 162.56 405.13 0)
 			(effects
 				(font
@@ -23853,7 +24093,73 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR096")
+					(reference "#PWR033")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 642.62 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "83a93dea-a03a-44d1-aceb-444942e21d2e")
+		(property "Reference" "#PWR06"
+			(at 642.62 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 642.62 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 642.62 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 642.62 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 642.62 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ff55d8be-c98c-402b-b859-b68529e4bd40")
+		)
+		(instances
+			(project ""
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -23868,7 +24174,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "845dbc97-c8d5-4766-95be-91076f66704d")
-		(property "Reference" "R15"
+		(property "Reference" "R10"
 			(at 166.37 414.02 90)
 			(effects
 				(font
@@ -23931,7 +24237,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R15")
+					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -23947,7 +24253,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8b657d13-88b8-4ecd-b4c5-c72257d583f4")
-		(property "Reference" "#PWR084"
+		(property "Reference" "#PWR039"
 			(at 683.26 424.18 0)
 			(effects
 				(font
@@ -23997,7 +24303,74 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR084")
+					(reference "#PWR039")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 647.7 71.12 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "90a5df3a-d8ab-4b0f-9e2b-4c33c556c921")
+		(property "Reference" "H2"
+			(at 650.24 68.5799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 650.24 71.1199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_Pad"
+			(at 647.7 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 647.7 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 647.7 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "960f1744-fce8-4247-98fb-acc84f2caddd")
+		)
+		(instances
+			(project "alu_motherboard"
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "H2")
 					(unit 1)
 				)
 			)
@@ -24013,7 +24386,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "93fc5e3d-6d6c-48a4-a77a-4b380838edc1")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR028"
 			(at 198.12 379.73 0)
 			(effects
 				(font
@@ -24063,7 +24436,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR09")
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -24078,7 +24451,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "964288e9-dd7f-451b-b709-d3de8c93b4f1")
-		(property "Reference" "#PWR099"
+		(property "Reference" "#PWR044"
 			(at 162.56 462.28 0)
 			(effects
 				(font
@@ -24128,7 +24501,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR099")
+					(reference "#PWR044")
 					(unit 1)
 				)
 			)
@@ -24144,7 +24517,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "96449874-6d3e-4954-b70c-bde1bc36ecec")
-		(property "Reference" "D8"
+		(property "Reference" "D6"
 			(at 93.98 275.2724 90)
 			(effects
 				(font
@@ -24198,7 +24571,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D8")
+					(reference "D6")
 					(unit 1)
 				)
 			)
@@ -24213,7 +24586,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "96b6aeb9-156b-4108-8b1c-bcb55e9eb88c")
-		(property "Reference" "Q14"
+		(property "Reference" "Q10"
 			(at 188.468 460.502 90)
 			(effects
 				(font
@@ -24282,7 +24655,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q14")
+					(reference "Q10")
 					(unit 1)
 				)
 			)
@@ -24298,7 +24671,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "96cca353-3b7e-4470-a665-ddfa5cf266b9")
-		(property "Reference" "D3"
+		(property "Reference" "D11"
 			(at 119.38 275.2724 90)
 			(effects
 				(font
@@ -24352,7 +24725,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D3")
+					(reference "D11")
 					(unit 1)
 				)
 			)
@@ -24482,7 +24855,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "99c808eb-c415-41c1-a663-a175e61ecff4")
-		(property "Reference" "J4"
+		(property "Reference" "J3"
 			(at 427.99 223.52 0)
 			(effects
 				(font
@@ -24654,7 +25027,7 @@
 		(instances
 			(project ""
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "J4")
+					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -24670,7 +25043,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9a888bc4-3c87-404d-b62c-ce0f080f2abb")
-		(property "Reference" "#PWR054"
+		(property "Reference" "#PWR020"
 			(at 237.49 243.84 0)
 			(effects
 				(font
@@ -24720,7 +25093,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR054")
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -24736,7 +25109,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9b4b9da3-9da4-494c-9c92-95fc9e865c66")
-		(property "Reference" "#PWR015"
+		(property "Reference" "#PWR037"
 			(at 464.82 421.64 0)
 			(effects
 				(font
@@ -24786,7 +25159,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR015")
+					(reference "#PWR037")
 					(unit 1)
 				)
 			)
@@ -24916,7 +25289,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9e407f0d-dc1f-4613-8c42-c8edad492734")
-		(property "Reference" "#PWR087"
+		(property "Reference" "#PWR030"
 			(at 769.62 389.89 0)
 			(effects
 				(font
@@ -24966,7 +25339,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR087")
+					(reference "#PWR030")
 					(unit 1)
 				)
 			)
@@ -24982,7 +25355,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9ef20e8a-cc2c-4e32-98a6-a77cf4500a03")
-		(property "Reference" "C18"
+		(property "Reference" "C8"
 			(at 726.44 434.3399 0)
 			(effects
 				(font
@@ -25045,7 +25418,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "C18")
+					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -25061,7 +25434,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a1a1d075-d9cf-4f7e-acb2-c7565f690552")
-		(property "Reference" "#PWR092"
+		(property "Reference" "#PWR045"
 			(at 198.12 474.98 0)
 			(effects
 				(font
@@ -25111,7 +25484,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR092")
+					(reference "#PWR045")
 					(unit 1)
 				)
 			)
@@ -25127,7 +25500,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a22e13a6-d0c9-405f-910f-214402fdbdca")
-		(property "Reference" "#PWR091"
+		(property "Reference" "#PWR043"
 			(at 198.12 455.93 0)
 			(effects
 				(font
@@ -25177,7 +25550,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR091")
+					(reference "#PWR043")
 					(unit 1)
 				)
 			)
@@ -25193,7 +25566,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a35e21e1-ecc2-4ff6-9e06-d3e00bbc05a6")
-		(property "Reference" "Q4"
+		(property "Reference" "Q1"
 			(at 727.71 144.7799 0)
 			(effects
 				(font
@@ -25262,7 +25635,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q4")
+					(reference "Q1")
 					(unit 1)
 				)
 			)
@@ -25392,7 +25765,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ab2c8320-c0f4-4f23-938b-111fc3dac1a6")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR07"
 			(at 400.05 119.38 0)
 			(effects
 				(font
@@ -25442,7 +25815,7 @@
 		(instances
 			(project ""
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR04")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -25458,7 +25831,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "aba86ade-f604-4303-87fa-28cf75fd3853")
-		(property "Reference" "#PWR046"
+		(property "Reference" "#PWR019"
 			(at 193.04 243.84 0)
 			(effects
 				(font
@@ -25508,7 +25881,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR046")
+					(reference "#PWR019")
 					(unit 1)
 				)
 			)
@@ -25708,7 +26081,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "af480bfc-6fdf-464e-b22f-c18926ebfedb")
-		(property "Reference" "U6"
+		(property "Reference" "U1"
 			(at 792.48 434.3399 0)
 			(effects
 				(font
@@ -25807,8 +26180,87 @@
 		(instances
 			(project ""
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "U6")
+					(reference "U1")
 					(unit 5)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 64.77 40.64 90)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b4512da2-40ff-4c37-80a9-e4c812371b0e")
+		(property "Reference" "R1"
+			(at 66.04 38.1 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1000"
+			(at 66.294 43.688 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
+			(at 64.77 38.862 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 64.77 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 64.77 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C21190"
+			(at 66.04 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "66bb4321-c8ed-40b6-9c4d-07aaef0e15c5")
+		)
+		(pin "2"
+			(uuid "b3e436f9-6285-4990-8c36-fcb4f7b720a9")
+		)
+		(instances
+			(project "alu_motherboard"
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "R1")
+					(unit 1)
 				)
 			)
 		)
@@ -25823,7 +26275,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "b573c1d5-d9ef-48f2-a2e9-e12cd0c51f24")
-		(property "Reference" "C22"
+		(property "Reference" "C1"
 			(at 709.93 391.1599 0)
 			(effects
 				(font
@@ -25877,7 +26329,7 @@
 		(instances
 			(project ""
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "C22")
+					(reference "C1")
 					(unit 1)
 				)
 			)
@@ -25893,7 +26345,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "b67a54d5-5636-4028-b596-909784aca4d2")
-		(property "Reference" "D1"
+		(property "Reference" "D13"
 			(at 129.54 275.2724 90)
 			(effects
 				(font
@@ -25947,7 +26399,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D1")
+					(reference "D13")
 					(unit 1)
 				)
 			)
@@ -25963,7 +26415,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b7561d89-223b-46c0-a2f4-ab50c18912b8")
-		(property "Reference" "#PWR088"
+		(property "Reference" "#PWR032"
 			(at 198.12 398.78 0)
 			(effects
 				(font
@@ -26013,7 +26465,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR088")
+					(reference "#PWR032")
 					(unit 1)
 				)
 			)
@@ -26143,7 +26595,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bddb9ee2-b24a-428c-bcdb-54bd62232db2")
-		(property "Reference" "D17"
+		(property "Reference" "D18"
 			(at 179.324 432.562 0)
 			(effects
 				(font
@@ -26206,7 +26658,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D17")
+					(reference "D18")
 					(unit 1)
 				)
 			)
@@ -26223,7 +26675,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "be5d823b-6a83-4777-93b8-d418fd4e92a6")
-		(property "Reference" "#PWR045"
+		(property "Reference" "#PWR017"
 			(at 157.48 237.49 0)
 			(effects
 				(font
@@ -26273,7 +26725,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR045")
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -26289,7 +26741,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "be86cb4a-8666-4665-aeeb-134f3f440ad2")
-		(property "Reference" "C25"
+		(property "Reference" "C4"
 			(at 748.03 391.1599 0)
 			(effects
 				(font
@@ -26343,7 +26795,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "C25")
+					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -26358,7 +26810,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bed6c570-03c0-44db-bfb2-ad63b1bf3716")
-		(property "Reference" "D14"
+		(property "Reference" "D15"
 			(at 179.324 375.412 0)
 			(effects
 				(font
@@ -26421,7 +26873,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D14")
+					(reference "D15")
 					(unit 1)
 				)
 			)
@@ -26436,7 +26888,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c07e12db-054e-4cee-aeff-ddab264de888")
-		(property "Reference" "D16"
+		(property "Reference" "D17"
 			(at 179.324 413.512 0)
 			(effects
 				(font
@@ -26499,7 +26951,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D16")
+					(reference "D17")
 					(unit 1)
 				)
 			)
@@ -26515,7 +26967,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c6a2cade-c06d-4431-af97-c49f52c1f087")
-		(property "Reference" "U6"
+		(property "Reference" "U1"
 			(at 238.7517 90.17 0)
 			(effects
 				(font
@@ -26612,7 +27064,7 @@
 		(instances
 			(project ""
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "U6")
+					(reference "U1")
 					(unit 2)
 				)
 			)
@@ -26627,7 +27079,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c7db43e5-80e6-4c78-bc09-699b40241728")
-		(property "Reference" "Q6"
+		(property "Reference" "Q4"
 			(at 211.582 230.378 90)
 			(effects
 				(font
@@ -26696,7 +27148,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q6")
+					(reference "Q4")
 					(unit 1)
 				)
 			)
@@ -26711,7 +27163,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cf9e2fc4-cf77-4fc8-a606-5232611a69b5")
-		(property "Reference" "#PWR097"
+		(property "Reference" "#PWR038"
 			(at 162.56 424.18 0)
 			(effects
 				(font
@@ -26761,7 +27213,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR097")
+					(reference "#PWR038")
 					(unit 1)
 				)
 			)
@@ -26776,7 +27228,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d12a83b0-8518-4a52-b90a-fb967198200e")
-		(property "Reference" "Q10"
+		(property "Reference" "Q6"
 			(at 188.468 384.302 90)
 			(effects
 				(font
@@ -26845,7 +27297,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q10")
+					(reference "Q6")
 					(unit 1)
 				)
 			)
@@ -26860,7 +27312,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d2e21178-000d-4345-8128-deec827b1dad")
-		(property "Reference" "Q9"
+		(property "Reference" "Q5"
 			(at 188.468 365.252 90)
 			(effects
 				(font
@@ -26929,7 +27381,73 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q9")
+					(reference "Q5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 69.85 41.91 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d4dcd379-b1b0-43a0-b09f-5450bcd17257")
+		(property "Reference" "#PWR02"
+			(at 69.85 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 69.85 46.482 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 69.85 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 69.85 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 69.85 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "64a7a3c3-6590-4592-bc4c-deef2fe15989")
+		)
+		(instances
+			(project "alu_motherboard"
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
@@ -26945,7 +27463,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d7b137e7-726e-4684-8525-3b7f581c4745")
-		(property "Reference" "#PWR052"
+		(property "Reference" "#PWR021"
 			(at 723.9 245.11 0)
 			(effects
 				(font
@@ -26995,7 +27513,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR052")
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -27011,7 +27529,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d8153325-398c-449e-886b-760127c434c4")
-		(property "Reference" "D12"
+		(property "Reference" "D5"
 			(at 220.726 233.172 0)
 			(effects
 				(font
@@ -27074,7 +27592,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D12")
+					(reference "D5")
 					(unit 1)
 				)
 			)
@@ -27090,7 +27608,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d8486319-a1b8-49eb-afef-6f3915b817a4")
-		(property "Reference" "C21"
+		(property "Reference" "C11"
 			(at 801.37 434.3399 0)
 			(effects
 				(font
@@ -27153,7 +27671,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "C21")
+					(reference "C11")
 					(unit 1)
 				)
 			)
@@ -27168,7 +27686,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d974967d-6081-4b2b-8b41-540af852a75c")
-		(property "Reference" "R16"
+		(property "Reference" "R11"
 			(at 166.37 433.07 90)
 			(effects
 				(font
@@ -27231,7 +27749,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R16")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -27247,7 +27765,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "db43708c-2002-4fb1-82ff-e26fdece7bbb")
-		(property "Reference" "Q5"
+		(property "Reference" "Q2"
 			(at 727.71 209.5499 0)
 			(effects
 				(font
@@ -27316,7 +27834,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q5")
+					(reference "Q2")
 					(unit 1)
 				)
 			)
@@ -27331,7 +27849,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "dee86874-daf2-45e7-9c7a-253ebaf25e6f")
-		(property "Reference" "D13"
+		(property "Reference" "D14"
 			(at 179.324 356.362 0)
 			(effects
 				(font
@@ -27394,7 +27912,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D13")
+					(reference "D14")
 					(unit 1)
 				)
 			)
@@ -27410,7 +27928,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "df5895f0-6aa6-4a1a-a305-0acf2597291b")
-		(property "Reference" "D11"
+		(property "Reference" "D3"
 			(at 727.71 222.5674 90)
 			(effects
 				(font
@@ -27473,7 +27991,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D11")
+					(reference "D3")
 					(unit 1)
 				)
 			)
@@ -27489,7 +28007,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "df82ebad-afa7-429d-9729-8ed7c4138ff7")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR023"
 			(at 463.55 289.56 0)
 			(effects
 				(font
@@ -27539,7 +28057,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR011")
+					(reference "#PWR023")
 					(unit 1)
 				)
 			)
@@ -27554,7 +28072,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e2425b10-4c60-412f-bc68-31261944c02c")
-		(property "Reference" "Q15"
+		(property "Reference" "Q11"
 			(at 188.468 479.552 90)
 			(effects
 				(font
@@ -27623,7 +28141,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q15")
+					(reference "Q11")
 					(unit 1)
 				)
 			)
@@ -27639,7 +28157,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e5010332-d3ac-4df0-8419-9c84599508ab")
-		(property "Reference" "R6"
+		(property "Reference" "R2"
 			(at 726.44 166.3699 0)
 			(effects
 				(font
@@ -27702,7 +28220,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R6")
+					(reference "R2")
 					(unit 1)
 				)
 			)
@@ -27718,7 +28236,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e6da965b-5036-4dcf-81b3-e6b175aa8f1f")
-		(property "Reference" "#PWR049"
+		(property "Reference" "#PWR09"
 			(at 723.9 140.97 0)
 			(effects
 				(font
@@ -27768,7 +28286,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR049")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -27783,7 +28301,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e7aba1c9-3e91-4a64-ac7e-ef1afe052860")
-		(property "Reference" "R14"
+		(property "Reference" "R9"
 			(at 166.37 394.97 90)
 			(effects
 				(font
@@ -27846,7 +28364,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R14")
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -27861,7 +28379,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e8c89685-39f4-4022-a601-d670c04be914")
-		(property "Reference" "R12"
+		(property "Reference" "R7"
 			(at 166.37 356.87 90)
 			(effects
 				(font
@@ -27924,7 +28442,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R12")
+					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -27939,7 +28457,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ea7773e2-4184-4eb2-840e-1de9861c797a")
-		(property "Reference" "R19"
+		(property "Reference" "R14"
 			(at 166.37 490.22 90)
 			(effects
 				(font
@@ -28002,7 +28520,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "R19")
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -28017,7 +28535,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f1eb175a-06a2-4591-b77d-a60fad574f0e")
-		(property "Reference" "Q11"
+		(property "Reference" "Q7"
 			(at 188.468 403.352 90)
 			(effects
 				(font
@@ -28086,7 +28604,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "Q11")
+					(reference "Q7")
 					(unit 1)
 				)
 			)
@@ -28216,7 +28734,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f6e57712-1a8f-476e-8b84-f9700e8984dd")
-		(property "Reference" "#PWR012"
+		(property "Reference" "#PWR016"
 			(at 406.4 229.87 0)
 			(effects
 				(font
@@ -28266,7 +28784,74 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR012")
+					(reference "#PWR016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 652.78 71.12 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f70c2c58-76d1-411a-bb16-246a12d361ca")
+		(property "Reference" "H3"
+			(at 655.32 68.5799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 655.32 71.1199 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_2.2mm_M2_Pad"
+			(at 652.78 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 652.78 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 652.78 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6726e7db-7aa1-477d-ac06-f042ab06080c")
+		)
+		(instances
+			(project "alu_motherboard"
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "H3")
 					(unit 1)
 				)
 			)
@@ -28281,7 +28866,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f784b02d-d614-4c37-b72d-25151f3c6df2")
-		(property "Reference" "D18"
+		(property "Reference" "D19"
 			(at 179.324 451.612 0)
 			(effects
 				(font
@@ -28344,7 +28929,86 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D18")
+					(reference "D19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 54.61 40.64 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fa9c64e6-2ccc-471d-89d0-bc35077d0271")
+		(property "Reference" "D1"
+			(at 53.086 37.592 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LED"
+			(at 52.832 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder"
+			(at 54.61 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 54.61 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 54.61 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C84267"
+			(at 53.086 37.592 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "899643bb-a6f9-483e-9b19-6a477c7e9212")
+		)
+		(pin "1"
+			(uuid "ae4633a0-0be2-4a40-af2e-5ad93694a555")
+		)
+		(instances
+			(project "alu_motherboard"
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -28360,7 +29024,7 @@
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "fc083a14-7c70-4e3b-b059-654284782600")
-		(property "Reference" "D2"
+		(property "Reference" "D12"
 			(at 124.46 275.2724 90)
 			(effects
 				(font
@@ -28414,7 +29078,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "D2")
+					(reference "D12")
 					(unit 1)
 				)
 			)
@@ -28544,7 +29208,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fe0d36a2-a213-4e75-acc1-ff77be8315f3")
-		(property "Reference" "#PWR083"
+		(property "Reference" "#PWR042"
 			(at 683.26 457.2 0)
 			(effects
 				(font
@@ -28594,7 +29258,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR083")
+					(reference "#PWR042")
 					(unit 1)
 				)
 			)
@@ -28610,7 +29274,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fe6855af-763e-4c87-a437-3982f40870b0")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR011"
 			(at 149.86 152.4 0)
 			(effects
 				(font
@@ -28660,7 +29324,7 @@
 		(instances
 			(project "alu_motherboard"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR03")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -28687,7 +29351,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "../alu_shift/mux.kicad_sch"
+		(property "Sheetfile" "mux.kicad_sch"
 			(at 283.21 372.6946 0)
 			(effects
 				(font
@@ -28965,8 +29629,8 @@
 		(fill
 			(color 0 0 0 0.0000)
 		)
-		(uuid "96fad003-d28e-477f-aa83-b9eabc3f651c")
-		(property "Sheetname" "8Bit_Mux1"
+		(uuid "dc56a371-d93c-4002-b2a1-7fd31d5dab89")
+		(property "Sheetname" "8Bit_Mux3"
 			(at 243.84 297.7384 0)
 			(effects
 				(font
@@ -28975,7 +29639,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "../alu_shift/mux.kicad_sch"
+		(property "Sheetfile" "mux.kicad_sch"
 			(at 243.84 357.4546 0)
 			(effects
 				(font
@@ -28992,7 +29656,7 @@
 				)
 				(justify right)
 			)
-			(uuid "c5e99aed-1154-44b2-883a-c7913d2282c8")
+			(uuid "3e178472-9f78-42d7-9715-c3000a49b8e0")
 		)
 		(pin "B3" input
 			(at 261.62 312.42 0)
@@ -29002,7 +29666,7 @@
 				)
 				(justify right)
 			)
-			(uuid "73e52825-b3e5-4b6c-be8b-d91ede30fa78")
+			(uuid "6e0c7e09-9644-40f9-be77-5e5c922ee1e4")
 		)
 		(pin "B4" input
 			(at 261.62 309.88 0)
@@ -29012,7 +29676,7 @@
 				)
 				(justify right)
 			)
-			(uuid "9637cc73-5ac1-41a8-be25-5e01476efcf3")
+			(uuid "4416a256-80d0-499a-b8fd-530a4d5d07ae")
 		)
 		(pin "A3" input
 			(at 261.62 341.63 0)
@@ -29022,7 +29686,7 @@
 				)
 				(justify right)
 			)
-			(uuid "c1fb785c-d35b-44a0-a6c8-2ff7403c2ca9")
+			(uuid "fcb64565-8842-4113-847e-24ad2d061fc3")
 		)
 		(pin "A4" input
 			(at 261.62 339.09 0)
@@ -29032,7 +29696,7 @@
 				)
 				(justify right)
 			)
-			(uuid "93cd5ee9-2041-487a-9261-527b5a6c12b4")
+			(uuid "a44184c8-45dc-4eec-99cb-1306ee3035eb")
 		)
 		(pin "A7" input
 			(at 261.62 331.47 0)
@@ -29042,7 +29706,7 @@
 				)
 				(justify right)
 			)
-			(uuid "d55f02e7-e592-45f1-90c9-ad68499eb554")
+			(uuid "89562d33-c8b2-490a-bb58-b3e7eec8ca01")
 		)
 		(pin "A5" input
 			(at 261.62 336.55 0)
@@ -29052,7 +29716,7 @@
 				)
 				(justify right)
 			)
-			(uuid "e092c67b-eb74-462a-922b-03c85ad8b7e1")
+			(uuid "c110a150-ab26-40bb-894d-0ab6ad846ea6")
 		)
 		(pin "B5" input
 			(at 261.62 307.34 0)
@@ -29062,7 +29726,7 @@
 				)
 				(justify right)
 			)
-			(uuid "8105a5a4-d17f-43b2-b3f9-ff0a36d8535e")
+			(uuid "75789f4e-c722-4cd2-ada9-b337218d141f")
 		)
 		(pin "A6" input
 			(at 261.62 334.01 0)
@@ -29072,7 +29736,7 @@
 				)
 				(justify right)
 			)
-			(uuid "73a18977-3205-43de-ba7f-128f312769be")
+			(uuid "2ad2b2cb-024c-4bfe-a778-4a666e9d8fe5")
 		)
 		(pin "B7" input
 			(at 261.62 302.26 0)
@@ -29082,7 +29746,7 @@
 				)
 				(justify right)
 			)
-			(uuid "61b9f4dc-f3b5-46e2-83a6-095a073945d1")
+			(uuid "22cb7a1f-88bc-4808-b680-1943d14c7bdb")
 		)
 		(pin "B6" input
 			(at 261.62 304.8 0)
@@ -29092,7 +29756,7 @@
 				)
 				(justify right)
 			)
-			(uuid "2d3e10ce-8507-4812-8a3b-274575d4edde")
+			(uuid "42fba5e6-1087-4267-a87a-a873c1877aa5")
 		)
 		(pin "RES6" output
 			(at 243.84 318.77 180)
@@ -29102,7 +29766,7 @@
 				)
 				(justify left)
 			)
-			(uuid "d73ec6c5-f114-4a70-a020-06e6a4f62f5b")
+			(uuid "9aa1b050-8158-41dd-bfbb-3e231b3a8681")
 		)
 		(pin "RES1" output
 			(at 243.84 331.47 180)
@@ -29112,7 +29776,7 @@
 				)
 				(justify left)
 			)
-			(uuid "247f414c-df02-4863-9ef2-3e702cf044b2")
+			(uuid "7c088c75-8fe9-47c6-bd77-7933ff93c93a")
 		)
 		(pin "RES2" output
 			(at 243.84 328.93 180)
@@ -29122,7 +29786,7 @@
 				)
 				(justify left)
 			)
-			(uuid "07a5fc49-5e20-4caa-b16c-de02542c5eda")
+			(uuid "a48e89a6-cf3c-4f2c-8cf4-d7f25de8f59e")
 		)
 		(pin "RES3" output
 			(at 243.84 326.39 180)
@@ -29132,7 +29796,7 @@
 				)
 				(justify left)
 			)
-			(uuid "3512d81a-8ae7-433f-a582-5da838def97c")
+			(uuid "7e8eb7ca-670d-4497-b32c-05512c37f12b")
 		)
 		(pin "RES4" output
 			(at 243.84 323.85 180)
@@ -29142,7 +29806,7 @@
 				)
 				(justify left)
 			)
-			(uuid "5fe8de04-33a6-4034-b3c4-6fbeaaa209f0")
+			(uuid "f32a5482-8335-4dd4-bddf-d44d38eb49d2")
 		)
 		(pin "RES0" output
 			(at 243.84 334.01 180)
@@ -29152,7 +29816,7 @@
 				)
 				(justify left)
 			)
-			(uuid "44168b2f-c258-43c7-a77e-dce26c85b285")
+			(uuid "d36caec2-cbd3-4eea-b043-73b5997092e0")
 		)
 		(pin "RES5" output
 			(at 243.84 321.31 180)
@@ -29162,7 +29826,7 @@
 				)
 				(justify left)
 			)
-			(uuid "566fad0c-9678-4808-8f2e-24b28f14ed57")
+			(uuid "35121936-9906-4051-8e78-755f1159c6e6")
 		)
 		(pin "RES7" output
 			(at 243.84 316.23 180)
@@ -29172,7 +29836,7 @@
 				)
 				(justify left)
 			)
-			(uuid "544d23a7-e9f7-4426-918f-25ccb7d681b9")
+			(uuid "9e5b93f3-4fea-4541-b881-cc780fa6e41a")
 		)
 		(pin "B2" input
 			(at 261.62 314.96 0)
@@ -29182,7 +29846,7 @@
 				)
 				(justify right)
 			)
-			(uuid "847c13a9-57b9-4fba-91b1-aedbe5ff89d4")
+			(uuid "40d2a2bc-2966-4cc7-b1c2-ffbc01a44187")
 		)
 		(pin "A1" input
 			(at 261.62 346.71 0)
@@ -29192,7 +29856,7 @@
 				)
 				(justify right)
 			)
-			(uuid "d9c8203b-0533-4930-88ff-0158e46c226e")
+			(uuid "26d925bf-8881-48ef-a894-f8b64b4ef08e")
 		)
 		(pin "B1" input
 			(at 261.62 317.5 0)
@@ -29202,7 +29866,7 @@
 				)
 				(justify right)
 			)
-			(uuid "959b3670-adc2-4dc1-afc4-6c673671b916")
+			(uuid "78564d56-8a79-4e1b-8a9f-33f45a9ccf55")
 		)
 		(pin "A0" input
 			(at 261.62 349.25 0)
@@ -29212,7 +29876,7 @@
 				)
 				(justify right)
 			)
-			(uuid "ec140719-f2d6-45ac-a684-856fa58ae2e2")
+			(uuid "d7c508d7-8dad-4123-9185-098d6be3e458")
 		)
 		(pin "B0" input
 			(at 261.62 320.04 0)
@@ -29222,7 +29886,7 @@
 				)
 				(justify right)
 			)
-			(uuid "aa4ecdd8-4eac-4e03-af5c-9184d42cf7b7")
+			(uuid "4b093574-4d0b-495c-a455-43fb4546f6c3")
 		)
 		(pin "SEL" input
 			(at 261.62 354.33 0)
@@ -29232,7 +29896,7 @@
 				)
 				(justify right)
 			)
-			(uuid "4647deb2-e2eb-44e4-8215-6f64c1557199")
+			(uuid "1e984edd-e392-43d7-9892-b721a7cc05a7")
 		)
 		(instances
 			(project "alu_motherboard"

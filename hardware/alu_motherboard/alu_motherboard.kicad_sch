@@ -8107,12 +8107,6 @@
 		(uuid "b91a361f-b610-4a4b-accd-4532327e271b")
 	)
 	(junction
-		(at 411.48 382.27)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b9cd7563-0976-4c26-ab62-6dfb0a2d2abd")
-	)
-	(junction
 		(at 683.26 448.31)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -8339,6 +8333,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "eebb8427-16a4-42b4-bd29-ec5bf4eb989f")
+	)
+	(junction
+		(at 364.49 59.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f04a56c6-ae52-4704-8d35-e9400de18c4e")
 	)
 	(junction
 		(at 786.13 422.91)
@@ -10246,7 +10246,7 @@
 	)
 	(wire
 		(pts
-			(xy 288.29 59.69) (xy 419.1 59.69)
+			(xy 288.29 59.69) (xy 364.49 59.69)
 		)
 		(stroke
 			(width 0)
@@ -10953,6 +10953,16 @@
 			(type default)
 		)
 		(uuid "56188b4a-7c7d-469b-a042-eff7eeab74ac")
+	)
+	(wire
+		(pts
+			(xy 364.49 59.69) (xy 419.1 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "564ecb50-8132-4d7c-8ffd-33ec7400b274")
 	)
 	(wire
 		(pts
@@ -12223,16 +12233,6 @@
 			(type default)
 		)
 		(uuid "7a1e203d-b8a4-4c2e-b452-2f239603190d")
-	)
-	(wire
-		(pts
-			(xy 424.18 384.81) (xy 411.48 384.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7a9572f6-dd8d-4a70-8517-369bc0c6634d")
 	)
 	(wire
 		(pts
@@ -14256,6 +14256,16 @@
 	)
 	(wire
 		(pts
+			(xy 364.49 59.69) (xy 364.49 384.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c50ce2f1-2d0b-4719-bc2c-57c2f9eae6f6")
+	)
+	(wire
+		(pts
 			(xy 480.06 130.81) (xy 480.06 187.96)
 		)
 		(stroke
@@ -14353,6 +14363,16 @@
 			(type default)
 		)
 		(uuid "c64bf732-bc0c-4305-b057-1a6f8e0fe050")
+	)
+	(wire
+		(pts
+			(xy 364.49 384.81) (xy 424.18 384.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c6b1f925-d489-4e77-81b8-899802ecc0a4")
 	)
 	(wire
 		(pts
@@ -15383,16 +15403,6 @@
 			(type default)
 		)
 		(uuid "e773ae66-a101-416f-9f2e-837eaec5b48a")
-	)
-	(wire
-		(pts
-			(xy 411.48 382.27) (xy 411.48 384.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e7ceac82-e55a-404b-a4ac-1a4ce993622e")
 	)
 	(wire
 		(pts
@@ -17554,7 +17564,7 @@
 		)
 		(uuid "e3fb252c-07f7-4f36-9eb2-5bb275450c38")
 	)
-	(label "VCC"
+	(label "SSIB"
 		(at 422.91 384.81 180)
 		(effects
 			(font
