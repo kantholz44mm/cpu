@@ -1,4 +1,3 @@
-use regex::Regex;
 use isa::arch::{Opcode, Register};
 
 #[derive(Clone, Copy, Debug, PartialEq)]
@@ -10,18 +9,33 @@ pub enum Token<'a> {
     Symbol(char),
 }
 
-pub fn lex_number<'a>(input: &'a str) -> Option<(Token<'a>, usize)> {
-    let regex = Regex::new(r"^(\-)?(0x|0b)?([0-9a-fA-F]+)").unwrap();
-    let captures = regex.captures(&input)?;
-    let radix = match captures.get(2) {
-        Some(v) if v.as_str().starts_with("0x") => 16,
-        Some(v) if v.as_str().starts_with("0b") => 2,
-        _ => 10
-    };
-    let sign = captures.get(1).map_or(1, |_| -1);
-    let value = u64::from_str_radix(&captures[3], radix).ok()?;
+pub fn lex_number<'a>(mut input: &'a str) -> Option<(Token<'a>, usize)> {
 
-    Some((Token::Number(value as i64 * sign), captures[0].chars().count()))
+    let mut chars_consumed = 0;
+
+    let (sign, consumed_by_sign) = match input {
+        _ if input.starts_with('-') => (-1, 1),
+        _ if input.starts_with('+') => ( 1, 1),
+        _                           => ( 1, 0),
+    };
+
+    chars_consumed += consumed_by_sign;
+    input = &input[consumed_by_sign..];
+
+    let (radix, consumed_by_radix) = match input {
+        _ if input.starts_with("0x") => (16, 2),
+        _ if input.starts_with("0b") => ( 2, 2),
+        _                            => (10, 0),
+    };
+
+    chars_consumed += consumed_by_radix;
+    input = &input[consumed_by_radix..];
+
+    let consumed_by_number = input.chars().take_while(char::is_ascii_hexdigit).count();
+    let number = u64::from_str_radix(&input[..consumed_by_number], radix).ok()?;
+    chars_consumed += consumed_by_number;
+
+    Some((Token::Number(number as i64 * sign), chars_consumed))
 }
 
 pub fn lex_register<'a>(input: &'a str) -> Option<(Token<'a>, usize)> {
