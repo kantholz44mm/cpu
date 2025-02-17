@@ -1,4 +1,5 @@
 /software/*/target/
+/software/*/Cargo.lock
 /hardware/**/*.gbr
 /hardware/**/*.drl
 /hardware/**/*.zip

@@ -105,11 +105,11 @@ mod tests {
     pub fn test_shifting() {
         let a = 0b10101010;
         for i in 0..8 {
-            assert_eq!(shift_left_word(u8_to_bools(a), u8_to_bools(i)), u8_to_bools(a << i));
-            assert_eq!(shift_right_word(u8_to_bools(a), u8_to_bools(i)), u8_to_bools(a >> i));
+            assert_eq!(shift_left_word(u8_to_bools(a), u8_to_bools(i), false), u8_to_bools(a << i));
+            assert_eq!(shift_right_word(u8_to_bools(a), u8_to_bools(i), false), u8_to_bools(a >> i));
 
-            assert_eq!(shift_word(u8_to_bools(a), u8_to_bools(i), false), (u8_to_bools(a << i), true ));
-            assert_eq!(shift_word(u8_to_bools(a), u8_to_bools(i), true ), (u8_to_bools(a >> i), false));
+            assert_eq!(shift_word(u8_to_bools(a), u8_to_bools(i), false, false), (u8_to_bools(a << i), true ));
+            assert_eq!(shift_word(u8_to_bools(a), u8_to_bools(i), true, false), (u8_to_bools(a >> i), false));
         }
     }
 

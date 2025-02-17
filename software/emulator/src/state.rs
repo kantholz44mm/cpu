@@ -1,6 +1,4 @@
 use std::ops::Range;
-
-use image::{ImageBuffer, Luma};
 use isa::arch::{ControlFlags, DoubleWord, Instruction, QuadWord, Register, Word};
 use crate::combinatorics::{alu, and, mux_doubleword, mux_word, xor};
 
@@ -119,11 +117,6 @@ impl State {
             // finally, update PC
             self.pc = bools_to_u16(nextpc);
         }
-    }
-
-    pub fn dump_memory_to_bitmap(&self, path: &str) {
-        let img: ImageBuffer<Luma<u8>, &[u8]> = ImageBuffer::from_raw(256, 256, &self.memory[..]).unwrap();
-        img.save(path).unwrap();
     }
 
     pub fn dump_memory(&self, range: Range<usize>, path: &str) {

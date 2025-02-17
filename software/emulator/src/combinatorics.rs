@@ -119,28 +119,28 @@ pub fn or_and_xor_nand_word(sel: [bool; 2], a: [bool; 8], b: [bool; 8]) -> [bool
     ]
 }
 
-pub fn shift_left_word(a: [bool; 8], by: [bool; 8]) -> [bool; 8] {
-    let a = mux_word(a, [false,  a[0],  a[1],  a[2], a[3], a[4], a[5], a[6]], by[0]);
-    let a = mux_word(a, [false, false,  a[0],  a[1], a[2], a[3], a[4], a[5]], by[1]);
-    let a = mux_word(a, [false, false, false, false, a[0], a[1], a[2], a[3]], by[2]);
+pub fn shift_left_word(a: [bool; 8], by: [bool; 8], sib: bool) -> [bool; 8] {
+    let a = mux_word(a, [sib, a[0], a[1], a[2], a[3], a[4], a[5], a[6]], by[0]);
+    let a = mux_word(a, [sib,  sib, a[0], a[1], a[2], a[3], a[4], a[5]], by[1]);
+    let a = mux_word(a, [sib,  sib,  sib,  sib, a[0], a[1], a[2], a[3]], by[2]);
     a
 }
 
-pub fn shift_right_word(a: [bool; 8], by: [bool; 8]) -> [bool; 8] {
-    let a = mux_word(a, [a[1], a[2], a[3], a[4],  a[5],  a[6],  a[7], false], by[0]);
-    let a = mux_word(a, [a[2], a[3], a[4], a[5],  a[6],  a[7], false, false], by[1]);
-    let a = mux_word(a, [a[4], a[5], a[6], a[7], false, false, false, false], by[2]);
+pub fn shift_right_word(a: [bool; 8], by: [bool; 8], sib: bool) -> [bool; 8] {
+    let a = mux_word(a, [a[1], a[2], a[3], a[4], a[5], a[6], a[7], sib], by[0]);
+    let a = mux_word(a, [a[2], a[3], a[4], a[5], a[6], a[7],  sib, sib], by[1]);
+    let a = mux_word(a, [a[4], a[5], a[6], a[7],  sib,  sib,  sib, sib], by[2]);
     a
 }
 
-pub fn shift_word(a: [bool; 8], by: [bool; 8], dir: bool) -> ([bool; 8], bool) {
-    (mux_word(shift_left_word(a, by), shift_right_word(a, by), dir), mux(a[7], a[0], dir))
+pub fn shift_word(a: [bool; 8], by: [bool; 8], dir: bool, sib: bool) -> ([bool; 8], bool) {
+    (mux_word(shift_left_word(a, by, sib), shift_right_word(a, by, sib), dir), mux(a[7], a[0], dir))
 }
 
 pub fn alu(op: [bool; 3], a: [bool; 8], b: [bool; 8], cin: bool) -> ([bool; 8], [bool; 4]) {
     let (add_sub_result, add_sub_cout, add_sub_overflow) = add_sub_word(cin, op[0], a, b);
     let or_nor_xor_and_result = or_and_xor_nand_word(op[0..2].try_into().unwrap(), a, b);
-    let (shift_result, shift_out) = shift_word(a, b, op[0]);
+    let (shift_result, shift_out) = shift_word(a, b, op[0], cin);
 
     let result = mux_word(mux_word(add_sub_result, shift_result, op[1]), or_nor_xor_and_result, op[2]);
     let zero = not(or(or(or(or(or(or(or(result[0], result[1]), result[2]), result[3]), result[4]), result[5]), result[6]), result[7]));
