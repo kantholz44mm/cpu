@@ -1,0 +1,89 @@
+\section{Boolean logic}
+
+As the word "digital" suggests, digital computers operate on individual digits. In most modern machines, the base of these digits is 2, hence called "binary" numbers. While there are computers using a trinary or even higher-valued number base \cite{wikipedia_setun}, the binary system has proven to be simple and robust to implement. In an electrical representation, a line pulled towards the GND potential represents a logical 0. Similarly, pulling the same line towards a predefined voltage level different from GND represents a logical 1. Due to their close association to electronic implementation, these logic levels are also called LOW and HIGH, respectively. Therefore, we define:
+
+\begin{align}
+    \mathcal{B} &= \{0, 1\} \\
+    LOW  &\coloneqq 0       \\
+    HIGH &\coloneqq 1
+\end{align}
+
+\subsection{Logical operators} \label{sec:logical_operators}
+
+To do meaningful computation, logical operators are defined. Each operator is a function of one or more binary digit inputs, producing a single binary digit output. They have the shared signature $\mathcal{B}^n \to \mathcal{B} \mid n \geq 1$, where $n$ denotes the number of inputs. Since each input can only assume the state HIGH or LOW, for an operator taking $n$ inputs, there are $2^n$ combinations of input states. Therefore, there can only be $n^4$ different operators for any given $n$. For operators with $n = 2$, there are only 16 different mappings from inputs to outputs. Operators that have either one or two inputs can be written in infix notation. For this reason, many such operators have been given widely recognized names and symbols. \autoref{tab:boolean_operators} shows names and symbols of operators relevant to this paper. The order of the inputs of all given operators does not matter. For this reason, the inputs are unlabelled in their graphic representations later on.
+
+\begin{minipage}[t]{\textwidth}
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|c|c|} 
+        \hline
+        \textbf{A} & \textbf{B}   & \bm{$A \land B$} & \bm{$A \lor B$} & \bm{$A \lnand B$} & \bm{$A \lnor B$} & \bm{$A \lxor B$} & \bm{$\lnot A$}  \\ 
+                   &              & AND              & OR              & NAND              & NOR              & XOR              & NOT             \\
+        \hline
+        0          & 0            & 0                & 0               & 1                 & 1                & 0                & 1               \\ 
+        \hline
+        0          & 1            & 0                & 1               & 1                 & 0                & 1                & 1               \\ 
+        \hline
+        1          & 0            & 0                & 1               & 1                 & 0                & 1                & 0               \\ 
+        \hline
+        1          & 1            & 1                & 1               & 0                 & 0                & 0                & 0               \\
+        \hline
+    \end{tabular}
+    \label{tab:boolean_operators}
+    \captionof{table}{Boolean operators}
+\end{minipage}
+
+The algebra defined by these logical operators is called "Boolean algebra". Expressions of this algebra can make use of named variables and parenthesis, as would be the case in regular algebra. By nesting and reusing functions in this language, any mapping of any number of inputs to any number of outputs can be denoted. There are rules on how operations can be transformed into different operations denoting the same logical mapping. For brevity, this set of rules is not explained here. An extensive overview of these transformations and their application is given in \cite{shannon1938symbolic}. Here is an example of an expression in this language:
+
+\begin{displaymath}
+    \neg(\neg A \land \neg B)
+\end{displaymath}
+
+One important aspect of any set of such operators is its functional completeness. A set of operators is called functionally complete when and only when its operators can be combined and chained in a way that emulates all other operators. Again, there are only 16 operators with 2 inputs. If a smaller set of operators can be used to build all 16 of these, it is deemed functionally complete, as it can be used to denote any logical function. Examples of such functionally complete sets include:
+
+\begin{gather}
+    \{AND, OR, NOT\} \label{gather:and_or_not} \\
+    \{NAND\}         \\
+    \{XOR, NOT\}
+\end{gather}
+
+Consider the expression given earlier, $\neg(\neg A \land \neg B)$. the outputs of the entire expression are identical to that of the OR gate. However, only the NOT and AND operators are used within the expression. Therefore, the set of operators given in set \ref{gather_and_or_not} is functionally complete, but not minimal, because the OR operator can be emulated by the AND and NOT operators. Thus, the OR can be dropped from the set, while still retaining its functional completeness. A set of boolean operators is considered minimal when removing any operator causes the set to no longer be functionally complete. An even more restrictive category are the "Sheffer functions", which are also known as \textit{sole sufficient operators}. They are the functionally complete sets which contain only a single boolean operator. For operators with 2 inputs, there are only two such sets: $\{NAND\}$ and $\{NOR\}$.
+
+\subsection{Logic gates}
+
+Since most digital processors work using electrical circuits, there is a need for a notation that can be shared by electricians and logicians. Since all boolean operators as defined in \autoref{sec:logical_operators} produce only a single binary digit but take $n$ inputs, chaining multiple such operators naturally results in a logical tree structure. Since trees are planar graphs \cite{West2001}, they can be drawn out without intersections. Each operator is then assigned a unique symbol that is drawn at the respective graph edge. In real world applications, one operator corresponds to one or more physical components, which are collectively called a "logic gate". Figures \ref{fig:logic_gates_and} - \ref{fig:logic_gates_not} show the symbols used for the AND, OR and NOT gate defined in \autoref{tab:boolean_operators}. The symbols used are defined in standard 14456 by the \ac{ieee} \cite{STD14456}. The equivalent \ac{iso} standard that defines symbols for these functions is ISO 60617. \cite{ISO60617}.
+
+\begin{figure}[H]
+    \centering
+    % First image
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{images/drawio/and_symbol.png}
+        \caption{AND Gate, defined in \cite{STD14456}}
+        \label{fig:logic_gates_and}
+    \end{minipage}
+    \hfill
+    % Second image
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{images/drawio/or_symbol.png}
+        \caption{OR Gate, defined in \cite{STD14456}}
+        \label{fig:logic_gates_or}
+    \end{minipage}
+    \hfill
+    % Third image
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{images/drawio/not_symbol.png}
+        \caption{NOT Gate, defined in \cite{STD14456}}
+        \label{fig:logic_gates_not}
+    \end{minipage}
+\end{figure}
+
+As an example, consider the boolean expression given above, $\neg(\neg A \land \neg B)$. Its visual representation can be seen in \autoref{fig:or_from_and}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/drawio/or_from_and.png}
+    \caption{Visual representation of $\neg(\neg A \land \neg B)$}
+    \label{fig:or_from_and}
+\end{figure}
