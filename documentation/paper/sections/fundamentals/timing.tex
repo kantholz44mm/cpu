@@ -1,4 +1,4 @@
-\section{Timing}
+\subsection{Timing}
 
 Electrical signals propagate at a finite speed. Because of this, electrical components used to implement logic gates have a non-zero propagation time, after which the output signal is guaranteed by the manufacturer to have reached the expected voltage level. Since many of these individual logic gates are connected in series, their propagation delays add up, as do the propagation times of the traces between the circuits. The propagation times of logic gate \acp{ic} are typically on the order of 10s of nanoseconds. The propagation speed of electromagnetic waves in any given material is given by \cite{heule2016stratified}
 
@@ -17,25 +17,29 @@ When a logical expression is implemented as a tree of logic gate components, the
     \label{fig:critical_path}
 \end{figure}
 
-\subsection{Combinatorial and sequential logic}
+\subsubsection{Combinatorial and sequential logic}
 
 Combinatorial logic describes a circuit of digital gates that compute some pure boolean function. This means that the output of the circuit depends only on the present input and not on the history of the input. This contrasts with sequential logic, in which, as the name suggests, the output also depends on the order of operations, i.e an output may depend on previous inputs. In a digital electrical computer, this can be realised by forming loops between logic gates. An example of a combinatorial logic circuit is an adder circuit. There is no state stored within the circuit, it need not know the results of its previous operation to calculate any other addition. Once the input signals have been applied and propagated through the logic circuit, the system is stable. There are no feedback loops that may cause the circuit to change state at any point if the inputs remain stable. An example of a sequential logic circuit is the venerable SR latch. Such a latch can be seen in \autoref{fig:nand_sr_latch}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/drawio/nand_latch.png}  % Replace with your image file
-    \caption{SR Latch made from NAND gates}
-    \label{fig:nand_sr_latch}
+    \begin{minipage}{0.6\textwidth}
+        \centering
+        \includegraphics[width=0.7\textwidth]{images/drawio/nand_latch.png}  % Replace with your image file
+        \caption{SR Latch made from NAND gates}
+        \label{fig:nand_sr_latch}
+    \end{minipage}
+    \begin{minipage}{0.35\textwidth}
+        \centering
+        \vspace{-3em}
+        \begin{align}
+            Q  &= S \lnand Q' \label{equ:latch_q} \\
+            Q' &= R \lnand Q  \label{equ:latch_q_not}
+        \end{align}
+    \end{minipage}
 \end{figure}
 
-Within such a latch, there are clearly cycles, where the output of each NAND gate serves as the input of the other NAND gate. The boolean expressions for $Q$ and $Q'$ are as follows:
-
-\begin{align}
-    Q  &= S \lnand Q' \\
-    Q' &= R \lnand Q
-\end{align}
-
-Even though one can write an expression for each path through the latch, when expanding any one of the two, there is an unbounded recursion:
+Within such a latch, there are clearly cycles, where the output of each NAND gate serves as the input of the other NAND gate. The boolean expressions for $Q$ and $Q'$ are given in equations \ref{equ:latch_q} and \ref{equ:latch_q_not}. Even though one can write an expression for each path through the latch, when expanding any one of the two, there is an unbounded recursion:
 
 \begin{align}
     Q &= S \lnand Q' \\
