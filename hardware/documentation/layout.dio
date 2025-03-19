@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="sgD3QCEKRrs9sJ2pnXeP" name="Page-1">
-        <mxGraphModel dx="-155" dy="1640" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="-121" dy="1665" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -91,26 +91,38 @@
                 <mxCell id="160" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=#666666;fillColor=#f5f5f5;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.clock;fontSize=25;fontColor=#333333;" parent="1" vertex="1">
                     <mxGeometry x="1488.75" y="833.13" width="62.5" height="63.75" as="geometry"/>
                 </mxCell>
-                <mxCell id="210" value="R&lt;div&gt;E&lt;/div&gt;&lt;div&gt;G&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="1">
+                <mxCell id="210" value="R&lt;div&gt;E&lt;/div&gt;&lt;div&gt;G&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=15;" parent="1" vertex="1">
                     <mxGeometry x="2758" y="-41" width="50" height="99" as="geometry"/>
                 </mxCell>
-                <mxCell id="211" value="R&lt;div&gt;E&lt;/div&gt;&lt;div&gt;G&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="1">
+                <mxCell id="211" value="R&lt;div&gt;E&lt;/div&gt;&lt;div&gt;G&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=15;" parent="1" vertex="1">
                     <mxGeometry x="2707" y="-41" width="50" height="99" as="geometry"/>
                 </mxCell>
-                <mxCell id="212" value="R&lt;div&gt;E&lt;/div&gt;&lt;div&gt;G&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="1">
+                <mxCell id="212" value="R&lt;div&gt;E&lt;/div&gt;&lt;div&gt;G&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=15;" parent="1" vertex="1">
                     <mxGeometry x="2656" y="-41" width="50" height="99" as="geometry"/>
                 </mxCell>
-                <mxCell id="213" value="R&lt;div&gt;E&lt;/div&gt;&lt;div&gt;G&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="1">
+                <mxCell id="213" value="R&lt;div&gt;E&lt;/div&gt;&lt;div&gt;G&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=15;" parent="1" vertex="1">
                     <mxGeometry x="2605" y="-41" width="50" height="99" as="geometry"/>
                 </mxCell>
-                <mxCell id="214" value="R&lt;div&gt;E&lt;/div&gt;&lt;div&gt;G&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="1">
+                <mxCell id="214" value="R&lt;div&gt;E&lt;/div&gt;&lt;div&gt;G&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=15;" parent="1" vertex="1">
                     <mxGeometry x="2554" y="-41" width="50" height="99" as="geometry"/>
                 </mxCell>
-                <mxCell id="215" value="R&lt;div&gt;E&lt;/div&gt;&lt;div&gt;G&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="1">
+                <mxCell id="215" value="R&lt;div&gt;E&lt;/div&gt;&lt;div&gt;G&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=15;" parent="1" vertex="1">
                     <mxGeometry x="2503" y="-41" width="50" height="99" as="geometry"/>
                 </mxCell>
-                <mxCell id="216" value="Register Fabric" style="rounded=0;whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="1">
+                <mxCell id="216" value="Register Fabric" style="rounded=0;whiteSpace=wrap;html=1;fontSize=27;" parent="1" vertex="1">
                     <mxGeometry x="2503" y="59" width="356" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="217" value="P&lt;div&gt;C&lt;/div&gt;&lt;div&gt;1&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="1">
+                    <mxGeometry x="2554" y="120" width="50" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="218" value="P&lt;div&gt;C&lt;/div&gt;&lt;div&gt;0&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=15;" vertex="1" parent="1">
+                    <mxGeometry x="2503" y="120" width="50" height="99" as="geometry"/>
+                </mxCell>
+                <mxCell id="219" value="&lt;font&gt;PC&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=29;" vertex="1" parent="1">
+                    <mxGeometry x="2503" y="220" width="101" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="220" value="&lt;font&gt;IO&lt;/font&gt;&lt;div&gt;&lt;font&gt;MEM&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=29;" vertex="1" parent="1">
+                    <mxGeometry x="2605" y="120" width="113" height="160" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
