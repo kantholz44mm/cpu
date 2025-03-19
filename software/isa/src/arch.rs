@@ -134,11 +134,11 @@ pub enum OperandList {
 impl From<Instruction> for QuadWord {
     fn from(value: Instruction) -> Self {
         0 as QuadWord
-        | (value.immediate as QuadWord)      << 0
-        | (value.ro2 as QuadWord)            << 16
-        | (value.ro1 as QuadWord)            << 19
-        | (value.rd as QuadWord)             << 22
-        | (value.opcode as QuadWord)         << 25
+        | (value.immediate as QuadWord) << 0
+        | (value.ro2 as QuadWord)       << 16
+        | (value.ro1 as QuadWord)       << 19
+        | (value.rd as QuadWord)        << 22
+        | (value.opcode as QuadWord)    << 25
     }
 }
 

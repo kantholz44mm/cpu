@@ -1,0 +1,10 @@
+\section{Software}
+
+Since no hardware implementation is available at the start of the project, an emulation environment is needed to verify the \ac{isa} design. This environment can also be used during the \ac{isa} design process in order to test design choices before investing into hardware. For this purpose, the \ac{isa} is implemented on the logic gate level within a digital logic simulation software. Additionally, to automate testing and verification of the implementation, a software emulator is written.
+
+As is the case with a hardware implementation, there is no existing software tooling that programmers can use to interact with the \ac{isa}. Without a such tools, the only way of creating programs is to manually create a sequence of encoded instructions. This is cumbersome, inefficient and error-prone. To give programmers an efficient way of implementing software for the system, a compiler is needed. Such a tool transforms a sequence of human-readable code into the native instruction format compatible with an \ac{isa}. Since the complexity and size of programs for the \ac{isa} designed for this project is rather limited by the available memories, implementing a compiler for a high-level language is not worth the time investment. Therefore, an assembler is implemented.
+
+The programming language chosen for both pieces of software is - again due to the limited complecity of programs - largely irrelevant. Mostly out of personal preference, the Rust programming language is used for this purpose. It provides access to low level data types and bit-operations on those types, while still retaining high usability for the developer through modern language design and an included package manager. Other suitable options would have been C and C++.
+
+\input{sections/implementation/software/emulator.tex}
+\input{sections/implementation/software/assembler.tex}

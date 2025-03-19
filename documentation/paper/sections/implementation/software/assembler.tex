@@ -1,0 +1,85 @@
+\subsection{Assembler}
+
+Assembly language is the most primitive type of programming language. It provides little to no abstraction over the machine and is therefore highly platform-dependent. In most assembler implementations, each operation in the assembly language corresponds to one \ac{cpu} instruction as defined by the \ac{isa}. The assembly language is therefore the human-readable equivalent of a ``raw'' binary. \autoref{fig:arm_assembly_example} shows a snippet of assembly for the \ac{arm} architecture. The code shown stores the integer values 5 and 10 into registers R0 and R1. It then computes the addition of the two and stores the result into register R2.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/arm_assembly_example.png}
+    \caption{ARM assembly example, adding the numbers 5 and 10 (comments show the C language equivalent)}
+    \label{fig:arm_assembly_example}
+\end{figure}
+
+Each line except the first contains one operation or instruction. When used as input to an \ac{arm} assembler, this file will thus produce a binary containing 4 instructions. Since the transformation from an assembly language into an executable sequence of instruction encodings is rather simple, so is implementing a rudimentary assembler. This transformation is subdivided into multiple smaller and therefore simpler transformations:
+
+$$ Source\ code \xrightarrow{\text{preprocess}} Source\ code \xrightarrow{\text{lex}} Lexemes \xrightarrow{\text{parse}} Statements \xrightarrow{\text{serialise}} Executable $$
+
+Each layer passes its output to the next layer. Since each layer adds additional restrictions to the initial input, errors in the source code can be reported at any point in the chain. Each transformation is implemented by a single function, which returns the datatype \texttt{Result<T, String>}, where T is the desired output type. In case of an error, processing stops and the given error string is reported to the user. Otherwise, the result is given to the next stage and processing continues. The output of serialisation stage is a raw binary that, when loaded by an \ac{isa} implementation, can be directly executed.
+
+\subsubsection{Preprocessor}
+
+The preprocessor is the first step of the compilation pipeline. It is not strictly necessary and only adds ``syntactic sugar'' ontop of the basic assembly language. It is comparable to the C preprocessor stage. It operates on source code directly, outputting source code as well. Its tasks are, in the given order:
+
+\begin{enumerate}
+    \item Allow inclusion of other source files
+    \item Expand macros
+    \item Expand constant definitions
+    \item Strip code comments
+\end{enumerate}
+
+These operations allow programmers to more easily reuse code, both in the form of entire source code files, as well as smaller pieces of code in the form of macros. All operations are implemented using simple text processing algorithms. This stage does not perform any semantical analysis. Syntactical analysis is only done for the commands to the preprocessor itself, but not for the assembly code they are operating on.
+
+%TODO example preprocessor directives.
+
+\subsubsection{Lexer} \label{sec:assembler_lexer}
+
+The lexer is responsible for transforming textual input into semantic atoms called tokens or lexemes. A lexeme is roughly equivalent to a ``word''. Examples may be value literals such as \texttt{123} or \texttt{0x4ABB}, keywords such as the instruction names (\texttt{ADD}, \texttt{MOV}, etc.) or delimiters such as \texttt{,} or \texttt{:}.
+
+\begin{wrapfigure}{R}{0.5\textwidth}
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/rust_token_datatype.png}
+    \caption{Internal datatype for lexemes}
+    \label{fig:rust_token_datatype}
+\end{wrapfigure}
+
+\autoref{fig:rust_token_datatype} shows the internal datatype used for lexemes. Since the preprocessor has removed higher-level language constructs and even code comments, this datatype can be quite small, containing only 5 different variants. These variants contain datatypes other than character strings, therefore the lexer is responsible for not only recognizing the extent of each lexeme within the given input source code, but also to transform the lexemes datatype. For example, within a source file, \texttt{0xFF}, \texttt{255} and \texttt{0b11111111} are all valid and denote the same integer value, and thus are converted to \texttt{Number(255)}. Similarly, register (\texttt{R0 - R7}) and opcode literals (i.e \texttt{ADD}) are converted to the variants \texttt{Register} and \texttt{Operation}, each of which contains an enum represenation of the lexeme. Identifiers are human readable names, which, as of writing, are only used for implementing labels. Labels are explained in more detail in \autoref{sec:assembler_parser}. Symbols are all otherwise unrecognized input characters.
+
+\subsubsection{Parser} \label{sec:assembler_parser}
+
+The parsing stage is responsible for transforming a list of lexemes into a list of instructions. It implements semantic analysis and error checking. Its 3 main tasks are, in order:
+
+\begin{enumerate}
+    \item resolve labels
+    \item evaluate mathematical expressions
+    \item parse instruction invocations
+\end{enumerate}
+
+\begin{wrapfigure}{R}{0.5\textwidth}
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/asm_labels_example.png}
+    \caption{Exemplary usage of labels in assembly code, continuously incrementing R1 by 1}
+    \label{fig:asm_labels_example}
+\end{wrapfigure}
+
+Up to this stage, a program may contain unresolved labels, which are human readable names for locations within the program. Such labels may be used by the programmer to create named procedures or named points the program can branch to. As an example, \autoref{fig:asm_labels_example} shows a loop, continuously incrementing R1 by 1 and then branching back to the start. These labels are resolved by passing through the input lexeme stream and keeping track of how many operations have been encountered. When an identifier is encountered, depending on its context, it is either added to a list of known labels, along with its address, or replaced by that address, if the label was previously known. There is also the globally defined label \texttt{\$}, which always resolves to the current address. This can be used to implement relative jumps.
+
+In order to implement relative jumps, a mechanism is needed to evaluate mathematical expressions. Since this is a semantical analysis, this is also done within the parsing stage. To implement this, the input lexeme stream is scanned for a pair of braces, which are used to enclose a mathematical expression. All lexemes between two matching braces are considered part of one such expression. The expression is converted from infix to postfix notation using Dijkstras shunting yard algorithm \cite{dijkstra1976discipline} and then executed using a simple virtual stack machine. Since all labels have been resolved, all operands are constants, therefore the result is also a constant. The lexemes of the mathematical expression are then replaced by a single \texttt{Number} lexeme containing the result.
+
+\begin{wrapfigure}{R}{0.5\textwidth}
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/rust_instruction_data_structure.png}
+    \caption{Rust data structure representing each CPU/Assembly instruction}
+    \label{fig:rust_instruction_data_structure}
+\end{wrapfigure}
+
+Finally, the list of lexemes should contain only sequences that are a valid instruction invocation. An instruction invocation consists of the name of the operation, as well as an optional, comma-separated list of operands. The allowed number and type of operands depends on the instruction being invoked. For example, since a \texttt{MOV} instruction must transfer data from one register to another, its operand list must have the form \texttt{Rx, Ry}, where x and y are the indices of the source and target registers. The order and type of operands is thus inspected and, if invalid, an error is reported to the user. If the list of operands is valid, the sequence of lexemes that form the instruction invocation are transformed into a data structure that represents that instruction. \autoref{fig:rust_instruction_data_structure} shows this structure. This figure shows that the maximum number of operands is 4. As of writing, no instruction uses all 4 operands and the longest ones use 3.
+
+\subsubsection{Serialisation}
+
+\begin{wrapfigure}{R}{0.6\textwidth}
+    \centering
+    \includegraphics[width=0.58\textwidth]{images/rust_instruction_to_quadword.png}
+    \caption{Rust code that converts an instruction data structure into 32 bit integers}
+    \label{fig:rust_instruction_to_quadword}
+\end{wrapfigure}
+
+The serialisation stage takes as input the list of instructions resulting from the parser stage. All datatypes in this structure are of fixed size, as apparent in \autoref{fig:rust_instruction_data_structure}. Furthermore, all instructions in the \ac{isa} have a fixed size, too. Therefore, implementing serialisation is rather trivial and can be done using only bit-operations. \autoref{fig:rust_instruction_to_quadword} shows all code necessary to perform this transformation. Each instruction of the input list is transformed into a 32 bit integer. This list can be written to a file or loaded into the emulator software as-is.
