@@ -48,7 +48,7 @@
         "silk_text_thickness": 0.1,
         "silk_text_upright": false,
         "zones": {
-          "min_clearance": 0.3
+          "min_clearance": 0.5
         }
       },
       "diff_pair_dimensions": [
@@ -69,16 +69,19 @@
         "copper_edge_clearance": "error",
         "copper_sliver": "warning",
         "courtyards_overlap": "error",
+        "creepage": "error",
         "diff_pair_gap_out_of_range": "error",
         "diff_pair_uncoupled_length_too_long": "error",
         "drill_out_of_range": "error",
-        "duplicate_footprints": "error",
-        "extra_footprint": "error",
+        "duplicate_footprints": "warning",
+        "extra_footprint": "warning",
         "footprint": "error",
-        "footprint_symbol_mismatch": "error",
+        "footprint_filters_mismatch": "ignore",
+        "footprint_symbol_mismatch": "warning",
         "footprint_type_mismatch": "ignore",
         "hole_clearance": "error",
         "hole_near_hole": "error",
+        "hole_to_hole": "error",
         "holes_co_located": "warning",
         "invalid_outline": "error",
         "isolated_copper": "warning",
@@ -89,24 +92,28 @@
         "lib_footprint_mismatch": "warning",
         "malformed_courtyard": "error",
         "microvia_drill_out_of_range": "error",
+        "mirrored_text_on_front_layer": "warning",
         "missing_courtyard": "ignore",
-        "missing_footprint": "error",
-        "net_conflict": "error",
+        "missing_footprint": "warning",
+        "net_conflict": "warning",
+        "nonmirrored_text_on_back_layer": "warning",
         "npth_inside_courtyard": "ignore",
         "padstack": "warning",
         "pth_inside_courtyard": "ignore",
         "shorting_items": "error",
-        "silk_edge_clearance": "ignore",
+        "silk_edge_clearance": "warning",
         "silk_over_copper": "warning",
-        "silk_overlap": "ignore",
+        "silk_overlap": "warning",
         "skew_out_of_range": "error",
         "solder_mask_bridge": "error",
-        "starved_thermal": "warning",
+        "starved_thermal": "error",
         "text_height": "warning",
         "text_thickness": "warning",
         "through_hole_pad_without_hole": "error",
         "too_many_vias": "error",
+        "track_angle": "error",
         "track_dangling": "warning",
+        "track_segment_length": "error",
         "track_width": "error",
         "tracks_crossing": "error",
         "unconnected_items": "error",
@@ -119,6 +126,7 @@
         "min_clearance": 0.1,
         "min_connection": 0.0,
         "min_copper_edge_clearance": 0.5,
+        "min_groove_width": 0.0,
         "min_hole_clearance": 0.25,
         "min_hole_to_hole": 0.2,
         "min_microvia_diameter": 0.2,
@@ -136,16 +144,17 @@
       },
       "teardrop_options": [
         {
-          "td_onpadsmd": true,
+          "td_onpthpad": true,
           "td_onroundshapesonly": false,
+          "td_onsmdpad": true,
           "td_ontrackend": false,
-          "td_onviapad": true
+          "td_onvia": true
         }
       ],
       "teardrop_parameters": [
         {
           "td_allow_use_two_tracks": true,
-          "td_curve_segcount": 5,
+          "td_curve_segcount": 1,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
@@ -156,7 +165,7 @@
         },
         {
           "td_allow_use_two_tracks": true,
-          "td_curve_segcount": 5,
+          "td_curve_segcount": 1,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
@@ -167,7 +176,7 @@
         },
         {
           "td_allow_use_two_tracks": true,
-          "td_curve_segcount": 5,
+          "td_curve_segcount": 1,
           "td_height_ratio": 1.0,
           "td_length_ratio": 0.5,
           "td_maxheight": 2.0,
@@ -466,7 +475,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "alu_shift.kicad_pro",
+    "filename": "alu.kicad_pro",
     "version": 3
   },
   "net_settings": {
@@ -505,7 +514,7 @@
       "plot": "gerber/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "alu_shift.step",
+      "step": "",
       "svg": "",
       "vrml": ""
     },
@@ -624,34 +633,6 @@
     [
       "aaf6bf5a-f60a-4604-acad-8ada22c0fabd",
       "Root"
-    ],
-    [
-      "0b62401d-b793-40b0-818b-2734a85adc66",
-      "MuxLeft1"
-    ],
-    [
-      "647ef48e-943b-4ce8-b10e-9411cb7be0d5",
-      "MuxRight1"
-    ],
-    [
-      "871f3f5d-5c9d-4369-8210-f657be1b4cec",
-      "MuxRight2"
-    ],
-    [
-      "c42f403e-b7d0-42ef-ac00-2449399344db",
-      "MuxRight4"
-    ],
-    [
-      "64452d8c-84b4-4da6-a178-691a8523b73c",
-      "MuxResult"
-    ],
-    [
-      "a66f574f-be5e-4347-aed2-dd689f74ae5f",
-      "MuxLeft4"
-    ],
-    [
-      "54ddbe49-dcb7-4b42-b521-a34e4004dba0",
-      "MuxLeft2"
     ]
   ],
   "text_variables": {}
