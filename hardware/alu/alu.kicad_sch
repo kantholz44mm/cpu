@@ -15535,6 +15535,16 @@
 	)
 	(wire
 		(pts
+			(xy 237.49 706.12) (xy 237.49 708.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34f8d096-fbe3-4847-b95b-72823b35362a")
+	)
+	(wire
+		(pts
 			(xy 497.84 575.31) (xy 497.84 584.2)
 		)
 		(stroke
@@ -17402,6 +17412,16 @@
 			(type default)
 		)
 		(uuid "44c7e0be-46ac-4ec4-8d73-ba061234f61f")
+	)
+	(wire
+		(pts
+			(xy 237.49 716.28) (xy 237.49 718.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "44dc99fd-b092-403f-b948-6b5300ac84ad")
 	)
 	(wire
 		(pts
@@ -27952,6 +27972,16 @@
 			(type default)
 		)
 		(uuid "a2a5ed20-29a9-4dda-a6c9-14ad0e5a2371")
+	)
+	(wire
+		(pts
+			(xy 237.49 726.44) (xy 237.49 727.71)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2bf952d-53b4-41c8-ab04-4820539e9995")
 	)
 	(wire
 		(pts
@@ -66537,6 +66567,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 237.49 706.12 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5664a3a5-c901-4dd2-b4fa-839cc55ed111")
+		(property "Reference" "#PWR025"
+			(at 237.49 709.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 237.49 701.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 237.49 706.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 237.49 706.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 237.49 706.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bab9897c-3f5c-46c6-acb4-5c1c892ddaf1")
+		)
+		(instances
+			(project ""
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "#PWR025")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 1526.54 408.94 0)
 		(unit 1)
@@ -75164,6 +75260,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 237.49 722.63 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7189062d-1d5a-4fef-ab4e-ecca280f5a03")
+		(property "Reference" "R192"
+			(at 234.95 721.36 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1000"
+			(at 240.538 721.106 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 235.712 722.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 237.49 722.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 237.49 722.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C106235"
+			(at 234.95 721.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f7383387-20fe-4f5d-a6a6-b734e048572f")
+		)
+		(pin "2"
+			(uuid "1f5b44f1-9268-418d-b966-b32deefc0be5")
+		)
+		(instances
+			(project "alu"
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "R192")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "74xx:74HC00")
 		(at 529.59 1633.22 180)
 		(unit 2)
@@ -76739,6 +76914,72 @@
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
 					(reference "U9")
 					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 237.49 727.71 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "75a2023b-24b3-4882-a496-6a7a482534ba")
+		(property "Reference" "#PWR0493"
+			(at 237.49 734.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 237.49 732.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 237.49 727.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 237.49 727.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 237.49 727.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f175e166-a55b-40c8-b076-c62e1079e5b3")
+		)
+		(instances
+			(project "alu"
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "#PWR0493")
+					(unit 1)
 				)
 			)
 		)
@@ -82104,6 +82345,85 @@
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
 					(reference "U73")
 					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:LED")
+		(at 237.49 712.47 270)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "87feffe5-b488-4468-ab93-b29f876f5da5")
+		(property "Reference" "D52"
+			(at 240.538 710.946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "LED"
+			(at 233.68 710.692 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_0402_1005Metric"
+			(at 237.49 712.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 237.49 712.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Light emitting diode"
+			(at 237.49 712.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C965793"
+			(at 240.538 710.946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "28361964-e9fb-4710-bc76-68bae4043115")
+		)
+		(pin "1"
+			(uuid "c4e1bd94-3fa0-4a8d-b6ef-12b53533d858")
+		)
+		(instances
+			(project "alu"
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "D52")
+					(unit 1)
 				)
 			)
 		)
