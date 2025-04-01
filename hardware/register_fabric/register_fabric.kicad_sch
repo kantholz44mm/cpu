@@ -44953,7 +44953,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:SO-20_12.8x7.5mm_P1.27mm"
+		(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
 			(at 1671.32 1037.59 0)
 			(effects
 				(font
@@ -45524,7 +45524,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:SO-20_12.8x7.5mm_P1.27mm"
+		(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
 			(at 1671.32 920.75 0)
 			(effects
 				(font
@@ -47821,7 +47821,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:SO-20_12.8x7.5mm_P1.27mm"
+		(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
 			(at 1671.32 1096.01 0)
 			(effects
 				(font
@@ -70926,7 +70926,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:SO-20_12.8x7.5mm_P1.27mm"
+		(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
 			(at 1671.32 862.33 0)
 			(effects
 				(font
@@ -72344,7 +72344,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:SO-20_12.8x7.5mm_P1.27mm"
+		(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
 			(at 1671.32 570.23 0)
 			(effects
 				(font
@@ -73110,7 +73110,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:SO-20_12.8x7.5mm_P1.27mm"
+		(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
 			(at 1671.32 979.17 0)
 			(effects
 				(font
@@ -74913,7 +74913,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:SO-20_12.8x7.5mm_P1.27mm"
+		(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
 			(at 1671.32 803.91 0)
 			(effects
 				(font
@@ -75037,7 +75037,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:SO-20_12.8x7.5mm_P1.27mm"
+		(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
 			(at 1671.32 745.49 0)
 			(effects
 				(font
@@ -87162,7 +87162,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:SO-20_12.8x7.5mm_P1.27mm"
+		(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
 			(at 1671.32 394.97 0)
 			(effects
 				(font
@@ -90726,7 +90726,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:SO-20_12.8x7.5mm_P1.27mm"
+		(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
 			(at 1671.32 1154.43 0)
 			(effects
 				(font
@@ -94032,7 +94032,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:SO-20_12.8x7.5mm_P1.27mm"
+		(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
 			(at 1671.32 1212.85 0)
 			(effects
 				(font
@@ -94648,7 +94648,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:SO-20_12.8x7.5mm_P1.27mm"
+		(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
 			(at 1671.32 687.07 0)
 			(effects
 				(font
@@ -95569,7 +95569,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "dde00f56-ba1e-408a-8f12-f4155699367f")
 		(property "Reference" "U4"
 			(at 1673.4633 433.07 0)
@@ -95589,7 +95588,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:SO-20_12.8x7.5mm_P1.27mm"
+		(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
 			(at 1671.32 453.39 0)
 			(effects
 				(font
@@ -98706,7 +98705,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:SO-20_12.8x7.5mm_P1.27mm"
+		(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
 			(at 1671.32 628.65 0)
 			(effects
 				(font
@@ -99051,7 +99050,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:SO-20_12.8x7.5mm_P1.27mm"
+		(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
 			(at 1671.32 511.81 0)
 			(effects
 				(font
@@ -102186,7 +102185,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:SO-20_12.8x7.5mm_P1.27mm"
+		(property "Footprint" "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm"
 			(at 1671.32 336.55 0)
 			(effects
 				(font
