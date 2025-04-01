@@ -3790,6 +3790,113 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Mechanical:MountingHole_Pad"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim yes)
+			(in_bom no)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MountingHole_Pad"
+				(at 0 4.445 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Mounting Hole with connection"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "mounting hole"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "MountingHole*Pad*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "MountingHole_Pad_0_1"
+				(circle
+					(center 0 1.27)
+					(radius 1.27)
+					(stroke
+						(width 1.27)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "MountingHole_Pad_1_1"
+				(pin input line
+					(at 0 -2.54 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Transistor_FET:IRLML6244"
 			(pin_names
 				(hide yes)
@@ -5916,6 +6023,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4506befd-5552-4f0c-808f-b4b951ddc193")
+	)
+	(junction
+		(at 270.51 718.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "45cfc1b0-5c6a-4127-8ea1-74ef3be8abe8")
 	)
 	(junction
 		(at 109.22 1192.53)
@@ -17955,6 +18068,16 @@
 	)
 	(wire
 		(pts
+			(xy 270.51 718.82) (xy 270.51 722.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a4b6457-a352-4c0f-a397-ea59255f40f1")
+	)
+	(wire
+		(pts
 			(xy 238.76 1296.67) (xy 238.76 1264.92)
 		)
 		(stroke
@@ -19282,6 +19405,16 @@
 			(type default)
 		)
 		(uuid "56c7a1e6-cc1f-4280-817b-edc67ca3d7a9")
+	)
+	(wire
+		(pts
+			(xy 261.62 718.82) (xy 270.51 718.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56f94a25-37c1-4d2b-8b8e-e60bde362464")
 	)
 	(wire
 		(pts
@@ -22242,6 +22375,16 @@
 			(type default)
 		)
 		(uuid "70994e3b-6834-482a-9b0a-829709b94f8c")
+	)
+	(wire
+		(pts
+			(xy 270.51 718.82) (xy 280.67 718.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "70a16ef6-208f-4494-bd59-bd620b0bfbc3")
 	)
 	(wire
 		(pts
@@ -47898,6 +48041,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 280.67 716.28 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1e1b45d3-ae78-4dc0-9df3-d12d84dd8094")
+		(property "Reference" "H3"
+			(at 283.21 713.7399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 283.21 716.2799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad_TopBottom"
+			(at 280.67 716.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 280.67 716.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 280.67 716.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bec0826b-ae8e-4161-8cec-c92a3bfe0476")
+		)
+		(instances
+			(project "alu"
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "H3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "74xx:74HC00")
 		(at 469.9 1631.95 180)
 		(unit 2)
@@ -57100,6 +57310,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 270.51 722.63 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3a5ec3c3-a0a1-4ca0-bb0a-b69f04a5ef81")
+		(property "Reference" "#PWR0494"
+			(at 270.51 728.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 270.51 727.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 270.51 722.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 270.51 722.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 270.51 722.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7a1af91b-f659-4aed-84f4-ee4d7acbd29f")
+		)
+		(instances
+			(project "alu"
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "#PWR0494")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "74xx:74HC00")
 		(at 1645.92 177.8 0)
 		(unit 2)
@@ -62360,6 +62636,73 @@
 			(project "alu"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
 					(reference "R177")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 270.51 716.28 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4ae978a6-69b6-4635-86b6-40599bc3ca85")
+		(property "Reference" "H2"
+			(at 273.05 713.7399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 273.05 716.2799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad_TopBottom"
+			(at 270.51 716.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 270.51 716.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 270.51 716.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ae1768df-2420-498b-bb49-bf7079ead54c")
+		)
+		(instances
+			(project "alu"
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "H2")
 					(unit 1)
 				)
 			)
@@ -116438,6 +116781,73 @@
 			(project "alu"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
 					(reference "R134")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole_Pad")
+		(at 261.62 716.28 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f2ee4ce4-0019-4d87-8f82-d567abab8d9f")
+		(property "Reference" "H1"
+			(at 264.16 713.7399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole_Pad"
+			(at 264.16 716.2799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad_TopBottom"
+			(at 261.62 716.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 261.62 716.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole with connection"
+			(at 261.62 716.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "97161536-af51-49d5-81ad-438cda870002")
+		)
+		(instances
+			(project ""
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "H1")
 					(unit 1)
 				)
 			)
