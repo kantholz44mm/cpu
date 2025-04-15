@@ -8,12 +8,6 @@ MOVI R2, 0
 MOVI R3, 0
 MOVI R4, 1
 
-
-a_simple_loop:
-    ADDI R1, R1, 1
-    BZI [a_simple_loop], RZ
-
-
 fib_loop:
     ADD16 RH, RL, R1, R2, R3, R4
     
@@ -32,11 +26,3 @@ fib_loop:
 done:
     HCF
 
-not_quite_done:
-    CALL still_not_done
-    RET
-
-still_not_done:
-    RET
-
-@include? <fibonacci.s>
