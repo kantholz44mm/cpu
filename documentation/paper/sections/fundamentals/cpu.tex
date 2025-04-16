@@ -38,4 +38,35 @@ The control unit contains the logic necessary to orchestrate all other component
 
 The \ac{alu} is the device performing the actual computations within a processor. It contains digital logic circuits that perform arithmetic such as addition, subtraction, multiplication, division or logical operations such as AND, OR, NOT, etc. When a programmer requests the \ac{cpu} to calculate some mathematical formula, it is this device that does the calculations. It is asynchronous does not require any clock signal. 
 
+\subsubsection{Busses}
 
+The individual submodules of a \ac{cpu} need to exchange information in order to be useful. To do so, a designer may either choose to use a dedicated point-to-point connection to connect one input to one output. However, they might also choose to use a single line as a transmission medium for multiple consumers or producers of a signal. It is also possible - though uncommon - to use a single line for transferring multiple distinct signals. When more than two devices are connected using a shared set of transmission media, this setup is referred to as a bus.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/drawio/bus.png}  % Replace with your image file
+    \caption{Set of system busses commonly found in CPUs}
+    \label{fig:system_bus}
+\end{figure}
+
+\autoref{fig:system_bus} shows a set of busses that together form the system bus. The system bus contains several smaller busses that transport data, addresses or control lines, respectively. Though not strictly necessary, this set of busses is commonly found in many \ac{isa} implementations. It reduces the number of individual connections needed to transport data between components, thus reducing complexity. The control bus transports control signals, mostly from a central control unit to all other components. For example, these control signals may instruct the \ac{alu} about which operation it should perform, or where to fetch its operands from. The address bus contains an address, which may then be used by the register bank or any connected internal or external memories for specifying an address to load from or store to. The data bus transfers computation data between \ac{cpu} modules. For example, the \ac{alu} outputs the result of an operation onto this bus, which is then used as input for writing to a destination register.
+
+Depending on the number of consumers and producers on any given bus, it may be categorized as either one of the following:
+
+\begin{description}
+    \item[SPSC] Single producer, Single consumers
+    \item[SPMC] Single producer, Multiple consumers
+    \item[MPSC] Multiple producers, Single consumer
+    \item[MPMC] Multiple producers, Multiple consumers  
+\end{description}
+
+The exact number of consumers and producers is largely irrelevant, however the distinction between single and multiple producers is crucial for the electrotechnical implementation strategies.
+
+\subsubsection{Microcode}
+
+With increasing complexity of individual instructions, more and more complex hardware is required to execute them. Instead of creating hardware implementations of specific operations, they are further subdivided into smaller suboperations. This way, suboperations can be reused for multiple instructions. For example, instead of providing a dedicated hardware implementation of the NAND instruction, an \ac{alu} may only support NOT and AND and then reuse them in sequence to perform the equivalent of a NAND instruction. Similarly, the \ac{alu} may be reused to perform address calculations for branching operations. The set of suboperations is referred to as microcode and is part of the design of any given microarchitecture. It must be implemented transparently to the programmer and software running on the system, as it is not specified by the \ac{isa} and is therefore implementation-dependent. 
+
+
+
+
+As mentioned before, each phase of each instruction may take one or more clock cycles. During each cycle, a sub-operation is performed. 
