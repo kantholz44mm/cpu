@@ -61,12 +61,3 @@ Depending on the number of consumers and producers on any given bus, it may be c
 \end{description}
 
 The exact number of consumers and producers is largely irrelevant, however the distinction between single and multiple producers is crucial for the electrotechnical implementation strategies.
-
-\subsubsection{Microcode}
-
-With increasing complexity of individual instructions, more and more complex hardware is required to execute them. Instead of creating hardware implementations of specific operations, they are further subdivided into smaller suboperations. This way, suboperations can be reused for multiple instructions. For example, instead of providing a dedicated hardware implementation of the NAND instruction, an \ac{alu} may only support NOT and AND and then reuse them in sequence to perform the equivalent of a NAND instruction. Similarly, the \ac{alu} may be reused to perform address calculations for branching operations. The set of suboperations is referred to as microcode and is part of the design of any given microarchitecture. It must be implemented transparently to the programmer and software running on the system, as it is not specified by the \ac{isa} and is therefore implementation-dependent. 
-
-
-
-
-As mentioned before, each phase of each instruction may take one or more clock cycles. During each cycle, a sub-operation is performed. 

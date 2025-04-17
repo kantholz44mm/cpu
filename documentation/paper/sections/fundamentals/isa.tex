@@ -93,3 +93,27 @@ Instructions can be divided up into different types based on their effects. Ther
 
 In order for a processor to understand each instruction, it must be laid out in a predictable, well defined manner. This is called the instruction encoding format. This encoding must include all information required for performing a desired operation. The encoding must include the opcode, all operands and any additional settings required for executing an operation. Since different operations require a different number and type of operand, it can be useful to define a variable length encoding scheme to save memory and increase code density. On the other hand, variable length encodings require additional logic to determine the length from a given opcode and fetch the required number of bytes from memory. This introduces complexity in an implementation, as well as increasing the number of logic gates required. Typically, this also causes the fetch phase to take more than a single clock cycle. For these reasons, many \ac{risc} architectures use a fixed length encoding. Since different types of instructions require different combinations of options and operands, \acp{isa} may define multiple distinct encoding schemes. The instruction decoder can then choose the corresponding format for each opcode.
 
+\subsubsection{Microcode}
+
+With increasing complexity of individual instructions, more and more complex hardware is required to execute them. To retain a manageable level of complexity, complex operations can be split further into suboperations. These suboperations or microoperations form the instruction set that is directly executable on any given implementation or microarchitecture. The set of all supported microoperations is called microcode of an implementation. Any given instruction on the \ac{isa} level can then be implemented by one or more of these microoperations. Since programmers write their software for an \ac{isa} and not for a microarchitecture, this must be implemented in a way that is transparent to the programmer.
+
+Depending on the level of abstraction that this microcode provides, the microcode is classified as either ``horizontal'' or ``vertical''. Horizontal microcode provides less of an abstraction over the hardware than the vertical counterpart. In microarchitectures using horizontal microcode, each microoperation is a direct binary representation of control signals. When the microoperation is executed, the control signals are applied to the relevant multiplexers and switches within the \ac{cpu}. In vertical microcode, each microoperation has a distinct opcode, similar to the \ac{isa}-level opcodes. The opcode serves as an identifier instead of a set of control signals. An additional hardware unit the decodes and interprets each microoperation. This approach resembles its own \ac{risc} computer that then implements another, possibly even \ac{cisc} \ac{isa}.
+
+In horizontal microcode, each \ac{isa} operation may correspond to one or more microcode control words. During each clock cycle, one control word is executed. Therefore, executing an instruction with $n$ control words takes $n$ clock cycles. If a microarchitecture consists only of instructions where $n = 1$, it is called a single cycle processor. Otherwise, it is considered a multicycle processor. All control words must be the same size, therefore every instruction must provide a value for every control signal. Many instructions use only a small portion of the available hardware units, therefore a lot of the control word table is used for instructing hardware to remain inert.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/drawio/microcode_horizontal.png}  % Replace with your image file
+    \caption{Exemplary equivalent of individual instructions in horizontal microcode}
+    \label{fig:horizontal_microcode}
+\end{figure}
+
+\autoref{fig:horizontal_microcode} shows the control signals that each \ac{isa} operation maps to in an exemplary \ac{isa}. Each control signal may be used to setup internal multiplexers or other switching circuitry. In \autoref{fig:horizontal_microcode}, only the JE instruction has the ``Branch'' bit set. In practice, this can be used to control a multiplexer that selects whether to increment the program counter or load a jump target. This can be seen in \autoref{fig:pc_multiplexer}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/drawio/pc_multiplexer.png}
+    \caption{Multiplexer used to select between incrementing PC and loading a branch address}
+    \label{fig:pc_multiplexer}
+\end{figure}
+
