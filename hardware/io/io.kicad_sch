@@ -3161,7 +3161,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Connector:Barrel_Jack_MountingPin"
+		(symbol "Connector:Barrel_Jack_Switch_Pin3Ring"
 			(pin_names
 				(hide yes)
 			)
@@ -3176,13 +3176,12 @@
 					)
 				)
 			)
-			(property "Value" "Barrel_Jack_MountingPin"
-				(at 1.27 -6.35 0)
+			(property "Value" "Barrel_Jack_Switch_Pin3Ring"
+				(at 0 -5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
 			(property "Footprint" ""
@@ -3203,7 +3202,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "DC Barrel Jack with a mounting pin"
+			(property "Description" "DC Barrel Jack with an internal switch"
 				(at 0 0 0)
 				(effects
 					(font
@@ -3230,7 +3229,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "Barrel_Jack_MountingPin_0_1"
+			(symbol "Barrel_Jack_Switch_Pin3Ring_0_1"
 				(rectangle
 					(start -5.08 3.81)
 					(end 5.08 -3.81)
@@ -3278,6 +3277,18 @@
 						(type outline)
 					)
 				)
+				(polyline
+					(pts
+						(xy 1.27 -2.286) (xy 1.905 -1.651)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 				(rectangle
 					(start 3.683 3.175)
 					(end -3.302 1.905)
@@ -3301,46 +3312,20 @@
 						(type none)
 					)
 				)
-			)
-			(symbol "Barrel_Jack_MountingPin_1_1"
 				(polyline
 					(pts
-						(xy -1.016 -4.572) (xy 1.016 -4.572)
+						(xy 5.08 0) (xy 1.27 0) (xy 1.27 -2.286) (xy 0.635 -1.651)
 					)
 					(stroke
-						(width 0.1524)
+						(width 0.254)
 						(type default)
 					)
 					(fill
 						(type none)
 					)
 				)
-				(text "Mounting"
-					(at 0 -4.191 0)
-					(effects
-						(font
-							(size 0.381 0.381)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -7.62 90)
-					(length 3.048)
-					(name "MountPin"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "MP"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
+			)
+			(symbol "Barrel_Jack_Switch_Pin3Ring_1_1"
 				(pin passive line
 					(at 7.62 2.54 180)
 					(length 2.54)
@@ -3360,7 +3345,7 @@
 					)
 				)
 				(pin passive line
-					(at 7.62 -2.54 180)
+					(at 7.62 0 180)
 					(length 2.54)
 					(name "~"
 						(effects
@@ -3370,6 +3355,24 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 -2.54 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -22232,6 +22235,12 @@
 		(uuid "d9d2ce58-7dc0-4440-8419-30d1ffa8cefb")
 	)
 	(junction
+		(at 438.15 91.44)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "da540798-f8f7-41c3-8599-b37427fa4563")
+	)
+	(junction
 		(at 1193.8 869.95)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -33901,6 +33910,16 @@
 	)
 	(wire
 		(pts
+			(xy 438.15 91.44) (xy 474.98 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3f46065c-bba5-42e1-9ea0-adadb84f0c6e")
+	)
+	(wire
+		(pts
 			(xy 637.54 708.66) (xy 641.35 708.66)
 		)
 		(stroke
@@ -43721,6 +43740,16 @@
 	)
 	(wire
 		(pts
+			(xy 434.34 88.9) (xy 438.15 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7de4cf2c-2de3-450e-9e43-802d056874a1")
+	)
+	(wire
+		(pts
 			(xy 800.1 1816.1) (xy 800.1 1807.21)
 		)
 		(stroke
@@ -48981,6 +49010,16 @@
 	)
 	(wire
 		(pts
+			(xy 438.15 88.9) (xy 438.15 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a043d2d8-b0aa-4cf9-8a01-f3738aaf1ad6")
+	)
+	(wire
+		(pts
 			(xy 487.68 260.35) (xy 495.3 260.35)
 		)
 		(stroke
@@ -51341,7 +51380,7 @@
 	)
 	(wire
 		(pts
-			(xy 434.34 91.44) (xy 474.98 91.44)
+			(xy 434.34 91.44) (xy 438.15 91.44)
 		)
 		(stroke
 			(width 0)
@@ -62268,16 +62307,6 @@
 			(type default)
 		)
 		(uuid "f2225519-f75b-463a-a68f-c93700b03df1")
-	)
-	(wire
-		(pts
-			(xy 426.72 96.52) (xy 426.72 109.22)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f237bcfe-467d-42bd-bd01-1f85721a8ebd")
 	)
 	(wire
 		(pts
@@ -135058,77 +135087,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Barrel_Jack_MountingPin")
-		(at 426.72 88.9 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(dnp yes)
-		(fields_autoplaced yes)
-		(uuid "5b406f5a-98ea-4c08-ba1c-7845b6c22221")
-		(property "Reference" "J9"
-			(at 426.72 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Barrel_Jack_MountingPin"
-			(at 426.72 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_BarrelJack:BarrelJack_Horizontal"
-			(at 427.99 89.916 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 427.99 89.916 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "DC Barrel Jack with a mounting pin"
-			(at 426.72 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "a43ad6e9-c17c-4723-a8ea-4202e06b0e2b")
-		)
-		(pin "MP"
-			(uuid "7b2be6f0-1edb-46ab-9378-a42b0f280991")
-		)
-		(pin "1"
-			(uuid "dec4dd8d-1a3c-4a37-8269-1140c57632d9")
-		)
-		(instances
-			(project ""
-				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "J9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 1728.47 885.19 0)
 		(unit 1)
@@ -145184,6 +145142,77 @@
 			(project "io"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
 					(reference "R145")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Barrel_Jack_Switch_Pin3Ring")
+		(at 426.72 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp yes)
+		(fields_autoplaced yes)
+		(uuid "6c4e7980-d602-4f33-8cfd-78f858463669")
+		(property "Reference" "J11"
+			(at 426.72 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Barrel_Jack_Switch_Pin3Ring"
+			(at 426.72 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_BarrelJack:BarrelJack_Horizontal"
+			(at 427.99 89.916 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 427.99 89.916 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "DC Barrel Jack with an internal switch"
+			(at 426.72 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "903a88f6-d0af-4396-a4e9-a690f7567c8b")
+		)
+		(pin "1"
+			(uuid "71bb7959-70a3-4a23-bfae-869f96ef3156")
+		)
+		(pin "3"
+			(uuid "2d461175-3475-4314-b4c0-3e7e58c37f6d")
+		)
+		(instances
+			(project ""
+				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
+					(reference "J11")
 					(unit 1)
 				)
 			)
@@ -177991,15 +178020,15 @@
 	(symbol
 		(lib_id "Device:R")
 		(at 474.98 77.47 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
 		(on_board yes)
 		(dnp yes)
-		(fields_autoplaced yes)
 		(uuid "b25abcb4-2505-42d6-b76b-31acac46f20d")
 		(property "Reference" "R115"
-			(at 477.52 76.1999 0)
+			(at 472.44 76.1999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -178008,7 +178037,7 @@
 			)
 		)
 		(property "Value" "10K"
-			(at 477.52 78.7399 0)
+			(at 472.44 78.7399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -178017,7 +178046,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
-			(at 473.202 77.47 90)
+			(at 476.758 77.47 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -179791,72 +179820,6 @@
 			(project "io"
 				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
 					(reference "#PWR0379")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 426.72 109.22 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b594049a-a4fc-46af-b20b-ede4f0053b79")
-		(property "Reference" "#PWR0237"
-			(at 426.72 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 426.72 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 426.72 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 426.72 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 426.72 109.22 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d91fa8dd-4c2c-4152-b200-a0bf0635f3b8")
-		)
-		(instances
-			(project "io"
-				(path "/aaf6bf5a-f60a-4604-acad-8ada22c0fabd"
-					(reference "#PWR0237")
 					(unit 1)
 				)
 			)
