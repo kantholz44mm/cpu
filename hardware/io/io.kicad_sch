@@ -19505,6 +19505,12 @@
 		(uuid "514e8578-7426-494f-80ac-8f115af10937")
 	)
 	(junction
+		(at 97.79 543.56)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "51873c90-7194-47f8-a2d5-ee9a3170914f")
+	)
+	(junction
 		(at 1629.41 805.18)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -21009,6 +21015,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9d7662c6-96b6-4a3e-92a9-03b9754923c0")
+	)
+	(junction
+		(at 97.79 518.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9d7bc2fc-bda5-4275-bfb4-4bd78a9590c3")
 	)
 	(junction
 		(at 1360.17 499.11)
@@ -123199,17 +123211,15 @@
 	)
 	(symbol
 		(lib_id "74xx:74HC14")
-		(at 100.33 633.73 0)
-		(mirror y)
+		(at 125.73 633.73 0)
 		(unit 3)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "439fbec1-9621-4131-8c3f-7cfbbb90d580")
 		(property "Reference" "U18"
-			(at 100.33 624.84 0)
+			(at 125.73 624.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -123217,7 +123227,7 @@
 			)
 		)
 		(property "Value" "74HC14"
-			(at 100.33 627.38 0)
+			(at 125.73 627.38 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -123225,7 +123235,7 @@
 			)
 		)
 		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
-			(at 100.33 633.73 0)
+			(at 125.73 633.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -123234,7 +123244,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/gpn/sn74HC14"
-			(at 100.33 633.73 0)
+			(at 125.73 633.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -123243,7 +123253,7 @@
 			)
 		)
 		(property "Description" "Hex inverter schmitt trigger"
-			(at 100.33 633.73 0)
+			(at 125.73 633.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -124825,7 +124835,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 111.76 530.86 0)
+		(at 114.3 530.86 0)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -124835,7 +124845,7 @@
 		(fields_autoplaced yes)
 		(uuid "473413ad-d065-494b-ae8e-e35dceaa8b00")
 		(property "Reference" "C50"
-			(at 107.95 529.5899 0)
+			(at 110.49 529.5899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -124844,7 +124854,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 107.95 532.1299 0)
+			(at 110.49 532.1299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -124853,7 +124863,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 112.7252 527.05 0)
+			(at 115.2652 527.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -124862,7 +124872,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 111.76 530.86 0)
+			(at 114.3 530.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -124871,7 +124881,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 111.76 530.86 0)
+			(at 114.3 530.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -130406,17 +130416,15 @@
 	)
 	(symbol
 		(lib_id "74xx:74HC14")
-		(at 100.33 661.67 0)
-		(mirror y)
+		(at 125.73 661.67 0)
 		(unit 4)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "5402d514-312b-4ae0-8187-51ffdf20ea2f")
 		(property "Reference" "U18"
-			(at 100.33 652.78 0)
+			(at 125.73 652.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -130424,7 +130432,7 @@
 			)
 		)
 		(property "Value" "74HC14"
-			(at 100.33 655.32 0)
+			(at 125.73 655.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -130432,7 +130440,7 @@
 			)
 		)
 		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
-			(at 100.33 661.67 0)
+			(at 125.73 661.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -130441,7 +130449,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/gpn/sn74HC14"
-			(at 100.33 661.67 0)
+			(at 125.73 661.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -130450,7 +130458,7 @@
 			)
 		)
 		(property "Description" "Hex inverter schmitt trigger"
-			(at 100.33 661.67 0)
+			(at 125.73 661.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -145304,17 +145312,15 @@
 	)
 	(symbol
 		(lib_id "74xx:74HC14")
-		(at 100.33 692.15 0)
-		(mirror y)
+		(at 125.73 692.15 0)
 		(unit 5)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "6c7d29f5-e657-4154-91b5-ae97dd1f664d")
 		(property "Reference" "U18"
-			(at 100.33 683.26 0)
+			(at 125.73 683.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -145322,7 +145328,7 @@
 			)
 		)
 		(property "Value" "74HC14"
-			(at 100.33 685.8 0)
+			(at 125.73 685.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -145330,7 +145336,7 @@
 			)
 		)
 		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
-			(at 100.33 692.15 0)
+			(at 125.73 692.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -145339,7 +145345,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/gpn/sn74HC14"
-			(at 100.33 692.15 0)
+			(at 125.73 692.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -145348,7 +145354,7 @@
 			)
 		)
 		(property "Description" "Hex inverter schmitt trigger"
-			(at 100.33 692.15 0)
+			(at 125.73 692.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -155874,17 +155880,15 @@
 	)
 	(symbol
 		(lib_id "74xx:74HC14")
-		(at 100.33 581.66 0)
-		(mirror y)
+		(at 125.73 581.66 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "842bb590-c8a8-43d4-a608-ffc83b0e3259")
 		(property "Reference" "U18"
-			(at 100.33 572.77 0)
+			(at 125.73 572.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -155892,7 +155896,7 @@
 			)
 		)
 		(property "Value" "74HC14"
-			(at 100.33 575.31 0)
+			(at 125.73 575.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -155900,7 +155904,7 @@
 			)
 		)
 		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
-			(at 100.33 581.66 0)
+			(at 125.73 581.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -155909,7 +155913,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/gpn/sn74HC14"
-			(at 100.33 581.66 0)
+			(at 125.73 581.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -155918,7 +155922,7 @@
 			)
 		)
 		(property "Description" "Hex inverter schmitt trigger"
-			(at 100.33 581.66 0)
+			(at 125.73 581.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -174531,7 +174535,7 @@
 	)
 	(symbol
 		(lib_id "74xx:74HC14")
-		(at 128.27 530.86 0)
+		(at 97.79 530.86 0)
 		(mirror y)
 		(unit 7)
 		(exclude_from_sim no)
@@ -174541,7 +174545,7 @@
 		(fields_autoplaced yes)
 		(uuid "a9e9a4a8-5e11-4b1d-8f13-03a34fe9cd6f")
 		(property "Reference" "U18"
-			(at 121.92 529.5899 0)
+			(at 91.44 529.5899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -174550,7 +174554,7 @@
 			)
 		)
 		(property "Value" "74HC14"
-			(at 121.92 532.1299 0)
+			(at 91.44 532.1299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -174559,7 +174563,7 @@
 			)
 		)
 		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
-			(at 128.27 530.86 0)
+			(at 97.79 530.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -174568,7 +174572,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/gpn/sn74HC14"
-			(at 128.27 530.86 0)
+			(at 97.79 530.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -174577,7 +174581,7 @@
 			)
 		)
 		(property "Description" "Hex inverter schmitt trigger"
-			(at 128.27 530.86 0)
+			(at 97.79 530.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -182629,17 +182633,15 @@
 	)
 	(symbol
 		(lib_id "74xx:74HC14")
-		(at 100.33 605.79 0)
-		(mirror y)
+		(at 125.73 605.79 0)
 		(unit 2)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "bb7d444c-aed3-4f31-904d-716e664a9659")
 		(property "Reference" "U18"
-			(at 100.33 596.9 0)
+			(at 125.73 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -182647,7 +182649,7 @@
 			)
 		)
 		(property "Value" "74HC14"
-			(at 100.33 599.44 0)
+			(at 125.73 599.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -182655,7 +182657,7 @@
 			)
 		)
 		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
-			(at 100.33 605.79 0)
+			(at 125.73 605.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -182664,7 +182666,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/gpn/sn74HC14"
-			(at 100.33 605.79 0)
+			(at 125.73 605.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -182673,7 +182675,7 @@
 			)
 		)
 		(property "Description" "Hex inverter schmitt trigger"
-			(at 100.33 605.79 0)
+			(at 125.73 605.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -197055,17 +197057,15 @@
 	)
 	(symbol
 		(lib_id "74xx:74HC14")
-		(at 100.33 722.63 0)
-		(mirror y)
+		(at 125.73 722.63 0)
 		(unit 6)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "d8970242-6011-4a66-9a07-c867ba204eee")
 		(property "Reference" "U18"
-			(at 100.33 713.74 0)
+			(at 125.73 713.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -197073,7 +197073,7 @@
 			)
 		)
 		(property "Value" "74HC14"
-			(at 100.33 716.28 0)
+			(at 125.73 716.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -197081,7 +197081,7 @@
 			)
 		)
 		(property "Footprint" "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm"
-			(at 100.33 722.63 0)
+			(at 125.73 722.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -197090,7 +197090,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.ti.com/lit/gpn/sn74HC14"
-			(at 100.33 722.63 0)
+			(at 125.73 722.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -197099,7 +197099,7 @@
 			)
 		)
 		(property "Description" "Hex inverter schmitt trigger"
-			(at 100.33 722.63 0)
+			(at 125.73 722.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
