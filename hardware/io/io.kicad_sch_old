@@ -92249,7 +92249,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1134.618 754.126 90)
 			(effects
 				(font
@@ -93570,7 +93570,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1694.688 953.516 90)
 			(effects
 				(font
@@ -94632,7 +94632,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1745.488 790.956 90)
 			(effects
 				(font
@@ -95270,7 +95270,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1383.538 1084.326 90)
 			(effects
 				(font
@@ -96202,7 +96202,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1010.158 1084.326 90)
 			(effects
 				(font
@@ -96387,7 +96387,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1247.648 855.726 90)
 			(effects
 				(font
@@ -97034,7 +97034,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1010.158 754.126 90)
 			(effects
 				(font
@@ -97197,7 +97197,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1321.308 883.666 90)
 			(effects
 				(font
@@ -97276,7 +97276,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1745.488 726.186 90)
 			(effects
 				(font
@@ -98483,7 +98483,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1196.848 1020.826 90)
 			(effects
 				(font
@@ -98713,7 +98713,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1819.148 818.896 90)
 			(effects
 				(font
@@ -99739,7 +99739,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1496.568 1056.386 90)
 			(effects
 				(font
@@ -101131,7 +101131,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1807.718 925.576 90)
 			(effects
 				(font
@@ -101210,7 +101210,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1383.538 754.126 90)
 			(effects
 				(font
@@ -102585,7 +102585,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1694.688 818.896 90)
 			(effects
 				(font
@@ -103324,7 +103324,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1123.188 726.186 90)
 			(effects
 				(font
@@ -103841,7 +103841,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1185.418 726.186 90)
 			(effects
 				(font
@@ -104628,7 +104628,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1134.618 953.516 90)
 			(effects
 				(font
@@ -105017,7 +105017,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1434.338 790.956 90)
 			(effects
 				(font
@@ -106099,7 +106099,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1445.768 953.516 90)
 			(effects
 				(font
@@ -106244,7 +106244,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1072.388 818.896 90)
 			(effects
 				(font
@@ -107412,7 +107412,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1321.308 754.126 90)
 			(effects
 				(font
@@ -109249,7 +109249,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1321.308 818.896 90)
 			(effects
 				(font
@@ -110213,7 +110213,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1694.688 754.126 90)
 			(effects
 				(font
@@ -112101,7 +112101,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1372.108 790.956 90)
 			(effects
 				(font
@@ -112759,7 +112759,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1943.608 953.516 90)
 			(effects
 				(font
@@ -112942,7 +112942,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1683.258 726.186 90)
 			(effects
 				(font
@@ -113142,7 +113142,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1558.798 726.186 90)
 			(effects
 				(font
@@ -113461,7 +113461,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1060.958 992.886 90)
 			(effects
 				(font
@@ -113614,7 +113614,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1694.688 883.666 90)
 			(effects
 				(font
@@ -113843,7 +113843,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1683.258 790.956 90)
 			(effects
 				(font
@@ -114869,7 +114869,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1123.188 992.886 90)
 			(effects
 				(font
@@ -115214,7 +115214,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1185.418 855.726 90)
 			(effects
 				(font
@@ -115736,7 +115736,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1932.178 1056.386 90)
 			(effects
 				(font
@@ -116268,7 +116268,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1010.158 1020.826 90)
 			(effects
 				(font
@@ -116559,7 +116559,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1060.958 790.956 90)
 			(effects
 				(font
@@ -116638,7 +116638,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1247.648 726.186 90)
 			(effects
 				(font
@@ -116853,7 +116853,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1134.618 818.896 90)
 			(effects
 				(font
@@ -117512,7 +117512,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1869.948 1056.386 90)
 			(effects
 				(font
@@ -118308,7 +118308,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1259.078 818.896 90)
 			(effects
 				(font
@@ -119426,7 +119426,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1621.028 855.726 90)
 			(effects
 				(font
@@ -123022,7 +123022,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1196.848 818.896 90)
 			(effects
 				(font
@@ -124393,7 +124393,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1507.998 754.126 90)
 			(effects
 				(font
@@ -124842,7 +124842,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1309.878 925.576 90)
 			(effects
 				(font
@@ -125259,7 +125259,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1185.418 925.576 90)
 			(effects
 				(font
@@ -125636,7 +125636,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1932.178 726.186 90)
 			(effects
 				(font
@@ -127194,7 +127194,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1621.028 790.956 90)
 			(effects
 				(font
@@ -128001,7 +128001,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1372.108 855.726 90)
 			(effects
 				(font
@@ -128080,7 +128080,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1434.338 855.726 90)
 			(effects
 				(font
@@ -129267,7 +129267,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1185.418 790.956 90)
 			(effects
 				(font
@@ -129424,7 +129424,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1756.918 1084.326 90)
 			(effects
 				(font
@@ -129636,7 +129636,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1621.028 925.576 90)
 			(effects
 				(font
@@ -129861,7 +129861,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1507.998 1084.326 90)
 			(effects
 				(font
@@ -129940,7 +129940,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1123.188 1056.386 90)
 			(effects
 				(font
@@ -130405,7 +130405,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 998.728 925.576 90)
 			(effects
 				(font
@@ -130551,7 +130551,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1869.948 790.956 90)
 			(effects
 				(font
@@ -130907,7 +130907,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1507.998 953.516 90)
 			(effects
 				(font
@@ -131812,7 +131812,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1372.108 1056.386 90)
 			(effects
 				(font
@@ -131995,7 +131995,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1943.608 818.896 90)
 			(effects
 				(font
@@ -132219,7 +132219,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1434.338 925.576 90)
 			(effects
 				(font
@@ -134492,7 +134492,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1756.918 883.666 90)
 			(effects
 				(font
@@ -135397,7 +135397,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1434.338 726.186 90)
 			(effects
 				(font
@@ -135972,7 +135972,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1445.768 818.896 90)
 			(effects
 				(font
@@ -136810,7 +136810,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1943.608 1084.326 90)
 			(effects
 				(font
@@ -137503,7 +137503,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1134.618 883.666 90)
 			(effects
 				(font
@@ -138893,7 +138893,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1372.108 726.186 90)
 			(effects
 				(font
@@ -139124,7 +139124,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1445.768 883.666 90)
 			(effects
 				(font
@@ -139337,7 +139337,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1060.958 925.576 90)
 			(effects
 				(font
@@ -139578,7 +139578,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1060.958 726.186 90)
 			(effects
 				(font
@@ -139802,7 +139802,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1259.078 1084.326 90)
 			(effects
 				(font
@@ -142794,7 +142794,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1558.798 1056.386 90)
 			(effects
 				(font
@@ -144761,7 +144761,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1134.618 1084.326 90)
 			(effects
 				(font
@@ -145169,9 +145169,9 @@
 		(at 584.2 408.94 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6bd0fa28-5060-410f-8915-8dd4eb9ca77f")
 		(property "Reference" "U9"
@@ -145648,7 +145648,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1072.388 754.126 90)
 			(effects
 				(font
@@ -146118,7 +146118,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1383.538 883.666 90)
 			(effects
 				(font
@@ -146717,7 +146717,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1434.338 1056.386 90)
 			(effects
 				(font
@@ -150719,7 +150719,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1819.148 1084.326 90)
 			(effects
 				(font
@@ -151159,7 +151159,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1196.848 883.666 90)
 			(effects
 				(font
@@ -151808,7 +151808,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1756.918 754.126 90)
 			(effects
 				(font
@@ -152284,7 +152284,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 998.728 1056.386 90)
 			(effects
 				(font
@@ -152629,7 +152629,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1309.878 855.726 90)
 			(effects
 				(font
@@ -153235,7 +153235,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1570.228 818.896 90)
 			(effects
 				(font
@@ -154803,7 +154803,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1881.378 754.126 90)
 			(effects
 				(font
@@ -154960,7 +154960,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1881.378 953.516 90)
 			(effects
 				(font
@@ -155614,7 +155614,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1309.878 1056.386 90)
 			(effects
 				(font
@@ -157281,7 +157281,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1745.488 855.726 90)
 			(effects
 				(font
@@ -157872,7 +157872,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1134.618 1020.826 90)
 			(effects
 				(font
@@ -158084,7 +158084,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1247.648 790.956 90)
 			(effects
 				(font
@@ -158487,7 +158487,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1247.648 1056.386 90)
 			(effects
 				(font
@@ -158566,7 +158566,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1321.308 1084.326 90)
 			(effects
 				(font
@@ -159457,7 +159457,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1185.418 1056.386 90)
 			(effects
 				(font
@@ -165304,7 +165304,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1621.028 1056.386 90)
 			(effects
 				(font
@@ -165383,7 +165383,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1072.388 1084.326 90)
 			(effects
 				(font
@@ -166397,7 +166397,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 998.728 726.186 90)
 			(effects
 				(font
@@ -166646,7 +166646,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1372.108 925.576 90)
 			(effects
 				(font
@@ -166795,7 +166795,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1745.488 925.576 90)
 			(effects
 				(font
@@ -167023,7 +167023,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1869.948 925.576 90)
 			(effects
 				(font
@@ -167600,7 +167600,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 998.728 855.726 90)
 			(effects
 				(font
@@ -167731,9 +167731,9 @@
 		(at 582.93 283.21 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9cea23aa-c6df-46a7-902b-3248c90a5b9a")
 		(property "Reference" "U6"
@@ -168961,7 +168961,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1157.478 1301.496 90)
 			(effects
 				(font
@@ -170258,7 +170258,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1683.258 855.726 90)
 			(effects
 				(font
@@ -172103,7 +172103,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1123.188 855.726 90)
 			(effects
 				(font
@@ -172868,7 +172868,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1558.798 855.726 90)
 			(effects
 				(font
@@ -174100,7 +174100,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1010.158 818.896 90)
 			(effects
 				(font
@@ -174775,7 +174775,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1507.998 818.896 90)
 			(effects
 				(font
@@ -175062,7 +175062,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1807.718 855.726 90)
 			(effects
 				(font
@@ -175829,7 +175829,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1196.848 953.516 90)
 			(effects
 				(font
@@ -176106,7 +176106,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1123.188 790.956 90)
 			(effects
 				(font
@@ -177053,7 +177053,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 998.728 790.956 90)
 			(effects
 				(font
@@ -177486,7 +177486,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1756.918 818.896 90)
 			(effects
 				(font
@@ -177565,7 +177565,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1819.148 883.666 90)
 			(effects
 				(font
@@ -178765,7 +178765,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1072.388 1020.826 90)
 			(effects
 				(font
@@ -179378,7 +179378,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1496.568 790.956 90)
 			(effects
 				(font
@@ -179667,7 +179667,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1881.378 1084.326 90)
 			(effects
 				(font
@@ -181124,7 +181124,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1621.028 726.186 90)
 			(effects
 				(font
@@ -181486,7 +181486,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1496.568 855.726 90)
 			(effects
 				(font
@@ -181902,7 +181902,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1196.848 1084.326 90)
 			(effects
 				(font
@@ -182218,7 +182218,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1632.458 953.516 90)
 			(effects
 				(font
@@ -183711,7 +183711,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1632.458 818.896 90)
 			(effects
 				(font
@@ -184612,7 +184612,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1683.258 925.576 90)
 			(effects
 				(font
@@ -184873,7 +184873,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1807.718 1056.386 90)
 			(effects
 				(font
@@ -185134,7 +185134,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1807.718 790.956 90)
 			(effects
 				(font
@@ -185492,7 +185492,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1072.388 953.516 90)
 			(effects
 				(font
@@ -185940,7 +185940,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1694.688 1084.326 90)
 			(effects
 				(font
@@ -186227,7 +186227,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1807.718 726.186 90)
 			(effects
 				(font
@@ -186922,7 +186922,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1309.878 726.186 90)
 			(effects
 				(font
@@ -187464,7 +187464,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1745.488 1056.386 90)
 			(effects
 				(font
@@ -188915,7 +188915,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1558.798 790.956 90)
 			(effects
 				(font
@@ -189046,9 +189046,9 @@
 		(at 510.54 283.21 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c7bf25d3-6837-432c-9ce3-5314487353ef")
 		(property "Reference" "U8"
@@ -189220,7 +189220,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1383.538 953.516 90)
 			(effects
 				(font
@@ -190306,7 +190306,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1570.228 953.516 90)
 			(effects
 				(font
@@ -190523,7 +190523,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1383.538 818.896 90)
 			(effects
 				(font
@@ -191216,7 +191216,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1507.998 883.666 90)
 			(effects
 				(font
@@ -191787,7 +191787,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1869.948 726.186 90)
 			(effects
 				(font
@@ -194320,7 +194320,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1570.228 754.126 90)
 			(effects
 				(font
@@ -194715,7 +194715,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1185.418 992.886 90)
 			(effects
 				(font
@@ -194898,7 +194898,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1321.308 953.516 90)
 			(effects
 				(font
@@ -195326,7 +195326,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1683.258 1056.386 90)
 			(effects
 				(font
@@ -195475,7 +195475,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1819.148 754.126 90)
 			(effects
 				(font
@@ -195755,7 +195755,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1445.768 1084.326 90)
 			(effects
 				(font
@@ -196511,7 +196511,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1943.608 754.126 90)
 			(effects
 				(font
@@ -197295,9 +197295,9 @@
 		(at 655.32 283.21 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d7b89629-01de-4c3a-be87-68d9ec89a741")
 		(property "Reference" "U2"
@@ -197804,7 +197804,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1932.178 925.576 90)
 			(effects
 				(font
@@ -198691,7 +198691,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1259.078 754.126 90)
 			(effects
 				(font
@@ -199110,7 +199110,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1247.648 925.576 90)
 			(effects
 				(font
@@ -199558,7 +199558,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1496.568 925.576 90)
 			(effects
 				(font
@@ -200594,9 +200594,9 @@
 		(at 656.59 408.94 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "de052686-cf70-4da5-a9de-2018b0949760")
 		(property "Reference" "U10"
@@ -200967,7 +200967,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1819.148 953.516 90)
 			(effects
 				(font
@@ -201400,7 +201400,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1570.228 1084.326 90)
 			(effects
 				(font
@@ -202425,9 +202425,9 @@
 		(at 438.15 283.21 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e24315a3-67d9-4152-aa17-b719e3d8c7ad")
 		(property "Reference" "U7"
@@ -203572,7 +203572,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1558.798 925.576 90)
 			(effects
 				(font
@@ -204702,7 +204702,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1445.768 754.126 90)
 			(effects
 				(font
@@ -206045,7 +206045,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1309.878 790.956 90)
 			(effects
 				(font
@@ -206532,7 +206532,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1060.958 855.726 90)
 			(effects
 				(font
@@ -206597,9 +206597,9 @@
 		(at 656.59 181.61 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ea29c4ec-ffed-4976-a959-2b505faf494f")
 		(property "Reference" "U1"
@@ -207222,7 +207222,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1496.568 726.186 90)
 			(effects
 				(font
@@ -207512,7 +207512,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1632.458 883.666 90)
 			(effects
 				(font
@@ -208020,7 +208020,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1881.378 818.896 90)
 			(effects
 				(font
@@ -208099,7 +208099,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1632.458 1084.326 90)
 			(effects
 				(font
@@ -208360,7 +208360,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1632.458 754.126 90)
 			(effects
 				(font
@@ -210925,7 +210925,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1010.158 883.666 90)
 			(effects
 				(font
@@ -211186,7 +211186,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1756.918 953.516 90)
 			(effects
 				(font
@@ -211909,7 +211909,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1932.178 790.956 90)
 			(effects
 				(font
@@ -213172,7 +213172,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1570.228 883.666 90)
 			(effects
 				(font
@@ -214914,7 +214914,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1123.188 925.576 90)
 			(effects
 				(font
@@ -215287,7 +215287,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 998.728 992.886 90)
 			(effects
 				(font
@@ -215702,7 +215702,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1259.078 883.666 90)
 			(effects
 				(font
@@ -215929,7 +215929,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1010.158 953.516 90)
 			(effects
 				(font
@@ -216144,7 +216144,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1060.958 1056.386 90)
 			(effects
 				(font
@@ -217187,7 +217187,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1259.078 953.516 90)
 			(effects
 				(font
@@ -217506,7 +217506,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1072.388 883.666 90)
 			(effects
 				(font
@@ -217652,7 +217652,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1K"
+		(property "Value" "1000"
 			(at 1196.848 754.126 90)
 			(effects
 				(font
