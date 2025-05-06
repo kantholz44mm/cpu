@@ -85,8 +85,7 @@ Again, the complexity increases starting from the left. The more complex an addr
 
 $$ \text{Base} + \text{Index} * \text{Scale} + \text{Displacement} $$
 
-This requires additional hardware for performing the additions and multiplication. Note that the ``Scale'' is restricted to 1, 2, 4 or 8 and can therefore be implemented by shifting the index to the left by 1, 2, 3 or 4 bits. In most modern, and some older architectures, the addressing modes can be quite numerous and complex. For example, the Intel 6502 has 13 different addressing modes \cite[13.2.1]{schlyter200513}. However, an \ac{isa} need not implement a large number of addressing modes in order to be useful. For example, the Intel 8008 \ac{cpu} only has 3 addressing modes (Register, Register Indirect and Immediate) \cite{cpu-world8008}.
-
+This requires additional hardware for performing the additions and multiplication. Note that the ``Scale'' is restricted to 1, 2, 4 or 8 and can therefore be implemented by shifting the index to the left by 1, 2, 3 or 4 bits. In most modern, and some older architectures, the addressing modes can be quite numerous and complex. For example, the Intel 6502 has 13 different addressing modes \cite[13.2.1]{schlyter200513}. However, an \ac{isa} need not implement a large number of addressing modes in order to be useful. For example, the Intel 8008 \ac{cpu} only has 3 addressing modes (Register, Register Indirect and Immediate) \cite{cpu-world8008}. The complex addressing modes are useful when implementing features of high-level programming languages such as arrays or structured data.
 
 \subsubsection{Opcodes}
 

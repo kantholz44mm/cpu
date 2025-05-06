@@ -1,21 +1,85 @@
 \subsection{ISA} \label{sec:design_isa}
 
-The first step to creating an implementation of a \ac{cpu} is to define its behavior in the form of an \ac{isa}. For this work, several existing \acp{isa} have been explored, however none provide the desired combination of ease-of-use, visualisation quality and low cost. Therefore, in this chapter, a custom \ac{isa} is developed. The hardware built during this project then implements this architecture.
-
-\subsubsection{Memory model}
-
-As outlined in \autoref{sec:fundamentals_isa_memory_model}, there are 3 major memory models. For this project, a strict Harvard architecture is used since it allows a full separation of program instructions and general purpose data. This makes the timing required for memory accesses simpler, reducing the hardware needed to handle them. It also allows the architecture to use address buses of different size.
-
-While most modern architectures have a word size of 64 bits or even more, this is impractical for the planned implementation due to the added number of components, wires and board space. On the other extreme, there are no architectures using exclusively 1 bit words. This would be too restrictive considering the program counter or the number of opcodes. However, there are architectures that use serial processing internally, operating on one bit at a time, such as the PDP8/S \cite{computermuseum_pdp8s}. There are several true 2-bit architectures such as the Intel 3000 \cite{wikichip_intel3000}. Similarly, there are historical architectures using words with a size of 4 bits each, such as the Intel 4004 and 4040 \cite{intel4004history}. However, a word size of 4 is impractical since even the most basic mathematical operations are likely to require operands greater than 15. Additionally, most memories and other similar components operate using 8 bit words. Since most students will also be familiar with the 8-bit byte, this is chosen as the word size for the architecture.
-
-However, using 8 words for address data restricts the program counter and memory to 256 addressable locations. This means that any one program can only have at most 256 instructions, assuming each address holds one instruction. Likewise, there can only be 256 bytes of individually addressable \ac{ram}, assuming the memory is addressed on a byte-by-byte basis. While this can be useful to demonstrate the inner workings of a \ac{cpu}, most interesting real world problems require more storage than that. Since the \ac{isa} follows a strict Harvard architecture, the size of data and address words and busses can differ. In this case, using double the data word size as the address word size is a good compromise between available memory size and implementation cost. Using 16 bit addresses, a total of \SI{64}{\kibi\byte} can be addressed for both data \ac{ram} and program \ac{rom}. 
-
-
+The first step to creating an implementation of a \ac{cpu} is to define its behavior in the form of an \ac{isa}. For this work, several existing \acp{isa} have been explored, however none provide the desired combination of ease-of-use, visualisation quality and low cost. Therefore, in this chapter, a custom \ac{isa} is developed. The hardware built during this project then implements this architecture. The architecture is dubbed \ac{ava}. 
 
 \subsubsection{Execution model}
 
-The execution model of choice for this project is the register machine. Its working principles are explained in more detail in \autoref{sec:fundamentals_isa_execution_model}. Most modern machines are based on this architecture as well, due to better scalability and flexibility, as well as compilers being easier to optimize for such systems. Since the result of this work shall be used for demonstrating the working principles of digital computers, it makes sense to implement something close to real world systems. More specifically, the architecture of choice obeys the ``Load-store'' principle used for many modern RISC processors.
+The execution model of choice for this project is the register machine. Its working principles are explained in more detail in \autoref{sec:fundamentals_isa_execution_model}. Most modern machines are based on this architecture as well, due to better scalability and flexibility, as well as compilers being easier to optimize for such systems. Since the result of this work shall be used for demonstrating the working principles of digital computers, it makes sense to implement something close to real world systems. More specifically, the architecture of choice obeys the ``Load-store'' principle used in many modern RISC processors.
 
-\subsubsection{Memory addressing modes}
+\subsubsection{Memory Model}
 
-% !TODO!
+As outlined in \autoref{sec:fundamentals_isa_memory_model}, there are 3 major memory models. For this project, a strict Harvard architecture is used since it allows a full separation of program instructions and general purpose data. This makes the timing required for memory accesses simpler, reducing the hardware needed to handle them. It also allows the architecture to use address buses of different size. 
+
+While most modern architectures have a word size of 64 bits or even more, this is impractical for the planned implementation due to the added number of components, wires and board space. On the other extreme, there are no architectures using exclusively 1 bit words. This would be too restrictive considering the program counter or the number of opcodes. However, there are architectures that use serial processing internally, operating on one bit at a time, such as the PDP8/S \cite{computermuseum_pdp8s}. There are several true 2-bit architectures such as the Intel 3000 \cite{wikichip_intel3000}. Similarly, there are historical architectures using words with a size of 4 bits each, such as the Intel 4004 and 4040 \cite{intel4004history}. However, a word size of 4 is impractical since even the most basic mathematical operations are likely to require operand values greater than 15. Since the clockrate of an implementation using discrete components will likely be quite slow, increasing the size of operands is important to achieve usable throughput. Therefore, a word size of 8 bits is chosen. However, using 8 bit addresses to index memory allows only 256 words to be accessed. This is not enough for even most trivial problems, as both the program and main memory would have this limitation. Therefore, all addresses are 16 bit, while data words remain 8 bit words. This way, both the program and main memory can store up to 65536 data.
+
+The main memory can be used to store temporary results that exceed the size provided by the general purpose register set. It is byte-addressable, meaning its atom of data is also the computer word of 8 bits each. The program memory will also be indexed by a 16 bit quantity. However, its size per datum can be arbitrarily chosen, since the contents do not have to be written during operation, and its data are decoded before being used an operation. This therefore only depends on the chosen instruction encoding and its length.
+
+The register set consists of a 16 bit program counter, as well as 8 additional 8 bit registers, referred to as general purpose registers. Some of these registers have additional purposes, depending on the instruction that is being executed. \autoref{tab:register_set} shows the set of registers included in the \ac{isa}. All registers except the program counter are integrated into a single register file. This maximises homogeneity and therefore reduces the implementation complexity.
+
+\begin{minipage}[t]{\textwidth}
+    \centering
+    \begin{tabular}{|l|l|l|l|l|} 
+        \hline
+        \textbf{ID} & \textbf{Name}              & \textbf{Shorthand} & \textbf{Width} & \textbf{Access}      \\ 
+        \hline
+        0           & Zero register              & R0 / RZ            & 8              & Read only            \\ 
+        \hline
+        1           & General purpose register 1 & R1                 & 8              & Read/Write           \\ 
+        \hline
+        2           & General purpose register 2 & R2                 & 8              & Read/Write           \\ 
+        \hline
+        3           & General purpose register 3 & R3                 & 8              & Read/Write           \\ 
+        \hline
+        4           & General purpose register 4 & R4                 & 8              & Read/Write           \\ 
+        \hline
+        5           & Flags register             & R5 / RF            & 8              & Read/Write/Indirect  \\ 
+        \hline
+        6           & Low address register       & R6 / RL            & 8              & Read/Write           \\ 
+        \hline
+        7           & High address register      & R7 / RH            & 8              & Read/Write           \\ 
+        \hline
+        8           & Program counter register   & PC                 & 16             & Indirect             \\
+        \hline
+    \end{tabular}
+    \label{tab:register_set}
+    \captionof{table}{Registers used in the \ac{isa}}
+\end{minipage}
+
+The first register is referred to as the ``zero register''. An equivalent register exists in many \ac{risc} architectures such as \ac{mips} \cite{mips1995}, RISC-V \cite{riscv_specs}, SPARC \cite{sparc_specs} and many others. This register allows operations to discard their results without modifying other registers. For example, an instruction may use the \ac{alu} for computing a comparison, which is only used for deciding whether to branch or not. The result itself is not of any interest, therefore, it can be discarded. Similarly, having fast access to the immediate value 0 is useful for implementing instructions without additional hardware. For example, the \ac{mips} \ac{isa} classifies \texttt{MOV} (copy data from one register to another) as a \textit{pseudo-instruction}, since there is no actual operation that implements this directly. Instead, the assembler substitutes an \texttt{ADD} instruction that adds the 0 register to the source register and stores the result in the target register \cite{mips1995}.
+
+Following the zero register is a set of four truly general purpose registers. They can be used as temporary storage for arbitrary data by the programmer. They can be read from and written to, even within the same operation. Having four of these registers in combination with this method of access allows holding and processing two 16 bit words at a time.
+
+In addition to the computation result, an \ac{alu} outputs a set of flags in most architectures. These flags give programmers additional information about the result, such as whether it is negative or positive, whether it is 0 or if an addition or subtraction resulted in a carry or borrow. Register 5 serves as a general purpose register. However, for operations that result in such flags, they will be written to this register implicitly. If the register is also the destination for the computation result, the result is discarded and only the flags are written.
+
+Registers 6 and 7 can be used as general purpose registers. Their contents are also used as a 16 bit operand for operations that require memory accesses. For this reason, they are also referred to as \texttt{RH} and \texttt{RL}. The order of concatenation of their data is fixed to simplify hardware implementation. They are written to on a per-register basis.
+
+The final register included in \ac{ava} is the program counter. It is the only register that is not 8 bits in size but is instead 16 bits wide. This is needed to index the full range of program memory. It stores the address of the instruction that is currently being executed. It can not be read at all and can only be written to indirectly through branching.
+
+\subsubsection{Addressing modes}
+
+In order to keep complexity of an implementation low, only simple addressing is included in the \ac{isa}. \autoref{fig:addressing_modes_implemented} shows the same hierarchy of addressing modes as \autoref{fig:addressing_modes_general} but highlights the ones used by \ac{ava}.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/drawio/addressing_modes_implemented.png}  % Replace with your image file
+    \caption{Hierarchical overview of addressing modes with implemented modes highlighted. (Modified from S. Dandamudi, laid out horizontally and compacted for readability \cite{sivarama_addrmodes})}
+    \label{fig:addressing_modes_implemented}
+\end{figure}
+
+All of these addressing modes share the property of containing no arithmetic for calculating an address. This means that an implementation only needs to route connections between components without additional components required for computation. Since the more complex addressing modes are used for implementing high level constructs in a performant manner, they can be substituted with multiple primitive operations. The programmer must calculate offsets for members of a piece of structured data explicitly using arithmetic instructions.
+
+\subsubsection{Opcodes}
+
+
+
+\subsubsection{RISC vs. CISC}
+
+
+\subsubsection{Types of Instruction}
+
+
+\subsubsection{Instruction Encoding}
+
+
+\subsubsection{Microcode}
+
