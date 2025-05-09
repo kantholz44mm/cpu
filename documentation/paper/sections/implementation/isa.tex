@@ -6,7 +6,7 @@ The first step to creating an implementation of a \ac{cpu} is to define its beha
 
 The execution model of choice for this project is the register machine. Its working principles are explained in more detail in \autoref{sec:fundamentals_isa_execution_model}. Most modern machines are based on this architecture as well, due to better scalability and flexibility, as well as compilers being easier to optimize for such systems. Since the result of this work shall be used for demonstrating the working principles of digital computers, it makes sense to implement something close to real world systems. More specifically, the architecture of choice obeys the ``Load-store'' principle used in many modern RISC processors.
 
-\subsubsection{Memory Model}
+\subsubsection{Memory Model} \label{sec:implementation_isa_memory_model}
 
 As outlined in \autoref{sec:fundamentals_isa_memory_model}, there are 3 major memory models. For this project, a strict Harvard architecture is used since it allows a full separation of program instructions and general purpose data. This makes the timing required for memory accesses simpler, reducing the hardware needed to handle them. It also allows the architecture to use address buses of different size. 
 
@@ -69,6 +69,30 @@ In order to keep complexity of an implementation low, only simple addressing is 
 All of these addressing modes share the property of containing no arithmetic for calculating an address. This means that an implementation only needs to route connections between components without additional components required for computation. Since the more complex addressing modes are used for implementing high level constructs in a performant manner, they can be substituted with multiple primitive operations. The programmer must calculate offsets for members of a piece of structured data explicitly using arithmetic instructions.
 
 \subsubsection{Opcodes}
+
+Within the defined task for this work, there are several operations that the architecture must be able to execute:
+
+\begin{itemize}
+    \item Memory access (Load, Store, Move)
+    \item Flow control ((Conditional) Jump)
+    \item (Un-) signed addition
+    \item (Un-) signed subtraction
+    \item Bitwise operations (AND, OR, NOT)
+    \item Bitwise shifting (Left and right) 
+\end{itemize}
+
+Each of these operations must be assigned its unique opcode so the control logic knows what operation to perform during a cycle. As discussed in \autoref{sec:implementation_isa_memory_model}, an operation can be emulated by using another operation. Therefore, the number of actual opcodes defined in an \ac{isa} may be smaller than the number of usable instructions within a programming language. However, there is no general way to substitute the fundamental arithmetic operations of addition, subtraction and bitwise shifting to the left or right. Therefore, these four operations receive one opcode each. The bitwise logic operations \texttt{AND}, \texttt{OR}, \texttt{NOT} can be represented by several other combinations of logic operations, as discussed in \autoref{sec:logical_operators}. Since the combination of these three operators is functionally complete, any set of operators that are used to substitute them must also be functionally complete.
+
+\begin{wrapfigure}{R}{0.5\textwidth}
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/drawio/bitwise_operators_logic.png}
+    \caption{Logic gates implementing OR, AND, XOR, NAND while reusing intermediary results}
+    \label{fig:logic_gates_binary_operators}
+\end{wrapfigure}
+
+While the \ac{isa} could simply define these three operations directly, that would result in a total of 7 operations the \ac{alu} can perform. This is suboptimal, since it would require $\lceil log_2(8) \rceil = 3$ bits to encode, wasting the eighth value representable by these 3 bits. Therefore, the operator set \texttt{\{OR, AND, XOR, NAND\}} is chosen. Both the \texttt{NAND} and \texttt{XOR} operators can substitute the \texttt{NOT} operator by using an operand and the same operand or the constant 1, respectively. This combination of operators is chosen because when built from only \texttt{NAND} gates, the logical expressions share large amounts of boolean expressions. Therefore, much of the intermediary results can be used for several of the operators.
+
+
 
 
 
