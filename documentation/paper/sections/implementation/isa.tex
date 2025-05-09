@@ -81,16 +81,29 @@ Within the defined task for this work, there are several operations that the arc
     \item Bitwise shifting (Left and right) 
 \end{itemize}
 
-Each of these operations must be assigned its unique opcode so the control logic knows what operation to perform during a cycle. As discussed in \autoref{sec:implementation_isa_memory_model}, an operation can be emulated by using another operation. Therefore, the number of actual opcodes defined in an \ac{isa} may be smaller than the number of usable instructions within a programming language. However, there is no general way to substitute the fundamental arithmetic operations of addition, subtraction and bitwise shifting to the left or right. Therefore, these four operations receive one opcode each. The bitwise logic operations \texttt{AND}, \texttt{OR}, \texttt{NOT} can be represented by several other combinations of logic operations, as discussed in \autoref{sec:logical_operators}. Since the combination of these three operators is functionally complete, any set of operators that are used to substitute them must also be functionally complete.
+Each of these operations must be assigned its unique opcode so the control logic knows what operation to perform during a cycle. As discussed in \autoref{sec:implementation_isa_memory_model}, an operation can be emulated by using another operation. Therefore, the number of actual opcodes defined in an \ac{isa} may be smaller than the number of usable instructions within a programming language. However, there is no general way to substitute the fundamental arithmetic operations of addition, subtraction and bitwise shifting to the left or right. Therefore, these four operations receive one opcode each.
+
+In total, the \ac{alu} must be able to perform these seven different operations. However, the \ac{alu} is a logical module and will likely be implemented as an individual piece of hardware, too. Therefore, the opcode or the relevant bits encoding the \ac{alu} operation must be passed to the implementing device as an individual piece of data. This piece of data requires $\lceil log_2(8) \rceil = 3$ bits to encode, where the eighth value would not be assigned an operation and therefore wasted. The bitwise logic operations \texttt{AND}, \texttt{OR}, \texttt{NOT} can be represented by several other combinations of logic operations, as discussed in \autoref{sec:logical_operators}. Since the combination of these three operators is functionally complete, any set of operators that are used to substitute them must also be functionally complete.
 
 \begin{wrapfigure}{R}{0.5\textwidth}
     \centering
     \includegraphics[width=0.48\textwidth]{images/drawio/bitwise_operators_logic.png}
     \caption{Logic gates implementing OR, AND, XOR, NAND while reusing intermediary results}
     \label{fig:logic_gates_binary_operators}
-\end{wrapfigure}
+\end{wrapfigure}\leavevmode
 
-While the \ac{isa} could simply define these three operations directly, that would result in a total of 7 operations the \ac{alu} can perform. This is suboptimal, since it would require $\lceil log_2(8) \rceil = 3$ bits to encode, wasting the eighth value representable by these 3 bits. Therefore, the operator set \texttt{\{OR, AND, XOR, NAND\}} is chosen. Both the \texttt{NAND} and \texttt{XOR} operators can substitute the \texttt{NOT} operator by using an operand and the same operand or the constant 1, respectively. This combination of operators is chosen because when built from only \texttt{NAND} gates, the logical expressions share large amounts of boolean expressions. Therefore, much of the intermediary results can be used for several of the operators.
+A set of four functionally complete logical operations is chosen in order to fully exhaust the space indexed by 3 bits. Specifically, the operator set \texttt{\{OR, AND, XOR, NAND\}} is chosen. Both the \texttt{NAND} and \texttt{XOR} operators can substitute the \texttt{NOT} operator by using an operand and the same operand or the constant 1, respectively. This set of operators is chosen because when built from only \texttt{NAND} gates, the logical expressions share large amounts of boolean subexpressions . Therefore, much of the intermediary results can be used for several of the operators.
+
+\makebox[\linewidth]{}
+
+\begin{align}
+    A \lnand B &= A \lnand B \\
+    A \land B  &= (A \lnand B) \lnand (A \lnand B) \\
+    A \lor B   &= (A \lnand A) \lnand (B \lnand B) \\
+    A \lxor B  &= (A \lnand (A \lnand B)) \lnand ((B \lnand (A \lnand B)))
+\end{align}
+\captionof{table}{Boolean expressions for binary operators OR, AND, XOR, NAND using only NAND operators}
+\label{align:binary_operators_from_nand}
 
 
 
