@@ -1,0 +1,69 @@
+\subsubsection{Memory Model} \label{sec:implementation_isa_memory_model}
+
+As outlined in \autoref{sec:fundamentals_isa_memory_model}, there are 3 major memory models. For this project, a strict Harvard architecture is used since it allows a full separation of program instructions and general purpose data. This makes the timing required for memory accesses simpler, reducing the hardware needed to handle them. It also allows the architecture to use address buses of different size. 
+
+While most modern architectures have a word size of 64 bits or even more, this is impractical for the planned implementation due to the added number of components, wires and board space. On the other extreme, there are no architectures using exclusively 1 bit words. This would be too restrictive considering the program counter or the number of opcodes. However, there are architectures that use serial processing internally, operating on one bit at a time, such as the PDP8/S \cite{computermuseum_pdp8s}. There are several true 2-bit architectures such as the Intel 3000 \cite{wikichip_intel3000}. Similarly, there are historical architectures using words with a size of 4 bits each, such as the Intel 4004 and 4040 \cite{intel4004history}. However, a word size of 4 is impractical since even the most basic mathematical operations are likely to require operand values greater than 15. Since the clockrate of an implementation using discrete components will likely be quite slow, increasing the size of operands is important to achieve usable throughput. Therefore, a word size of 8 bits is chosen. However, using 8 bit addresses to index memory allows only 256 words to be accessed. This is not enough for even most trivial problems, as both the program and main memory would have this limitation. Therefore, all addresses are 16 bit, while data words remain 8 bit words. This way, both the program and main memory can store up to 65536 data.
+
+The main memory can be used to store temporary results that exceed the size provided by the general purpose register set. It is byte-addressable, meaning its atom of data is also the computer word of 8 bits each. The program memory will also be indexed by a 16 bit quantity. However, its size per datum can be arbitrarily chosen, since the contents do not have to be written during operation, and its data are decoded before being used an operation. This therefore only depends on the chosen instruction encoding and its length. The program memory contains data in atoms of 32 bits each. This is due to the instruction encoding format used, which is explained in more detail in \autoref{sec:implementation_instruction_encoding}.
+
+The register set consists of a 16 bit program counter, as well as 8 additional 8 bit registers, referred to as general purpose registers. Some of these registers have additional purposes, depending on the instruction that is being executed. \autoref{tab:register_set} shows the set of registers included in the \ac{isa}. All registers except the program counter are integrated into a single register file. This maximises homogeneity and therefore reduces the implementation complexity.
+
+\begin{minipage}[t]{\textwidth}
+    \centering
+    \begin{tabular}{|l|l|l|l|l|} 
+        \hline
+        \textbf{ID} & \textbf{Name}              & \textbf{Shorthand} & \textbf{Width} & \textbf{Access}      \\ 
+        \hline
+        0           & Zero register              & R0 / RZ            & 8              & Read only            \\ 
+        \hline
+        1           & General purpose register 1 & R1                 & 8              & Read/Write           \\ 
+        \hline
+        2           & General purpose register 2 & R2                 & 8              & Read/Write           \\ 
+        \hline
+        3           & General purpose register 3 & R3                 & 8              & Read/Write           \\ 
+        \hline
+        4           & General purpose register 4 & R4                 & 8              & Read/Write           \\ 
+        \hline
+        5           & Flags register             & R5 / RF            & 8              & Read/Write/Indirect  \\ 
+        \hline
+        6           & Low address register       & R6 / RL            & 8              & Read/Write           \\ 
+        \hline
+        7           & High address register      & R7 / RH            & 8              & Read/Write           \\ 
+        \hline
+        8           & Program counter register   & PC                 & 16             & Indirect             \\
+        \hline
+    \end{tabular}
+    \label{tab:register_set}
+    \captionof{table}{Registers used in the \ac{isa}}
+\end{minipage}
+
+The first register is referred to as the ``zero register''. An equivalent register exists in many \ac{risc} architectures such as \ac{mips} \cite{mips1995}, RISC-V \cite{riscv_specs}, SPARC \cite{sparc_specs} and many others. This register allows operations to discard their results without modifying other registers. For example, an instruction may use the \ac{alu} for computing a comparison, which is only used for deciding whether to branch or not. The result itself is not of any interest, therefore, it can be discarded. Similarly, having fast access to the immediate value 0 is useful for implementing instructions without additional hardware. For example, the \ac{mips} \ac{isa} classifies \texttt{MOV} (copy data from one register to another) as a \textit{pseudo-instruction}, since there is no actual operation that implements this directly. Instead, the assembler substitutes an \texttt{ADD} instruction that adds the 0 register to the source register and stores the result in the target register \cite{mips1995}.
+
+Following the zero register is a set of four truly general purpose registers. They can be used as temporary storage for arbitrary data by the programmer. They can be read from and written to, even within the same operation. Having four of these registers in combination with this method of access allows holding and processing two 16 bit words at a time.
+
+In addition to the computation result, an \ac{alu} outputs a set of flags in most architectures. These flags give programmers additional information about the result, such as whether it is negative or positive, whether it is equal to zero or if an addition or subtraction resulted in a carry or borrow. Register 5 serves as a general purpose register. However, for operations that result in such flags, they will be written to this register implicitly. If the register is also the destination for the computation result, the result is discarded and only the flags are written. In the AVA \ac{isa}, there are four distinct flags available to the programmer. Each one or any combination of them can be used to conditionally branch to a different location in the program. This allows programmers to implement flow control constructs such as function calls, \texttt{if-then-else} or loops.
+
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|c|l|} 
+        \hline
+        \textbf{\textbf{Index}} & \textbf{Abbreviation} & \textbf{Name} & \textbf{Description}                                                                                                                                                                                        \\ 
+        \hline
+        0                       & Z                     & Zero          & Set when an arithmetic result contains only 0                                                                                                                                                               \\ 
+        \hline
+        1                       & N                     & Negative      & Set when the MSB of an arithmetic result is 1                                                                                                                                                               \\ 
+        \hline
+        2                       & C                     & Carry/Borrow  & \begin{tabular}[c]{@{}l@{}}Set when the result of an addition or subtraction of two\\unsigned numbers does not fit into an unsigned number\\or when a bit shifting instruction shifts out a 1\end{tabular}  \\ 
+        \hline
+        3                       & V                     & Overflow      & \begin{tabular}[c]{@{}l@{}}Set when the result of an addition or subtraction of two\\signed numbers does not fit into a signed number\end{tabular}                                                          \\
+        \hline
+    \end{tabular}
+    \label{tab:implementation_alu_flags}
+    \captionof{table}{Set of flags output by each arithmetic operation}
+\end{table}
+
+\autoref{tab:implementation_alu_flags} shows the set of flags output by each \ac{alu} operation. These four flags are sufficient to implement all common comparison operators such as ``less than'', ``equal'', ``greater or equal'', etc. However, the zero register is the only flag that can be used to directly control conditional branching. If a programmer requires a different flag to control branching, it is possible to use bitwise instructions to mask the flags register and select the branch condition.
+
+Registers 6 and 7 can be used as general purpose registers. Their contents are also used as a 16 bit operand for operations that require memory accesses. For this reason, they are also referred to as \texttt{RH} and \texttt{RL}. The order of concatenation of their data is fixed to simplify hardware implementation. They are written to on a per-register basis.
+
+The final register included in \ac{ava} is the program counter. It is the only register that is not 8 bits in size but is instead 16 bits wide. This is needed to index the full range of program memory. It stores the address of the instruction that is currently being executed. It can not be read at all and can only be written to indirectly through branching.

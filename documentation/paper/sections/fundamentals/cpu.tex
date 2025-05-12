@@ -10,7 +10,7 @@ The main purpose of a \ac{cpu} is to sequentially execute a set of instructions 
 
 The execution of a program is typically done in discrete, synchronous steps, as dictated by one or more clock signals. Each edge of these clock signals advances the progress of the instruction cycle. The instruction cycle typically consists of the three phases of fetching, decoding and executing an instruction. In the fetch phase, the processor retrieves an instruction from program memory. Afterwards, in the decoding phase, the semantics of the fetched instruction are analysed and the internal state of the \ac{cpu} is setup. This involves extracting any operands and setting up the control signals that dictate what is done during the execution phase. In that phase, the desired operation is performed and any results are stored back into the relevant memories. These three phases form the instruction cycle. Each of the phases may take one or more clock cycles, although there are designs that combine some or all phases into shared ones. There are also processors that do not have a global clock signal for synchronisation. These designs are called ``asynchronous processors''. However, synchronous processors are by far more prevalent. In such designs, the asynchronous sections are communicating through synchronous gates, usually registers. This allows the asynchronous sections to be of different complexity, with different propagation delays.
 
-\subsubsection{Structure}
+\subsubsection{Structure} \label{sec:fundamentals_cpu_structure}
 
 A \ac{cpu} can be subdivided into its functional groups. 
 A typical, minimalistic \ac{cpu} has 3 main components:
