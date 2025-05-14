@@ -92,7 +92,7 @@ Since it is not feasible for an implementation to provide a set of control lines
     \captionof{table}{Input and output signals of the register file}
 \end{table}
 
-\subsubsection{Multiplexer}
+\subsubsection{Multiplexer} \label{sec:implementation_modularisation_multiplexer}
 
 A multiplexer selects one of multiple inputs and outputs it unchanged. To select between $n$ input signals, $\lceil log_2(n)\rceil$ selector signals are required. For example, two select between 3 different input signals, a 2 bit wide selector signal is needed. Multiplexers can also have inputs and outputs that are $m$ bits wide. A multiplexer that switches between $n$ words of $m$ bits each is referred to as an ``m bit n:1 multiplexer''. All combinations of $n$ and $m$ can be built using only the basic 1 bit 2:1 multiplexer. Its output for the input signals $A$, $B$ and $S$ is determined by the boolean expression:
 
