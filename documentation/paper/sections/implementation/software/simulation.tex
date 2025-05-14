@@ -1,0 +1,45 @@
+\subsection{Simulation}
+
+The software simulation is intended to design, test and simulate a possible implementation of the \ac{isa} on the level of individual logic gates. It allows an estimation of the size, complexity and number of components of its hardware equivalent. It also offers low cost and high speed of iteration. If a graphical tool is used, it also provides an opportunity visualize the entire structure. For this work, the digital logic simulator ``Digital'' by Heinz Neemann is used \cite{neemann_digital}. It is free to use and well documented and was previously used by the author to simulate other logical circuits. For these reasons, the cost of entry in both money and time spent learning to use the tool are minimal. The tool simulates digital logic circuits, which can then be hierarchically combined to form more and more complex circuits. \autoref{fig:digital_full_adder} shows a circuit that implements a 1 bit full adder within the software. \autoref{fig:digital_full_adder_reuse} shows how this circuit can then be reused in higher-level circuits.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/digital_full_adder.png}
+    \caption{1 Bit full adder in the logic gate simulator ``Digital''}
+    \label{fig:digital_full_adder}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/digital_full_adder_reuse.png}
+    \caption{Hierarchical reuse of the 1 bit full adder shown in \autoref{fig:digital_full_adder}}
+    \label{fig:digital_full_adder_reuse}
+\end{figure}
+
+This hierarchical nesting of circuit implementations allows for easier management of large numbers of gates, as well as reuse of common components. For example, 8 instances of the same 1 bit full adder can be connected to form an 8 bit word full adder. This approach of nesting also naturally leads to better semantic grouping of circuits, which can later be reused to divide the hardware implementation into reasonably sized \acp{pcb}. The entire simulation is built from the bottom up, i.e modules that require no submodules internally are designed first. In this work, the register is the initial module to be implemented. In \autoref{sec:design_philosophy}, the requirement of using only \texttt{NAND} gates is given. Therefore, the atomic building block within the simulation is an individual 2-input \texttt{NAND} gate.
+
+\subsubsection{Register}
+
+The register consists fundamentally of a bistable configuration of logic gates, such as latches as discussed in \autoref{sec:fundamentals_timing_sequential}. By extending an SR-latch with two more \texttt{NAND} gates, a ``gated D latch'' is created. It has two inputs $D$ and $E$, which serve as the data to store and the enable signal, respectively. When the signal $E$ is \texttt{HIGH}, the SR-latch stores the value of $D$ at that time. When $E$ is \texttt{LOW}, the state remains unchanged. \autoref{fig:implementation_software_simulation_d_latch} shows such a gated D latch implemented using only \texttt{NAND} gates.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/drawio/nand_d_latch.png}
+    \caption{D Latch implemented using only NAND gates}
+    \label{fig:implementation_software_simulation_d_latch}
+\end{figure}
+
+However, this is not suitable for use in synchronous circuits, since the state of the latch can change multiple times when the enable signal is \texttt{HIGH}. For this reason, two such latches are combined as shown in \autoref{fig:implementation_software_simulation_clocked_d_latch}. In this configuration, the output $Q$ of the first latch is used as the input $D$ of the second one. The enable signals are shared, with one latch receiving the inverse of the other. This way, an edge detection is implemented. The new value $D$ is only propagated when the state of the clock signal changes. This circuit is suitable for synchronous circuits since the saved value can only change once at the time of a clock edge.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/drawio/nand_clocked_d_latch.png}
+    \caption{Two sequential D latches, forming a gated, clocked D latch}
+    \label{fig:implementation_software_simulation_clocked_d_latch}
+\end{figure}
+
+Eight of these gated, clocked D latches are combined in parallel to form an 8 bit register. The register has additional logic to implement its control inputs for clearing and enabling or disabling writing on each clock cycle.
+
+\subsubsection{Multiplexer}
+
+The multiplexer is another essential low level building block that is used at several places in the logical design. It also requires no submodules internally and is built using only \texttt{NAND} gates. A multiplexer 

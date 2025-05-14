@@ -92,6 +92,34 @@ Since it is not feasible for an implementation to provide a set of control lines
     \captionof{table}{Input and output signals of the register file}
 \end{table}
 
+\subsubsection{Multiplexer}
+
+A multiplexer selects one of multiple inputs and outputs it unchanged. To select between $n$ input signals, $\lceil log_2(n)\rceil$ selector signals are required. For example, two select between 3 different input signals, a 2 bit wide selector signal is needed. Multiplexers can also have inputs and outputs that are $m$ bits wide. A multiplexer that switches between $n$ words of $m$ bits each is referred to as an ``m bit n:1 multiplexer''. All combinations of $n$ and $m$ can be built using only the basic 1 bit 2:1 multiplexer. Its output for the input signals $A$, $B$ and $S$ is determined by the boolean expression:
+
+\begin{displaymath}
+    (A \land \neg S) \lor (B \land S)
+\end{displaymath}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/drawio/multiplexer_tree.png}  % Replace with your image file
+    \caption{1 bit 4:1 multiplexer from three 1 bit 2:1 multiplexers}
+    \label{fig:implementation_modularisation_multiplexer_tree}
+\end{figure}
+To increase the number of inputs that can be selected from, a tree of 2:1 multiplexers is created. In this tree, the inputs of the leaves are the inputs of the resulting combined multiplexer. Each layer of the tree uses one bit of the selection input signal. By constructing a multiplexer this way, multiplexers with an arbitrary number of inputs can be constructed, provided the number of inputs is a power of two. This is a direct representation of a binary tree, since each individual 2:1 multiplexer serves as a tree node with two children. To increase the word size of a multiplexer, multiple n:1 multiplexers can be operated in parallel, again sharing their selection input signals. \autoref{fig:implementation_modularisation_multiplexer_tree} shows a 1 bit 4:1 multiplexer built from three individual 1 bit 2:1 multiplexers. For a filled, unskewed binary tree, the number of leaf nodes for a tree of height $h$ is given by $2^{h + 1} - 1$ \cite{tanenbaum2012sco}. Since each leaf multiplexer has 2 inputs, for an $m$ bit multiplexer of $n$ inputs, the following equation gives the number of 1 bit 2:1 multiplexers required in total:
+
+\begin{displaymath}
+    N_{multiplexers}(n, m) = m \times 2^{\lceil log_2(n) \rceil} - 1
+\end{displaymath}
+
+As an example, an 8 bit 4:1 multiplexer requires 
+\begin{displaymath}
+    N_{multiplexers}(4, 8) = 8 \times 2^{\lceil log_2(4) \rceil} - 1 = 31
+\end{displaymath}
+
+1 bit 2:1 multiplexers.
+
+
 \subsubsection{Control unit}
 
 The AVA architecture is designed with the complexity of the control unit in mind. Therefore, the architecture can be implemented using only horizontal microcode. The opcode is directly used as an address to read-only memory referred to as control signal memory. This memory stores the control word for each operation. The control word is then output and can be used as a selector for multiplexers within the interconnection network between modules. The individual control signals of the control word can also be used to control the function of modules directly. Due to its simplicity, the control unit module has a single input, which is the opcode, and outputs $n$ control signals, where $n$ depends on the interconnection network. \autoref{tab:implementation_logical_control_unit_io} shows a list of inputs and outputs of the control unit.
@@ -115,7 +143,7 @@ The AVA architecture is designed with the complexity of the control unit in mind
 
 The working memory must be addressable, therefore an address input is needed. Also, there must be two 8 bit connections for data \ac{io}. Lastly, the control unit must be able to instruct the memory on when data is read and written from the module, for which two dedicated control signals are used. In principle, all used memories are connected in this manner, however only the working memory must be writable. Both the program and control signal memory are read-only and do therefore not require control signals. The module is expected to interface with its environment in a synchronous, parallel manner, i.e there is no serialisation of data. This makes integration with other components simpler. However, an additional signal line must carry a clock signal to control timing. Many electrical memory components minimize the size of their package by using shared pins for data input and output. However, to simplify the logical design and clearly show the datapath within the device, distinct input and output connections are used.
 
-\begin{table}
+\begin{table}[H]
     \centering
     \begin{tabular}{|l|l|l|} 
         \hline
@@ -138,7 +166,7 @@ The working memory must be addressable, therefore an address input is needed. Al
     \captionof{table}{Input and output signals of a memory unit. Only working memory requires read-enable, write-enable and clock lines.}
 \end{table}
 
-\subsubsection{Branch control}
+\subsubsection{Branch control} \label{sec:branch_control_unit}
 
 The branch control module is introduced to contain several logic gate components which would otherwise remain on the ``top level'' of the logic design. The purpose of this module is to determine if the program counter is to be incremented or loaded from a different source, effectively performing a branching operation. Since the contents of the control signal memory are constant and the branching decision requires dynamic information at runtime, combinatorial logic is needed to combine the dynamic and constant signals. The AVA \ac{isa} defines only the ``zero'' bit of the flags register to be used for branching decision making, as is explained in \autoref{sec:implementation_opcodes}. Therefore, the zero bit of the \ac{alu} flag output is combined with two control signals. The first one controls whether a conditional branch is executed. The second one selects whether to branch if the zero flag bit is set or unset. The output of the combinatorial circuit is then used as an internal control signal to control the source multiplexer for the program counter. \autoref{fig:implementation_modularisation_branch_control_logic} shows the simple internal logic of the unit. \autoref{tab:implementation_branch_control_io} shows a list of inputs and outputs of the branch control unit.
 

@@ -17,7 +17,7 @@ When a logical expression is implemented as a tree of logic gate components, the
     \label{fig:critical_path}
 \end{figure}
 
-\subsubsection{Combinatorial and sequential logic}
+\subsubsection{Combinatorial and sequential logic} \label{sec:fundamentals_timing_sequential}
 
 Combinatorial logic describes a circuit of digital gates that compute some pure boolean function. This means that the output of the circuit depends only on the present input and not on the history of the input. This contrasts with sequential logic, in which, as the name suggests, the output also depends on the order of operations, i.e an output may depend on previous inputs. In a digital electrical computer, this can be realised by forming loops between logic gates. An example of a combinatorial logic circuit is an adder circuit. There is no state stored within the circuit, it need not know the results of its previous operation to calculate any other addition. Once the input signals have been applied and propagated through the logic circuit, the system is stable. There are no feedback loops that may cause the circuit to change state at any point if the inputs remain stable. An example of a sequential logic circuit is the venerable SR latch. Such a latch can be seen in \autoref{fig:nand_sr_latch}.
 
