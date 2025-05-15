@@ -14,7 +14,7 @@ Within the defined task for this work, there are several operations that the arc
 Each of these operations must be assigned its unique opcode so the control logic knows what operation to perform during a cycle. As discussed in \autoref{sec:implementation_isa_memory_model}, an operation can be emulated by using another operation. Therefore, the number of actual opcodes defined in an \ac{isa} may be smaller than the number of usable instructions within a programming language. However, there is no general way to substitute the fundamental arithmetic operations of addition, subtraction and bitwise shifting to the left or right. Therefore, these four operations receive one opcode each.
 
 
-\begin{wrapfigure}{R}{0.5\textwidth}
+\begin{wrapfigure}{r}{0.5\textwidth}
     \centering
     \includegraphics[width=0.48\textwidth]{images/drawio/bitwise_operators_logic.png}
     \caption{Logic gates implementing OR, AND, XOR, NAND while reusing intermediary results}

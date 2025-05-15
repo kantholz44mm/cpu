@@ -34,7 +34,7 @@ These operations allow programmers to more easily reuse code, both in the form o
 
 The lexer is responsible for transforming textual input into semantic atoms called tokens or lexemes. A lexeme is roughly equivalent to a ``word''. Examples may be value literals such as \texttt{123} or \texttt{0x4ABB}, keywords such as the instruction names (\texttt{ADD}, \texttt{MOV}, etc.) or delimiters such as \texttt{,} or \texttt{:}.
 
-\begin{wrapfigure}{R}{0.5\textwidth}
+\begin{wrapfigure}{r}{0.5\textwidth}
     \centering
     \includegraphics[width=0.48\textwidth]{images/rust_token_datatype.png}
     \caption{Internal datatype for lexemes}
@@ -53,7 +53,7 @@ The parsing stage is responsible for transforming a list of lexemes into a list 
     \item parse instruction invocations
 \end{enumerate}
 
-\begin{wrapfigure}{R}{0.5\textwidth}
+\begin{wrapfigure}{r}{0.5\textwidth}
     \centering
     \includegraphics[width=0.48\textwidth]{images/asm_labels_example.png}
     \caption{Exemplary usage of labels in assembly code, continuously incrementing R1 by 1}
@@ -64,7 +64,7 @@ Up to this stage, a program may contain unresolved labels, which are human reada
 
 In order to implement relative jumps, a mechanism is needed to evaluate mathematical expressions. Since this is a semantical analysis, this is also done within the parsing stage. To implement this, the input lexeme stream is scanned for a pair of braces, which are used to enclose a mathematical expression. All lexemes between two matching braces are considered part of one such expression. The expression is converted from infix to postfix notation using Dijkstras shunting yard algorithm \cite{dijkstra1976discipline} and then executed using a simple virtual stack machine. Since all labels have been resolved, all operands are constants, therefore the result is also a constant. The lexemes of the mathematical expression are then replaced by a single \texttt{Number} lexeme containing the result.
 
-\begin{wrapfigure}{R}{0.5\textwidth}
+\begin{wrapfigure}{r}{0.5\textwidth}
     \centering
     \includegraphics[width=0.48\textwidth]{images/rust_instruction_data_structure.png}
     \caption{Rust data structure representing each CPU/Assembly instruction}
@@ -75,7 +75,7 @@ Finally, the list of lexemes should contain only sequences that are a valid inst
 
 \subsubsection{Serialisation}
 
-\begin{wrapfigure}{R}{0.6\textwidth}
+\begin{wrapfigure}{r}{0.6\textwidth}
     \centering
     \includegraphics[width=0.58\textwidth]{images/rust_instruction_to_quadword.png}
     \caption{Rust code that converts an instruction data structure into 32 bit integers}

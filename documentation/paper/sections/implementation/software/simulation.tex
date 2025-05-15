@@ -1,6 +1,6 @@
 \subsection{Simulation}
 
-The software simulation is intended to design, test and simulate a possible implementation of the \ac{isa} on the level of individual logic gates. It allows an estimation of the size, complexity and number of components of its hardware equivalent. It also offers low cost and high speed of iteration. If a graphical tool is used, it also provides an opportunity visualize the entire structure. For this work, the digital logic simulator ``Digital'' by Heinz Neemann is used \cite{neemann_digital}. It is free to use and well documented and was previously used by the author to simulate other logical circuits. For these reasons, the cost of entry in both money and time spent learning to use the tool are minimal. The tool simulates digital logic circuits, which can then be hierarchically combined to form more and more complex circuits. \autoref{fig:digital_full_adder} shows a circuit that implements a 1 bit full adder within the software. \autoref{fig:digital_full_adder_reuse} shows how this circuit can then be reused in higher-level circuits.
+The software simulation is intended to design, test and simulate a possible implementation of the \ac{isa} on the level of individual logic gates. It allows an estimation of the size, complexity and number of components of its hardware equivalent. The hardware will eventually consist of individual, discrete logic gates. Therefore, the simulation is used to verify a design on this level of abstraction. It also offers low cost and high speed of iteration. If a graphical tool is used, it also provides an opportunity visualize the entire structure. For this work, the digital logic simulator ``Digital'' by Heinz Neemann is used \cite{neemann_digital}. It is free to use and well documented and was previously used by the author to simulate other logical circuits. For these reasons, the cost of entry in both money and time spent learning to use the tool are minimal. The tool simulates digital logic circuits, which can then be hierarchically combined to form more and more complex circuits. \autoref{fig:digital_full_adder} shows a circuit that implements a 1 bit full adder within the software. \autoref{fig:digital_full_adder_reuse} shows how this circuit can then be reused in higher-level circuits.
 
 \begin{figure}[h!]
     \centering
@@ -90,7 +90,7 @@ Addition is implemented using an 8 bit ripple-carry adder. It consists of 8 full
     \label{fig:implementation_software_simulation_full_adder}
 \end{figure}
 
-\begin{wrapfigure}{R}{0.5\textwidth}
+\begin{wrapfigure}{r}{0.5\textwidth}
     \centering
     \includegraphics[width=0.48\textwidth]{images/drawio/addsub_overflow_carry.png}
     \caption{Logic gate circuits that compute carry/borrow and overflow flags for addition and subtraction}
@@ -99,7 +99,7 @@ Addition is implemented using an 8 bit ripple-carry adder. It consists of 8 full
 
 Due to the two's complement representation of negative numbers, subtraction is implemented by inverting all bits of the second operand and adding the value 1. By using the carry input of the adder circuit, this constant can be added implicity. Inversion is implemented by using the \texttt{XOR} logic gate with the constant 1 at one input. Since this module receives only one bit of the \ac{alu} opcode to distinguish between addition and subtraction, this bit can be used instead of the constant 1. Both addition and subtraction output their carry-out, as well as the overflow flag as defined in the \ac{isa}. An overflow occurs when the most significant bit of the result is not enough to capture the result value. To detect this, one can simply check if the carry outputs of the last and second-to-last adder stages are different using a single \texttt{XOR} logic gate. Similarly, by combining the bit that switches between addition and subtraction and the carry output of the last adder stage, one can obtain the carry-out and borrow flag for both addition and subtraction \cite{idallen_overflow}. \autoref{fig:implementation_software_simulation_addsub_overflow_carry} shows these circuits implemented using only \texttt{NAND} gates.
 
-\begin{wrapfigure}{R}{0.5\textwidth}
+\begin{wrapfigure}{r}{0.5\textwidth}
     \centering
     \includegraphics[width=0.48\textwidth]{images/drawio/bitwise_operators_logic.png}
     \caption{Implementation of OR, AND, XOR, NAND operators using only NAND gates}
