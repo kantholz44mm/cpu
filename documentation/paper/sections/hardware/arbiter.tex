@@ -1,0 +1,16 @@
+\subsection{Arbiter} \label{sec:hardware_arbiter}
+
+The arbiter is not explicitly present in both the software simulator, emulator or the logic design of previous chapters. It handles several tasks that are not directly related to computation:
+
+\begin{itemize}
+    \item Generation of clock signals
+    \item Storing current state of CPU (Halted, Paused, etc.)
+    \item Installing new user programs in program \ac{rom}
+    \item Installing new instruction sets in control signal \ac{rom}
+    \item Handling user input buttons
+    \item Handling external communication via \ac{usb}
+\end{itemize}
+
+All of these tasks could be implemented using discrete electrical components. However, none of these tasks are related to the computation or the processes within the \ac{cpu} itself and therefore provide no educational value to users. By integrating all of them into a single \ac{ic}, complexity, development time and cost can be focused on the important sections of the project.
+
+

@@ -136,12 +136,13 @@ In horizontal microcode, each \ac{isa} operation may correspond to one or more m
     \label{fig:horizontal_microcode}
 \end{figure}
 
-\autoref{fig:horizontal_microcode} shows the control signals that each \ac{isa} operation maps to in an exemplary \ac{isa}. Each control signal may be used to setup internal multiplexers or other switching circuitry. In \autoref{fig:horizontal_microcode}, only the JE instruction has the ``Branch'' bit set. In practice, this can be used to control a multiplexer that selects whether to increment the program counter or load a jump target. This can be seen in \autoref{fig:pc_multiplexer}.
-
-\begin{figure}[h!]
+\begin{wrapfigure}{r}{0.5\textwidth}
     \centering
-    \includegraphics[width=0.7\textwidth]{images/drawio/pc_multiplexer.png}
+    \includegraphics[width=0.48\textwidth]{images/drawio/pc_multiplexer.png}
     \caption{Multiplexer used to select between incrementing PC and loading a branch address}
     \label{fig:pc_multiplexer}
-\end{figure}
+\end{wrapfigure}
+
+\autoref{fig:horizontal_microcode} shows the control signals that each \ac{isa} operation maps to in an exemplary \ac{isa}. Each control signal may be used to setup internal multiplexers or other switching circuitry. In \autoref{fig:horizontal_microcode}, only the JE instruction has the ``Branch'' bit set. In practice, this can be used to control a multiplexer that selects whether to increment the program counter or load a jump target. This can be seen in \autoref{fig:pc_multiplexer}.
+
 

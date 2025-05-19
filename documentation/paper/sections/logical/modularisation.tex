@@ -109,12 +109,12 @@ A multiplexer selects one of multiple inputs and outputs it unchanged. To select
 To increase the number of inputs that can be selected from, a tree of 2:1 multiplexers is created. In this tree, the inputs of the leaves are the inputs of the resulting combined multiplexer. Each layer of the tree uses one bit of the selection input signal. By constructing a multiplexer this way, multiplexers with an arbitrary number of inputs can be constructed, provided the number of inputs is a power of two. This is a direct representation of a binary tree, since each individual 2:1 multiplexer serves as a tree node with two children. To increase the word size of a multiplexer, multiple n:1 multiplexers can be operated in parallel, again sharing their selection input signals. \autoref{fig:implementation_modularisation_multiplexer_tree} shows a 1 bit 4:1 multiplexer built from three individual 1 bit 2:1 multiplexers. For a filled, unskewed binary tree, the number of leaf nodes for a tree of height $h$ is given by $2^{h + 1} - 1$ \cite{tanenbaum2012sco}. Since each leaf multiplexer has 2 inputs, for an $m$ bit multiplexer of $n$ inputs, the following equation gives the number of 1 bit 2:1 multiplexers required in total:
 
 \begin{displaymath}
-    N_{multiplexers}(n, m) = m \times 2^{\lceil log_2(n) \rceil} - 1
+    N_{multiplexers}(n, m) = m \times (2^{\lceil log_2(n) \rceil} - 1)
 \end{displaymath}
 
 As an example, an 8 bit 4:1 multiplexer requires 
 \begin{displaymath}
-    N_{multiplexers}(4, 8) = 8 \times 2^{\lceil log_2(4) \rceil} - 1 = 31
+    N_{multiplexers}(4, 8) = 8 \times (2^{\lceil log_2(4) \rceil} - 1) = 24
 \end{displaymath}
 
 1 bit 2:1 multiplexers.

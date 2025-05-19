@@ -1,4 +1,4 @@
-\subsubsection{Emulation}
+\subsection{Emulation}
 
 In addition to the gate-level simulation, an emulator is written. This emulator provides a software interface to an implementation of the \ac{isa}. Through this interface, the full internal state can be read out at any stage of program execution. This allows comprehensive testing, which is not possible in the simulation software since it has no way to hook into the internal state using a programming language. The emulation is written as close as possible to its gate-level counterpart. By doing so, testing within the emulator also verifies the behavior of the simulator to some extent.
 

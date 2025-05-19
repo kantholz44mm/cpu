@@ -38,7 +38,7 @@ The control unit contains the logic necessary to orchestrate all other component
 
 The \ac{alu} is the device performing the actual computations within a processor. It contains digital logic circuits that perform arithmetic such as addition, subtraction, multiplication, division or logical operations such as AND, OR, NOT, etc. When a programmer requests the \ac{cpu} to calculate some mathematical formula, it is this device that does the calculations. It is asynchronous does not require any clock signal. 
 
-\subsubsection{Busses}
+\subsubsection{Busses} \label{sec:fundamentals_busses}
 
 The individual submodules of a \ac{cpu} need to exchange information in order to be useful. To do so, a designer may either choose to use a dedicated point-to-point connection to connect one input to one output. However, they might also choose to use a single line as a transmission medium for multiple consumers or producers of a signal. It is also possible - though uncommon - to use a single line for transferring multiple distinct signals. When more than two devices are connected using a shared set of transmission media, this setup is referred to as a bus.
 
