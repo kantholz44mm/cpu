@@ -41,7 +41,7 @@ The algebra defined by these logical operators is called "Boolean algebra". Expr
 One important aspect of any set of such operators is its functional completeness. A set of operators is called functionally complete when and only when its operators can be combined and chained in a way that emulates all other operators. Again, there are only 16 operators with 2 inputs. If a smaller set of operators can be used to build all 16 of these, it is deemed functionally complete, as it can be used to denote any logical function. Examples of such functionally complete sets include:
 
 \begin{gather}
-    \{AND, OR, NOT\} \label{gather:and_or_not} \\
+    \{AND, OR, NOT\} \label{gather_and_or_not} \\
     \{NAND\}         \\
     \{XOR, NOT\}
 \end{gather}
@@ -52,7 +52,7 @@ Consider the expression given earlier, $\neg(\neg A \land \neg B)$. the outputs 
 
 Since most digital processors work using electrical circuits, there is a need for a notation that can be shared by electricians and logicians. Since all boolean operators as defined in \autoref{sec:logical_operators} produce only a single binary digit but take $n$ inputs, chaining multiple such operators naturally results in a logical tree structure. Since trees are planar graphs \cite{West2001}, they can be drawn out without intersections. Each operator is then assigned a unique symbol that is drawn at the respective graph edge. In real world applications, one operator corresponds to one or more physical components, which are collectively called a "logic gate". Figures \ref{fig:logic_gates_and} - \ref{fig:logic_gates_not} show the symbols used for the AND, OR and NOT gate defined in \autoref{tab:boolean_operators}. The symbols used are defined in standard 14456 by the \ac{ieee} \cite{STD14456}. The equivalent \ac{iso} standard that defines symbols for these functions is ISO 60617. \cite{ISO60617}.
 
-\begin{figure}[H]
+\begin{figure}[h!]
     \centering
     % First image
     \begin{minipage}{0.3\textwidth}

@@ -45,7 +45,7 @@ In addition to the computation result, an \ac{alu} outputs a set of flags in mos
 
 \begin{table}
     \centering
-    \begin{tabular}{|c|c|c|l|} 
+    \begin{tabularx}{\textwidth}{|c|c|c|X|} 
         \hline
         \textbf{\textbf{Index}} & \textbf{Abbreviation} & \textbf{Name} & \textbf{Description}                                                                                                                                                                                        \\ 
         \hline
@@ -53,13 +53,13 @@ In addition to the computation result, an \ac{alu} outputs a set of flags in mos
         \hline
         1                       & N                     & Negative      & Set when the MSB of an arithmetic result is 1                                                                                                                                                               \\ 
         \hline
-        2                       & C                     & Carry/Borrow  & \begin{tabular}[c]{@{}l@{}}Set when the result of an addition or subtraction of two\\unsigned numbers does not fit into an unsigned number\\or when a bit shifting instruction shifts out a 1\end{tabular}  \\ 
+        2                       & C                     & Carry/Borrow  & Set when the result of an addition or subtraction of twounsigned numbers does not fit into an unsigned number or when a bit shifting instruction shifts out a 1  \\ 
         \hline
-        3                       & V                     & Overflow      & \begin{tabular}[c]{@{}l@{}}Set when the result of an addition or subtraction of two\\signed numbers does not fit into a signed number\end{tabular}                                                          \\
+        3                       & V                     & Overflow      & Set when the result of an addition or subtraction of two signed numbers does not fit into a signed number \\
         \hline
-    \end{tabular}
+    \end{tabularx}
+    \caption{Set of flags output by each arithmetic operation}
     \label{tab:implementation_alu_flags}
-    \captionof{table}{Set of flags output by each arithmetic operation}
 \end{table}
 
 \autoref{tab:implementation_alu_flags} shows the set of flags output by each \ac{alu} operation. These four flags are sufficient to implement all common comparison operators such as ``less than'', ``equal'', ``greater or equal'', etc. However, the zero register is the only flag that can be used to directly control conditional branching. If a programmer requires a different flag to control branching, it is possible to use bitwise instructions to mask the flags register and select the branch condition.

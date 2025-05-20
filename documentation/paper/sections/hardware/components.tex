@@ -4,16 +4,18 @@ Any electrical hardware consists of a number of components that are connected to
 
 Since all useful electrical circuits use passive components such as capacitors, resistors and inductors of multiple values and sizes, these will not be explored in detail here. All of the passive components use a 0402 package, as it is the smallest and cheapest package available for automated assembly in most consumer-grade assembly houses.
 
-\begin{wrapfigure}{r}{0.4\textwidth}
-    \centering
-    \includegraphics[width=0.38\textwidth]{images/SN74HC00_pinout.png}
-    \caption{Functional pinout and internal gate layout of the SN74HC00 IC (SNx4HC00 datasheet, Rev. H \cite[p. 1]{ti_sn74hc00})}
-    \label{fig:hardware_components_sn74hc00_pinout}
-\end{wrapfigure}\leavevmode
 
 \subsubsection{NAND gate}
 
+
 The primary component of the device is the individual \texttt{NAND} logic gate. However, while \acp{ic} of this type are available, each individual gate \ac{ic} requires a power supply and ground pin in addition to the signal pins. For this reason, the majority of such 2 input logic gate \acp{ic} contain four gates per chip. this way, these four gates can share their supply and ground pins, decreasing complexity and number of connections required. For this reason, the ``SN74HC00'' \ac{ic} by Texas Instruments is chosen. \autoref{fig:hardware_components_sn74hc00_pinout} shows the layout of the four contained gates, as well as the pin mapping for their inputs and outputs. The chip is part of the ``SN74'' family of chips, multiple of which are used in this work. By using components from the same family, it is more likely for different components to work together well. This family of components has been available since 1982, providing the additional advantage of being readily available, well known and well documented. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/SN74HC00_pinout.png}
+    \caption{Functional pinout and internal gate layout of the SN74HC00 IC (SNx4HC00 datasheet, Rev. H \cite[p. 1]{ti_sn74hc00})}
+    \label{fig:hardware_components_sn74hc00_pinout}
+\end{figure}
 
 \subsubsection{Multiplexer}
 
@@ -63,5 +65,14 @@ The external power connector must be protected against electrotechnical faults s
 
 \subsubsection{Arbiter}
 
-In the software simulation, the clock signal is generated implicitly. However, in the electrical implementation, some component must generate the clock signal for all \ac{cpu} modules. For this purpose, an integrated \ac{mcu} is used. This \ac{mcu} is referred to as the ``arbiter'', as it represents the system at the highest level of control within the entire \ac{cpu}. For this work, the ``ATMega2560'' by Microchip Technologies is used, as it offers 86 \ac{gpio} pins, is widely available, well documented and runs at \SI{5}{\volt}. It is also compatible with the ``Arduino'' framework, which provides libraries for all functions of the chip, reducing software development time. The usage and role of the arbiter is explained in more detail in \autoref{sec:hardware_arbiter}.
+In the software simulation, the clock signal is generated implicitly. However, in the electrical implementation, some component must generate the clock signal for all \ac{cpu} modules. For this purpose, an integrated \ac{mcu} is used. This \ac{mcu} is referred to as the ``arbiter'', as it represents the system at the highest level of control within the entire \ac{cpu}. For this work, the ``ATMega2560'' by Microchip Technologies is used, as it offers 86 \ac{gpio} pins, is widely available, well documented and runs at \SI{5}{\volt}. It is also compatible with the ``Arduino'' framework, which provides libraries for all functions of the chip, reducing software development time. In addition to generating the clock signal, it handles several tasks not directly related to computation:
 
+\begin{itemize}
+    \item Storing current state of CPU (Halted, Paused, etc.)
+    \item Installing new user programs in program \ac{rom}
+    \item Installing new instruction sets in control signal \ac{rom}
+    \item Handling user input buttons
+    \item Handling external communication via \ac{usb}
+\end{itemize}
+
+All of these tasks could be implemented using discrete electrical components. However, none of these tasks are related to the computation or the processes within the \ac{cpu} itself and therefore provide no educational value to users. By integrating all of them into a single \ac{ic}, complexity, development time and cost can be focused on the important sections of the project.

@@ -2,14 +2,3 @@
 
 The \ac{cpu} is implemented as a set of interconnected \acp{pcb}. This approach was mainly chosen due to the high reliability of \ac{pcb} manufacturing. In recent years, the cost of custom \acp{pcb} has dropped significantly, to the point where the pricing is even accessible to hobbyists with very ordered quantities. This approach also has the benfit of offering automated assembly via pick-and-place machines. Many budget \ac{pcb} manufacturers offer both \ac{pcb} production and assembly as a service, resulting in cheap components and quick turn-around times. In addition to these factors, the fully digital design process makes it easier to review changes to the design over time, analyze circuitry before assembly and make incremental changes to parts of a circuit.
 
-Since the \ac{cpu} is logically grouped into functional units, it makes sense to divide the hardware implementation in a similar manner. The individual \acp{pcb} are interconnected using parallel connectors. This increases the modularity of the design. If part of the whole circuit is faulty due to a design error, it is cheaper if only this board has to be replaced. Likewise, it enable reuse of entire sub-circuits without additional development. In the final implementation, this is done for the 8 bit registers, of which 9 are needed in total. Also, each board can be tested individually by attaching a cable harness to its external interface and running tests on the other end.
-
-\subsubsection{Physical interfaces}
-
-The \ac{cpu} must electrically connect components both internally and externally. Most internal connections between individual logic gates and their respective inputs and outputs are implemented using copper traces on an individual \ac{pcb}. There are also interfaces between the different \ac{pcb}. To allow user input, power supply and attachment of peripheral devices, an interface to the external world is required. For this purpose, there is a wide variety of well established interfacing solutions in the form of physical connectors.
-
-In order to choose a suitable connector from  !TODO!
-
-% Connectors
-% Mounting to Plywood
-% Plexiglass front

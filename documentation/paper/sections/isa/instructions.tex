@@ -14,12 +14,12 @@ Within the defined task for this work, there are several operations that the arc
 Each of these operations must be assigned its unique opcode so the control logic knows what operation to perform during a cycle. As discussed in \autoref{sec:implementation_isa_memory_model}, an operation can be emulated by using another operation. Therefore, the number of actual opcodes defined in an \ac{isa} may be smaller than the number of usable instructions within a programming language. However, there is no general way to substitute the fundamental arithmetic operations of addition, subtraction and bitwise shifting to the left or right. Therefore, these four operations receive one opcode each.
 
 
-\begin{wrapfigure}{r}{0.5\textwidth}
+\begin{figure}[h!]
     \centering
-    \includegraphics[width=0.48\textwidth]{images/drawio/bitwise_operators_logic.png}
+    \includegraphics[width=0.7\textwidth]{images/drawio/bitwise_operators_logic.png}
     \caption{Logic gates implementing OR, AND, XOR, NAND while reusing intermediary results}
     \label{fig:logic_gates_binary_operators}
-\end{wrapfigure}\leavevmode
+\end{figure}
 
 In total, the \ac{alu} must be able to perform these seven different operations. However, it is a logically free-standing module and will likely be implemented as an individual piece of hardware, too. Therefore, the opcode or the relevant bits encoding the \ac{alu} operation must be passed to the implementing device as an individual piece of data. This piece of data requires $\lceil log_2(8) \rceil = 3$ bits to encode. Since there are only 7 required operations, one value represented by the 3 bits would not be assigned an operation. For this reason, the set of the three required bitwise operations \texttt{\{AND, OR, NOT\}} is replaced by \texttt{\{OR, AND, XOR, NAND\}}. As discussed in \autoref{sec:logical_operators}, this set is functionally complete, therefore any other set of boolean operators can be built from it. From the original required set of bitwise operations, \texttt{AND} and \texttt{OR} are retained, and \texttt{NOT} can be emulated by both the \texttt{XOR} and \texttt{NAND} operations. Since \texttt{NOT} is the only unary operator, emulating it by using the binary \texttt{NAND} simplifies an implementation since it also only needs to support binary operations.
 
@@ -49,9 +49,10 @@ Instead, each arithmetic is assigned multiple instructions that have the followi
         XXXNF  & Using a register operand, not updating the flags register    \\
         XXXINF & Using an immediate operand, not updating the flags register 
     \end{tabular}    
-    \label{tab:instruction_suffices}
-    \captionof{table}{Effect of instruction suffix on arithmetic instructions (XXX represents an arbitrary arithmetic operation)}
 \end{table}
+\caption{Effect of instruction suffix on arithmetic instructions (XXX represents an arbitrary arithmetic operation)}
+\label{tab:instruction_suffices}
+\vspace{1em}
 
 This increases the number of opcodes assigned to arithmetic operations four-fold, resulting in 32 opcodes for the 8 base operations. However, the added flexibility for laying out the opcode assignments is deemed worth the tradeoff.
 
@@ -99,9 +100,10 @@ The instructions of the AVA \ac{isa} largely fall into the three groups of compu
         49              & HCF           &                   & Flow Control      & Halt execution                   \\
         \hline
     \end{tabular}
-    \label{tab:instructions}
-    \captionof{table}{Supported instructions and their opcodes, variants, type and brief description (variant suffices are explained in \autoref{tab:instruction_suffices})}
 \end{table}
+\caption{Supported instructions and their opcodes, variants, type and brief description (variant suffices are explained in \autoref{tab:instruction_suffices})}
+\label{tab:instructions}
+\vspace{1em}
 
 At the time of writing, there are a total of 50 unique instructions, as well as 20 pseudo-instructions implemented within the assembler software. \autoref{tab:instructions} shows a listing of all instructions defined in the \ac{isa}.
 
@@ -109,7 +111,7 @@ At the time of writing, there are a total of 50 unique instructions, as well as 
 
 To simplify the implementation, all instructions use the same fixed length instruction encoding format. This way, one instruction word at a time is fetched from program memory, regardless of the instruction being read. An implementation can then directly route use the outputs of the program memory as the control signals without any further decoding logic. By doing so, the fetching circuitry can be implemented as a single, asynchronous unit. Since the architecture follows a strict Harvard architecture, the program memory is fully decoupled from the working memory. Therefore, the length of the instruction encoding can be chosen freely. After initial experimentation with 16 bit encodings, this was deemed too restrictive to implement a usable, practical \ac{isa}. The current revision uses a 32 bit word per instruction. \autoref{fig:ava_instruction_encoding} shows the fixed length instruction encoding format used in the AVA \ac{isa}.
 
-\begin{figure}[H]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{images/drawio/ava_instruction_encoding.png}  % Replace with your image file
     \caption{AVA 32 bit instruction encoding scheme and field descriptions. Numbers above fields represent bit positions within the instruction}

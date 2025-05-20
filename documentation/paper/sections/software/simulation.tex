@@ -24,7 +24,7 @@ From this type of gate, the individual modules described in \autoref{sec:impleme
 
 The register consists fundamentally of a bistable configuration of logic gates, such as latches as discussed in \autoref{sec:fundamentals_timing_sequential}. By extending an SR-latch with two more \texttt{NAND} gates, a ``gated D latch'' is created. It has two inputs $D$ and $E$, which serve as the data to store and the enable signal, respectively. When the signal $E$ is \texttt{HIGH}, the SR-latch stores the value of $D$ at that time. When $E$ is \texttt{LOW}, the state remains unchanged. \autoref{fig:implementation_software_simulation_d_latch} shows such a gated D latch implemented using only \texttt{NAND} gates.
 
-\begin{figure}[H]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{images/drawio/nand_d_latch.png}
     \caption{D Latch implemented using only NAND gates}
@@ -33,7 +33,7 @@ The register consists fundamentally of a bistable configuration of logic gates, 
 
 However, this is not suitable for use in synchronous circuits, since the state of the latch can change multiple times when the enable signal is \texttt{HIGH}. For this reason, two such latches are combined as shown in \autoref{fig:implementation_software_simulation_clocked_d_latch}. In this configuration, the output $Q$ of the first latch is used as the input $D$ of the second one. The enable signals are shared, with one latch receiving the inverse of the other. This way, an edge detection is implemented. The new value $D$ is only propagated when the state of the clock signal changes. This circuit is suitable for synchronous circuits since the saved value can only change once at the time of a clock edge.
 
-\begin{figure}[H]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.9\textwidth]{images/drawio/nand_clocked_d_latch.png}
     \caption{Two sequential D latches, forming a gated, clocked D latch}
@@ -54,13 +54,13 @@ While memory can also be constructed from individual logic gates, most real work
 
 The clock \& interface unit provides a way to interact with the state of the simulated device. It has inputs in the form of a clock generator and several buttons controlling the following aspects:
 
-\begin{description}
-    \item[Reset] Clears all registers
-    \item[Halt] Manually halts the device, stopping clock propagation
-    \item[Continue] Manually resumes operation if the device is halted
-    \item[Step] Manually execute one phase of the instruction cycle
-    \item[Clken] Enable or disable clock signal generation     
-\end{description}
+\begin{itemize}
+    \item \textbf{Reset} Clears all registers
+    \item \textbf{Halt} Manually halts the device, stopping clock propagation
+    \item \textbf{Continue} Manually resumes operation if the device is halted
+    \item \textbf{Step} Manually execute one phase of the instruction cycle
+    \item \textbf{Clken} Enable or disable clock signal generation     
+\end{itemize}
 
 Since this unit is only relevant for the software simulation, it is not explained in more detail.
 
@@ -83,34 +83,34 @@ Addition is implemented using an 8 bit ripple-carry adder. It consists of 8 full
     COUT &= (A \land B) \lor (CIN \land (A \lxor B))
 \end{align}
 
-\begin{figure}[H]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=0.9\textwidth]{images/digital_full_adder.png}
     \caption{Full adder implemented using only \texttt{NAND} gates}
     \label{fig:implementation_software_simulation_full_adder}
 \end{figure}
 
-\begin{wrapfigure}{r}{0.5\textwidth}
+\begin{figure}[h!]
     \centering
-    \includegraphics[width=0.48\textwidth]{images/drawio/addsub_overflow_carry.png}
+    \includegraphics[width=0.7\textwidth]{images/drawio/addsub_overflow_carry.png}
     \caption{Logic gate circuits that compute carry/borrow and overflow flags for addition and subtraction}
     \label{fig:implementation_software_simulation_addsub_overflow_carry}
-\end{wrapfigure}\leavevmode
+\end{figure}
 
 Due to the two's complement representation of negative numbers, subtraction is implemented by inverting all bits of the second operand and adding the value 1. By using the carry input of the adder circuit, this constant can be added implicity. Inversion is implemented by using the \texttt{XOR} logic gate with the constant 1 at one input. Since this module receives only one bit of the \ac{alu} opcode to distinguish between addition and subtraction, this bit can be used instead of the constant 1. Both addition and subtraction output their carry-out, as well as the overflow flag as defined in the \ac{isa}. An overflow occurs when the most significant bit of the result is not enough to capture the result value. To detect this, one can simply check if the carry outputs of the last and second-to-last adder stages are different using a single \texttt{XOR} logic gate. Similarly, by combining the bit that switches between addition and subtraction and the carry output of the last adder stage, one can obtain the carry-out and borrow flag for both addition and subtraction \cite{idallen_overflow}. \autoref{fig:implementation_software_simulation_addsub_overflow_carry} shows these circuits implemented using only \texttt{NAND} gates.
 
-\begin{wrapfigure}{r}{0.5\textwidth}
+\begin{figure}[h!]
     \centering
-    \includegraphics[width=0.48\textwidth]{images/drawio/bitwise_operators_logic.png}
+    \includegraphics[width=0.7\textwidth]{images/drawio/bitwise_operators_logic.png}
     \caption{Implementation of OR, AND, XOR, NAND operators using only NAND gates}
     \label{fig:implementation_software_simulation__binary_operators}
-\end{wrapfigure}\leavevmode
+\end{figure}
 
 As discussed in \autoref{sec:implementation_opcodes}, the boolean logic module implements the four operators \texttt{\{OR, AND, XOR, NAND\}}. \autoref{fig:implementation_software_simulation__binary_operators} shows the implementation using only \texttt{NAND} gates, as also explained in the same chapter. The boolean logic module outputs no flags.
 
 The bit shifting module is implemented using a series of 8 bit 2:1 multiplexers. A multiplexer at stage $n$ either passes the output of stage $n - 1$ without change, or shifts it by $2^n$ bits by offsetting inputs and outputs by $n$ places. For 8 bit operands, all shifts by more than 7 bits result in the same value, as all 8 bits of the first operand have been replaced. Therefore, only $log_2(8) = 3$ multiplexers are required. Depending on the least significant bits of the second operand, they shift the first operand by 1, 2 or 4 bits, respectively. However, this approach has the disadvantage of requiring a separate series of three multiplexers for shifting to the left or to the right. An advantage, however, is that the inputs that are not assigned an output from the previous stage can use the value of the carry bit of the flags register to replace shifted bits by either a 0 or a 1. The boolean logic module outputs only a carry out flag, which is the first bit that was shifted out of the input. By combining this with replacing shifted bits by the last carry, data of arbitrary size can be shifted by repeatedly shifting 8 bit data in sequence. \autoref{fig:implementation_software_simulation_shifter} shows the full bidirectional shifter with all mentioned features, as it is implemented at the time of writing.
 
-\begin{figure}[H]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth]{images/bitshifter.png}
     \caption{Bidirectional shifter implemented in simulation software ``Digital''}
