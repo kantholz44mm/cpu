@@ -32,6 +32,9 @@
 \usepackage{wrapfig}
 \usepackage{csquotes}
 \usepackage{needspace}
+\usepackage{pdfpages}
+\usepackage{appendix}
+
 
 \hypersetup{
   colorlinks=true, % Use colored text instead of boxes
@@ -39,6 +42,8 @@
   citecolor=green, % Color for citations
   urlcolor=gray % Color for URLs
 }
+
+\newcommand{\appref}[1]{\hyperref[#1]{Appendix~\ref*{#1}}}
 
 \setlist[itemize]{topsep=1em, itemsep=0.5em}
 \setlist[enumerate]{topsep=1em, itemsep=0.5em}
@@ -54,6 +59,8 @@
 
 \begin{document}
 
+\pagestyle{empty}
+
 \include{cover}
 \newpage
 \include{statutory}
@@ -65,20 +72,33 @@
   \addcontentsline{toc}{section}{Abbreviations}
   \addcontentsline{toc}{section}{List of tables}
   \addcontentsline{toc}{section}{List of figures}
+  \addtocontents{toc}{\protect\thispagestyle{empty}}
 
   \hypersetup{linkcolor=black}
+  \thispagestyle{empty}
   \tableofcontents
   \newpage
 
   \acuseall
+  \thispagestyle{empty}
   \printacronyms[name=Acronyms]
   \newpage
   \acresetall
   
+  \addtocontents{lot}{\protect\thispagestyle{empty}}
   \listoftables
+  \thispagestyle{empty}
+  \newpage
+  
+  \addtocontents{lof}{\protect\thispagestyle{empty}}
   \listoffigures
+  \thispagestyle{empty}
   \newpage
 }
+
+\clearpage
+\pagestyle{plain}
+\pagenumbering{arabic}
 
 \input{sections/intro}
 \newpage
@@ -86,7 +106,7 @@
 \newpage
 \input{sections/isa}
 \newpage
-\input{sections/logical}
+\input{sections/architecture}
 \newpage
 \input{sections/software}
 \newpage
@@ -99,6 +119,11 @@
 \renewcommand\refname{Literature}
 \bibliographystyle{alphaurl}
 \bibliography{literature}
+
+\newpage
+\newpage
+\addcontentsline{toc}{section}{Appendix}
+\input{appendix}
 \newpage
 \newpage
 \newpage

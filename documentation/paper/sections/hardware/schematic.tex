@@ -1,2 +1,70 @@
 \subsection{Electrical schematic} \label{sec:hardware_electrical_schematic}
 
+Using the components described in the previous chapter, an electrical schematic is created. This schematic captures the logical behavior of the architecture and the software implementation. At this point, the number of modules of the hardware implementation is decided. In total, four different electrical schematics are developed. The full schematics are too large to include at this point, therefore they can be found in \appref{app:schematic_alu} - \appref{app:schematic_register}. To design both the electrical schematics and \acp{pcb}, the software distribution ``KiCAD'' 9.0 is used.
+
+\subsubsection{Common Circuits}
+
+Throughout the design of all schematics, a set of circuits which are used in multiple places emerges. These circuits are small, reusable building blocks for common tasks. One such circuit is the \ac{io} stage. It is used in all places where a signal is routed to an external connector of the schematic. This is necessary in order to amplify the signal, outputting a voltage as close to the \texttt{HIGH} voltage level as possible. It also includes an \ac{led} for visualisation to the user. It consists of one N-channel and one P-channel \ac{mosfet}. This is needed in order to not invert the input signal. It is also biased using a single \SI{100}{\kilo\ohm} resistor.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/io_stage_schematic.png}
+    \caption{1 Bit Input/Output stage, input signal on the left, output on the right}
+    \label{fig:hardware_schematic_io_stage}
+\end{figure}
+
+Another commonly used element is the decoupling capacitor. When switching, each logic gate \ac{ic} requires some amount of charge to change its output voltage level according to its logic function. However, the capacitance of the copper traces of a \ac{pcb} may not contain enough charge to fully saturate all components of large circuits. If this is the case, then the voltage of the net drops locally, referred to as a brown-out. This can lead to unpredictable behavior, since some or all of the logic \acp{ic} may stop behaving as intended at lower voltages. The likelihood of this occuring increases with the frequency of state change, which in this work, is the clock frequency of the \ac{cpu}. For this reason, additional capacitance is added. Each \ac{ic} receives a dedicated buffer capacitor near its supply pin, increasing the capacitance of the supply net locally. For these capacitors, \SI{100}{\nano\farad} of capacitance is recommended by manufacturers \cite{ti_sn74hc00,microchip_atmega2560}. In addition to this, each schematic module has a set of larger capacitors to provide more global capacitance. For this purpose, \SI{22}{\micro\farad} electrolytic capacitors are used as recommended by the manufacturer of the power \ac{ic} used\cite{tracopower_tsr3}.
+
+
+\subsubsection{Modules}
+
+The logical design has been partitioned into functional modules in \autoref{sec:architecture_modularisation}. However, these modules differ significantly in size, complexity and number of components needed. For example, while the memories take up a significant amount of space in the module diagrams, they physically only require a single \ac{ic} each. Therefore, to minimize manufacturing cost, a new set of electrical modules is chosen by merging related logical modules into a single electrical schematic. 
+
+\paragraph*{Arithmetic logic unit}
+
+The arithmetic logic unit represents both a logical and electrical module. It consists of 508 \texttt{NAND} logic gates, which is $24.9\%$ of the total number of gates. This number of components warrants a distinct schematic and \ac{pcb}. The initial design, for which a prototype \ac{pcb} was created and tested, has split up this module further. It consisted of the same three computation modules present in the logical design, as well as a larger board which served as a connecting piece and provided the external connector. However, through doing so, the \acp{pcb} were found to be unnecessarily large and therefore expensive. For this reason, the second revision combined all four boards into one.
+
+\paragraph*{Register}
+
+The 
+
+
+
+
+
+
+
+\paragraph*{Register}
+
+This schematic describes an individual 8 bit register. It contains only few components and is relatively simple. However, the design requires a total of 9 such registers; two of which are used for the program counter, while the rest represents one general purpose register each. due to the large number of boards of this type required, having a single shared schematic with no role-specific circuitry is preferable. The circuit is interfaced with a single connector that carries all signals, data and power supply. The connector has two rows of 16 pins each, resulting in a total of 32 signal lines. \autoref{fig:hardware_schematic_register_connector} shows the signal assignment of each pin.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/register_connector_schematic.png}
+    \caption{Connector of the 8 Bit register schematic, annotations show carried signal per line}
+    \label{fig:hardware_schematic_register_connector}
+\end{figure}
+
+The schematic contains eight 1 Bit gated, clocked D latches as described in \autoref{sec:implementation_software_simulation_register}. These gates are used in parallel to form one 8 Bit register. The schematic circuit for one such latch is shown in \autoref{fig:hardware_schematic_1bit_register}. All of the input, output and control signals are connected to the relevant pins of the \ac{io} connector. Except the \ac{io} connector and \ac{io} sanitation circuitry, this schematic matches the gate-level logic design exactly.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/1bit_register_schematic.png}
+    \caption{1 Bit register, data input on the left, data output on the right, control signals going from top to bottom (\texttt{CLK}, \texttt{!CLK}, \texttt{!CLR} read from left to right)}
+    \label{fig:hardware_schematic_1bit_register}
+\end{figure}
+
+
+
+
+
+
+
+\subsubsection{Arithmetic Logic Unit}
+
+The first schematic implements the \ac{alu}. Its schematic deviates from the purely \texttt{NAND}-gate based logical design. It internally uses 96 1 bit 2:1 multiplexers, which are replaced by 24 ``SN74HC157'' \acp{ic}. Apart from this, the logical design is translated into its corresponding electrical components directly. All inputs and outputs are routed through an \ac{io} stage.
+
+
+
+\subsubsection{Register}
+

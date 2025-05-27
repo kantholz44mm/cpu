@@ -18,7 +18,16 @@ The software simulation is intended to design, test and simulate a possible impl
 
 This hierarchical nesting of circuit implementations allows for easier management of large numbers of gates, as well as reuse of common components. For example, 8 instances of the same 1 bit full adder can be connected to form an 8 bit word full adder. This approach of nesting also naturally leads to better semantic grouping of circuits, which can later be reused to divide the hardware implementation into reasonably sized \acp{pcb}. The entire simulation is built from the bottom up, i.e modules that require no submodules internally and consist only of atomic logic gates are designed first. In this work, the register is the initial module to be implemented. In \autoref{sec:design_philosophy}, the requirement of using only \texttt{NAND} gates is given. Therefore, the atomic building block within the simulation is an individual 2-input \texttt{NAND} gate.
 
-From this type of gate, the individual modules described in \autoref{sec:implementation_logical} are built. However, the diagram developed in this chapter did not yet contain any clock signals, as they are not relevant to the datapaths. However, to simulate a logic circuit, it must have a clock input. Therefore, an additional module is introduced, which is only necessary for the simulation. 
+From this type of gate, the individual modules described in \autoref{sec:implementation_architecture} are built. However, the diagram developed in this chapter did not yet contain any clock signals, as they are not relevant to the datapaths. However, to simulate a logic circuit, it must have a clock input. Therefore, an additional module is introduced, which is only necessary for the simulation. 
+
+The full simulation contains 2041 individual 2-input \texttt{NAND} gates. An overview of the simulation can be seen in \appref{app:simulation_full}. \autoref{fig:implementation_simulation_gate_pie_chart} shows how the gates are distributed among the individual logical modules.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/gate_pie_chart.png}
+    \caption{Distribution of NAND gates among logical modules, given in absolute number and percentages relative to total}
+    \label{fig:implementation_simulation_gate_pie_chart}
+\end{figure}
 
 \subsubsection{Register \& Register File} \label{sec:implementation_software_simulation_register}
 
@@ -44,7 +53,7 @@ Eight of these gated, clocked D latches are combined in parallel to form an 8 bi
 
 \subsubsection{Multiplexer}
 
-The multiplexer is another essential low level building block that is used at several places in the logical design. It also requires no submodules internally and is built using only \texttt{NAND} gates. Due to its simple, repetetive construction, as is explained in \autoref{sec:implementation_modularisation_multiplexer}, the reconstruction in the simulation environment is not explored in more detail. The final software simulation uses several 8 bit 2:1 and 16 bit 2:1 multiplexers to select between 8 or 16 bit words, as well as a few 1 bit 2:1 multiplexers for switching control signals.
+The multiplexer is another essential low level building block that is used at several places in the logical design. It also requires no submodules internally and is built using only \texttt{NAND} gates. Due to its simple, repetetive construction, as is explained in \autoref{sec:fundamentals_boolean_logic_multiplexer}, the reconstruction in the simulation environment is not explored in more detail. The final software simulation uses several 8 bit 2:1 and 16 bit 2:1 multiplexers to select between 8 or 16 bit words, as well as a few 1 bit 2:1 multiplexers for switching control signals.
 
 \subsubsection{Memory}
 

@@ -7,7 +7,7 @@ Initially, all modules derived in the previous chapter are free-standing, i.e th
 \begin{figure}[h!]
     \centering
     \includegraphics[width=1.0\textwidth]{images/drawio/datapath_operation_fields.png}  % Replace with your image file
-    \caption{Datapath of the instruction decoding section. Data lines are drawn in solid black, dotted red lines indicate control signals}
+    \caption{Datapath of instruction decoding. Solid black lines transport data, dotted red lines are control signals}
     \label{fig:implementation_interconnection_datapath_instruction_decoding}
 \end{figure}
 
@@ -16,7 +16,7 @@ The register file must additionally receive two of the control signals to contro
 \begin{figure}[h!]
     \centering
     \includegraphics[width=1.0\textwidth]{images/drawio/datapath_operation_alu.png}  % Replace with your image file
-    \caption{Datapath of the instruction decoding and ALU sections. Data lines are drawn in solid black, dotted red lines indicate control signals}
+    \caption{Datapath of instruction decoding and ALU. Solid black lines transport data, dotted red lines are control signals}
     \label{fig:implementation_interconnection_datapath_alu}
 \end{figure}
 
@@ -24,7 +24,7 @@ In the current state, the contents of the program counter are static. However, i
 \begin{figure}[h!]
     \centering
     \includegraphics[width=1.0\textwidth]{images/drawio/datapath_operation_pc.png}  % Replace with your image file
-    \caption{Datapath of the instruction decoding, ALU and program counter sections. Data lines are drawn in solid black, dotted red lines indicate control signals}
+    \caption{Datapath instruction decoding, ALU and program counter. Solid black lines transport data, dotted red lines are control signals}
     \label{fig:implementation_interconnection_datapath_pc}
 \end{figure}
 
@@ -33,7 +33,7 @@ The last module to be connected is the working memory. It must receive an addres
 \begin{figure}[h!]
     \centering
     \includegraphics[width=1.0\textwidth]{images/drawio/datapath.png}  % Replace with your image file
-    \caption{Datapath of a possible implementation of the AVA architecture, omitting clock signals and external interfaces. Data lines are drawn in solid black, dotted red lines indicate control signals}
+    \caption{Datapath of an implementation of the AVA \ac{isa}. Solid black lines transport data, dotted red lines are control signals. Clock signals and external interfaces are omitted for clarity.}
     \label{fig:implementation_interconnection_datapath}
 \end{figure}
 

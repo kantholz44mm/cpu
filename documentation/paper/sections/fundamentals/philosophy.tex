@@ -2,24 +2,24 @@
 
 The design philosophy provides a basis on which design decisions can be made. These are high-level ideas of how to approach a problem and where to allocate attention to when creating a solution. They are given in their order of importance.
 
-\subsubsection{NAND only}
+\subsubsection*{NAND only}
 
 As explained in \autoref{sec:logical_operators}, the NAND operator by itself is functionally complete. For this project, all hardware shall be built exclusively from NAND gates. This choice is personal and rather arbitrary. One could just as well implement it using only NOR gates or a combination of multiple other gates such as AND, NOT. Assuming an equal number of gates per chip, regardless of the gate type, this would require far fewer total components. However, there is a certain beauty in a single function, which, when nested and applied in just the right order, forms a device capable of running any algorithm that any other computer can. It also demonstrates this functional completeness and serves as a good starting point for explaining boolean transformation rules within lectures. The additional cost for board space and number of components is also somewhat negated by purchasing larger quantities of that one component type.
 
 This restriction to NAND gates is not absolute; Components needed for the electrotechnical aspects of a design are exempt. Examples of this are decoupling capacitors, transistors for amplifying signals or indicator \acp{led}. Additionally, the memories used for implementing main memory and program storage are exempt as well. This is because building a practical amount of storage using discrete NAND gate \acp{ic} requires huge amounts of gates and board space, while being extremely repetitive. In some circuits, large numbers of bits need to be ORed together. Since each OR gate requires 3 NAND gates and each OR gate has only 2 inputs, the number of gates needed for ORing $n$ inputs is $3n$. As this is also a rather trivial operation with no educational benefit, large OR gates may be built using diodes.
 
-\subsubsection{Visualisation}
+\subsubsection*{Visualisation}
 
 The primary objective of the finished product is to serve as a visualisation aid for lectures. Therefore, it is crucial to provide a good indication of what is happening within the device. Good visualisation also helps with debugging and testing the device. For these purposes, indicator \acp{led} may be used. The user should, at all times, be able to see the full internal state of the device. This includes relevant inputs and outputs of each logical module, as well as all persistent state such as the values stored in registers. To better demonstrate the control logic, all control signals should be equipped with \acp{led} as well. Furthermore, all input and output devices should have similar indicators installed. Users must also be able to see the purposes of and connections between all modules. For this, each module or important logical component should have a clearly visible label that describes its role.
 
-\subsubsection{Simplicity}
+\subsubsection*{Simplicity}
 
 A \ac{cpu} is inherently a complex device. Complexity increases the likelihood of errors in design, manufacturing and testing. Any error in the physical device may require additional time to find and fix, let alone purchasing more hardware. Therefore, it is crucial to keep technical aspects of the project simple. If a design decision leads to increased cost by means of additional components or board space, it may still be worth it, if it also provides a significant simplification.
 
-\subsubsection{Modularity}
+\subsubsection*{Modularity}
 
 Again, a \ac{cpu} is a complex device. To make testing and manufacturing easier and improve the visualisation quality, it is divided up into smaller parts. Each logical module performs only one task and can be operated individually. This also reduces the hardware that is affected if there is an error in the design and allows incremental improvements to individual logical sections, as well as replacements for smaller, cheaper parts.
 
-\subsubsection{Cost}
+\subsubsection*{Cost}
 
 Keeping costs low during development is necessary since funds for research projects are limited and sought-after. Additionally, such constraints are conducive to innovative and creative ways of solving problems. Balancing costs and performance or featureset is a crucial skill in the engineering trades. Furthermore, by keeping costs low, there is room for additions and improvements to the project without the need for further funding. If the project is released to the public, it also lowers the barrier of entry.
