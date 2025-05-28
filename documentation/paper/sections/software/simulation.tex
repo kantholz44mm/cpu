@@ -20,15 +20,6 @@ This hierarchical nesting of circuit implementations allows for easier managemen
 
 From this type of gate, the individual modules described in \autoref{sec:implementation_architecture} are built. However, the diagram developed in this chapter did not yet contain any clock signals, as they are not relevant to the datapaths. However, to simulate a logic circuit, it must have a clock input. Therefore, an additional module is introduced, which is only necessary for the simulation. 
 
-The full simulation contains 2041 individual 2-input \texttt{NAND} gates. An overview of the simulation can be seen in \appref{app:simulation_full}. \autoref{fig:implementation_simulation_gate_pie_chart} shows how the gates are distributed among the individual logical modules.
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.7\textwidth]{images/gate_pie_chart.png}
-    \caption{Distribution of NAND gates among logical modules, given in absolute number and percentages relative to total}
-    \label{fig:implementation_simulation_gate_pie_chart}
-\end{figure}
-
 \subsubsection{Register \& Register File} \label{sec:implementation_software_simulation_register}
 
 The register consists fundamentally of a bistable configuration of logic gates, such as latches as discussed in \autoref{sec:fundamentals_timing_sequential}. By extending an SR-latch with two more \texttt{NAND} gates, a ``gated D latch'' is created. It has two inputs $D$ and $E$, which serve as the data to store and the enable signal, respectively. When the signal $E$ is \texttt{HIGH}, the SR-latch stores the value of $D$ at that time. When $E$ is \texttt{LOW}, the state remains unchanged. \autoref{fig:implementation_software_simulation_d_latch} shows such a gated D latch implemented using only \texttt{NAND} gates.
@@ -125,3 +116,16 @@ The bit shifting module is implemented using a series of 8 bit 2:1 multiplexers.
     \caption{Bidirectional shifter implemented in simulation software ``Digital''}
     \label{fig:implementation_software_simulation_shifter}
 \end{figure}
+
+\subsubsection{Analysis}
+
+The full simulation contains 2041 individual 2-input \texttt{NAND} gates. While the entire simulation is too large to show here, an overview can be seen in \appref{app:simulation_full}. \autoref{fig:implementation_simulation_gate_pie_chart} shows how the gates are distributed among the individual logical modules. From this graphic, it becomes apparent that a large portion of all \texttt{NAND} gates are used to construct registers. In total, $\frac{9 \cdot 92}{2041} \approx 40.6\%$ are used for this purpose. When considering the \ac{alu}, only $\approx 21.6\%$ of all gates do actual computation.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/gate_pie_chart.png}
+    \caption{Distribution of NAND gates among logical modules, given in absolute number and percentages relative to total}
+    \label{fig:implementation_simulation_gate_pie_chart}
+\end{figure}
+
+While concrete numbers 
