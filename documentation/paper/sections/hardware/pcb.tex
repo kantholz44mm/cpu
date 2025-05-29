@@ -1,4 +1,113 @@
 \subsection{PCB}
 
-The \ac{cpu} is implemented as a set of interconnected \acp{pcb}. This approach was mainly chosen due to the high reliability of \ac{pcb} manufacturing. In recent years, the cost of custom \acp{pcb} has dropped significantly, to the point where the pricing is even accessible to hobbyists with very ordered quantities. This approach also has the benfit of offering automated assembly via pick-and-place machines. Many budget \ac{pcb} manufacturers offer both \ac{pcb} production and assembly as a service, resulting in cheap components and quick turn-around times. In addition to these factors, the fully digital design process makes it easier to review changes to the design over time, analyze circuitry before assembly and make incremental changes to parts of a circuit.
+The \ac{cpu} is implemented as a set of interconnected \acp{pcb}. This approach was chosen due to the high reliability and repeatability of \ac{pcb} manufacturing. In recent years, the cost of custom \acp{pcb} has dropped significantly, to the point where the pricing is accessible even to hobbyists with low quantities. This approach also has the benfit of automated assembly via pick-and-place machines. Many budget \ac{pcb} manufacturers offer both \ac{pcb} production and assembly as a service, resulting in cheap components and quick turn-around times. In addition to these factors, the fully digital design process makes it easier to review changes to the design over time, analyze circuitry before assembly and make incremental changes to parts of a circuit. This chapter documents the \ac{pcb} design process, starting with the electrical schematics developed in the last chapter. This design process is identical for all \acp{pcb} designed in this work.
+
+\subsubsection{Tooling \& Setup}
+
+As for the schematics, ``KiCAD'' 9.0 is used. A template is created from which all subsequent projects are derived. This template stores settings such as the global grid size, net names, board stackup and constraints such as trace width and margins. For this project, all designs are based on standard FR-4 with four layers and a thickness of \SI{1.6}{\milli\meter}. Four layers was found to be a good compromise between cost and ease of use. In addition to that, having a dedicated ground and supply plane provides shielding, noise isolation and low impedance return paths. This in turn allows the device to be operated at a higher frequency. All designs use a copper thickness of \SI{35}{\micro\meter} for all layers. All signal traces are \SI{0.15}{\milli\meter} wide, while all power supply traces are \SI{0.5}{\milli\meter} wide. All signal vias have an outer diameter of \SI{0.45}{\milli\meter} and a hole diameter of \SI{0.3}{\milli\meter}. Both the trace and via width corresponds to the minimum supported dimensions of the \ac{pcb} manufacturer.
+
+\subsubsection{Module layout}
+
+All modules and their components and interfaces are known at this point. From this, an estimation of the required \ac{pcb} size is derived. To do so, the sum of the area of all footprints is calculated. While this metric does not consider the space needed for inter-component routing, it nontheless gives a rough estimation of the distribution of board real estate among the boards relative to each other. This calculation is performed using the integrated scripting console provided by KiCAD. \autoref{tab:pcb_area_estimation} shows the results for the size estimation. Notably, the registers alone are estimated to require more than half of the available space.
+
+\begin{table}[H]
+    \centering
+        \refstepcounter{table}
+        \begin{tabular}{|l|l|l|l|l|} 
+            \hline
+            \textbf{Module} & \textbf{Area ($\bm{mm^2}$)} & \textbf{Count} & $\bm{\Sigma_{Area} (mm^2)}$ & \textbf{Relative Area}  \\ 
+            \hline
+            Register        & 5283.7                          & 9                         & 47553.3         & 53.87\%                 \\ 
+            \hline
+            Register Fabric & 10433.1                         & 1                         & 10433.1         & 11.82\%                 \\ 
+            \hline
+            ALU             & 8914                            & 1                         & 8914            & 10.1\%                  \\ 
+            \hline
+            IO              & 21378.7                         & 1                         & 21378.7         & 24.21\%                 \\
+            \hline
+        \end{tabular}
+\end{table}
+\caption{Estimation of required \ac{pcb} area calculated from footprints of contained components}
+\label{tab:pcb_area_estimation}
+
+\autoref{tab:pcb_area_actual} shows the actual dimensions and relative area calculations after development has concluded. As is shown below, the relative area of all modules has increased, except for the register, which has decreased. This is explained by the low number of components, which allows denser packing since less space is required for traces. Likewise, the high number and diversity of components the \ac{io} board has caused it to receive the largest portion of relative area at $37\%$. These figures are not known at the time of development.
+
+\begin{table}[H]
+    \centering
+    \refstepcounter{table}
+    \begin{tabular}{|l|l|l|l|l|l|l|} 
+    \hline
+    \textbf{Module} & \textbf{\#\textsubscript{Components}}    & \textbf{Area ($\bm{mm^2}$)} & \textbf{Count} & $\bm{\Sigma_{Area}}$ & \textbf{Relative Area}  \\ 
+    \hline
+    Register        & 122                      & 4950                                            & 9              & 44550           & 33.04\%                 \\ 
+    \hline
+    Register Fabric & 431                      & 22189.5                                         & 1              & 22189.5         & 16.46\%                 \\ 
+    \hline
+    ALU             & 414                      & 18200                                           & 1              & 18200           & 13.5\%                  \\ 
+    \hline
+    IO              & 793                      & 49880                                           & 1              & 49880           & 37\%                    \\
+    \hline
+    \end{tabular}
+\end{table}
+\caption{Number of components, area and relative area of final \acp{pcb} modules}
+\label{tab:pcb_area_actual}
+
+Based on the estimated size requirements, a layout is created. This layout is modified and adapted during the development phase. This diagram is also used to determine whether all edges are long enough to fit the required connectors between \acp{pcb}. \autoref{fig:hardware_module_layout} shows the finalised hardware module layout. The exact shape and size of each module has been adapted all throughout the \ac{pcb} development process, but the order and general layout has remained intact.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{images/drawio/module_layout.png}
+    \caption{Finalised hardware module layout with connectors shown as dotted red rectangles}
+    \label{fig:hardware_module_layout}
+\end{figure}
+
+\subsubsection{Placement}
+
+The first step of converting the schematic to a manufacturable \ac{pcb} design is to place the components. Finding a spatially optimal placement for both components and traces is an active area of research and has been shown to be NP-complete \cite{garey1976simplified}. However, for this work, a larger, more readable and visualy interesting layout is preferable due to the design philosophy goals of both simplicity and visualisation quality. Therefore, the components are laid out in a manual process largely based on intuition and experience. Components are placed in a way that shows the datapath through the \ac{cpu}, at the cost of \ac{pcb} space. For example, all \acp{led} on a \ac{pcb} are placed close to each other, even though the relevant inputs and outputs span across the whole board, making it necessary to route longer and therefore more complex traces. Likewise, \acp{led} forming larger pieces of data are also kept physically close and are laid out with their \ac{lsb} to the right. This allows users to easily read their binary contents. \autoref{fig:hardware_pcb_placement} shows the result of this placement process at the example of the 8 bit register \ac{pcb}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/kicad_placement.png}
+    \caption{Placement of components for 8 bit register \ac{pcb}}
+    \label{fig:hardware_pcb_placement}
+\end{figure}
+
+While most components can be placed relatively freely according to their function, decoupling capacitors are placed as close to the power supply pins of each \ac{ic}. Mounting holes are placed in locations that are as far apart as possible in order to create the highest mechanical stability possible. They are also preferably placed next to connectors in order to provide rigidity when connecting or disconnecting modules or external devices. Each \ac{pcb} also receives a grounded ring of \SI{5}{\milli\meter} along its perimeter. This serves as shielding against \ac{emi} caused by rapid switching within each \ac{pcb}. This reduces transmittance of noise across the \ac{pcb} boundaries to neighboring modules\cite{peterson_pcb_2021}.
+
+\subsubsection{Routing}
+
+Routing, like the placement of components, is done manually. By manually routing each trace, the visual cleanliness and therefore the clarity of the datapath is preserved. Traces are routed roughly in the order of the tree of the boolean circuits, starting at the external connectors. Even though four layers of copper are available for routing, the ground and power supply planes are exempted from general purpose routing. By doing so, impedance and inductance are minimised and therefore high-frequency noise is rejected more efficiently\cite{peterson_pcb_2021}.
+\\
+
+The majority of all routing is done on the inner two layers, which are divided up into one X and one Y layer. While each layer can be used to traverse both directions, restricting the majority of movement to one axis per layer decreases the likelihood of collisions during routing. Many autorouters offer algorithms that follow the ``XY'' principle\cite{terratel_pcb_routing_2025}.
+\\
+
+\subsubsection{Labeling}
+
+To further increase the educational value of the hardware, labels are added to both the front and back silkscreen. Since the device is intended to be mounted on a rigid surface for easier transportation, no information relevant to the datapath is included in the silkscreen on the back. Every \ac{led} receives a corresponding label that documents its signal and purpose in the datapath. Likewise, groups of \ac{led} that form words of data receive a label that documents the role of the entire word. Semantically related words and signals are even further grouped and labeled. All connectors receive a label that shows what component it is intended to be attached to.
+\\
+
+The bottom side of each \ac{pcb} has a large label with the name and revision of the module, as well as a table that documents the signal for each pin of each external connector. \autoref{fig:silkscreen_operand_labeling} shows a silkscreen on the front of the \ac{io} \ac{pcb} that visually explains the composition of the current instruction word. Each column is one digital \ac{io} stage with an \ac{led}. \autoref{fig:silkscreen_connector_signal_table} shows an annotation of a connector on the same board on the bottom silkscreen.
+
+\begin{figure}[H]
+    \centering
+    % First image
+    \begin{minipage}{0.6\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/operand_labeling.png}
+        \caption{Top side silkscreen showing the composition of the current 32 bit instruction word with an annotation of each contained binary datum.}
+        \label{fig:silkscreen_operand_labeling}
+    \end{minipage}
+    \hfill
+    % Second image
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/connector_signal_table.png}
+        \caption{Bottom side silkscreen showing detailed information about signals on connector}
+        \label{fig:silkscreen_connector_signal_table}
+    \end{minipage}
+    \hfill
+\end{figure}
+
+
 

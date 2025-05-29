@@ -33,6 +33,12 @@ Depending on the way the memory can be accessed by the programmer, an \ac{isa} f
 
 In a machine obeying the Von Neumann memory model, there is only one global memory space, which contains both data and program instructions. In a harvard architecture, these memories have a separate address space. A modified harvard architecture is functionally the same as a regular harvard one, but the software can access the instruction memory as if it was data, while still being stored in a separate memory. This is the memory model used by many modern \ac{isa}. Having two separate memories for storing data and program instructions has the main benefit of allowing different word and address sizes.
 
+\paragraph*{Memory mapped \ac{io}}
+
+Some of the address space available to the programmer can have an \ac{io} device connected to it. This is called ``memory mapped \ac{io}''. In this method, main memory and \ac{io} devices use the same, shared address space. This allows the \ac{cpu} to use regular memory operations to interact with heterogenous devices such as \ac{gpio}, \acp{adc} or other \acp{cpu} by simply reading or writing to the address. One example for this practice is the memory mapping of the original GameBoy console. The memory region \texttt{0x8000} - \texttt{0xA000} is mapped to the video \ac{ram} used by the graphics unit. Therefore, modifying data in this address region modifies the colors of the pixels shown by the display. 
+
+Memory mapped \ac{io} is contrasted by port-based \ac{io}, in which there are dedicated \ac{io} ports with their own address or name space. These must be accessed by special instructions such as \texttt{OUTB} or \texttt{INB}.
+
 \subsubsection{Execution Model} \label{sec:fundamentals_isa_execution_model}
 
 An execution model describes how the computer achieves computation. This means the order of execution and the number and location of operands and results. As with the memory model, there are multiple options to choose from:

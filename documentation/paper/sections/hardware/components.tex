@@ -33,7 +33,7 @@ A hardware implementation is likely split up into modules, similar to the way th
 
 In order to deliver power to the device, a standard \SI{5.5}{\milli\meter} \ac{dc} barrel jack is used. It can handle continuous currents of up to \SI{5}{\ampere} at \SI{12}{\volt}\cite{cliff_dc_connectors}. In addition to the barrel jack, a \ac{usb} type B connector is used for providing a programming interface for the user. A \ac{usb} 3.0 connector can also carry up to \SI{900}{\milli\ampere} at \SI{5}{\volt}. However, having a separate power supply allows a much wider range of power supplies and voltages to be used. The \ac{usb} signal is internally converted to \ac{uart} using an ``FT32RL'' \ac{ic} by FTDI. Both the \ac{usb} and barrel jack connectors provide circuit protection by integrating mechanical reverse polarity protection.
 
-\subsubsection*{Human Machine Interface}
+\subsubsection*{Human Machine Interface} \label{sec:hardware_hmi}
 
 \paragraph*{Mechanical input}
 

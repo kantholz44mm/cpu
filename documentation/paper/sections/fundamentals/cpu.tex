@@ -33,7 +33,7 @@ The control unit contains the logic necessary to orchestrate all other component
 
 \autoref{fig:cpu_structure} shows the composition of a \ac{cpu} from these three components, as well as the external interfaces that interact directly with it. The \ac{alu} and register file combine to form the processor, whose actions are then orchestrated by a control unit.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{images/drawio/cpu_structure.png}  % Replace with your image file
     \caption{Structure of register based CPU; arrows represent data flow. Blue components represent asynchronous circuitry, orange compontents represent synchronous circuitry. (Modified from Wikipedia, aggregated data flow arrows \cite{wikipedia_cpu})}
@@ -46,7 +46,7 @@ The \ac{alu} is the device performing the actual computations within a processor
 
 The individual submodules of a \ac{cpu} need to exchange information in order to be useful. To do so, a designer may either choose to use a dedicated point-to-point connection to connect one input to one output. However, they might also choose to use a single line as a transmission medium for multiple consumers or producers of a signal. It is also possible - though uncommon - to use a single line for transferring multiple distinct signals. When more than two devices are connected using a shared set of transmission media, this setup is referred to as a bus.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{images/drawio/bus.png}  % Replace with your image file
     \caption{Set of system busses commonly found in CPUs}
@@ -64,4 +64,14 @@ Depending on the number of consumers and producers on any given bus, it may be c
     \item[MPMC] Multiple producers, Multiple consumers  
 \end{description}
 
-The exact number of consumers and producers is largely irrelevant, however the distinction between single and multiple producers is crucial for the electrotechnical implementation strategies.
+The exact number of consumers and producers is largely irrelevant, however the distinction between single and multiple producers is crucial for the electrotechnical implementation strategies. Digital outputs are often implemented using ``push-pull stages''. Such a stage is shown in \autoref{fig:push_pull_stage}. Depending on $V_{in}$, the output signal $V_{out}$ is either pulled towards the positive or negative supply voltage. If multiple such outputs are connected to the same net and output different values, an electrical short circuit is created between positive and negative supply voltages. This can not occur with multiple consumers, as they only read the voltage at their inputs and do not drive the signal in any significant way.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/drawio/push_pull.png}  % Replace with your image file
+    \caption{Digital push-pull stage using an N and P channel \ac{mosfet}}
+    \label{fig:push_pull_stage}
+\end{figure}
+
+When multiple producers must share a transmission line, tri-state logic is used. In contrast to boolean logic, the outputs of a gate can assume a third state called ``High-Z''. As the name suggests, in this state, the output of the gate is electrically disconnected from the transmission medium and therefore has a high impedance. Most \acp{ic} that support tri-state logic have a dedicated ``Chip enable'' signal, which serves to control this third state. As these circuits are significantly more complex than the simple push pull stage, they are omitted here \cite{gajski1997principles}.

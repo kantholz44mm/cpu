@@ -7,7 +7,7 @@ split into its own module. The \ac{isa} defines a set of 8 general purpose regis
 
 \paragraph*{Control unit}
 
-The AVA architecture is designed with the complexity of the control unit in mind. Therefore, the architecture can be implemented using only horizontal microcode. The opcode is directly used as an address to read-only memory referred to as control signal memory. This memory stores the control word for each operation. The control word is then output and can be used as a selector for multiplexers within the interconnection network between modules. The individual control signals of the control word can also be used to control the function of modules directly. Due to its simplicity, the control unit module has a single input, which is the opcode, and outputs $n$ control signals, where $n$ depends on the interconnection network. \autoref{tab:implementation_logical_control_unit_io} shows a list of inputs and outputs of the control unit.
+The \ac{ava} architecture is designed with the complexity of the control unit in mind. Therefore, the architecture can be implemented using only horizontal microcode. The opcode is directly used as an address to read-only memory referred to as control signal memory. This memory stores the control word for each operation. The control word is then output and can be used as a selector for multiplexers within the interconnection network between modules. The individual control signals of the control word can also be used to control the function of modules directly. Due to its simplicity, the control unit module has a single input, which is the opcode, and outputs $n$ control signals, where $n$ depends on the interconnection network. \autoref{tab:implementation_logical_control_unit_io} shows a list of inputs and outputs of the control unit.
 
 \begin{table}[H]
     \centering
@@ -26,7 +26,7 @@ The AVA architecture is designed with the complexity of the control unit in mind
 
 \paragraph*{Branch control} \label{sec:branch_control_unit}
 
-The branch control module is introduced to contain several logic gate components which would otherwise remain on the ``top level'' of the logic design. The purpose of this module is to determine if the program counter is to be incremented or loaded from a different source, effectively performing a branching operation. Since the contents of the control signal memory are constant and the branching decision requires dynamic information at runtime, combinatorial logic is needed to combine the dynamic and constant signals. The AVA \ac{isa} defines only the ``zero'' bit of the flags register to be used for branching decision making, as is explained in \autoref{sec:implementation_opcodes}. Therefore, the zero bit of the \ac{alu} flag output is combined with two control signals. The first one controls whether a conditional branch is executed. The second one selects whether to branch if the zero flag bit is set or unset. The output of the combinatorial circuit is then used as an internal control signal to control the source multiplexer for the program counter. \autoref{fig:implementation_modularisation_branch_control_logic} shows the simple internal logic of the unit. \autoref{tab:implementation_branch_control_io} shows a list of inputs and outputs of the branch control unit.
+The branch control module is introduced to contain several logic gate components which would otherwise remain on the ``top level'' of the logic design. The purpose of this module is to determine if the program counter is to be incremented or loaded from a different source, effectively performing a branching operation. Since the contents of the control signal memory are constant and the branching decision requires dynamic information at runtime, combinatorial logic is needed to combine the dynamic and constant signals. The \ac{ava} \ac{isa} defines only the ``zero'' bit of the flags register to be used for branching decision making, as is explained in \autoref{sec:implementation_opcodes}. Therefore, the zero bit of the \ac{alu} flag output is combined with two control signals. The first one controls whether a conditional branch is executed. The second one selects whether to branch if the zero flag bit is set or unset. The output of the combinatorial circuit is then used as an internal control signal to control the source multiplexer for the program counter. \autoref{fig:implementation_modularisation_branch_control_logic} shows the simple internal logic of the unit. \autoref{tab:implementation_branch_control_io} shows a list of inputs and outputs of the branch control unit.
 
 \begin{figure}[h!]
     \centering
@@ -172,8 +172,4 @@ Since it is not feasible for an implementation to provide a set of control lines
 \end{table}
 \caption{Input and output signals of the register file}
 \label{tab:implementation_logical_register_file_io}
-
-
-
-
 
