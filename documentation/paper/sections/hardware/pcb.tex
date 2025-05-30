@@ -52,7 +52,7 @@ All modules and their components and interfaces are known at this point. From th
 \caption{Number of components, area and relative area of final \acp{pcb} modules}
 \label{tab:pcb_area_actual}
 
-Based on the estimated size requirements, a layout is created. This layout is modified and adapted during the development phase. This diagram is also used to determine whether all edges are long enough to fit the required connectors between \acp{pcb}. \autoref{fig:hardware_module_layout} shows the finalised hardware module layout. The exact shape and size of each module has been adapted all throughout the \ac{pcb} development process, but the order and general layout has remained intact.
+Based on the estimated size requirements, a layout is created. This layout is modified and adapted during the development phase. This diagram is also used to determine whether all edges are long enough to fit the required connectors between \acp{pcb}. \autoref{fig:hardware_module_layout} shows the finalised hardware module layout. The exact shape and size of each module has been adapted all throughout the \ac{pcb} development process, but the order and general layout has remained intact. The bounding box of the final assembly is $\SI{356}{\milli\meter} \times \SI{393}{\milli\meter}$.
 
 \begin{figure}[H]
     \centering
@@ -79,8 +79,7 @@ While most components can be placed relatively freely according to their functio
 Routing, like the placement of components, is done manually. By manually routing each trace, the visual cleanliness and therefore the clarity of the datapath is preserved. Traces are routed roughly in the order of the tree of the boolean circuits, starting at the external connectors. Even though four layers of copper are available for routing, the ground and power supply planes are exempted from general purpose routing. By doing so, impedance and inductance are minimised and therefore high-frequency noise is rejected more efficiently\cite{peterson_pcb_2021}.
 \\
 
-The majority of all routing is done on the inner two layers, which are divided up into one X and one Y layer. While each layer can be used to traverse both directions, restricting the majority of movement to one axis per layer decreases the likelihood of collisions during routing. Many autorouters offer algorithms that follow the ``XY'' principle\cite{terratel_pcb_routing_2025}.
-\\
+The majority of all routing is done on the inner two layers, which are divided up into one X and one Y layer. While each layer can be used to traverse both directions, restricting the majority of movement to one axis per layer decreases the likelihood of collisions during routing. Many autorouters offer algorithms that follow the ``XY'' principle\cite{terratel_pcb_routing_2025}. After routing is finished, the set of resulting traces and copper planes is verified by using the electrical rules checker tool integrated in KiCAD. It ensures that there are no connections between unrelated nets.
 
 \subsubsection{Labeling}
 
@@ -109,5 +108,29 @@ The bottom side of each \ac{pcb} has a large label with the name and revision of
     \hfill
 \end{figure}
 
+\subsubsection{Assembly}
 
+All \ac{smd} components are assembled directly by the \ac{pcb} manufacturer. After receiving the boards, all \ac{tht} components are assembled manually using a soldering iron. Using a multimeter, all manually soldered contacts are checked for defects such as cold solder joints and shorts. \autoref{fig:hardware_pcb_unassembled} shows a \ac{pcb} of the register file without any components. \autoref{fig:hardware_pcb_assembled} shows the same \ac{pcb} but with all components installed.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/pcb/fabric_not_assembled_front.jpg}
+    \caption{Front side of register fabric \ac{pcb}, unassembled}
+    \label{fig:hardware_pcb_unassembled}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/pcb/fabric_assembled_front.jpg}
+    \caption{Front side of register fabric \ac{pcb}, assembled}
+    \label{fig:hardware_pcb_assembled}
+\end{figure}
+
+After all \acp{pcb} are fully assembled, they can be connected using the board edge connectors. \autoref{fig:hardware_cpu_assembled} shows the full \ac{cpu} with all boards. Pictures showing the front and back side of all boards, both assembled and unassembled can be seen in \appref{app:cpu_assembly} - \appref{app:register_assembled}. Due to time constraints, the device is not mounted on a rigid backing material as intended.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/pcb/full_assembly_front.jpg}
+    \caption{Front side of the full \ac{cpu} assembly with all components}
+    \label{fig:hardware_cpu_assembled}
+\end{figure}

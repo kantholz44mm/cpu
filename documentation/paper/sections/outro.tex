@@ -1,0 +1,31 @@
+\section{Results}
+
+\subsection{Summary}
+
+In this paper, key decision points for computer architecture design are explored and discussed. Likewise, a brief overview of digital electronics and boolean algebra is given. The working principles behind digital computing devices are introduced and a set of decision guidelines for an implementation is defined.
+\\
+
+A custom 8 bit computer architecture is created and documented. The instruction set, instruction encoding scheme and memory model of the architecture are defined. From this, a possible implementation is derived by first creating the datapath between a set of abstract modules.
+\\
+
+This abstract design is transformed into a gate-level implementation within the digital logic simulation software ``Digital''. An assembler is developed to transform human-readable source code into natively executable binaries for the simulator. Additionally, a software emulator is written to verify the simulation. Automated tests are created, covering the assember and emulator. Test programs are written and compiled in order to test both the simulator and emulator from end to end.
+\\
+
+The gate-level design is transformed into a set of electrical schematics with discrete components. The functionality of the abstract modules is split up into four schematics that contain roughly the same amount of complexity and components. These schematics are then used to develop design files for \acp{pcb}. The \acp{pcb} are manufactured and tested using an external microcontroller running test software. Due to time constraints, one of the four designs could not be exhaustively tested. All other boards have been tested and work according to expectations, except for a defect of the ``zero'' flag output of the \ac{alu}. All boards are assembled and fit together using the intended edge connectors.
+\\
+
+The fundamental architecture has been validated and is able to execute programs. The hardware design is finished and all modules have been manufactured.
+
+\subsection{Outlook}
+
+In its current state, the hardware can not be used as a demonstration device. The \ac{io} module is not yet tested except for smoke-testing. Additionally, software must be written for the integrated microcontroller in order for users to be able to install programs and instruction sets to the \acp{rom}. While the individual modules have been tested, the system as a whole has not. By testing the system end-to-end, additional measurements regarding the performance can be made. Following this, the device can be compared to other architectures and implementations of similar complexity.
+\\
+
+While there are several programs used to test the emulator and simulator, additional ones can be created to demonstrate certain aspects of modern computation such as recursive function calling or processing of data structures such as graphs, trees or matrices. There is also a set of assembly libraries that offer macros for commonly used tasks such as a software stack, function calls and parameter passing. These libraries can be extended, eventually resulting in a richer development experience. At the moment, even basic tasks must be manually implemented for all programs.
+\\
+
+The device has an external connector that allows access to the memory and data busses. Peripherals can be developed which expand the \ac{io} capabilities and open up more practical use cases. For example, displays, keyboards or game controllers can be created that allow real-time input and output.
+
+\subsection{Acknowledgments}
+
+I would like to thank Martin Rentschler for supervising this work and acting as a mentor in the writing process. I would also like to thank Harald Gnegel and Tilmann Wendel for their opinions and feedback on my architectural design. Furthermore, I would like to thank Miriam Hennigs for her help with soldering the immense number of components. Lastly, I would like to extend my gratitude to Thomas Schmid, whose electrotechnical expertise helped me verify my electrical schematics and \ac{pcb} designs.

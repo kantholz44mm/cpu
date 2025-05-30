@@ -4,7 +4,7 @@ Before creating a hardware implementation of the logical design, software is use
 
 As the architecture is derived within this work, there is no existing software tooling. Without such tools, programmers must create their programs by hand by writing and encoding binary files in the expected instruction encoding. This is cumbersome, error prone and inefficient. To give programmers an efficient way of implementing software for the system, a compiler is needed. Such a tool transforms a sequence of human-readable code into the native instruction format. Since the complexity and size of programs for the \ac{isa} designed for this project is rather limited by the available memories, implementing a compiler for a high-level language is not worth the time investment. Therefore, a simple assembler is implemented.
 
-\input{sections/software/simulation.tex}
-\newpage
-\input{sections/software/emulation.tex}
 \input{sections/software/assembler.tex}
+\input{sections/software/simulation.tex}
+\input{sections/software/emulation.tex}
+\input{sections/software/testing.tex}

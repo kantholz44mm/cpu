@@ -1,5 +1,23 @@
 \section{Introduction}
 
-\input{sections/intro/motivation}
-\input{sections/intro/goals}
-\input{sections/intro/approach}
+\subsection{Motivation}
+
+Within the computer science program at DHBW, the lectures ``Digitaltechnik'' and ``Rechnerarchitektur'' teach important fundamentals for an understanding of modern digital computing systems. Both lectures can benefit from a good visualisation of the taught concepts. ``Digitaltechnik'' imparts fundamentals of digital circuits, while ``Rechnerarchitektur'' shows the internals of digital processors on a higher level of abstraction. An illustrative model of a simple \ac{cpu} could serve as a helpful bridge between the two levels of abstraction. From the perspective of ``Digitaltechnik'', individual modules of the \ac{cpu} are especially interesting. For example, registers or individual arithmetic operations can be shown on their physical counterparts. From the perspective of ``Rechnerarchitektur'', the composition and interconnection of the modules is more relevant. Here, the datapath or the control logic can be visualized. Both lectures may benefit from a visualisation of the order of steps within a digital system. Since the implementation is on a gate level, minimizing the number of gates is the most important metric when designing an implementation of the \ac{isa}.
+
+This thought forms the core of the motivation for this work. Additionally, the assignment offers an enormous potential for learning the student. It touches a broad spectrum of technical topics, whose fundamentals were already taught. Therefore, these foundations can be strengthened and expanded upon. Planing and executing a complex technical project independently offers further opportunities for personal development.
+
+\subsection{Goals}
+
+First and foremost, this work aims to create a tangible, illustrative implementation of a simple digital computing system. This is intended for visualizing the processes withing a \ac{cpu}. Additionally, the \ac{isa} shall be fully documented to serve as a jumping-off-point for future modification or extension. The physical build must have a user interface to demonstrate individual processes and clock cycles. The hardware shall be tested for performance and correctness.
+
+\subsection{Approach}
+
+The first section of this work shows the goals and the problem space. It also explains technical expressions relevant for understanding the later sections. This includes a brief overview of the working principles of a digital processor, as well as the concept of an \ac{isa}.
+
+Following this, the conceptual design and its development is presented. Specifically, the \ac{isa} and accompanying instruction set are explained in detail. The fundamental design principles, based on which all design decisions are made, are shown. Following this is an overview of the structure of the \ac{cpu}. This overview follows the bottom-up principle, starting at individual logic gates and functional modules built from them, culminating in a working \ac{cpu}.
+
+After the presentation of the concept, there is documentation of the implementation. This includes implementation details and specifically electrotechnically relevant ones. Additionally, software simulation has been used to verify the logical design and develop software tooling. This simulation, as well as the development of the afore-mentioned tools are documented in the implementation section as well. The software tools mainly consist of an assembler for the custom \ac{isa}, as well as the development of test programs in order to verify the correct behavior of the \ac{cpu}.
+
+After the documentation of the implementation, there is a section on commissioning. It predominantly considers physically building the \ac{cpu} modules and their interconnections. It also describes testing and debugging of the modules and the finished \ac{cpu}.
+
+A retrospective summary forms the closing section of this work. It evaluates test results, performance analyses and functional tests. Difficulties and problems that occurred during the course of the project are listed as well. This is followed by an outlook in order to show potential corrections or extensions and to provide jumping-off-points for future work. Additionally, personal learnings are documented.

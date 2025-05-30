@@ -1,4 +1,4 @@
-\subsection{Emulation}
+\subsection{Emulation} \label{sec:software_emulation}
 
 In addition to the gate-level simulation, an emulator is written. This emulator provides a software interface to an implementation of the \ac{isa}. Through this interface, the full internal state can be read out at any stage of program execution. This allows comprehensive testing, which is not possible in the simulation software since it has no way to hook into the internal state using a programming language. The emulation is written as close as possible to its gate-level counterpart. By doing so, testing within the emulator also verifies the behavior of the simulator to some extent. \\
 
@@ -26,7 +26,7 @@ The software simulator processes instructions using a simulated clock input. Thi
     \label{fig:rust_datatype_emulator_state}
 \end{figure}
 
-\autoref{align:emulation_internal_state} shows the individual components of the internal state, as well as the tuple consisting of all of them denoted as $S$. The device state has a total of 2622537 bits, which results in a total of $2^{2622537}$ different states. That makes it practically impossible to exhaustively test.
+\autoref{align:emulation_internal_state} shows the individual components of the internal state, as well as the tuple consisting of all of them denoted as $S$. The device state has a total of 2622537 bits, which results in a total of $2^{2622537}$ different states. That makes it practically impossible to exhaustively test. Therefore, a non-exhaustive set of tests is used, which is detailed further in \autoref{sec:testing}.
 
 This type is translated directly into its Rust counterpart. While Rust supports tuples, the type is instead captured as a struct, which additionally allows naming the individual fields for easier access. \autoref{fig:rust_datatype_emulator_state} shows this datatype. A constructor is implemented, which initializes all fields to 0. Another function allows loading binary program files as well as a binary file that represents the control signal memory. This is equivalent to resetting the state of the \ac{cpu}, clearing all registers, while the contents of all \acp{rom} remain intact. \\
 

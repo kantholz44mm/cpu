@@ -1,0 +1,43 @@
+\subsection{Testing} \label{sec:testing}
+
+The purpose of the software implementation is to verify the behavior at the gate level before investing into a hardware version. However, errors in the simulation software invalidate all tests. Therefore, the software itself must be tested to ensure it behaves as expected. In this chapter, the testing process for the simulator, emulator and assembler is documented. While important, software testing is not the focus of this work and is therefore kept concise. A lot of testing is done ``ad-hoc'', i.e during development. This type of iterative testing has the advantage of very fast iteration, however tests become redundant or outdated equally fast. They also mostly test a very small piece of the source code. Therefore, for each piece of software, a set of tests is written to verify the expected behavior after development has concluded.
+
+\paragraph*{Assembler}
+
+Both the simulator and assembler are tested by executing software and comparing the state of the system after execution to an expected state. Therefore, the assembler that produces the output binaries must be tested first, as the other systems depend on it. Since the assembler is designed as a series of independent transformations, each transformation can be tested and verified independently, too. In order, the following units are tested:
+
+\begin{itemize}
+    \item \textbf{Preprocessing} Search-and-replace operations on the source code level
+    \item \textbf{Lexing} Converting source code to atomic tokens
+    \item \textbf{Parsing} Converting a sequence of tokens into an abstract syntax tree
+    \item \textbf{Serialisation} Converting an abstract syntax tree into a sequence of bytes
+    \item \textbf{End-To-End} Converting source code into an executable program
+\end{itemize}
+
+At least $80\%$ of all lines must be covered by unit tests, which is verified by using the LLVM instrumentation shipped with ``cargo''. The tests are adapted and executed repeatedly during development and cover the required amount of code after development concludes.
+
+\paragraph*{Emulator}
+
+The internals of the emulator software are also verified using unit tests. This system consists of two major subcomponents:
+
+\begin{itemize}
+    \item \textbf{Combinatorics} Functions that implement boolean logic circuits directly
+    \item \textbf{State transition} Emulates a single clock cycle with propagation of control signals and \ac{io}
+\end{itemize}
+
+Again, at least $80\%$ of all lines of these components is unit tested during and after development. Additionally, using the verified assembler software, a set of test programs is compiled. Each of these test programs is executed and the resulting state of the emulator is inspected and compared to the expected state. This represents end-to-end testing and verifies both the emulator and, to some extent, the assembler.
+
+\paragraph*{Simulator}
+
+The simulator is not tested automatically, as the ``Digital'' logic gate simulator only supports table-driven testing. In this method of testing, one large table contains a defined state for each digital input, and another one contains the defined state of each digital output after the simulation is run. This works for individual modules, but not for a system as complex as a \ac{cpu} with an enormous state space. As mentioned in \autoref{sec:software_emulation}, the state space includes all memories, which for this work, results in a total of $2^{2622537}$ distinct states. Because of this, exhaustive table driven testing is not feasible. Instead, many states can be consolidated. For example, not all permutations of the control signal memory are useful, since they might contain conflicting or redundant combinations of signals. Therefore, only the final design of the instruction set and its control signal program is tested. Likewise, out of all the possible sequences of instructions, only a marginal fraction does useful computation.
+
+The set of programs used for end-to-end testing contains code to test the following mechanisms of the architecture:
+
+\begin{itemize}
+    \item Sequential execution and result reuse
+    \item Reading and writing from registers
+    \item Reading and writing from memory
+    \item Arithmetic operations
+    \item (Conditional) Branching and function calls
+    \item Halting
+\end{itemize}
