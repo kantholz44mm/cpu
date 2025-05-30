@@ -11,7 +11,7 @@ The primary component of the device is the individual \texttt{NAND} logic gate. 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.5\textwidth]{images/SN74HC00_pinout.png}
-    \caption{Functional pinout and internal gate layout of the SN74HC00 IC (SNx4HC00 datasheet, Rev. H \cite[p. 1]{ti_sn74hc00})}
+    \caption[Pin mapping of SN74HC00 IC]{Functional pinout and internal gate layout of the SN74HC00 IC (SNx4HC00 datasheet, Rev. H \cite[p. 1]{ti_sn74hc00})}
     \label{fig:hardware_components_sn74hc00_pinout}
 \end{figure}
 
@@ -37,12 +37,12 @@ In order to deliver power to the device, a standard \SI{5.5}{\milli\meter} \ac{d
 
 \paragraph*{Mechanical input}
 
-To interface with the user, mechanical inputs are needed. To enable user input, simple tactile switches are used. They are cheap and readily available. However, like all mechanical switches, they suffer from signal bouncing. In such mechanical switches, some physical contacts have to approach each other at finite speeds. Therefore, the imperfect surfaces of the contacts create arcing and do not touch instantaneously. This results in an oscillation of the output signal until it settles into the new state. The output at position \texttt{OND} in \autoref{fig:hardware_components_deswitch_bounce} shows the direct output of the mechanical switch without any debouncing circuitry.
+To interface with the user, mechanical inputs are needed. To enable user input, simple tactile switches are used. They are cheap and readily available. However, like all mechanical switches, they suffer from signal bouncing. In such mechanical switches, some physical contacts have to approach each other at finite speeds. Therefore, the imperfect surfaces of the contacts create arcing and do not touch instantaneously. This results in an oscillation of the output signal until it settles into the new state. The output at position \texttt{OND} in \autoref{fig:hardware_components_switch_debounce} shows the direct output of the mechanical switch without any debouncing circuitry.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/drawio/switch_debounce.png}  % Replace with your image file
-    \caption{Mechanical switch circuit and the graphs for mechanical position and output signal at relevant net sections (Modified from Clive Maxfield of Digikey Electronics, omitted description of bounces and outline of switch \cite{maxfield_hardware_debounce})}
+    \caption[Switch debouncing]{Mechanical switch circuit and the graphs for mechanical position and output signal at relevant net sections (Modified from Clive Maxfield of Digikey Electronics, omitted description of bounces and outline of switch \cite{maxfield_hardware_debounce})}
     \label{fig:hardware_components_switch_debounce}
 \end{figure}
 

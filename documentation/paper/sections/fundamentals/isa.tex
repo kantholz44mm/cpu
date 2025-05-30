@@ -6,9 +6,13 @@ An \ac{isa} defines the shared behaviour of different implementations of said \a
 
 An \ac{isa} is an abstract model and does not specify \textit{how} it is to be implemented. When a \ac{cpu} implementing a specific \ac{isa} is designed, the designers are largely free to choose the exact implementation details, as long as the end product adheres to the rules laid out by the \ac{isa}. The distinction between an \ac{isa} and an implementation of said \ac{isa} is important; an \ac{isa} by itself cannot run code. There may be multiple implementations of one \ac{isa} using vastly different electrical or logical technologies. Due to the boolean logic transformation rules mentioned in \autoref{sec:logical_operators}, there is an infinite number of possible implementations, even when the same electrical components are used. Many \ac{isa} also leave room for interpretation or choice when it comes to electrotechnical details such as the voltage levels used, etc. An implementation of an \ac{isa} is also referred to as a microarchitecture. For example, the microarchitecture used by Intel for their flagship x86 \acp{cpu} is called the ``P6'' microarchitecture \cite{intel1997p6}.
 
-\subsubsection{Memory Model} \label{sec:fundamentals_isa_memory_model}
+\subsubsection{Memory} \label{sec:fundamentals_isa_memory}
 
-A digital computer operates on data. The memory model of an \ac{isa} specifies how the data within the system is laid out. A memory in this context is any electrical circuit that stores some number of bits of information for later use. Registers store immediate data such as operands, results or variables and are intended to be read from and written to every cycle. They are addressed directly by the programmer through their individual names. Formally, this class of memory is called the internal storage of a \ac{cpu} \cite{bryant2015computer}. In addition to the set of registers, cache also falls into this category. However, since cache is implementation-dependent and may be implemented transparently to the programmer and to the \ac{isa}, it is not discussed here. Any useful program is larger than the amount of data that fits into the register set. Most programs also use far more memory to store temporary data such as variables. Therefore, in addition to the registers, other memories are available to the programmer. These memories are typically orders of magnitude slower to access when compared to the internal storage, especially the registers. However, in turn, they offer orders of magnitude more storage. In this context, all of these memories shall be referred to as ``main memories''. All memories that are physically implemented must be finite in size. Therefore, they are divided up into cells of usefully sized data.
+A digital computer operates on data, which is stored within some memory. An \ac{isa} must define how this data is organised and used so that software is guaranteed to behave as expected regardless of the implementation.
+
+\paragraph*{Memory Model} \label{sec:fundamentals_isa_memory_model}
+
+The memory model of an \ac{isa} specifies how the data within the system is laid out. A memory in this context is any electrical circuit that stores some number of bits of information for later use. Registers store immediate data such as operands, results or variables and are intended to be read from and written to every cycle. They are addressed directly by the programmer through their individual names. Formally, this class of memory is called the internal storage of a \ac{cpu} \cite{bryant2015computer}. In addition to the set of registers, cache also falls into this category. However, since cache is implementation-dependent and may be implemented transparently to the programmer and to the \ac{isa}, it is not discussed here. Any useful program is larger than the amount of data that fits into the register set. Most programs also use far more memory to store temporary data such as variables. Therefore, in addition to the registers, other memories are available to the programmer. These memories are typically orders of magnitude slower to access when compared to the internal storage, especially the registers. However, in turn, they offer orders of magnitude more storage. In this context, all of these memories shall be referred to as ``main memories''. All memories that are physically implemented must be finite in size. Therefore, they are divided up into cells of usefully sized data.
 
 A ``word'' is the smallest, atomic unit of data used by most operations of an \ac{isa}. It is specified as the number of bits that form one word, usually a power of two. For example, in a 32 bit architecture, the \texttt{ADD} operation will most likely operate on two 32 bit operands, ouputting another 32 bit result. The lowest level data storage units of the same \ac{isa} will most likely be designed to also contain 32 bit words to contain one operand or result each. Each word of $n$ bits can represent $2^n$ different values. This is typically a power of 2, since many of the circuits used to implement such systems naturally favor such sizes. This includes decoders, multiplexers and similar circuits. Early processors such as the Intel 4004 had a word size of 4 bits, meaning one word can represent 16 distinct values. Most modern systems have either 32 or 64 bit processors. However, even so, the venerable byte has remained as the smallest practical, individually addressable unit of bits, consisting of 8 bits each. It can therefore represent 256 distinct values. It has proven to be a good middle ground in terms of granularity and size. Most \ac{ram} and \ac{rom} components are byte-addressible, meaning they also handle data with a size of 8 bits each. If the programmer needs to process data that does not fit into a single word, multiple words can be used and processed in sequence to form arbitrarily large data. 
 
@@ -17,7 +21,7 @@ Similarly, multiple registers can be concatenated to hold a larger piece of data
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{images/drawio/x86_register_size.png}  % Replace with your image file
-    \caption{Composition of a general purpose register in the x86 architecture. Each square represents one byte.}
+    \caption[Composition of an x86 register]{Composition of a general purpose register in the x86 architecture. Each square represents one byte.}
     \label{fig:x86_register_sizes}
 \end{figure}
 
@@ -35,11 +39,11 @@ In a machine obeying the Von Neumann memory model, there is only one global memo
 
 \paragraph*{Memory mapped \ac{io}}
 
-Some of the address space available to the programmer can have an \ac{io} device connected to it. This is called ``memory mapped \ac{io}''. In this method, main memory and \ac{io} devices use the same, shared address space. This allows the \ac{cpu} to use regular memory operations to interact with heterogenous devices such as \ac{gpio}, \acp{adc} or other \acp{cpu} by simply reading or writing to the address. One example for this practice is the memory mapping of the original GameBoy console. The memory region \texttt{0x8000} - \texttt{0xA000} is mapped to the video \ac{ram} used by the graphics unit. Therefore, modifying data in this address region modifies the colors of the pixels shown by the display. 
+Some of the address space available to the programmer can have an \ac{io} device connected to it. This is called ``memory mapped \ac{io}''. In this method, main memory and \ac{io} devices use the same, shared address space. This allows the \ac{cpu} to use regular memory operations to interact with heterogenous devices such as \ac{gpio}, \acp{adc} or other \acp{cpu} by simply reading or writing to the address. One example for this practice is the memory mapping of the original GameBoy console. The memory region \texttt{0x8000} - \texttt{0xA000} is mapped to the video \ac{ram} used by the graphics unit. Therefore, modifying data in this address region modifies the colors of the pixels shown by the display\cite{nintendo_gb_manual_v1_1}. 
 
 Memory mapped \ac{io} is contrasted by port-based \ac{io}, in which there are dedicated \ac{io} ports with their own address or name space. These must be accessed by special instructions such as \texttt{OUTB} or \texttt{INB}.
 
-\subsubsection{Execution Model} \label{sec:fundamentals_isa_execution_model}
+\paragraph*{Execution Model} \label{sec:fundamentals_isa_execution_model}
 
 An execution model describes how the computer achieves computation. This means the order of execution and the number and location of operands and results. As with the memory model, there are multiple options to choose from:
 
@@ -66,7 +70,7 @@ An execution model describes how the computer achieves computation. This means t
         \label{fig:register_architecture}
     \end{subfigure}
 
-    \caption{Working principle of the three execution models Stack, Accumulator and Register}
+    \caption[Execution models]{Working principle of the three execution models Stack, Accumulator and Register}
     \label{fig:execution_models}
 \end{figure}
 
@@ -76,14 +80,14 @@ The accumulator-based execution model has a fixed number of registers, one of wh
 
 The register based execution model provides a fixed set of registers. This model is subdivided further into the ``Register-Register'' and ``Memory-Register'' models. \autoref{fig:register_architecture} shows the former, which is also known as a ``Load-Store architecture'', since the only way of transferring data between registers and memory is via the dedicated load and store operations. All operands and result destinations of an arithmetic operation are registers. The ``Memory-Register'' model allows operations to be read from memory instead. Due to the bottleneck in speed of modern memories, many modern register based architectures are of the Load-Store variant. The register based execution model is highly flexible and well understood. Operands and intermediary results can be reused efficiently and compilers can deterministically optimize register allocation, allowing for higher performance.
 
-\subsubsection{Addressing modes}
+\paragraph*{Addressing modes}
 
-There are many different modes of addressing memories. An addressing mode specifies which memory is accessed, and how the address for that memory is calculated. \autoref{fig:addressing_modes} shows a hierarchical overview of types of modes of addressing. The complexity and number of arithmetic operations required for each mode increase with column, starting at the left. Within each column, complexity increases from top to bottom.
+There are many different modes of addressing memories. An addressing mode specifies which memory is accessed, and how the address for that memory is calculated. \autoref{fig:addressing_modes_general} shows a hierarchical overview of types of modes of addressing. The complexity and number of arithmetic operations required for each mode increase with column, starting at the left. Within each column, complexity increases from top to bottom.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{images/drawio/addressing_modes_general.png}  % Replace with your image file
-    \caption{Hierarchical overview of addressing modes (Modified from S. Dandamudi, laid out horizontally and compacted for readability \cite{sivarama_addrmodes})}
+    \caption[Hierarchical overview of addressing modes]{Hierarchical overview of addressing modes (Modified from S. Dandamudi, laid out horizontally and compacted for readability \cite{sivarama_addrmodes})}
     \label{fig:addressing_modes_general}
 \end{figure}
 
@@ -93,22 +97,26 @@ $$ \text{Base} + \text{Index} * \text{Scale} + \text{Displacement} $$
 
 This requires additional hardware for performing the additions and multiplication. Note that the ``Scale'' is restricted to 1, 2, 4 or 8 and can therefore be implemented by shifting the index to the left by 1, 2, 3 or 4 bits. In most modern, and some older architectures, the addressing modes can be quite numerous and complex. For example, the Intel 6502 has 13 different addressing modes \cite[13.2.1]{schlyter200513}. However, an \ac{isa} need not implement a large number of addressing modes in order to be useful. For example, the Intel 8008 \ac{cpu} only has 3 addressing modes (Register, Register Indirect and Immediate) \cite{cpu-world8008}. The complex addressing modes are useful when implementing features of high-level programming languages such as arrays or structured data.
 
-\subsubsection{Opcodes}
+\subsubsection{Instructions}
+
+An instruction is the atomic building block of programs. In \ac{risc} architectures, instructions generally do a single thing and side-effects are minimal. In \ac{cisc} architectures, a single instruction may do several things such as incrementing a counter and modifying both the contents of memory and some register.
+
+\paragraph*{Opcodes}
 
 Every instruction is identified by its unique ``Opcode'', which is a discrete number. Based on this number, the processor must infer the number and layout of operands and set up the internal state for execution of the given instruction. The number of bits available for encoding the opcodes determines the maximum number of instructions supported by an \ac{isa}. Not all opcodes within this available range must be assigned. Depending on the design philosophy, unassigned opcodes may be equivalent to NOPs or cause undefined behavior. In some \acp{isa}, the number of bits per opcode is variable. For example, in the widely used x86 \ac{isa}, the opcode can be between 8 and 24 bits \cite{mahoney2021enumerating}. More frequently used operations are assigned a shorter opcode to increase code density. An architecture may also split the opcode into multiple parts, deferring analysis of the full opcode to different stages of instruction decoding. This allows designers to more efficiently use the available index space of any n-bit opcode, increasing code density.
 
-\subsubsection{Types of Instruction}
+\paragraph*{Types of Instruction}
 
 Instructions can be divided up into different types based on their effects. There are instructions that perform some calculation and store the result in a target memory location. These instructions will be referred to as ``arithemtic instructions''. There are also instructions that do not calculate anything but simply move data between memories. Most \ac{risc} architectures follow the ``Load-Store'' paradigm. This paradigm says that only a select few instructions interact with main memory, whereas the rest of the instructions, including all arithmetic ones, interact only with immediate data and registers. These instructions will be referred to as ``transfer instructions''. Another important class of instruction is the ``control flow instruction''. As the name suggests, this type of instruction usually does not compute anything either, but is responsible for the decision making process within the \ac{cpu}. Upon executing such an instruction, the program counter, instead of being incremented, is overwritten with a value from a memory. This is called branching. There are unconditional and conditional branches, which only overwrite the program counter if some predicate is met. This predicate is typically dictated by a flag stemming from the result of the last arithmetic instruction. Branching is required for implementing function calls and general conditional execution, i.e ``Do X if Y, otherwise do Z''.
 
-\subsubsection{Instruction Encoding}
+\paragraph*{Instruction Encoding}
 
 In order for a processor to understand each instruction, it must be laid out in a predictable, well defined manner. This is called the instruction encoding format. This encoding must include all information required for performing a desired operation. The encoding must include the opcode, all operands and any additional settings required for executing an operation. Since different operations require a different number and type of operand, it can be useful to define a variable length encoding scheme to save memory and increase code density. On the other hand, variable length encodings require additional logic to determine the length from a given opcode and fetch the required number of bytes from memory. This introduces complexity in an implementation, as well as increasing the number of logic gates required. Typically, this also causes the fetch phase to take more than a single clock cycle. For these reasons, many \ac{risc} architectures use a fixed length encoding. Since different types of instructions require different combinations of options and operands, \acp{isa} may define multiple distinct encoding schemes. The instruction decoder can then choose the corresponding format for each opcode.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{images/drawio/mips_instruction_encoding.png}  % Replace with your image file
-    \caption{MIPS 32 bit instruction encoding scheme and field descriptions. Numbers above fields represent bit positions within the instruction (modified from Charles Price, aggregated information of multiple tables in section A-15 and A-16 \cite{mips1995})}
+    \caption[MIPS32 instruction encoding scheme]{MIPS 32 bit instruction encoding scheme and field descriptions. Numbers above fields represent bit positions within the instruction (modified from Charles Price, aggregated information of multiple tables in section A-15 and A-16 \cite{mips1995})}
     \label{fig:mips_instruction_encoding}
 \end{figure}
 
@@ -117,13 +125,13 @@ In order for a processor to understand each instruction, it must be laid out in 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{images/drawio/mips_instruction_encoding_example.png}  % Replace with your image file
-    \caption{Exemplary instruction encoding of \texttt{ADD R8, R17, R18} in the MIPS IV architecture}
+    \caption[Exemplary instruction encoding in MIPS IV]{Exemplary instruction encoding of \texttt{ADD R8, R17, R18} in the MIPS IV architecture}
     \label{fig:mips_instruction_encoding_example}
 \end{figure}
 
 \autoref{fig:mips_instruction_encoding_example} shows an example of how this encoding works in practice. In the example, the instruction \texttt{ADD R8, R17, R18} is encoded. Since the operation requires two register operands as well as one output register, the R-type encoding is used. Each of the three operands is assigned as an integer value to its corresponding field. The opcode is 0 for all R-type instructions (This can be used by the decoder to recognize the type). The \ac{alu} operation of addition is assigned the value 32, therefore this is encoded into the ``funct'' field. The instruction contains no shifting of the result, therefore the ``shamt'' field is set to 0.
 
-\subsubsection{Microcode}
+\paragraph*{Microcode}
 
 With increasing complexity of individual instructions, more and more complex hardware is required to execute them. To retain a manageable level of complexity, complex operations can be split further into suboperations. These suboperations or microoperations form the instruction set that is directly executable on any given implementation or microarchitecture. The set of all supported microoperations is called microcode of an implementation. Any given instruction on the \ac{isa} level can then be implemented by one or more of these microoperations. Since programmers write their software for an \ac{isa} and not for a microarchitecture, this must be implemented in a way that is transparent to the programmer.
 
@@ -134,7 +142,7 @@ In horizontal microcode, each \ac{isa} operation may correspond to one or more m
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/drawio/microcode_horizontal.png}  % Replace with your image file
-    \caption{Exemplary equivalent of individual instructions in horizontal microcode}
+    \caption[Control signals in horizontal microcde]{Exemplary equivalent of individual instructions in horizontal microcode}
     \label{fig:horizontal_microcode}
 \end{figure}
 
@@ -142,8 +150,8 @@ In horizontal microcode, each \ac{isa} operation may correspond to one or more m
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/drawio/pc_multiplexer.png}
-    \caption{Multiplexer used to select between incrementing PC and loading a branch address}
+    \includegraphics[width=0.6\textwidth]{images/drawio/pc_multiplexer.png}
+    \caption[Multiplexer implementing conditional branching]{Multiplexer used to select between incrementing PC and loading a branch address}
     \label{fig:pc_multiplexer}
 \end{figure}
 

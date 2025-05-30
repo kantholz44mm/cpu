@@ -12,7 +12,7 @@ The software simulation is intended to design, test and simulate a possible impl
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/digital_full_adder_reuse.png}
-    \caption{Hierarchical reuse of the 1 bit full adder shown in \autoref{fig:digital_full_adder}}
+    \caption[Hierarchical reuse of logic gate circuits in ``Digital'']{Hierarchical reuse of the 1 bit full adder shown in \autoref{fig:digital_full_adder}}
     \label{fig:digital_full_adder_reuse}
 \end{figure}
 
@@ -36,7 +36,7 @@ However, this is not suitable for use in synchronous circuits, since the state o
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.9\textwidth]{images/drawio/nand_clocked_d_latch.png}
-    \caption{Two sequential D latches, forming a gated, clocked D latch}
+    \caption[Gated, clocked D latch]{Two sequential D latches, forming a gated, clocked D latch}
     \label{fig:implementation_software_simulation_clocked_d_latch}
 \end{figure}
 
@@ -93,7 +93,7 @@ Addition is implemented using an 8 bit ripple-carry adder. It consists of 8 full
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{images/drawio/addsub_overflow_carry.png}
-    \caption{Logic gate circuits that compute carry/borrow and overflow flags for addition and subtraction}
+    \caption[Computing carry and overflow using logic gates]{Logic gate circuits that compute carry/borrow and overflow flags for addition and subtraction}
     \label{fig:implementation_software_simulation_addsub_overflow_carry}
 \end{figure}
 
@@ -102,7 +102,7 @@ Due to the two's complement representation of negative numbers, subtraction is i
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{images/drawio/bitwise_operators_logic.png}
-    \caption{Implementation of OR, AND, XOR, NAND operators using only NAND gates}
+    \caption[Implementing OR, AND, XOR, NAND using only the NAND operator]{Implementation of OR, AND, XOR, NAND operators using only NAND gates}
     \label{fig:implementation_software_simulation__binary_operators}
 \end{figure}
 
@@ -124,8 +124,6 @@ The full simulation contains 2041 individual 2-input \texttt{NAND} gates. While 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{images/gate_pie_chart.png}
-    \caption{Distribution of NAND gates among logical modules, given in absolute number and percentages relative to total}
+    \caption[Distribution of NAND gates among modules]{Distribution of NAND gates among logical modules, given in absolute number and percentages relative to total}
     \label{fig:implementation_simulation_gate_pie_chart}
 \end{figure}
-
-While concrete numbers 

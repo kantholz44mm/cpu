@@ -34,7 +34,7 @@ The register set consists of a 16 bit program counter, as well as 8 additional 8
         \hline
     \end{tabular}
     \label{tab:register_set}
-    \captionof{table}{Registers used in the \ac{isa}}
+    \captionof{table}{Registers used in the AVA ISA}
 \end{minipage}
 
 The first register is referred to as the ``zero register''. An equivalent register exists in many \ac{risc} architectures such as \ac{mips} \cite{mips1995}, RISC-V \cite{riscv_specs}, SPARC \cite{sparc_specs} and many others. This register allows operations to discard their results without modifying other registers. For example, an instruction may use the \ac{alu} for computing a comparison, which is only used for deciding whether to branch or not. The result itself is not of any interest, therefore, it can be discarded. Similarly, having fast access to the immediate value 0 is useful for implementing instructions without additional hardware. For example, the \ac{mips} \ac{isa} classifies \texttt{MOV} (copy data from one register to another) as a \textit{pseudo-instruction}, since there is no actual operation that implements this directly. Instead, the assembler substitutes an \texttt{ADD} instruction that adds the 0 register to the source register and stores the result in the target register \cite{mips1995}.

@@ -17,7 +17,7 @@ Each of these operations must be assigned its unique opcode so the control logic
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{images/drawio/bitwise_operators_logic.png}
-    \caption{Logic gates implementing OR, AND, XOR, NAND while reusing intermediary results}
+    \caption[OR, AND, XOR and NAND built from only NAND gates]{Logic gates implementing OR, AND, XOR, NAND while reusing intermediary results}
     \label{fig:logic_gates_binary_operators}
 \end{figure}
 
@@ -31,7 +31,7 @@ This specific set of operators is chosen for the large amount of shared intermed
     A \lor B   &= (A \lnand A) \lnand (B \lnand B) \\
     A \lxor B  &= (A \lnand (A \lnand B)) \lnand ((B \lnand (A \lnand B)))
 \end{align}
-\captionof{table}{Boolean expressions for binary operators OR, AND, XOR, NAND using only NAND operators}
+\captionof{table}[OR, AND, XOR, NAND using only the NAND operator]{Boolean expressions for binary operators OR, AND, XOR, NAND using only NAND operators}
 \label{align:binary_operators_from_nand}
 \vspace{\baselineskip}
 
@@ -49,14 +49,14 @@ Instead, each arithmetic is assigned multiple instructions that have the followi
         XXXNF  & Using a register operand, not updating the flags register    \\
         XXXINF & Using an immediate operand, not updating the flags register 
     \end{tabular}    
+    \caption[Instruction suffixes]{Effect of instruction suffix on arithmetic instructions (XXX represents an arbitrary arithmetic operation)}
+    \label{tab:instruction_suffices}
 \end{table}
-\caption{Effect of instruction suffix on arithmetic instructions (XXX represents an arbitrary arithmetic operation)}
-\label{tab:instruction_suffices}
 \vspace{1em}
 
 This increases the number of opcodes assigned to arithmetic operations four-fold, resulting in 32 opcodes for the 8 base operations. However, the added flexibility for laying out the opcode assignments is deemed worth the tradeoff.
 
-\subsubsection{Types of Instruction}
+\paragraph*{Types of Instruction}
 
 The instructions of the \ac{ava} \ac{isa} largely fall into the three groups of computation, memory access and flow control. Since the opcodes are freely assigned, there is no way to determine the type of instruction from the opcode only. Also, since there is no control signal to disable the \ac{alu}, technically, all operations perform some computation, even if the result is discarded. Some computation operations also discard the result but retain the flags for future use, similar to comparison instructions in other architectures (i.e \texttt{cmp} in x86 \cite{intelASM86Manual1983}). In this work, any operation that modifies the state of one or more general purpose register is considered a computational one. Memory access operations are ones where the \ac{ram} is accessed, i.e the \texttt{LOAD} and \texttt{STORE} operations. Flow control operations are ones that potentially modify the program counter (depending on some condition).
 
@@ -100,20 +100,20 @@ The instructions of the \ac{ava} \ac{isa} largely fall into the three groups of 
         49              & HCF           &                   & Flow Control      & Halt execution                   \\
         \hline
     \end{tabular}
+    \caption[AVA instruction set]{Supported instructions and their opcodes, variants, type and brief description (variant suffices are explained in \autoref{tab:instruction_suffices})}
+    \label{tab:instructions}
 \end{table}
-\caption{Supported instructions and their opcodes, variants, type and brief description (variant suffices are explained in \autoref{tab:instruction_suffices})}
-\label{tab:instructions}
 \vspace{1em}
 
 At the time of writing, there are a total of 50 unique instructions, as well as 20 pseudo-instructions implemented within the assembler software. \autoref{tab:instructions} shows a listing of all instructions defined in the \ac{isa}.
 
-\subsubsection{Instruction Encoding} \label{sec:implementation_instruction_encoding}
+\paragraph*{Instruction Encoding} \label{sec:implementation_instruction_encoding}
 
 To simplify the implementation, all instructions use the same fixed length instruction encoding format. This way, one instruction word at a time is fetched from program memory, regardless of the instruction being read. An implementation can then directly route use the outputs of the program memory as the control signals without any further decoding logic. By doing so, the fetching circuitry can be implemented as a single, asynchronous unit. Since the architecture follows a strict Harvard architecture, the program memory is fully decoupled from the working memory. Therefore, the length of the instruction encoding can be chosen freely. After initial experimentation with 16 bit encodings, this was deemed too restrictive to implement a usable, practical \ac{isa}. The current revision uses a 32 bit word per instruction. \autoref{fig:ava_instruction_encoding} shows the fixed length instruction encoding format used in the \ac{ava} \ac{isa}.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{images/drawio/ava_instruction_encoding.png}  % Replace with your image file
-    \caption{\ac{ava} 32 bit instruction encoding scheme and field descriptions. Numbers above fields represent bit positions within the instruction}
+    \caption[AVA instruction encoding scheme]{\ac{ava} 32 bit instruction encoding scheme and field descriptions. Numbers above fields represent bit positions within the instruction}
     \label{fig:ava_instruction_encoding}
 \end{figure}

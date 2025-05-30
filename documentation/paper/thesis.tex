@@ -34,7 +34,9 @@
 \usepackage{needspace}
 \usepackage{pdfpages}
 \usepackage{appendix}
+\usepackage{etoolbox}
 
+\pretocmd{\section}{\newpage}{}{}
 
 \hypersetup{
   colorlinks=true, % Use colored text instead of boxes
@@ -66,42 +68,46 @@
 
 \include{cover}
 \newpage
+
 \include{statutory}
 \newpage
 \include{abstract}
 \newpage
 
 {
-  \addcontentsline{toc}{section}{Abbreviations}
-  \addcontentsline{toc}{section}{List of tables}
-  \addcontentsline{toc}{section}{List of figures}
-  \addtocontents{toc}{\protect\thispagestyle{empty}}
-
+  
   \hypersetup{linkcolor=black}
   \thispagestyle{empty}
   \tableofcontents
   \newpage
-
-  \acuseall
+  
   \thispagestyle{empty}
+  \phantomsection
   \printacronyms[name=Acronyms]
   \newpage
-  \acresetall
+  \cftaddtitleline{toc}{section}{Abbreviations}{}
   
+  \phantomsection
   \addtocontents{lot}{\protect\thispagestyle{empty}}
   \listoftables
   \thispagestyle{empty}
   \newpage
+  \cftaddtitleline{toc}{section}{List of tables}{}
   
+  \phantomsection
   \addtocontents{lof}{\protect\thispagestyle{empty}}
   \listoffigures
   \thispagestyle{empty}
   \newpage
-}
 
+  \cftaddtitleline{toc}{section}{List of figures}{}
+  \addtocontents{toc}{\protect\thispagestyle{empty}}
+}
+  
 \clearpage
 \pagestyle{plain}
 \pagenumbering{arabic}
+\setcounter{page}{1}
 
 \input{sections/intro}
 \newpage
@@ -117,7 +123,7 @@
 \newpage
 \input{sections/outro}
 \newpage
-
+  
 \addcontentsline{toc}{section}{Literature}
 \nocite{*}
 

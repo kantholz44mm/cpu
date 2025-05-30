@@ -1,7 +1,9 @@
+\clearpage
 \section{ISA Design} \label{sec:design_isa}
 
 The first step to creating an implementation of a \ac{cpu} is to define its behavior in the form of an \ac{isa}. For this work, several existing \acp{isa} have been explored, however none provide the desired combination of ease-of-use, visualisation quality and low cost. Therefore, in this chapter, a custom \ac{isa} is developed. The hardware built during this project then implements this architecture. The architecture is dubbed \ac{ava}. 
 
+\input{sections/isa/philosophy.tex}
 \input{sections/isa/execution_model.tex}
 \input{sections/isa/memory_model.tex}
 \input{sections/isa/addressing_modes.tex}

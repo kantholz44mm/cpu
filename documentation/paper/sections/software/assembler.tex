@@ -5,7 +5,7 @@ Assembly language is the most primitive type of programming language. It provide
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{images/arm_assembly_example.png}
-    \caption{ARM assembly example, adding the numbers 5 and 10 (comments show the C language equivalent)}
+    \caption[ARM assembly example]{ARM assembly example, adding the numbers 5 and 10 (comments show the C language equivalent)}
     \label{fig:arm_assembly_example}
 \end{figure}
 
@@ -56,7 +56,7 @@ The parsing stage is responsible for transforming a list of lexemes into a list 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.48\textwidth]{images/asm_labels_example.png}
-    \caption{Exemplary usage of labels in assembly code, continuously incrementing R1 by 1}
+    \caption[Example of labels in assembly code]{Exemplary usage of labels in assembly code, continuously incrementing R1 by 1}
     \label{fig:asm_labels_example}
 \end{figure}
 
@@ -65,7 +65,7 @@ Up to this stage, a program may contain unresolved labels, which are human reada
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.48\textwidth]{images/rust_instruction_data_structure.png}
-    \caption{Rust data structure representing each CPU/Assembly instruction}
+    \caption[Internal data structure for instructions]{Rust data structure representing each CPU/Assembly instruction}
     \label{fig:rust_instruction_data_structure}
 \end{figure}
 
@@ -80,6 +80,6 @@ The serialisation stage takes as input the list of instructions resulting from t
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.58\textwidth]{images/rust_instruction_to_quadword.png}
-    \caption{Rust code that converts an instruction data structure into 32 bit integers}
+    \caption[Rust code to serialize an instruction]{Rust code that converts an instruction data structure into 32 bit integers}
     \label{fig:rust_instruction_to_quadword}
 \end{figure}

@@ -26,9 +26,9 @@ All modules and their components and interfaces are known at this point. From th
             IO              & 21378.7                         & 1                         & 21378.7         & 24.21\%                 \\
             \hline
         \end{tabular}
+        \caption[Estimated PCB area per module]{Estimation of required \ac{pcb} area calculated from footprints of contained components}
+        \label{tab:pcb_area_estimation}
 \end{table}
-\caption{Estimation of required \ac{pcb} area calculated from footprints of contained components}
-\label{tab:pcb_area_estimation}
 
 \autoref{tab:pcb_area_actual} shows the actual dimensions and relative area calculations after development has concluded. As is shown below, the relative area of all modules has increased, except for the register, which has decreased. This is explained by the low number of components, which allows denser packing since less space is required for traces. Likewise, the high number and diversity of components the \ac{io} board has caused it to receive the largest portion of relative area at $37\%$. These figures are not known at the time of development.
 
@@ -48,16 +48,16 @@ All modules and their components and interfaces are known at this point. From th
     IO              & 793                      & 49880                                           & 1              & 49880           & 37\%                    \\
     \hline
     \end{tabular}
+    \caption[Actual PCB area per module]{Number of components, area and relative area of final \acp{pcb} modules}
+    \label{tab:pcb_area_actual}
 \end{table}
-\caption{Number of components, area and relative area of final \acp{pcb} modules}
-\label{tab:pcb_area_actual}
 
 Based on the estimated size requirements, a layout is created. This layout is modified and adapted during the development phase. This diagram is also used to determine whether all edges are long enough to fit the required connectors between \acp{pcb}. \autoref{fig:hardware_module_layout} shows the finalised hardware module layout. The exact shape and size of each module has been adapted all throughout the \ac{pcb} development process, but the order and general layout has remained intact. The bounding box of the final assembly is $\SI{356}{\milli\meter} \times \SI{393}{\milli\meter}$.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{images/drawio/module_layout.png}
-    \caption{Finalised hardware module layout with connectors shown as dotted red rectangles}
+    \caption[Hardware module layout]{Finalised hardware module layout with connectors shown as dotted red rectangles}
     \label{fig:hardware_module_layout}
 \end{figure}
 
@@ -68,7 +68,7 @@ The first step of converting the schematic to a manufacturable \ac{pcb} design i
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{images/kicad_placement.png}
-    \caption{Placement of components for 8 bit register \ac{pcb}}
+    \caption[8 bit register component placement]{Placement of components for 8 bit register \ac{pcb}}
     \label{fig:hardware_pcb_placement}
 \end{figure}
 
@@ -94,7 +94,7 @@ The bottom side of each \ac{pcb} has a large label with the name and revision of
     \begin{minipage}{0.6\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/operand_labeling.png}
-        \caption{Top side silkscreen showing the composition of the current 32 bit instruction word with an annotation of each contained binary datum.}
+        \caption[Top side silkscreen example]{Top side silkscreen showing the composition of the current 32 bit instruction word with an annotation of each contained binary datum.}
         \label{fig:silkscreen_operand_labeling}
     \end{minipage}
     \hfill
@@ -102,7 +102,7 @@ The bottom side of each \ac{pcb} has a large label with the name and revision of
     \begin{minipage}{0.3\textwidth}
         \centering
         \includegraphics[width=\textwidth]{images/connector_signal_table.png}
-        \caption{Bottom side silkscreen showing detailed information about signals on connector}
+        \caption[Bottom side silkscreen example]{Bottom side silkscreen showing detailed information about signals on connector}
         \label{fig:silkscreen_connector_signal_table}
     \end{minipage}
     \hfill
@@ -131,6 +131,6 @@ After all \acp{pcb} are fully assembled, they can be connected using the board e
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{images/pcb/full_assembly_front.jpg}
-    \caption{Front side of the full \ac{cpu} assembly with all components}
+    \caption[CPU hardware overview]{Front side of the full \ac{cpu} assembly with all components}
     \label{fig:hardware_cpu_assembled}
 \end{figure}

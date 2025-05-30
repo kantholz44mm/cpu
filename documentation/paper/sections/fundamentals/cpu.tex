@@ -36,7 +36,7 @@ The control unit contains the logic necessary to orchestrate all other component
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{images/drawio/cpu_structure.png}  % Replace with your image file
-    \caption{Structure of register based CPU; arrows represent data flow. Blue components represent asynchronous circuitry, orange compontents represent synchronous circuitry. (Modified from Wikipedia, aggregated data flow arrows \cite{wikipedia_cpu})}
+    \caption[Datapath of a register based CPU]{Structure of register based CPU. Arrows represent data flow. Blue components represent asynchronous circuitry, orange compontents represent synchronous circuitry. (Modified from Wikipedia, aggregated data flow arrows \cite{wikipedia_cpu})}
     \label{fig:cpu_structure}
 \end{figure}
 
@@ -49,7 +49,7 @@ The individual submodules of a \ac{cpu} need to exchange information in order to
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{images/drawio/bus.png}  % Replace with your image file
-    \caption{Set of system busses commonly found in CPUs}
+    \caption[Common busses within CPUs]{Set of system busses commonly found in CPUs}
     \label{fig:system_bus}
 \end{figure}
 
@@ -70,7 +70,7 @@ The exact number of consumers and producers is largely irrelevant, however the d
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/drawio/push_pull.png}  % Replace with your image file
-    \caption{Digital push-pull stage using an N and P channel \ac{mosfet}}
+    \caption[Push pull IO stage]{Digital push-pull stage using an N and P channel \ac{mosfet}}
     \label{fig:push_pull_stage}
 \end{figure}
 
