@@ -1,6 +1,6 @@
 \subsection{PCB}
 
-The \ac{cpu} is implemented as a set of interconnected \acp{pcb}. This approach was chosen due to the high reliability and repeatability of \ac{pcb} manufacturing. In recent years, the cost of custom \acp{pcb} has dropped significantly, to the point where the pricing is accessible even to hobbyists with low quantities. This approach also has the benfit of automated assembly via pick-and-place machines. Many budget \ac{pcb} manufacturers offer both \ac{pcb} production and assembly as a service, resulting in cheap components and quick turn-around times. In addition to these factors, the fully digital design process makes it easier to review changes to the design over time, analyze circuitry before assembly and make incremental changes to parts of a circuit. This chapter documents the \ac{pcb} design process, starting with the electrical schematics developed in the last chapter. This design process is identical for all \acp{pcb} designed in this work.
+The \ac{cpu} is implemented as a set of interconnected \acp{pcb}. This approach was chosen due to the high reliability and repeatability of \ac{pcb} manufacturing. In recent years, the cost of custom \acp{pcb} has dropped significantly, to the point where the pricing is accessible even to hobbyists with low quantities. This approach also has the benefit of automated assembly via pick-and-place machines. Many budget \ac{pcb} manufacturers offer both \ac{pcb} production and assembly as a service, resulting in cheap components and quick turn-around times. In addition to these factors, the fully digital design process makes it easier to review changes to the design over time, analyze circuitry before assembly and make incremental changes to parts of a circuit. This chapter documents the \ac{pcb} design process, starting with the electrical schematics developed in the last chapter. This design process is identical for all \acp{pcb} designed in this work.
 
 \subsubsection{Tooling \& Setup}
 
@@ -12,7 +12,6 @@ All modules and their components and interfaces are known at this point. From th
 
 \begin{table}[H]
     \centering
-        \refstepcounter{table}
         \begin{tabular}{|l|l|l|l|l|} 
             \hline
             \textbf{Module} & \textbf{Area ($\bm{mm^2}$)} & \textbf{Count} & $\bm{\Sigma_{Area} (mm^2)}$ & \textbf{Relative Area}  \\ 
@@ -34,7 +33,6 @@ All modules and their components and interfaces are known at this point. From th
 
 \begin{table}[H]
     \centering
-    \refstepcounter{table}
     \begin{tabular}{|l|l|l|l|l|l|l|} 
     \hline
     \textbf{Module} & \textbf{\#\textsubscript{Components}}    & \textbf{Area ($\bm{mm^2}$)} & \textbf{Count} & $\bm{\Sigma_{Area}}$ & \textbf{Relative Area}  \\ 
@@ -63,7 +61,7 @@ Based on the estimated size requirements, a layout is created. This layout is mo
 
 \subsubsection{Placement}
 
-The first step of converting the schematic to a manufacturable \ac{pcb} design is to place the components. Finding a spatially optimal placement for both components and traces is an active area of research and has been shown to be NP-complete \cite{garey1976simplified}. However, for this work, a larger, more readable and visualy interesting layout is preferable due to the design philosophy goals of both simplicity and visualisation quality. Therefore, the components are laid out in a manual process largely based on intuition and experience. Components are placed in a way that shows the datapath through the \ac{cpu}, at the cost of \ac{pcb} space. For example, all \acp{led} on a \ac{pcb} are placed close to each other, even though the relevant inputs and outputs span across the whole board, making it necessary to route longer and therefore more complex traces. Likewise, \acp{led} forming larger pieces of data are also kept physically close and are laid out with their \ac{lsb} to the right. This allows users to easily read their binary contents. \autoref{fig:hardware_pcb_placement} shows the result of this placement process at the example of the 8 bit register \ac{pcb}.
+The first step of converting the schematic to a manufacturable \ac{pcb} design is to place the components. Finding a spatially optimal placement for both components and traces is an active area of research and has been shown to be NP-complete \cite{garey1976simplified}. However, for this work, a larger, more readable and visually interesting layout is preferable due to the design philosophy goals of both simplicity and visualisation quality. Therefore, the components are laid out in a manual process largely based on intuition and experience. Components are placed in a way that shows the datapath through the \ac{cpu}, at the cost of \ac{pcb} space. For example, all \acp{led} on a \ac{pcb} are placed close to each other, even though the relevant inputs and outputs span across the whole board, making it necessary to route longer and therefore more complex traces. Likewise, \acp{led} forming larger pieces of data are also kept physically close and are laid out with their \ac{lsb} to the right. This allows users to easily read their binary contents. \autoref{fig:hardware_pcb_placement} shows the result of this placement process at the example of the 8 bit register \ac{pcb}.
 
 \begin{figure}[H]
     \centering

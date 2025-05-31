@@ -28,7 +28,7 @@ The \ac{ava} architecture is designed with the complexity of the control unit in
 
 The branch control module is introduced to contain several logic gate components which would otherwise remain on the ``top level'' of the logic design. The purpose of this module is to determine if the program counter is to be incremented or loaded from a different source, effectively performing a branching operation. Since the contents of the control signal memory are constant and the branching decision requires dynamic information at runtime, combinatorial logic is needed to combine the dynamic and constant signals. The \ac{ava} \ac{isa} defines only the ``zero'' bit of the flags register to be used for branching decision making, as is explained in \autoref{sec:implementation_opcodes}. Therefore, the zero bit of the \ac{alu} flag output is combined with two control signals. The first one controls whether a conditional branch is executed. The second one selects whether to branch if the zero flag bit is set or unset. The output of the combinatorial circuit is then used as an internal control signal to control the source multiplexer for the program counter. \autoref{fig:implementation_modularisation_branch_control_logic} shows the simple internal logic of the unit. \autoref{tab:implementation_branch_control_io} shows a list of inputs and outputs of the branch control unit.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{images/drawio/branch_control.png}  % Replace with your image file
     \caption{Branch control unit logic}

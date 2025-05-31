@@ -4,15 +4,15 @@ A \ac{cpu} is a digital processor that executes instructions of a computer progr
 
 \subsubsection{Operation}
 
-The main purpose of a \ac{cpu} is to sequentially execute a set of instructions stored in some memory. An instruction performs a single action, modifying the state of the processor accordingly. For example, it may calculate the product or sum of two numbers and store them in some memory. Or it may transfer data between main memory and internal registers. This sequence of instructions is called the computer program. In most architectures, it is easily modifiable, making the computer programmable.
+The main purpose of a \ac{cpu} is to sequentially execute a set of instructions stored in some memory. An instruction is the atomic building block of programs and performs a predefined action, modifying the state of the processor accordingly. For example, it may calculate the product or sum of two numbers and store them in some memory. Or it may transfer data between main memory and internal registers. This sequence of instructions is called the computer program. In most architectures, it is easily modifiable, making the computer programmable.
 
 \subsubsection{Instruction Cycle}
 
-The execution of a program is typically done in discrete, synchronous steps, as dictated by one or more clock signals. Each edge of these clock signals advances the progress of the instruction cycle. The instruction cycle typically consists of the three phases of fetching, decoding and executing an instruction. In the fetch phase, the processor retrieves an instruction from program memory. Afterwards, in the decoding phase, the semantics of the fetched instruction are analysed and the internal state of the \ac{cpu} is setup. This involves extracting any operands and setting up the control signals that dictate what is done during the execution phase. In that phase, the desired operation is performed and any results are stored back into the relevant memories. These three phases form the instruction cycle. Each of the phases may take one or more clock cycles, although there are designs that combine some or all phases into shared ones. There are also processors that do not have a global clock signal for synchronisation. These designs are called ``asynchronous processors''. However, synchronous processors are by far more prevalent. In such designs, the asynchronous sections are communicating through synchronous gates, usually registers. This allows the asynchronous sections to be of different complexity, with different propagation delays.
+The execution of a program is typically done in discrete, synchronous steps, as dictated by one or more clock signals. Each edge of these clock signals advances the progress of the instruction cycle. The instruction cycle typically consists of the three phases of fetching, decoding and executing an instruction. In the fetch phase, the processor retrieves an instruction from program memory. Afterwards, in the decoding phase, the semantics of the fetched instruction are analysed and the internal state of the \ac{cpu} is setup. This involves extracting any operands and setting up the control signals that dictate what is done during the execution phase. In that phase, the desired operation is performed and any results are stored back into the relevant memories. Together, these three phases form the instruction cycle. Each of the phases may take one or more clock cycles, although there are designs that combine some or all phases into shared ones. There are also processors that do not have a global clock signal for synchronisation. These designs are called ``asynchronous processors''. However, synchronous processors are by far more prevalent. In such designs, the asynchronous sections are communicating through synchronous gates, usually registers. This allows the asynchronous sections to be of different complexity, with different propagation delays.
 
 \subsubsection{RISC vs. CISC}
 
-Early microprocessors had - by necessity - simple instructions. There were typically also fewer instructions compared to modern systems. This was dictated by the technology at the time. More functionality requires more transistors, which require space on the die, as well as more capabilities for shedding heat. With the shrinking sizes of transistors, more complex instructions became feasible. As with the instructions, the complexity of other systems of a \ac{cpu} grew as well. For example, the Intel 8008 processor released in 1972 \cite{intel4004history} had only 48 instructions \cite{cpu-world8008}, whereas a modern x86 implementation supporting all extensions has $\approx 1795$ instructions \cite[Chapter 7]{heule2016stratified}. Depending on the complexity and number of instructions, an architecture is classified as either \ac{risc} or \ac{cisc}. There is no exact definition of either of these types. This distinction only gives an indication of the design goals of an architecture. However, the line between the two is blurry, with many modern \ac{cisc} implementations translating instructions to one or more \ac{risc} type instructions to execute. 
+Early microprocessors had - by necessity - simple instructions. There were typically also fewer instructions compared to modern systems. This was dictated by the technology at the time. More functionality requires more transistors, which require space on the die, as well as more heat shedding capabilities. With the shrinking sizes of transistors, more complex instructions became feasible. As with the instructions, the complexity of other systems of a \ac{cpu} grew as well. For example, the Intel 8008 processor released in 1972 \cite{intel4004history} had only 48 instructions \cite{cpu-world8008}, whereas a modern x86 implementation supporting all extensions has $\approx 1795$ instructions \cite[Chapter 7]{heule2016stratified}. Depending on the complexity and number of instructions, an architecture is classified as either \ac{risc} or \ac{cisc}. There is no exact definition of either of these types. This distinction only gives an indication of the design goals of an architecture. However, the line between the two is blurry, with many modern \ac{cisc} implementations translating instructions to one or more \ac{risc} type instructions to execute internally. 
 
 \subsubsection{Structure} \label{sec:fundamentals_cpu_structure}
 
@@ -25,7 +25,7 @@ A typical, minimalistic \ac{cpu} has 3 main components:
     \item Control Unit
 \end{itemize}
 
-The \ac{alu} is an asynchronous circuit that performs logical and arithemtic operations. Its inputs are one or more operands, loaded from either an external memory, internal memories such as registers or directly from a given instruction. It performs an operation and outputs the result. Most \acp{alu} also output additional information in the form of one or more flags. These flags include auxiliary information such as the carry-out bit for addition operations or a bit indicating whether the result is zero or negative. These flags are usually saved to some register so they can be inspected in future instructions.
+The \ac{alu} is an asynchronous circuit that performs logical and arithmetic operations. Its inputs are one or more operands, loaded from either an external memory, internal memories such as registers or directly from a given instruction. It performs an operation and outputs the result. Most \acp{alu} also output additional information in the form of one or more flags. These flags include auxiliary information such as the carry-out bit for addition operations or a bit indicating whether the result is zero or negative. These flags are usually saved to some register so they can be inspected in future instructions.
 
 The register file consists of a set of registers that can be used to store temporary results. Each register stores a certain, fixed number of bits in a synchronous manner. Registers function as the synchronising instance between asynchronous circuits. While a \ac{cpu} may contain numerous registers used for equally numerous purposes, the register file consists only of general purpose registers exposed to programmers. Other uses for registers include a program counter, memory address registers, external flag registers and \ac{io} registers. These registers may only be indirectly or not at all visible to the programmer.
 
@@ -36,15 +36,15 @@ The control unit contains the logic necessary to orchestrate all other component
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{images/drawio/cpu_structure.png}  % Replace with your image file
-    \caption[Datapath of a register based CPU]{Structure of register based CPU. Arrows represent data flow. Blue components represent asynchronous circuitry, orange compontents represent synchronous circuitry. (Modified from Wikipedia, aggregated data flow arrows \cite{wikipedia_cpu})}
+    \caption[Datapath of a register based CPU]{Structure of register based CPU. Arrows represent data flow. Blue components represent asynchronous circuitry, orange components represent synchronous circuitry. (Modified from Wikipedia, aggregated data flow arrows \cite{wikipedia_cpu})}
     \label{fig:cpu_structure}
 \end{figure}
 
-The \ac{alu} is the device performing the actual computations within a processor. It contains digital logic circuits that perform arithmetic such as addition, subtraction, multiplication, division or logical operations such as AND, OR, NOT, etc. When a programmer requests the \ac{cpu} to calculate some mathematical formula, it is this device that does the calculations. It is asynchronous does not require any clock signal. 
+The \ac{alu} is the device performing the actual computations within a processor. It contains digital logic circuits that perform arithmetic such as addition, subtraction, multiplication, division or logical operations such as AND, OR, NOT, etc. When a programmer requests the \ac{cpu} to calculate some mathematical formula, it is this device that does the calculations. Since it operates asynchronously, it does not require any clock signal. 
 
 \subsubsection{Busses} \label{sec:fundamentals_busses}
 
-The individual submodules of a \ac{cpu} need to exchange information in order to be useful. To do so, a designer may either choose to use a dedicated point-to-point connection to connect one input to one output. However, they might also choose to use a single line as a transmission medium for multiple consumers or producers of a signal. It is also possible - though uncommon - to use a single line for transferring multiple distinct signals. When more than two devices are connected using a shared set of transmission media, this setup is referred to as a bus.
+The individual submodules of a \ac{cpu} need to exchange information in order to be useful. To do so, a designer may use a dedicated point-to-point connection to connect one input to one output. However, they might also choose to use a single line as a transmission medium for multiple consumers or producers of a signal. It is also possible to use a single line for transferring multiple distinct signals. When more than two devices are connected using a shared set of transmission media, this setup is referred to as a bus.
 
 \begin{figure}[H]
     \centering
@@ -57,14 +57,14 @@ The individual submodules of a \ac{cpu} need to exchange information in order to
 
 Depending on the number of consumers and producers on any given bus, it may be categorized as either one of the following:
 
-\begin{description}
-    \item[SPSC] Single producer, Single consumers
-    \item[SPMC] Single producer, Multiple consumers
-    \item[MPSC] Multiple producers, Single consumer
-    \item[MPMC] Multiple producers, Multiple consumers  
-\end{description}
+\begin{align}
+    \textbf{SPSC} & \text{Single producer, Single consumers} \nonumber \\
+    \textbf{SPMC} & \text{Single producer, Multiple consumers} \nonumber \\
+    \textbf{MPSC} & \text{Multiple producers, Single consumer} \nonumber \\
+    \textbf{MPMC} & \text{Multiple producers, Multiple consumers} \nonumber 
+\end{align}
 
-The exact number of consumers and producers is largely irrelevant, however the distinction between single and multiple producers is crucial for the electrotechnical implementation strategies. Digital outputs are often implemented using ``push-pull stages''. Such a stage is shown in \autoref{fig:push_pull_stage}. Depending on $V_{in}$, the output signal $V_{out}$ is either pulled towards the positive or negative supply voltage. If multiple such outputs are connected to the same net and output different values, an electrical short circuit is created between positive and negative supply voltages. This can not occur with multiple consumers, as they only read the voltage at their inputs and do not drive the signal in any significant way.
+The exact number of consumers is largely irrelevant, however the distinction between single and multiple producers is crucial for the electrotechnical implementation strategies. Digital outputs are often implemented using ``push-pull stages''. Such a stage is shown in \autoref{fig:push_pull_stage}. Depending on $V_{in}$, the output signal $V_{out}$ is either pulled towards the positive or negative supply voltage. If multiple outputs are connected to the same net and output different values, an electrical short circuit is created between positive and negative supply voltages. This can not occur with multiple consumers, as they only read the voltage at their inputs and do not drive the signal in any significant way.
 
 
 \begin{figure}[H]
@@ -74,4 +74,4 @@ The exact number of consumers and producers is largely irrelevant, however the d
     \label{fig:push_pull_stage}
 \end{figure}
 
-When multiple producers must share a transmission line, tri-state logic is used. In contrast to boolean logic, the outputs of a gate can assume a third state called ``High-Z''. As the name suggests, in this state, the output of the gate is electrically disconnected from the transmission medium and therefore has a high impedance. Most \acp{ic} that support tri-state logic have a dedicated ``Chip enable'' signal, which serves to control this third state. As these circuits are significantly more complex than the simple push pull stage, they are omitted here \cite{gajski1997principles}.
+When multiple producers must share a transmission line, tri-state logic is used. In contrast to boolean logic, the outputs of a gate can assume a third state called ``High-Z''. As the name suggests, in this state, the output of the gate is electrically disconnected from the transmission medium and therefore has a high impedance. Most \acp{ic} that support tri-state logic have a dedicated ``Chip enable'' signal, which serves to control this third state. As these circuits are significantly more complex than the simple push pull stage and are not the focus of this work, they are omitted at this point \cite{gajski1997principles}.

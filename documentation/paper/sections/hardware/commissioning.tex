@@ -22,14 +22,14 @@ After the electrical soundness of a board is verified, a temporary testing harne
     \centering
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
-        \includegraphics[height=1.5\textwidth]{images/arduino_mega.jpg} % Replace with your image file
+        \includegraphics[height=1.4\textwidth]{images/arduino_mega.jpg} % Replace with your image file
         \caption[Arduino MEGA]{Arduino MEGA clone development board (compatible with Arduino)}
         \label{fig:arduino_mega}
     \end{subfigure}
     \hfill % Adds spacing between subfigures
     \begin{subfigure}[b]{0.49\textwidth}
         \centering
-        \includegraphics[height=1.5\textwidth]{images/register_in_test_jig.jpg} % Replace with your image file
+        \includegraphics[height=1.4\textwidth]{images/register_in_test_jig.jpg} % Replace with your image file
         \caption{Register \ac{pcb} with attached testing harness}
         \label{fig:register_under_test}
     \end{subfigure}
@@ -39,7 +39,64 @@ After the electrical soundness of a board is verified, a temporary testing harne
 
 \paragraph*{Testing software}
 
-Each type of \ac{pcb} has its own set of testing procedures that are executed on the ATMega. This software mostly uses digital reading and writing on the \ac{io} pins of the ATMega, which then causes the tate of the \ac{dut} to change. This allows highly customisable testing. Due to the finite number of inputs and outputs of each module, it is feasible to exhaustively test many of them. For example, as the \ac{alu} operates on two 8 bit operands with 8 different operations, its input space contains only $2^{24} = 16777216$ states. At the time of writing, after applying the inputs, a delay of \SI{100}{\micro\second} is used to allow all signals to propagate through the device and allow its outputs to settle. With this delay, 10000 different states can be tested per second. This in turn allows exhaustive testing of the entire input state space in $\frac{2^{24}}{\SI{10000}{\hertz}} \approx \SI{1677.7}{\second} \approx \SI{28}{\minute}$.
+Each type of \ac{pcb} has its own set of testing procedures that are executed on the ATMega. This software mostly uses digital reading and writing on the \ac{io} pins of the ATMega, which then causes the state of the \ac{dut} to change. This allows highly customisable testing. Due to the finite number of inputs and outputs of each module, it is feasible to exhaustively test many of them. For example, as the \ac{alu} operates on two 8 bit operands with 8 different operations, its input space contains only $2^{24} = 16777216$ states. At the time of writing, after applying the inputs, a delay of \SI{100}{\micro\second} is used to allow all signals to propagate through the device and allow its outputs to settle. With this delay, 10000 different states can be tested per second. This in turn allows exhaustive testing of the entire input state space in $\frac{2^{24}}{\SI{10000}{\hertz}} \approx \SI{1677.7}{\second} \approx \SI{28}{\minute}$.
+\\
+
+In \autoref{sec:simulation_analysis}, a formula is given for calculating an estimation for the maximum operating frequency of a boolean logic circuit, depending on the propagation delay of the components used. However, it uses only \texttt{NAND} gates for its estimation and must therefore be modified since multiple different components have been used:
+
+\begin{displaymath}
+    \mathit{f}_{max}((t_{C1}, n_{C1}), (t_{C2}, n_{C2}), \cdots (t_{Cn}, n_{Cn})) = \frac{1}{\sum_{i=1}^{n} t_{Ci} \cdot n_{Ci}}
+\end{displaymath}
+
+In this equation, $t_{Ci}$ is the propagation delay of a component, of which $n_{Ci}$ have been used in the circuit. Similar to purely boolean circuits, all components within the composition tree are considered in this calculation. For some components or groups of components, the exact propagation delay is not known. For these, an oscilloscope is used to measure the time taken between applying an input and reading the expected output. As the components are already assembled onto a board with its surrounding circuitry, measuring only the components without loading their outputs is not possible. Therefore, the average of both transitions $\texttt{LOW} \to \texttt{HIGH}$ and $\texttt{HIGH} \to \texttt{LOW}$ is used in order to somewhat mitigate any assymetries due to the attached load. \autoref{tab:propagation_delays_measured} shows both the values given in the datasheets, as well as the measurement results.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|} 
+    \hline
+    \textbf{Component} & $\bm{t_{Datasheet}\text{(ns)}}$ & $\bm{t_{Measured}\text{(ns)}}$  \\ 
+    \hline
+    NAND gate          & 10                       & 4.22                     \\ 
+    \hline
+    IO stage           & /                        & 18.42                    \\ 
+    \hline
+    Multiplexer        & 11                       & 8                        \\ 
+    \hline
+    Decoder            & 15                       & 12.7                     \\ 
+    \hline
+    Buffer             & 11                       & 10.4                     \\ 
+    \hline
+    Memory             & 55                       & 47.78                    \\
+    \hline
+    \end{tabular}
+    \label{tab:propagation_delays_measured}
+    \captionof{table}[Propagation delays of used components]{Propagation delays of used components or groups of components. Both the value in the datasheet and the measured value are given.}
+\end{table}
+
+The measured values are consistently better than the values given by the manufacturer. This makes sense since the values are taken from the ``max'' sections of their respective datasheets, where the manufacturer specifies the worst case numbers. By using the measured values and the formula above, the following theoretical maximum operating frequencies are calculated for each module. Additionally, using the same testing harness and software, each module executes 1000 of its operations. For both the register and \ac{io} module, this operation is either a read or a write. For the \ac{alu}, the operation with the longest critical path is an addition with carry bit. An operation for the register file is selecting its input/output registers. The testing software increases the frequency of these operations in steps of \SI{0.1}{\mega\hertz}. The initial test frequency is half of the estimation calculated from the measured propagation values shown in \autoref{tab:propagation_delays_measured}. \autoref{tab:actual_operating_frequencies} shows these estimations, as well as the frequencies at which the output values of the module no longer match the expected values, denoted as $\mathit{f}_{Error}$. At this frequency, the device can no longer be operated reliably. 
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|} 
+    \hline
+    \textbf{Module} & $\bm{\mathit{f}_{Estimated}\text{(MHz)}}$ & $\bm{\mathit{f}_{Error}\text{(MHz)}}$  \\ 
+    \hline
+    Register        & 16.67                             & 14.3                            \\ 
+    \hline
+    Register File   & 18.52                             & 12.4                            \\ 
+    \hline
+    ALU             & 12.44                             & 9.8                             \\ 
+    \hline
+    IO              & 7.7                               & /                               \\ 
+    \hline
+    Combined        & 1.3                               & /                               \\
+    \hline
+    \end{tabular}
+    \label{tab:actual_operating_frequencies}
+    \captionof{table}[Estimated and actual maximum operating frequencies]{Estimated and actual maximum operating frequencies per module and for the combined assembly. $\mathit{f}_{Error}$ is the frequency at which the first error occurs during 1000 operations.}
+\end{table}
+
+The actual maximum operating frequencies, on average, deviate from the estimations by $\approx 22.8\%$. The acutal maximum frequencies are consistently lower than the estimations, which makes sense since additional factors such as the \ac{pcb} trace propagation delays have not been considered. Interestingly, the relative deviation corresponds roughly with the size of the module, and therefore its average trace length. By extrapolating the deviation of $22.8\%$ to the total, combined operating frequency, the device is expected to work correctly at a frequency of \SI{1.0036}{\mega\hertz}.
 
 \paragraph*{Results}
 

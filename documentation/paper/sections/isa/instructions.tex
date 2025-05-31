@@ -14,7 +14,7 @@ Within the defined task for this work, there are several operations that the arc
 Each of these operations must be assigned its unique opcode so the control logic knows what operation to perform during a cycle. As discussed in \autoref{sec:implementation_isa_memory_model}, an operation can be emulated by using another operation. Therefore, the number of actual opcodes defined in an \ac{isa} may be smaller than the number of usable instructions within a programming language. However, there is no general way to substitute the fundamental arithmetic operations of addition, subtraction and bitwise shifting to the left or right. Therefore, these four operations receive one opcode each.
 
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{images/drawio/bitwise_operators_logic.png}
     \caption[OR, AND, XOR and NAND built from only NAND gates]{Logic gates implementing OR, AND, XOR, NAND while reusing intermediary results}
@@ -35,9 +35,11 @@ This specific set of operators is chosen for the large amount of shared intermed
 \label{align:binary_operators_from_nand}
 \vspace{\baselineskip}
 
-However, this only defines the set of operations the \ac{alu} can perform by itself. It does not define the environment under which the \ac{alu} in invoked. For example, an arithmetic instruction may use operands from differen data sources such as registers, an immediate value encoded in the instruction or memory. From past experience, it also proves useful to have arithmetic instructions that do not modify the state of the flags register. An example of a use case for this is when implementing a stack in software. When pushing a value to this stack, the stack pointer must be incremented or decremented. If no addition can be performed without modifying the flags register, executing a \texttt{PUSH} instruction would therefore modify it as well. Therefore, early revisions of the \ac{ava} \ac{isa} defined a ``flags'' bit as part of the opcode that specified whether the flag output of the \ac{alu} shall update the flags register ``R5'' or not. 
+However, this only defines the set of operations the \ac{alu} can perform by itself. It does not define the environment under which the \ac{alu} in invoked. For example, an arithmetic instruction may use operands from different data sources such as registers, an immediate value encoded in the instruction or memory. From past experience, it also proves useful to have arithmetic instructions that do not modify the state of the flags register. An example of a use case for this is when implementing a stack in software. When pushing a value to this stack, the stack pointer must be incremented or decremented. If no addition can be performed without modifying the flags register, executing a \texttt{PUSH} instruction would therefore modify it as well. Therefore, early revisions of the \ac{ava} \ac{isa} defined a ``flags'' bit as part of the opcode that specified whether the flag output of the \ac{alu} shall update the flags register ``R5'' or not. 
+\\
 
 Similarly, the 3 bit \ac{alu} opcode was a direct subsection of the general opcode. However, this resulted in multiple unrelated opcodes performing the same \ac{alu} operation. This in turn imposed implicit restrictions on the way the opcodes were assigned. Therefore, this was later changed and the \ac{alu} operation is selected using only control signals, which are assignable to arbitrary opcodes. In the current revision, the opcode is merely a number used to index into a table of control signals. This way, the assignment of operations to opcodes is fully arbitrary. No control signal depends on the opcode directly. This allows multiple different sets of instructions to be defined using the same hardware, provided the implementation allows updating the control signal table.
+\\
 
 Instead, each arithmetic is assigned multiple instructions that have the following naming scheme:
 
@@ -111,7 +113,7 @@ At the time of writing, there are a total of 50 unique instructions, as well as 
 
 To simplify the implementation, all instructions use the same fixed length instruction encoding format. This way, one instruction word at a time is fetched from program memory, regardless of the instruction being read. An implementation can then directly route use the outputs of the program memory as the control signals without any further decoding logic. By doing so, the fetching circuitry can be implemented as a single, asynchronous unit. Since the architecture follows a strict Harvard architecture, the program memory is fully decoupled from the working memory. Therefore, the length of the instruction encoding can be chosen freely. After initial experimentation with 16 bit encodings, this was deemed too restrictive to implement a usable, practical \ac{isa}. The current revision uses a 32 bit word per instruction. \autoref{fig:ava_instruction_encoding} shows the fixed length instruction encoding format used in the \ac{ava} \ac{isa}.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{images/drawio/ava_instruction_encoding.png}  % Replace with your image file
     \caption[AVA instruction encoding scheme]{\ac{ava} 32 bit instruction encoding scheme and field descriptions. Numbers above fields represent bit positions within the instruction}

@@ -2,14 +2,14 @@
 
 The software simulation is intended to design, test and simulate a possible implementation of the \ac{isa} on the level of individual logic gates. It allows an estimation of the size, complexity and number of components of its hardware equivalent. The hardware will eventually consist of individual, discrete logic gates. Therefore, the simulation is used to verify a design on this level of abstraction. It also offers low cost and high speed of iteration. If a graphical tool is used, it also provides an opportunity visualize the entire structure. For this work, the digital logic simulator ``Digital'' by Heinz Neemann is used \cite{neemann_digital}. It is free to use and well documented and was previously used by the author to simulate other logical circuits. For these reasons, the cost of entry in both money and time spent learning to use the tool are minimal. The tool simulates digital logic circuits, which can then be hierarchically combined to form more and more complex circuits. \autoref{fig:digital_full_adder} shows a circuit that implements a 1 bit full adder within the software. \autoref{fig:digital_full_adder_reuse} shows how this circuit can then be reused in higher-level circuits.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{images/digital_full_adder.png}
     \caption{1 Bit full adder in the logic gate simulator ``Digital''}
     \label{fig:digital_full_adder}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{images/digital_full_adder_reuse.png}
     \caption[Hierarchical reuse of logic gate circuits in ``Digital'']{Hierarchical reuse of the 1 bit full adder shown in \autoref{fig:digital_full_adder}}
@@ -24,7 +24,7 @@ From this type of gate, the individual modules described in \autoref{sec:impleme
 
 The register consists fundamentally of a bistable configuration of logic gates, such as latches as discussed in \autoref{sec:fundamentals_timing_sequential}. By extending an SR-latch with two more \texttt{NAND} gates, a ``gated D latch'' is created. It has two inputs $D$ and $E$, which serve as the data to store and the enable signal, respectively. When the signal $E$ is \texttt{HIGH}, the SR-latch stores the value of $D$ at that time. When $E$ is \texttt{LOW}, the state remains unchanged. \autoref{fig:implementation_software_simulation_d_latch} shows such a gated D latch implemented using only \texttt{NAND} gates.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{images/drawio/nand_d_latch.png}
     \caption{D Latch implemented using only NAND gates}
@@ -33,7 +33,7 @@ The register consists fundamentally of a bistable configuration of logic gates, 
 
 However, this is not suitable for use in synchronous circuits, since the state of the latch can change multiple times when the enable signal is \texttt{HIGH}. For this reason, two such latches are combined as shown in \autoref{fig:implementation_software_simulation_clocked_d_latch}. In this configuration, the output $Q$ of the first latch is used as the input $D$ of the second one. The enable signals are shared, with one latch receiving the inverse of the other. This way, an edge detection is implemented. The new value $D$ is only propagated when the state of the clock signal changes. This circuit is suitable for synchronous circuits since the saved value can only change once at the time of a clock edge.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{images/drawio/nand_clocked_d_latch.png}
     \caption[Gated, clocked D latch]{Two sequential D latches, forming a gated, clocked D latch}
@@ -83,23 +83,23 @@ Addition is implemented using an 8 bit ripple-carry adder. It consists of 8 full
     COUT &= (A \land B) \lor (CIN \land (A \lxor B))
 \end{align}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{images/digital_full_adder.png}
     \caption{Full adder implemented using only \texttt{NAND} gates}
     \label{fig:implementation_software_simulation_full_adder}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{images/drawio/addsub_overflow_carry.png}
     \caption[Computing carry and overflow using logic gates]{Logic gate circuits that compute carry/borrow and overflow flags for addition and subtraction}
     \label{fig:implementation_software_simulation_addsub_overflow_carry}
 \end{figure}
 
-Due to the two's complement representation of negative numbers, subtraction is implemented by inverting all bits of the second operand and adding the value 1. By using the carry input of the adder circuit, this constant can be added implicity. Inversion is implemented by using the \texttt{XOR} logic gate with the constant 1 at one input. Since this module receives only one bit of the \ac{alu} opcode to distinguish between addition and subtraction, this bit can be used instead of the constant 1. Both addition and subtraction output their carry-out, as well as the overflow flag as defined in the \ac{isa}. An overflow occurs when the most significant bit of the result is not enough to capture the result value. To detect this, one can simply check if the carry outputs of the last and second-to-last adder stages are different using a single \texttt{XOR} logic gate. Similarly, by combining the bit that switches between addition and subtraction and the carry output of the last adder stage, one can obtain the carry-out and borrow flag for both addition and subtraction \cite{idallen_overflow}. \autoref{fig:implementation_software_simulation_addsub_overflow_carry} shows these circuits implemented using only \texttt{NAND} gates.
+Due to the two's complement representation of negative numbers, subtraction is implemented by inverting all bits of the second operand and adding the value 1. By using the carry input of the adder circuit, this constant can be added implicitly. Inversion is implemented by using the \texttt{XOR} logic gate with the constant 1 at one input. Since this module receives only one bit of the \ac{alu} opcode to distinguish between addition and subtraction, this bit can be used instead of the constant 1. Both addition and subtraction output their carry-out, as well as the overflow flag as defined in the \ac{isa}. An overflow occurs when the most significant bit of the result is not enough to capture the result value. To detect this, one can simply check if the carry outputs of the last and second-to-last adder stages are different using a single \texttt{XOR} logic gate. Similarly, by combining the bit that switches between addition and subtraction and the carry output of the last adder stage, one can obtain the carry-out and borrow flag for both addition and subtraction \cite{idallen_overflow}. \autoref{fig:implementation_software_simulation_addsub_overflow_carry} shows these circuits implemented using only \texttt{NAND} gates.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{images/drawio/bitwise_operators_logic.png}
     \caption[Implementing OR, AND, XOR, NAND using only the NAND operator]{Implementation of OR, AND, XOR, NAND operators using only NAND gates}
@@ -110,20 +110,30 @@ As discussed in \autoref{sec:implementation_opcodes}, the boolean logic module i
 
 The bit shifting module is implemented using a series of 8 bit 2:1 multiplexers. A multiplexer at stage $n$ either passes the output of stage $n - 1$ without change, or shifts it by $2^n$ bits by offsetting inputs and outputs by $n$ places. For 8 bit operands, all shifts by more than 7 bits result in the same value, as all 8 bits of the first operand have been replaced. Therefore, only $log_2(8) = 3$ multiplexers are required. Depending on the least significant bits of the second operand, they shift the first operand by 1, 2 or 4 bits, respectively. However, this approach has the disadvantage of requiring a separate series of three multiplexers for shifting to the left or to the right. An advantage, however, is that the inputs that are not assigned an output from the previous stage can use the value of the carry bit of the flags register to replace shifted bits by either a 0 or a 1. The boolean logic module outputs only a carry out flag, which is the first bit that was shifted out of the input. By combining this with replacing shifted bits by the last carry, data of arbitrary size can be shifted by repeatedly shifting 8 bit data in sequence. \autoref{fig:implementation_software_simulation_shifter} shows the full bidirectional shifter with all mentioned features, as it is implemented at the time of writing.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{images/bitshifter.png}
     \caption{Bidirectional shifter implemented in simulation software ``Digital''}
     \label{fig:implementation_software_simulation_shifter}
 \end{figure}
 
-\subsubsection{Analysis}
+\subsubsection{Analysis} \label{sec:simulation_analysis}
 
-The full simulation contains 2041 individual 2-input \texttt{NAND} gates. While the entire simulation is too large to show here, an overview can be seen in \appref{app:simulation_full}. \autoref{fig:implementation_simulation_gate_pie_chart} shows how the gates are distributed among the individual logical modules. From this graphic, it becomes apparent that a large portion of all \texttt{NAND} gates are used to construct registers. In total, $\frac{9 \cdot 92}{2041} \approx 40.6\%$ are used for this purpose. When considering the \ac{alu}, only $\approx 21.6\%$ of all gates do actual computation.
+The full simulation contains 2041 individual 2-input \texttt{NAND} gates. While the entire simulation is too large to show here, an overview can be seen in \appref{app:simulation_full}. \autoref{fig:implementation_simulation_gate_pie_chart} shows how the gates are distributed among the individual logical modules. From this graphic, it becomes apparent that a large portion of all \texttt{NAND} gates are used to construct registers. In total, $\frac{9 \cdot 92}{2041} \approx 40.6\%$ are used for this purpose. When considering the \ac{alu}, only $\approx 21.6\%$ of all gates do actual computation. 
+\\
 
-\begin{figure}[h!]
+While the simulation can run as fast as the host computer can process it at, a physical implementation succumbs to propagation delays and is therefore limited in its operating frequency. The device contains 31 non-recursive subtrees, of which the longest one contains 84 \texttt{NAND} gates. This means that the theoretical maximum clock frequency of the device, depending on the propagation delay of a single \texttt{NAND} gates, is given by
+
+\begin{displaymath}
+    \mathit{f}_{max}(t_{NAND}) = \frac{1}{t_{NAND} \cdot 84}
+\end{displaymath}
+
+For example, at a propagation delay of \SI{10}{\nano\second}, this results in a maximum operating frequency of $\approx\SI{11.9}{\mega\hertz}$. However, this is a rough estimation and does not consider factors such as the propagation delay added by electrical connections and non-gate components.
+
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/gate_pie_chart.png}
+    \includegraphics[width=0.9\textwidth]{images/gate_pie_chart.png}
     \caption[Distribution of NAND gates among modules]{Distribution of NAND gates among logical modules, given in absolute number and percentages relative to total}
     \label{fig:implementation_simulation_gate_pie_chart}
 \end{figure}
+

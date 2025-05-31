@@ -14,6 +14,7 @@ As the word ``digital'' suggests, digital computers operate on individual digits
 
 To do meaningful computation, logical operators are defined. Each operator is a function of one or more binary digit inputs, producing a single binary digit output. They have the shared signature $\mathcal{B}^n \to \mathcal{B} \mid n \geq 1$, where $n$ denotes the number of inputs. Since each input can only assume the state HIGH or LOW, for an operator taking $n$ inputs, there are $2^n$ combinations of input states. Therefore, there can only be $2^{2^n}$ different operators for any given $n$. For operators with $n = 2$, there are only 16 different mappings from inputs to outputs. Operators that have either one or two inputs can be written in infix notation. For this reason, many such operators have been given widely recognized names and symbols. \autoref{tab:boolean_operators} shows names and symbols of operators relevant to this paper. The order of the inputs of all given operators does not matter. For this reason, the inputs are unlabelled in their graphic representations later on.
 
+\vspace{1em}
 \begin{minipage}[t]{\textwidth}
     \centering
     \begin{tabular}{|c|c|c|c|c|c|c|c|} 
@@ -40,7 +41,7 @@ The algebra defined by these logical operators is called "Boolean algebra". Expr
     \neg(\neg A \land \neg B)
 \end{displaymath}
 
-One important aspect of any set of such operators is its functional completeness. A set of operators is called functionally complete when and only when its operators can be combined and chained in a way that emulates all other operators. Again, there are only 16 operators with 2 inputs. If a smaller set of operators can be used to build all 16 of these, it is deemed functionally complete, as it can be used to denote any logical function. Examples of such functionally complete sets include:
+A set of operators is called functionally complete if and only if its operators can be composed in a way that emulates all other operators of the same number of inputs. For 2 inputs, there are only 16 distinct operators. If a subset of operators can be used to compose all 16, it is deemed functionally complete, as it can be used to denote any logical function. Examples of such functionally complete sets include:
 
 \begin{gather}
     \{AND, OR, NOT\} \label{gather_and_or_not} \\
@@ -48,7 +49,7 @@ One important aspect of any set of such operators is its functional completeness
     \{XOR, NOT\}
 \end{gather}
 
-Consider the expression given earlier, $\neg(\neg A \land \neg B)$. The outputs of the entire expression are identical to that of the OR gate. However, only the NOT and AND operators are used within the expression. Therefore, the set of operators given in set \ref{gather_and_or_not} is functionally complete, but not minimal, because the OR operator can be emulated by the AND and NOT operators. Thus, the OR can be dropped from the set, while still retaining its functional completeness. A set of boolean operators is considered minimal when removing any operator causes the set to no longer be functionally complete. An even more restrictive category are the "Sheffer functions", which are also known as \textit{sole sufficient operators}. They are the functionally complete sets which contain only a single boolean operator. For operators with 2 inputs, there are only two such sets: $\{NAND\}$ and $\{NOR\}$.
+Consider the expression given earlier, $\neg(\neg A \land \neg B)$. The outputs of the entire expression are identical to that of the OR gate. However, only the NOT and AND operators are used within the expression. Therefore, the set of operators given in set \ref{gather_and_or_not} is functionally complete, but not minimal, because the OR operator can be emulated by the AND and NOT operators. Thus, the OR can be dropped from the set, while retaining its functional completeness. A set of boolean operators is considered minimal when removing any operator causes the set to no longer be functionally complete. An even more restrictive category are the "Sheffer functions", which are also known as \textit{sole sufficient operators}. They are the functionally complete sets which contain only a single boolean operator. For operators with 2 inputs, there are only two such sets: $\{NAND\}$ and $\{NOR\}$.
 
 \subsubsection{Logic gates}
 
@@ -56,7 +57,7 @@ Since most digital processors work using electrical circuits, there is a need fo
 
 Each operator is assigned a unique symbol that is drawn at the respective graph edge. In real world applications, one operator corresponds to one or more physical components, which are collectively called a "logic gate". Figures \ref{fig:logic_gates_and} - \ref{fig:logic_gates_not} show the symbols used for the AND, OR and NOT gate defined in \autoref{tab:boolean_operators}. The symbols used are defined in standard 14456 by the \ac{ieee} \cite{STD14456}. The equivalent \ac{iso} standard that defines symbols for these functions is ISO 60617. \cite{ISO60617}.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     % First image
     \begin{minipage}{0.3\textwidth}
@@ -83,9 +84,9 @@ Each operator is assigned a unique symbol that is drawn at the respective graph 
     \end{minipage}
 \end{figure}
 
-As an example, consider the boolean expression given above, $\neg(\neg A \land \neg B)$. Its visual representation can be seen in \autoref{fig:or_from_and}. This representation allows electrical engineers to reason about the structure in terms of electrical connections and components, while logicians can easily convert it to its boolean algebra form. 
+As an example for composition, consider the boolean expression given above, $\neg(\neg A \land \neg B)$. Its visual representation can be seen in \autoref{fig:or_from_and}. This representation allows electrical engineers to reason about the structure in terms of electrical connections and components, while logicians can easily convert it to its boolean algebra form. 
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{images/drawio/or_from_and.png}
     \caption{Visual representation of $\neg(\neg A \land \neg B)$}
@@ -94,13 +95,13 @@ As an example, consider the boolean expression given above, $\neg(\neg A \land \
 
 \subsubsection{Multiplexer} \label{sec:fundamentals_boolean_logic_multiplexer}
 
-A multiplexer selects one of multiple inputs and outputs it unchanged. To select between $n$ input signals, $\lceil log_2(n)\rceil$ selector signals are required. For example, two select between 3 different input signals, a selector signal of 2 bits is needed. If multiple multiplexers are operated in parallel and use the same selector signal, the set of multiplexers can be thought of as a single multiplexer with a data channel of $m$ bits. A multiplexer that switches between $n$ words of $m$ bits each is referred to as an ``m bit n:1 multiplexer''. All combinations of $n$ and $m$ can be built using only the basic 1 bit 2:1 multiplexer. Its output for the input signals $A$, $B$ and $S$ is determined by the boolean expression:
+A multiplexer is a commonly used circuit of logic gates used to select one of multiple inputs and propagate it to its output. To select between $n$ input signals, $\lceil log_2(n)\rceil$ selector signals are required. For example, two select between 3 different input signals, a selector signal of 2 bits is needed. If multiple multiplexers are operated in parallel and use the same selector signal, the set of multiplexers can be thought of as a single multiplexer with a data channel of $m$ bits. A multiplexer that switches between $n$ words of $m$ bits each is referred to as an ``m bit n:1 multiplexer''. All combinations of $n$ and $m$ can be built using only the basic 1 bit 2:1 multiplexer. Its output for the input signals $A$, $B$ and $S$ is determined by the boolean expression:
 
 \begin{displaymath}
     (A \land \neg S) \lor (B \land S)
 \end{displaymath}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{images/drawio/multiplexer_tree.png}  % Replace with your image file
     \caption[4:1 multiplexer from three 2:1 multiplexers]{1 bit 4:1 multiplexer from three 1 bit 2:1 multiplexers}
